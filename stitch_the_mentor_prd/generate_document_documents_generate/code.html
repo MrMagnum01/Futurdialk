@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Generate Document - The Mentor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-10 py-3">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-8 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">school</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">The Mentor</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-slate-900 dark:text-slate-200 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Dashboard</a>
+<a class="text-slate-900 dark:text-slate-200 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Universities</a>
+<a class="text-slate-900 dark:text-slate-200 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Applications</a>
+<a class="text-primary text-sm font-bold leading-normal transition-colors" href="#">Documents</a>
+<a class="text-slate-900 dark:text-slate-200 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Profile</a>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 hover:bg-primary/10 hover:text-primary text-slate-700 dark:text-slate-300 transition-colors">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 hover:bg-primary/10 hover:text-primary text-slate-700 dark:text-slate-300 transition-colors">
+<span class="material-symbols-outlined text-[20px]">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<div class="flex-1 flex flex-col max-w-[1440px] w-full mx-auto px-6 py-8">
+<!-- Breadcrumbs & Header -->
+<div class="flex flex-col gap-6 mb-8">
+<div class="flex flex-wrap items-center gap-2 text-sm">
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">Home</a>
+<span class="text-slate-400">/</span>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">Documents</a>
+<span class="text-slate-400">/</span>
+<span class="text-slate-900 dark:text-slate-100 font-medium">Generate New</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="flex flex-col gap-2">
+<h1 class="text-3xl md:text-4xl font-black tracking-tight text-slate-900 dark:text-white">Generate Document</h1>
+<p class="text-slate-500 dark:text-slate-400 text-lg max-w-2xl">Create professional SOPs, cover letters, and CVs with AI assistance. Follow the steps to generate your personalized document.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[20px]">history</span>
+<span>History</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="flex flex-col lg:flex-row gap-8 h-full min-h-[600px]">
+<!-- Left Column: Wizard Steps -->
+<div class="flex-1 flex flex-col gap-6 w-full lg:max-w-[600px]">
+<!-- Progress Stepper -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between relative">
+<!-- Connecting Line -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-slate-100 dark:bg-slate-800 z-0"></div>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1/2 h-1 bg-primary/20 z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold shadow-md shadow-primary/30">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<span class="text-xs font-semibold text-primary">Template</span>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold shadow-md shadow-primary/30 ring-4 ring-white dark:ring-slate-900">
+                                2
+                            </div>
+<span class="text-xs font-semibold text-primary">Details</span>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400 flex items-center justify-center text-sm font-bold ring-4 ring-white dark:ring-slate-900">
+                                3
+                            </div>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Review</span>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400 flex items-center justify-center text-sm font-bold ring-4 ring-white dark:ring-slate-900">
+                                4
+                            </div>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Export</span>
+</div>
+</div>
+</div>
+<!-- Step Content: Details Form -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 md:p-8 shadow-sm border border-slate-200 dark:border-slate-800 flex-1 flex flex-col">
+<div class="mb-6">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Personal Details</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Provide information to tailor the document to your profile.</p>
+</div>
+<form class="flex flex-col gap-5 flex-1" onsubmit="event.preventDefault();">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-slate-900 dark:text-slate-200">Target University</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined text-[20px]">school</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" placeholder="e.g. Stanford University" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-slate-900 dark:text-slate-200">Program of Study</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined text-[20px]">menu_book</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" placeholder="e.g. Master's in Computer Science" type="text"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-slate-900 dark:text-slate-200">Key Achievements &amp; Goals</label>
+<textarea class="w-full p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all resize-none" placeholder="Briefly describe your academic achievements, relevant work experience, and your future career goals. The AI will expand on these points." rows="4"></textarea>
+<div class="flex justify-end">
+<button class="text-primary text-xs font-medium flex items-center gap-1 hover:underline" type="button">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+                                    Improve with AI
+                                </button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-slate-900 dark:text-slate-200">Tone of Voice</label>
+<div class="grid grid-cols-3 gap-3">
+<label class="cursor-pointer group">
+<input checked="" class="peer sr-only" name="tone" type="radio"/>
+<div class="p-3 rounded-lg border border-slate-200 dark:border-slate-700 peer-checked:border-primary peer-checked:bg-primary/5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all flex flex-col items-center gap-2 text-center">
+<span class="material-symbols-outlined text-slate-400 peer-checked:text-primary group-hover:text-primary transition-colors">business_center</span>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-300 peer-checked:text-primary">Professional</span>
+</div>
+</label>
+<label class="cursor-pointer group">
+<input class="peer sr-only" name="tone" type="radio"/>
+<div class="p-3 rounded-lg border border-slate-200 dark:border-slate-700 peer-checked:border-primary peer-checked:bg-primary/5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all flex flex-col items-center gap-2 text-center">
+<span class="material-symbols-outlined text-slate-400 peer-checked:text-primary group-hover:text-primary transition-colors">school</span>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-300 peer-checked:text-primary">Academic</span>
+</div>
+</label>
+<label class="cursor-pointer group">
+<input class="peer sr-only" name="tone" type="radio"/>
+<div class="p-3 rounded-lg border border-slate-200 dark:border-slate-700 peer-checked:border-primary peer-checked:bg-primary/5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all flex flex-col items-center gap-2 text-center">
+<span class="material-symbols-outlined text-slate-400 peer-checked:text-primary group-hover:text-primary transition-colors">lightbulb</span>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-300 peer-checked:text-primary">Creative</span>
+</div>
+</label>
+</div>
+</div>
+<div class="mt-auto pt-6 flex justify-between items-center border-t border-slate-100 dark:border-slate-800">
+<button class="px-5 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" type="button">
+                                Back
+                            </button>
+<button class="group flex items-center gap-2 px-6 py-2.5 rounded-lg bg-primary text-white font-bold hover:bg-blue-600 transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40" type="button">
+<span class="material-symbols-outlined text-[20px] group-hover:animate-pulse">auto_awesome</span>
+                                Generate Preview
+                            </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Right Column: Live Preview -->
+<div class="flex-1 flex flex-col gap-6 lg:min-w-[500px]">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Document Preview</h3>
+<div class="flex gap-2">
+<button class="text-slate-500 hover:text-primary p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Zoom Out">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<span class="py-2 text-sm text-slate-500 font-mono">100%</span>
+<button class="text-slate-500 hover:text-primary p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Zoom In">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<!-- Preview Paper Container -->
+<div class="flex-1 bg-slate-200 dark:bg-slate-800/50 rounded-xl p-4 md:p-8 overflow-y-auto max-h-[800px] shadow-inner border border-slate-200 dark:border-slate-800 flex justify-center">
+<!-- A4 Paper Simulation -->
+<div class="bg-white w-full max-w-[210mm] min-h-[297mm] shadow-xl p-[25mm] relative group">
+<!-- Overlay/Placeholder State (Shown before generation) -->
+<div class="absolute inset-0 z-10 bg-white/60 backdrop-blur-[2px] flex flex-col items-center justify-center text-center p-8 hidden"> <!-- Remove 'hidden' to show empty state -->
+<div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4 text-slate-400">
+<span class="material-symbols-outlined text-3xl">description</span>
+</div>
+<h4 class="text-lg font-bold text-slate-800 mb-2">Ready to Generate</h4>
+<p class="text-slate-500 max-w-xs text-sm">Fill in the details on the left and click 'Generate Preview' to see your document here.</p>
+</div>
+<!-- Document Content (Mockup) -->
+<div class="flex flex-col gap-6 font-serif text-slate-800 text-[11pt] leading-relaxed">
+<!-- Header -->
+<div class="border-b-2 border-slate-900 pb-4 mb-4">
+<h1 class="text-2xl font-bold uppercase tracking-wide text-slate-900">Statement of Purpose</h1>
+<div class="flex justify-between mt-2 text-sm text-slate-600">
+<span>Target: Master's in Computer Science</span>
+<span>Stanford University</span>
+</div>
+</div>
+<!-- Body Paragraphs with Skeleton Loading Effect (Optional: remove animate-pulse for static text) -->
+<div class="space-y-4">
+<p>
+<span class="bg-primary/10 text-primary font-semibold px-1 rounded">Subject:</span> Application for Master of Science in Computer Science
+                                </p>
+<p>
+                                    To the Graduate Admissions Committee,
+                                </p>
+<p>
+                                    My journey in computer science began not in a classroom, but in a small robotics club during my high school years. Since then, my fascination with algorithmic problem-solving has only grown. I am writing to express my strong interest in the Master of Science in Computer Science program at Stanford University, a program I believe will be the catalyst for my goal of specializing in Artificial Intelligence.
+                                </p>
+<p>
+                                    During my undergraduate studies at [University Name], I maintained a GPA of 3.8 while leading the university's hackathon team. My capstone project, "Neural Networks for Urban Traffic Optimization," was awarded the Dean's List distinction. This experience solidified my resolve to pursue advanced research in machine learning architectures.
+                                </p>
+<p class="opacity-50 blur-[1px]">
+                                    Stanford's curriculum, particularly the work of Professor [Name] in reinforcement learning, aligns perfectly with my research interests. I am particularly drawn to the interdisciplinary approach of the AI Lab...
+                                </p>
+<p class="opacity-30 blur-[2px]">
+                                    I am confident that my technical background, coupled with my leadership experience, will allow me to contribute meaningfully to the diverse graduate community at Stanford. Thank you for considering my application.
+                                </p>
+</div>
+<!-- Floating Action Buttons on Preview -->
+<div class="absolute bottom-8 right-8 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="flex items-center justify-center w-12 h-12 rounded-full bg-slate-900 text-white shadow-lg hover:scale-105 transition-transform" title="Edit Manually">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:scale-105 transition-transform" title="Save Draft">
+<span class="material-symbols-outlined text-[20px]">save</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200 flex items-center justify-center overflow-hidden">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="User avatar thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZpSklt6Q6xQLBiGZuzP2Of2ot2j3efDVPf2AH5ANs4q--Pm2woPR0vTPqzq2kef1ePWk_BUrcF2-nZpUWwHepKe3EuX1ELNm92RVE_FNUTk4VI2SZ5IG2mNTkDK2RvGiWdlFkcDlj6zxxdNpKM5QaXQNR0GB2_qJpB_Zs9FYbLPZAXmqc6pGozy_ICc2Y8aJYOwSS4D3t_FJ7sgU-lqVH0jMWY27i8suGZRNhFlpsvjVLkw36lXKDkKAb2XTZKCGtgNnOAvXt1YE"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-primary flex items-center justify-center text-white text-xs font-bold">
+                                AI
+                            </div>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300">
+                            Generated in <span class="font-bold text-slate-900 dark:text-white">12s</span> • 
+                            <span class="text-green-600 font-medium">95% Match Score</span>
+</p>
+</div>
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold transition-colors">
+<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+                        Export PDF
+                    </button>
+</div>
+</div>
+</div>
+<!-- Templates Drawer (Visual hint at bottom) -->
+<div class="mt-12 mb-8">
+<div class="flex items-center justify-between mb-4 px-2">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Popular Templates</h3>
+<a class="text-primary text-sm font-medium hover:underline" href="#">View All Templates</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="group cursor-pointer">
+<div class="relative w-full aspect-[3/4] rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm transition-all group-hover:shadow-md group-hover:border-primary/50">
+<div class="absolute inset-0 bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<!-- Abstract Representation of CV -->
+<div class="w-3/4 h-3/4 bg-white shadow-sm p-2 flex flex-col gap-1 opacity-60 group-hover:opacity-100 transition-opacity">
+<div class="w-1/3 h-2 bg-slate-300 rounded-sm"></div>
+<div class="w-full h-1 bg-slate-200 rounded-sm mt-1"></div>
+<div class="w-full h-1 bg-slate-200 rounded-sm"></div>
+<div class="flex gap-1 mt-2">
+<div class="w-1/3 bg-slate-100 h-12"></div>
+<div class="w-2/3 bg-slate-100 h-12"></div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="text-white text-xs font-bold">Use Template</span>
+</div>
+</div>
+<div class="mt-2 px-1">
+<p class="text-sm font-semibold text-slate-900 dark:text-white">Academic CV</p>
+<p class="text-xs text-slate-500">Harvard Format</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="relative w-full aspect-[3/4] rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm transition-all group-hover:shadow-md group-hover:border-primary/50">
+<div class="absolute inset-0 bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<div class="w-3/4 h-3/4 bg-white shadow-sm p-3 flex flex-col gap-2 opacity-60 group-hover:opacity-100 transition-opacity">
+<div class="w-1/2 h-2 bg-slate-800 rounded-sm self-center"></div>
+<div class="w-full h-px bg-slate-200 my-1"></div>
+<div class="space-y-1">
+<div class="w-full h-1 bg-slate-200 rounded-sm"></div>
+<div class="w-full h-1 bg-slate-200 rounded-sm"></div>
+<div class="w-5/6 h-1 bg-slate-200 rounded-sm"></div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="text-white text-xs font-bold">Use Template</span>
+</div>
+</div>
+<div class="mt-2 px-1">
+<p class="text-sm font-semibold text-slate-900 dark:text-white">SOP Standard</p>
+<p class="text-xs text-slate-500">Universal Format</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="relative w-full aspect-[3/4] rounded-lg overflow-hidden border-2 border-primary shadow-md">
+<div class="absolute top-2 right-2 z-10">
+<div class="bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full">SELECTED</div>
+</div>
+<div class="absolute inset-0 bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<div class="w-3/4 h-3/4 bg-white shadow-sm p-3 flex flex-col gap-2 opacity-100">
+<div class="flex justify-between items-end border-b border-slate-900 pb-1 mb-1">
+<div class="w-1/2 h-3 bg-slate-900 rounded-sm"></div>
+</div>
+<div class="space-y-1">
+<div class="w-full h-1 bg-slate-300 rounded-sm"></div>
+<div class="w-full h-1 bg-slate-200 rounded-sm"></div>
+<div class="w-full h-1 bg-slate-200 rounded-sm"></div>
+<div class="w-4/6 h-1 bg-slate-200 rounded-sm"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-2 px-1">
+<p class="text-sm font-semibold text-primary">SOP Modern</p>
+<p class="text-xs text-slate-500">Clean &amp; Bold</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="relative w-full aspect-[3/4] rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm transition-all group-hover:shadow-md group-hover:border-primary/50">
+<div class="absolute inset-0 bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<div class="w-3/4 h-3/4 bg-white shadow-sm p-3 flex flex-col gap-2 opacity-60 group-hover:opacity-100 transition-opacity">
+<div class="w-1/3 h-2 bg-slate-400 rounded-sm"></div>
+<div class="flex gap-2 h-full">
+<div class="w-1/3 bg-slate-50 h-full rounded-sm"></div>
+<div class="w-2/3 space-y-2 pt-2">
+<div class="w-full h-1 bg-slate-200"></div>
+<div class="w-full h-1 bg-slate-200"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="text-white text-xs font-bold">Use Template</span>
+</div>
+</div>
+<div class="mt-2 px-1">
+<p class="text-sm font-semibold text-slate-900 dark:text-white">Creative Resume</p>
+<p class="text-xs text-slate-500">For Design Roles</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

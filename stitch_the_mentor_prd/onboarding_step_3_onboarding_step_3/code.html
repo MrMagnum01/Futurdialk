@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Mentor - Onboarding Step 3</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ecab",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#10221c",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1c2e28",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col overflow-x-hidden transition-colors duration-200">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark px-10 py-4 shadow-sm sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">The Mentor</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9 hidden md:flex">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary font-medium text-sm" href="#">Programs</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary font-medium text-sm" href="#">Destinations</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary font-medium text-sm" href="#">Exams</a>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-sm font-bold leading-normal transition-colors">
+<span class="truncate">Login</span>
+</button>
+</div>
+</header>
+<main class="flex-1 flex justify-center py-10 px-4 sm:px-10">
+<div class="layout-content-container flex flex-col max-w-[800px] w-full gap-8">
+<!-- Progress Section -->
+<div class="flex flex-col gap-3">
+<div class="flex gap-6 justify-between items-end">
+<div class="flex flex-col gap-1">
+<span class="text-primary font-bold text-sm uppercase tracking-wider">Step 3 of 5</span>
+<h1 class="text-slate-900 dark:text-white text-4xl md:text-5xl font-bold tracking-tight">Your Preferences</h1>
+</div>
+<span class="text-slate-500 dark:text-slate-400 font-sans font-medium">60% Completed</span>
+</div>
+<div class="h-2 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 60%;"></div>
+</div>
+<p class="text-slate-600 dark:text-slate-300 text-lg md:text-xl font-medium mt-2 max-w-2xl">
+                        Tell us where you want to study and your estimated budget so we can tailor our recommendations.
+                    </p>
+</div>
+<!-- Main Form Area -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-8 shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col gap-10">
+<!-- Destinations Section -->
+<section class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h2 class="text-slate-900 dark:text-white text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">public</span>
+                                Preferred Study Destinations
+                            </h2>
+<span class="text-xs text-slate-400 uppercase font-sans font-bold tracking-wider">Select Multiple</span>
+</div>
+<div class="flex flex-wrap gap-3">
+<!-- Active State Example -->
+<button class="group flex h-10 items-center justify-center gap-x-2 rounded-full border-2 border-primary bg-primary/10 pl-4 pr-4 transition-all hover:bg-primary/20">
+<span class="text-slate-900 dark:text-white text-sm font-bold">USA</span>
+<span class="material-symbols-outlined text-base">check</span>
+</button>
+<!-- Inactive States -->
+<button class="group flex h-10 items-center justify-center gap-x-2 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 pl-4 pr-4 transition-all hover:border-primary hover:text-primary dark:hover:text-primary text-slate-600 dark:text-slate-300">
+<span class="text-sm font-medium">United Kingdom</span>
+</button>
+<button class="group flex h-10 items-center justify-center gap-x-2 rounded-full border-2 border-primary bg-primary/10 pl-4 pr-4 transition-all hover:bg-primary/20">
+<span class="text-slate-900 dark:text-white text-sm font-bold">Canada</span>
+<span class="material-symbols-outlined text-base">check</span>
+</button>
+<button class="group flex h-10 items-center justify-center gap-x-2 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 pl-4 pr-4 transition-all hover:border-primary hover:text-primary dark:hover:text-primary text-slate-600 dark:text-slate-300">
+<span class="text-sm font-medium">Australia</span>
+</button>
+<button class="group flex h-10 items-center justify-center gap-x-2 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 pl-4 pr-4 transition-all hover:border-primary hover:text-primary dark:hover:text-primary text-slate-600 dark:text-slate-300">
+<span class="text-sm font-medium">Germany</span>
+</button>
+<button class="group flex h-10 items-center justify-center gap-x-2 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 pl-4 pr-4 transition-all hover:border-primary hover:text-primary dark:hover:text-primary text-slate-600 dark:text-slate-300">
+<span class="text-sm font-medium">Turkey</span>
+</button>
+<button class="group flex h-10 items-center justify-center gap-x-2 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 pl-4 pr-4 transition-all hover:border-primary hover:text-primary dark:hover:text-primary text-slate-600 dark:text-slate-300">
+<span class="text-sm font-medium">Jordan</span>
+</button>
+<button class="group flex h-10 items-center justify-center gap-x-2 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 pl-4 pr-4 transition-all hover:border-primary hover:text-primary dark:hover:text-primary text-slate-600 dark:text-slate-300">
+<span class="text-sm font-medium">Malaysia</span>
+</button>
+<button class="group flex h-10 items-center justify-center gap-x-2 rounded-full border border-dashed border-slate-300 dark:border-slate-600 bg-transparent pl-4 pr-4 transition-all hover:border-primary hover:text-primary text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined text-sm">add</span>
+<span class="text-sm font-medium">Add Other</span>
+</button>
+</div>
+</section>
+<div class="h-px bg-slate-100 dark:bg-slate-800 w-full"></div>
+<!-- Budget Section -->
+<section class="flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<h2 class="text-slate-900 dark:text-white text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+                                Annual Tuition Budget
+                            </h2>
+<div class="bg-primary/10 text-primary-dark dark:text-primary px-3 py-1 rounded-lg text-sm font-bold font-sans">
+                                $15k - $30k / year
+                            </div>
+</div>
+<div class="px-2 pt-6 pb-2">
+<!-- Custom Range Slider Representation -->
+<div class="relative h-2 bg-slate-200 dark:bg-slate-700 rounded-full">
+<div class="absolute h-full bg-primary rounded-full opacity-50" style="width: 100%;"></div>
+<div class="absolute h-full bg-primary rounded-full" style="left: 20%; width: 40%;"></div>
+<!-- Thumb Left -->
+<div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-6 h-6 bg-white dark:bg-slate-900 border-2 border-primary rounded-full shadow-md cursor-pointer hover:scale-110 transition-transform flex items-center justify-center" style="left: 20%;">
+<div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+</div>
+<!-- Thumb Right -->
+<div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-6 h-6 bg-white dark:bg-slate-900 border-2 border-primary rounded-full shadow-md cursor-pointer hover:scale-110 transition-transform flex items-center justify-center" style="left: 60%;">
+<div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+</div>
+<!-- Labels -->
+<div class="absolute -top-8 left-[20%] -translate-x-1/2 text-xs font-bold text-slate-600 dark:text-slate-300 font-sans">$15,000</div>
+<div class="absolute -top-8 left-[60%] -translate-x-1/2 text-xs font-bold text-slate-600 dark:text-slate-300 font-sans">$30,000</div>
+</div>
+<div class="flex justify-between mt-4 text-xs font-medium text-slate-400 font-sans">
+<span>$0</span>
+<span>$10,000</span>
+<span>$25,000</span>
+<span>$50,000</span>
+<span>$75,000+</span>
+</div>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-lg flex items-start gap-3 border border-slate-100 dark:border-slate-800">
+<span class="material-symbols-outlined text-slate-400 mt-0.5">info</span>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                 Most undergraduate programs in your selected regions range between <span class="text-slate-900 dark:text-white font-bold">$12,000</span> and <span class="text-slate-900 dark:text-white font-bold">$35,000</span> annually. We'll filter options to match your financial comfort zone.
+                             </p>
+</div>
+</section>
+</div>
+<!-- Navigation Actions -->
+<div class="flex justify-between items-center pt-4 pb-12">
+<button class="flex items-center gap-2 px-6 py-3 rounded-full text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors font-medium">
+<span class="material-symbols-outlined">arrow_back</span>
+                        Back
+                    </button>
+<button class="flex items-center gap-2 px-8 py-3 rounded-full bg-primary hover:bg-primary/90 text-slate-900 font-bold shadow-lg shadow-primary/20 transition-all hover:translate-y-[-1px]">
+                        Continue
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Environment variables (SECRETS!)
+.env
+.env.local
+.env.production
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build output
+dist/
+build/
+*.egg-info/
+
+# Docker volumes (local data)
+postgres_data/
+mongo_data/
+redis_data/
+minio_data/
+
+# Logs
+*.log
+logs/
+
+# Coverage & testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Misc
+*.bak
+*.tmp

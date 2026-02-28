@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Mentor - Onboarding Step 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ecab",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#10221c",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#183028",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-10 py-4 bg-surface-light dark:bg-surface-dark">
+<div class="flex items-center gap-3 text-slate-900 dark:text-slate-100">
+<div class="size-8 flex items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-xl">school</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">The Mentor</h2>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-sm font-medium text-slate-500 dark:text-slate-400">Already have an account?</span>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 text-sm font-bold hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">
+<span class="truncate">Sign In</span>
+</button>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-10 px-4 sm:px-10">
+<div class="layout-content-container flex flex-col w-full max-w-[960px] flex-1 gap-8">
+<!-- Progress Section -->
+<div class="flex flex-col gap-3 px-4">
+<div class="flex gap-6 justify-between items-end">
+<p class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-normal">Step 1 of 5</p>
+<p class="text-primary font-bold text-sm leading-normal">20% Completed</p>
+</div>
+<div class="h-3 w-full rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+<div class="h-full rounded-full bg-primary transition-all duration-500 ease-out" style="width: 20%;"></div>
+</div>
+</div>
+<!-- Title Section -->
+<div class="flex flex-col gap-2 px-4">
+<h1 class="text-slate-900 dark:text-slate-100 text-4xl sm:text-5xl font-bold leading-tight tracking-tight">Welcome to The Mentor</h1>
+<p class="text-slate-500 dark:text-slate-400 text-lg sm:text-xl font-medium leading-normal max-w-2xl">Let's personalize your experience. Which description fits you best?</p>
+</div>
+<!-- Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
+<!-- Card 1: High School Student -->
+<label class="group relative flex flex-col gap-4 p-4 pb-6 rounded-lg border-2 border-transparent bg-surface-light dark:bg-surface-dark shadow-sm hover:border-primary/50 hover:shadow-md dark:hover:border-primary/50 cursor-pointer transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary/5 has-[:checked]:shadow-lg dark:has-[:checked]:bg-primary/10">
+<input class="peer sr-only" name="user_role" type="radio" value="high_school"/>
+<div class="absolute top-4 right-4 size-6 rounded-full border-2 border-slate-200 dark:border-slate-600 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-surface-light text-sm opacity-0 peer-checked:opacity-100">check</span>
+</div>
+<div class="w-full aspect-[4/3] rounded-2xl bg-slate-100 dark:bg-slate-700 overflow-hidden relative">
+<img alt="Students studying together in a library" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Group of students studying together" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCisw9qj2oE-qBr2AIjKZb8lXcNYU-BqjqHVqvm-sWKWtb7CKBOA5PRNM_sB6R_f2SBarGn42CSD5Ax1WsEWHDqmMgxmqXgXnfylGQ_UGGtAqsX0SxPWgVy0-oEMC79R8oCTYSbeZ2aQBOdltrYMahAHDsl0ZQVtpF5mWR8fsiCVDgykIIzmmqF4XlYQlBnkql8RFYe-Pbnt8Zx2ItQLs-FJBAplVjng5xWyzw2ZvtETXQYgf5JfLoj8aJgzmFCcnKGjbhNHMBEOIU"/>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-normal">High School Student</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-relaxed">Preparing for Tawjihi or final exams</p>
+</div>
+</label>
+<!-- Card 2: Undergraduate -->
+<label class="group relative flex flex-col gap-4 p-4 pb-6 rounded-lg border-2 border-transparent bg-surface-light dark:bg-surface-dark shadow-sm hover:border-primary/50 hover:shadow-md dark:hover:border-primary/50 cursor-pointer transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary/5 has-[:checked]:shadow-lg dark:has-[:checked]:bg-primary/10">
+<input class="peer sr-only" name="user_role" type="radio" value="undergraduate"/>
+<div class="absolute top-4 right-4 size-6 rounded-full border-2 border-slate-200 dark:border-slate-600 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-surface-light text-sm opacity-0 peer-checked:opacity-100">check</span>
+</div>
+<div class="w-full aspect-[4/3] rounded-2xl bg-slate-100 dark:bg-slate-700 overflow-hidden relative">
+<img alt="University campus building with students walking" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="University campus lifestyle shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuR_ePOdqEb6wa8SI8y-510tgLf4DkE6kVoFqXCbkYQYW6LobqfnbwD48iraj1KJiEiIFVYJ9gSA6SvCggMwRj808FhgCwas-Y1Wd4Iw3uL_uoT7NT1ywjb8sT8auRYVPBdUsiU8hI7N4_67rc_l2Ng6BLMAtMILVfWDRvAOLGmG8z2e35vZiHnc3_w6SSDNJ5TUTdJA7Qae9U0tXZQOXdboYANAfbFlVhsRMS1wTH7jYJ9v8tyfVCUvCjWuHF38YA3I9kptYrU-E"/>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-normal">Undergraduate</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-relaxed">Currently enrolled in university</p>
+</div>
+</label>
+<!-- Card 3: Graduate -->
+<label class="group relative flex flex-col gap-4 p-4 pb-6 rounded-lg border-2 border-transparent bg-surface-light dark:bg-surface-dark shadow-sm hover:border-primary/50 hover:shadow-md dark:hover:border-primary/50 cursor-pointer transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary/5 has-[:checked]:shadow-lg dark:has-[:checked]:bg-primary/10">
+<input class="peer sr-only" name="user_role" type="radio" value="graduate"/>
+<div class="absolute top-4 right-4 size-6 rounded-full border-2 border-slate-200 dark:border-slate-600 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-surface-light text-sm opacity-0 peer-checked:opacity-100">check</span>
+</div>
+<div class="w-full aspect-[4/3] rounded-2xl bg-slate-100 dark:bg-slate-700 overflow-hidden relative">
+<img alt="Close up of a pile of books and laptop" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Advanced research and study materials" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvrHcX9gMdXiWNyL5sUgBWVl13VGJ6-OwUQateRrZOjgUGNELdb0bwke_AM6L30iAIwapi01EwMKuZGeQLcaXW3bSPTv7D1UD0c1bzuQV5QGjPI5XCVDzon2qtZDUqF2EF1BO7HmHpyN4bX8KwK1_n3KZBGZOrLlxdkUCLzgRGGQhTOJGDxnR02omMcFCP3yAXfYXIOD2mzAJv7Gk-x_bgyyV3i32n66REqz1MXvCRa2dX5x0F8fxwgjGh-PfyZk5yG7X-fM1v7fY"/>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-normal">Graduate</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-relaxed">Pursuing Master's or PhD</p>
+</div>
+</label>
+<!-- Card 4: Parent -->
+<label class="group relative flex flex-col gap-4 p-4 pb-6 rounded-lg border-2 border-transparent bg-surface-light dark:bg-surface-dark shadow-sm hover:border-primary/50 hover:shadow-md dark:hover:border-primary/50 cursor-pointer transition-all duration-200 has-[:checked]:border-primary has-[:checked]:bg-primary/5 has-[:checked]:shadow-lg dark:has-[:checked]:bg-primary/10">
+<input class="peer sr-only" name="user_role" type="radio" value="parent"/>
+<div class="absolute top-4 right-4 size-6 rounded-full border-2 border-slate-200 dark:border-slate-600 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-surface-light text-sm opacity-0 peer-checked:opacity-100">check</span>
+</div>
+<div class="w-full aspect-[4/3] rounded-2xl bg-slate-100 dark:bg-slate-700 overflow-hidden relative">
+<img alt="Mother helping child with homework" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Parent helping child with education" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDjDM08mnSS4jTW3FfW72q8ZfMngJtPo5-d7s091-KE9z63CAotTEVyiOouzG7hBDpU7lDm8LAegOXPLqmbgzNsPmU6beEDGElLqAIuaQPvWVmIQhTSMYrwUueXwQwfUAZMVkDxb_-RSz_aoThSMj9seAlvE3I0PkmywOByo2Wp2Rr_IZZgxsoLpxfhr8fYVL9-z2v8hJIFNn4Cf32eRm65MiCEQdSQvP9vf5czhNHafQ0TbG8pb-6QnpyVbrYo1YeUEwMpTo08FI"/>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-normal">Parent</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-relaxed">Supporting my child's education</p>
+</div>
+</label>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row px-4 py-8 justify-between items-center gap-4 border-t border-slate-200 dark:border-slate-800 mt-4">
+<button class="flex items-center justify-center gap-2 text-slate-500 dark:text-slate-400 font-bold text-base hover:text-slate-800 dark:hover:text-slate-200 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+                            Back
+                        </button>
+<button class="flex min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-primary text-slate-900 text-lg font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:bg-[#10d499] active:scale-95 transition-all">
+<span class="mr-2">Next Step</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

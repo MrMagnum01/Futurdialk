@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Career Discovery Quiz - The Mentor</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#13ecab",
+              "background-light": "#f6f8f7",
+              "background-dark": "#10221c",
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dbe6e2;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #13ecab;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#152a24] px-10 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-8 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">The Mentor</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary text-sm font-medium transition-colors" href="#">Home</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary text-sm font-medium transition-colors" href="#">Universities</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary text-sm font-medium transition-colors" href="#">Career Guide</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary text-sm font-medium transition-colors" href="#">About Us</a>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-emerald-400 text-slate-900 text-sm font-bold leading-normal transition-all shadow-sm hover:shadow-md">
+<span class="truncate">Sign In</span>
+</button>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center py-8 px-4 sm:px-10">
+<div class="w-full max-w-4xl flex flex-col gap-8">
+<!-- Progress Header -->
+<div class="flex flex-col gap-4 bg-white dark:bg-[#152a24] p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-between">
+<div>
+<h1 class="text-2xl font-bold text-slate-900 dark:text-white">Discover Your Ideal Career Path</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Section 1: Work Preferences</p>
+</div>
+<div class="text-right">
+<p class="text-slate-900 dark:text-white text-base font-bold">Question 4 of 10</p>
+<p class="text-primary text-sm font-medium">40% complete</p>
+</div>
+</div>
+<div class="relative h-3 w-full rounded-full bg-slate-100 dark:bg-slate-700 overflow-hidden">
+<div class="absolute top-0 left-0 h-full rounded-full bg-primary transition-all duration-500 ease-out" style="width: 40%;"></div>
+</div>
+</div>
+<!-- Question Card Area -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+<!-- Visual Context (Left Side) -->
+<div class="lg:col-span-5 flex flex-col">
+<div class="relative h-full min-h-[300px] rounded-xl overflow-hidden shadow-md group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern bright office space with plants and glass walls" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAebAfjbkCoinirOwubu--a5FpgOE9P6Yp1WW2cUWO29zfZSvOKL1jHxiuXK3tUW1h-su7C6j6QYFgj7pt9e0Kb7wLgGmbrRz7Zzoe_qev-2umIE_DYlwOcy9FVsHjCnqDdI3mTmtzoHQ-05uaovUPnx6HrS6awV9aYLe14LFhFZOfG_d5vS77nE2EOlYLeX-KIIe6b8XATLKqHGYaxQJWtJ8sz1xtSUG_fXn6nN1ShcxJFjRRhEQH3uviJT2Lxl-Fu9jRTL3qmSOw');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 text-white">
+<div class="mb-2 inline-flex items-center justify-center rounded-full bg-primary/20 backdrop-blur-md px-3 py-1 border border-primary/30">
+<span class="material-symbols-outlined text-primary text-sm mr-1">lightbulb</span>
+<span class="text-xs font-semibold text-primary uppercase tracking-wider">Insight</span>
+</div>
+<p class="text-lg font-medium leading-snug text-white/90">
+                                "Your environment shapes your productivity. Choose where you thrive best."
+                            </p>
+</div>
+</div>
+</div>
+<!-- Interaction Area (Right Side) -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="bg-white dark:bg-[#152a24] p-8 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 h-full flex flex-col justify-center">
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Which work environment do you prefer?</h3>
+<p class="text-slate-500 dark:text-slate-400 mb-8">Select the option that best describes where you feel most energized and productive.</p>
+<form class="flex flex-col gap-4">
+<!-- Option 1 -->
+<label class="relative flex cursor-pointer rounded-lg border-2 border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-4 hover:border-primary/50 hover:bg-primary/5 transition-all group">
+<input class="peer sr-only" name="environment" type="radio"/>
+<div class="flex items-center gap-4 w-full">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white dark:bg-slate-700 shadow-sm text-slate-400 peer-checked:bg-primary peer-checked:text-slate-900 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">apartment</span>
+</div>
+<div class="flex flex-col">
+<span class="text-base font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Corporate Office</span>
+<span class="text-sm text-slate-500 dark:text-slate-400">Structured, professional setting with teams.</span>
+</div>
+<div class="ml-auto opacity-0 peer-checked:opacity-100 text-primary">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+</div>
+<div class="absolute inset-0 rounded-lg ring-2 ring-transparent peer-checked:ring-primary peer-checked:ring-offset-2 dark:peer-checked:ring-offset-slate-900 pointer-events-none transition-all"></div>
+</label>
+<!-- Option 2 -->
+<label class="relative flex cursor-pointer rounded-lg border-2 border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-4 hover:border-primary/50 hover:bg-primary/5 transition-all group">
+<input class="peer sr-only" name="environment" type="radio"/>
+<div class="flex items-center gap-4 w-full">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white dark:bg-slate-700 shadow-sm text-slate-400 peer-checked:bg-primary peer-checked:text-slate-900 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">cottage</span>
+</div>
+<div class="flex flex-col">
+<span class="text-base font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Remote / Home Office</span>
+<span class="text-sm text-slate-500 dark:text-slate-400">Flexible, quiet, and independent work.</span>
+</div>
+<div class="ml-auto opacity-0 peer-checked:opacity-100 text-primary">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+</div>
+<div class="absolute inset-0 rounded-lg ring-2 ring-transparent peer-checked:ring-primary peer-checked:ring-offset-2 dark:peer-checked:ring-offset-slate-900 pointer-events-none transition-all"></div>
+</label>
+<!-- Option 3 -->
+<label class="relative flex cursor-pointer rounded-lg border-2 border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-4 hover:border-primary/50 hover:bg-primary/5 transition-all group">
+<input class="peer sr-only" name="environment" type="radio"/>
+<div class="flex items-center gap-4 w-full">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white dark:bg-slate-700 shadow-sm text-slate-400 peer-checked:bg-primary peer-checked:text-slate-900 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">palette</span>
+</div>
+<div class="flex flex-col">
+<span class="text-base font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Creative Studio</span>
+<span class="text-sm text-slate-500 dark:text-slate-400">Collaborative, open, and artistic spaces.</span>
+</div>
+<div class="ml-auto opacity-0 peer-checked:opacity-100 text-primary">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+</div>
+<div class="absolute inset-0 rounded-lg ring-2 ring-transparent peer-checked:ring-primary peer-checked:ring-offset-2 dark:peer-checked:ring-offset-slate-900 pointer-events-none transition-all"></div>
+</label>
+<!-- Option 4 -->
+<label class="relative flex cursor-pointer rounded-lg border-2 border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-4 hover:border-primary/50 hover:bg-primary/5 transition-all group">
+<input class="peer sr-only" name="environment" type="radio"/>
+<div class="flex items-center gap-4 w-full">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white dark:bg-slate-700 shadow-sm text-slate-400 peer-checked:bg-primary peer-checked:text-slate-900 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">nature_people</span>
+</div>
+<div class="flex flex-col">
+<span class="text-base font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Field Work / Outdoors</span>
+<span class="text-sm text-slate-500 dark:text-slate-400">Active, dynamic, and nature-connected.</span>
+</div>
+<div class="ml-auto opacity-0 peer-checked:opacity-100 text-primary">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+</div>
+<div class="absolute inset-0 rounded-lg ring-2 ring-transparent peer-checked:ring-primary peer-checked:ring-offset-2 dark:peer-checked:ring-offset-slate-900 pointer-events-none transition-all"></div>
+</label>
+</form>
+<div class="mt-8 flex justify-between items-center pt-6 border-t border-slate-100 dark:border-slate-800">
+<button class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+                                Back
+                            </button>
+<button class="bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 font-bold flex items-center gap-2 px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
+                                Next Question
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Hint/Helper Section -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-[#152a24] p-5 rounded-xl border border-slate-100 dark:border-slate-800 flex items-start gap-4">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">timer</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white text-sm">Takes 5 Minutes</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">A quick way to gain deep insights into your career future.</p>
+</div>
+</div>
+<div class="bg-white dark:bg-[#152a24] p-5 rounded-xl border border-slate-100 dark:border-slate-800 flex items-start gap-4">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white text-sm">AI Analysis</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">We use smart algorithms to match your traits to industries.</p>
+</div>
+</div>
+<div class="bg-white dark:bg-[#152a24] p-5 rounded-xl border border-slate-100 dark:border-slate-800 flex items-start gap-4">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white text-sm">Private &amp; Secure</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Your results are private and only shared if you choose.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer decoration (Optional but adds to the clean look) -->
+<div class="w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent mt-12"></div>
+</body></html>

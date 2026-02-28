@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ticket Detail - The Mentor Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-dark": "#1a2430",
+                        "surface-light": "#ffffff",
+                        "border-dark": "#282f39",
+                        "border-light": "#e2e8f0",
+                        "text-main-dark": "#f8fafc",
+                        "text-main-light": "#0f172a",
+                        "text-sub-dark": "#94a3b8",
+                        "text-sub-light": "#64748b"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-text-main-light dark:text-text-main-dark">
+<div class="size-8 flex items-center justify-center bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined">school</span>
+</div>
+<h2 class="text-text-main-light dark:text-text-main-dark text-lg font-bold leading-tight tracking-[-0.015em]">The Mentor Admin</h2>
+</div>
+<nav class="flex items-center gap-9 hidden lg:flex">
+<a class="text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Dashboard</a>
+<a class="text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Users</a>
+<a class="text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Roadmaps</a>
+<a class="text-text-main-light dark:text-text-main-dark font-semibold text-sm leading-normal" href="#">Support</a>
+<a class="text-text-sub-light dark:text-text-sub-dark hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Settings</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="flex flex-col min-w-40 !h-10 max-w-64 hidden md:flex">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus-within:border-primary transition-colors">
+<div class="text-text-sub-light dark:text-text-sub-dark flex bg-transparent items-center justify-center pl-3">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden bg-transparent text-text-main-light dark:text-text-main-dark focus:outline-0 focus:ring-0 border-none h-full placeholder:text-text-sub-light dark:placeholder:text-text-sub-dark px-3 text-sm font-normal leading-normal" placeholder="Search tickets..." value=""/>
+</div>
+</label>
+<button class="relative text-text-sub-light dark:text-text-sub-dark hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 size-2 bg-red-500 rounded-full"></span>
+</button>
+<div class="h-8 w-[1px] bg-border-light dark:bg-border-dark hidden sm:block"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-xs font-semibold text-text-main-light dark:text-text-main-dark">Admin User</p>
+<p class="text-[10px] text-text-sub-light dark:text-text-sub-dark">Support Lead</p>
+</div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 ring-2 ring-primary/20" data-alt="Admin user profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlA0DP9BoHaRHU2TPN9T4kgaqTz4zGpqqE23dET0yArn4nAM4h3vc9xS3Qw8mURu3iECHouGdUa72awtMNFs4Fo6iIqPjtDtYieUAbrDqUAXIZvBhaiErxEAplF29iQ54hqLDsEnqDKStaYJr6d4Rxq7qk_FFZYQxTK-yd4EmKgK6zK94rvS5zlhazse9n_FJdzDbMH7O19P1IXcyH_CkLAR0s6b0xL_gjlABKA398jg50VLVwz0v8dmYrdxaPTckFH176MnA4h5M");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full max-w-[1440px] mx-auto p-6 lg:p-10 flex flex-col">
+<!-- Breadcrumbs & Header -->
+<div class="flex flex-col gap-4 mb-8">
+<div class="flex flex-wrap items-center gap-2 text-sm">
+<a class="text-text-sub-light dark:text-text-sub-dark hover:text-primary font-medium" href="#">Support</a>
+<span class="text-text-sub-light dark:text-text-sub-dark font-medium">/</span>
+<a class="text-text-sub-light dark:text-text-sub-dark hover:text-primary font-medium" href="#">Tickets</a>
+<span class="text-text-sub-light dark:text-text-sub-dark font-medium">/</span>
+<span class="text-text-main-light dark:text-text-main-dark font-medium">Ticket #2491</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+<div>
+<h1 class="text-text-main-light dark:text-text-main-dark text-3xl font-bold leading-tight mb-2">Login Issues with Tawjihi Portal</h1>
+<p class="text-text-sub-light dark:text-text-sub-dark text-sm">Submitted on Oct 24, 2023 at 10:30 AM via Web Portal</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center gap-2 px-4 h-10 rounded-lg bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark text-text-main-light dark:text-text-main-dark hover:bg-background-light dark:hover:bg-background-dark transition-colors text-sm font-semibold">
+<span class="material-symbols-outlined text-[20px]">print</span>
+                        Print
+                    </button>
+<button class="flex items-center justify-center gap-2 px-6 h-10 rounded-lg bg-primary hover:bg-blue-600 text-white transition-colors text-sm font-bold shadow-lg shadow-blue-500/20">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+                        Resolve Ticket
+                    </button>
+</div>
+</div>
+<div class="flex flex-wrap gap-3 mt-2">
+<div class="flex h-7 items-center justify-center gap-x-2 rounded-full bg-red-500/10 border border-red-500/20 px-3">
+<span class="size-2 rounded-full bg-red-500 animate-pulse"></span>
+<p class="text-red-500 dark:text-red-400 text-xs font-bold uppercase tracking-wide">High Priority</p>
+</div>
+<div class="flex h-7 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark px-3">
+<span class="material-symbols-outlined text-[16px] text-text-sub-light dark:text-text-sub-dark">bug_report</span>
+<p class="text-text-sub-light dark:text-text-sub-dark text-xs font-medium">Technical Issue</p>
+</div>
+<div class="flex h-7 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark px-3">
+<span class="material-symbols-outlined text-[16px] text-text-sub-light dark:text-text-sub-dark">school</span>
+<p class="text-text-sub-light dark:text-text-sub-dark text-xs font-medium">Tawjihi Stream</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-8 items-start">
+<!-- Left Column: Conversation -->
+<div class="flex-1 w-full flex flex-col gap-6">
+<!-- Ticket Description (Initial Post) -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark p-6 shadow-sm">
+<div class="flex items-start gap-4 mb-4">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 shrink-0" data-alt="Student profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJI01R0LHOWXXC9YftkoavNBj1oRti2GKfxlwY1hpF4_VNS7ll2_6P0ChdelpgJOgeOUpX1rcO_jMLBDuVl9EYCBOicLtxF6R_t_4xN-C00I0iS6S4nU7OwhynylVvs_Y_KR2hKRSljzwemEe2rd0lc1f6EkyfgPAQ2hSFkgraoYcz9D7pDlPeckQxNbWY9lWGDqQhcC5qHusjlnEn-CDut9GDfqAcez_GSrWG5xuG21pmm_ceNgLOV-I8bm8SQzaYpA_x_b5ELA4");'></div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<h3 class="text-text-main-light dark:text-text-main-dark font-bold text-base">Sarah Ahmed</h3>
+<span class="text-text-sub-light dark:text-text-sub-dark text-xs">Oct 24, 10:30 AM</span>
+</div>
+<p class="text-text-sub-light dark:text-text-sub-dark text-sm">Student • Scientific Stream</p>
+</div>
+</div>
+<div class="text-text-main-light dark:text-text-main-dark text-base leading-relaxed space-y-4">
+<p>Hi Mentor Support Team,</p>
+<p>I am trying to access the Tawjihi specialized roadmap portal since this morning, but I keep getting a "502 Bad Gateway" error. I've tried clearing my cache and using a different browser (Chrome and Edge), but the issue persists.</p>
+<p>This is urgent as I have a scheduled mock exam this afternoon. Please help!</p>
+<p>Thanks,<br/>Sarah</p>
+</div>
+<!-- Attachments -->
+<div class="mt-6 pt-4 border-t border-border-light dark:border-border-dark">
+<p class="text-xs font-semibold text-text-sub-light dark:text-text-sub-dark mb-3 uppercase tracking-wider">Attachments (1)</p>
+<div class="flex gap-4">
+<div class="flex items-center gap-3 p-3 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark max-w-sm cursor-pointer hover:border-primary transition-colors group">
+<div class="size-10 rounded bg-red-500/10 flex items-center justify-center text-red-500">
+<span class="material-symbols-outlined">image</span>
+</div>
+<div class="overflow-hidden">
+<p class="text-sm font-medium text-text-main-light dark:text-text-main-dark truncate group-hover:text-primary transition-colors">screenshot_error.png</p>
+<p class="text-xs text-text-sub-light dark:text-text-sub-dark">245 KB</p>
+</div>
+<span class="material-symbols-outlined text-text-sub-light dark:text-text-sub-dark ml-2 group-hover:text-primary">download</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Internal Note -->
+<div class="relative bg-yellow-500/5 dark:bg-yellow-500/10 rounded-xl border border-dashed border-yellow-500/40 p-6 ml-12">
+<div class="absolute -left-3 top-6 size-6 bg-yellow-500 rounded-full flex items-center justify-center text-black z-10 ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-yellow-600 dark:text-yellow-500 text-xs font-bold uppercase tracking-wide">Internal Note</span>
+<span class="text-text-sub-light dark:text-text-sub-dark text-xs">• Oct 24, 10:45 AM</span>
+</div>
+<div class="flex items-start gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8 shrink-0" data-alt="Tech lead profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAOsVtkaMnNVEoMTVUvku_ANdL5DX4pcz3fAAD_YmpNCyi2K7FG9MSs05MjiK0ACfkw-W1aoiGQYi3jmoXcOKbhrwzWJj08tA4n8F6uExWN8RgZu6KGYQeTCxDGLnn-yFIqQc7vD5lgK4CcMVY8sWl-O53vxua05LguY3aWWF6T3jAjITMh42bmKZUjubgbuc4FV52lZvnSgjlgT2JKJrfGrqu86w0UCjuzTWLw_ALzB0rYMnDOWECQgXD4K1B7IFzzjBPDYIGAf48");'></div>
+<div>
+<p class="text-text-main-light dark:text-text-main-dark text-sm font-medium">Karim (Tech Lead)</p>
+<p class="text-text-sub-light dark:text-text-sub-dark text-sm mt-1">
+                                 Confirmed server outage in the East Amman node. DevOps team has been notified. ETA for fix is 30 mins.
+                             </p>
+</div>
+</div>
+</div>
+<!-- Support Reply -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark p-6 ml-12 shadow-sm border-l-4 border-l-primary">
+<div class="flex items-start gap-4 mb-4">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 shrink-0" data-alt="Support agent profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAARzLlkZbkHg9V5ZkEKjWv3I1VejWo3hkmPZlRJKNETWtVEVsaNCEB-b-uWvm6K5EewT7adA8SnFS8u8RKvXtFmB3sH_wt1lqUBOQrNhMYtKKBUfWG0_YBtZpyrhvWISKQYQK3CCHjsLWc9K6HRkPG9BWCC2sWTbRFdcl5ylPChMnMwXGq3k1h3d6R5GwO-OkZzOU2xTaPjJKBWXjdglIPnaE-EtqAAyEeIkxByxpLap87ut09Syjq-QvVjG1Bt6iKlitzhWobvIQ");'></div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<h3 class="text-text-main-light dark:text-text-main-dark font-bold text-base">You (Support)</h3>
+<span class="text-text-sub-light dark:text-text-sub-dark text-xs">Oct 24, 11:00 AM</span>
+</div>
+<p class="text-text-sub-light dark:text-text-sub-dark text-sm">Customer Success Team</p>
+</div>
+</div>
+<div class="text-text-main-light dark:text-text-main-dark text-base leading-relaxed space-y-4">
+<p>Hello Sarah,</p>
+<p>Thank you for bringing this to our attention. We are currently experiencing a minor server outage affecting some students in your region.</p>
+<p>Our technical team is already working on a fix, and we expect the portal to be back online within the next 30 minutes. Your mock exam data is safe, and we can reschedule your start time if needed.</p>
+<p>I will notify you here as soon as the system is stable.</p>
+</div>
+</div>
+<!-- Reply Area -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark p-4 shadow-sm mt-4">
+<div class="flex gap-2 mb-4 border-b border-border-light dark:border-border-dark pb-2">
+<button class="px-4 py-2 text-sm font-medium text-primary border-b-2 border-primary -mb-[9px]">Reply to User</button>
+<button class="px-4 py-2 text-sm font-medium text-text-sub-light dark:text-text-sub-dark hover:text-text-main-dark transition-colors">Internal Note</button>
+</div>
+<div class="relative">
+<textarea class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg p-4 text-text-main-light dark:text-text-main-dark placeholder:text-text-sub-light dark:placeholder:text-text-sub-dark min-h-[120px] focus:ring-2 focus:ring-primary/50 focus:border-primary focus:outline-none resize-y" placeholder="Type your reply here... Use Markdown for formatting."></textarea>
+<div class="absolute bottom-3 right-3 flex gap-2">
+<button class="p-1.5 text-text-sub-light dark:text-text-sub-dark hover:text-primary hover:bg-surface-light dark:hover:bg-surface-dark rounded transition-colors" title="Attach File">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+<button class="p-1.5 text-text-sub-light dark:text-text-sub-dark hover:text-primary hover:bg-surface-light dark:hover:bg-surface-dark rounded transition-colors" title="Insert Canned Response">
+<span class="material-symbols-outlined text-[20px]">flash_on</span>
+</button>
+</div>
+</div>
+<div class="flex justify-between items-center mt-4">
+<div class="flex items-center gap-2">
+<input checked="" class="rounded border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-primary focus:ring-primary/50" id="email-notify" type="checkbox"/>
+<label class="text-sm text-text-sub-light dark:text-text-sub-dark select-none" for="email-notify">Notify via Email</label>
+</div>
+<button class="flex items-center justify-center gap-2 px-6 h-10 rounded-lg bg-primary hover:bg-blue-600 text-white transition-colors text-sm font-bold">
+                            Send Reply
+                            <span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Sidebar: User Metadata -->
+<aside class="w-full lg:w-[360px] shrink-0 flex flex-col gap-6">
+<!-- User Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark p-6 shadow-sm">
+<div class="flex flex-col items-center text-center pb-6 border-b border-border-light dark:border-border-dark">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-20 mb-4 ring-4 ring-background-light dark:ring-background-dark" data-alt="Student profile large" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD92C3Vk3uPRT9C2IaNFjGOmKHQszyTXXzd053HppY6--F2xeUOF4RTik_2BG4ekBDGjbK1Nn3ZS5EM9osrSPT932n_PwJ-S9qvWruY67ykXTAMR5rtXy406zFIM8M5021ZdfXGpDv6-Qq3k-nGtlp-Egz90lQla7iv5U4khR6uGfEDmsCg9axy_ShZ6noYMffgbXllUOG7ims7n0pafYf1G1EcUc1tWfmTTbSEW3ghdpkgDAJYwa1n2lslbCtajU9vIaO5v7vss6Q");'></div>
+<h3 class="text-text-main-light dark:text-text-main-dark font-bold text-lg">Sarah Ahmed</h3>
+<p class="text-text-sub-light dark:text-text-sub-dark text-sm">sarah.ahmed@example.com</p>
+<div class="mt-4 flex gap-2">
+<span class="px-2 py-1 rounded bg-blue-500/10 text-blue-500 text-xs font-medium border border-blue-500/20">Pro Plan</span>
+<span class="px-2 py-1 rounded bg-green-500/10 text-green-500 text-xs font-medium border border-green-500/20">Active</span>
+</div>
+</div>
+<div class="pt-4 space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-text-sub-light dark:text-text-sub-dark text-sm">User ID</span>
+<span class="text-text-main-light dark:text-text-main-dark text-sm font-medium font-mono">#U-92834</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-text-sub-light dark:text-text-sub-dark text-sm">Last Login</span>
+<span class="text-text-main-light dark:text-text-main-dark text-sm font-medium">2 hours ago</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-text-sub-light dark:text-text-sub-dark text-sm">Stream</span>
+<span class="text-text-main-light dark:text-text-main-dark text-sm font-medium">Scientific</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-text-sub-light dark:text-text-sub-dark text-sm">Location</span>
+<span class="text-text-main-light dark:text-text-main-dark text-sm font-medium">Amman, Jordan</span>
+</div>
+</div>
+<div class="mt-6">
+<button class="w-full h-9 rounded-lg border border-border-light dark:border-border-dark text-text-main-light dark:text-text-main-dark hover:bg-background-light dark:hover:bg-background-dark text-sm font-medium transition-colors">
+                            View Full Profile
+                        </button>
+</div>
+</div>
+<!-- Active Roadmaps -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark p-6 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<h4 class="text-text-main-light dark:text-text-main-dark font-bold text-sm">Active Roadmaps</h4>
+<a class="text-primary text-xs font-medium hover:underline" href="#">View All</a>
+</div>
+<div class="space-y-3">
+<!-- Item 1 -->
+<div class="flex items-center gap-3 p-3 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark">
+<div class="size-8 rounded-md bg-purple-500/20 flex items-center justify-center text-purple-400">
+<span class="material-symbols-outlined text-[18px]">functions</span>
+</div>
+<div class="flex-1 min-w-0">
+<h5 class="text-text-main-light dark:text-text-main-dark text-sm font-medium truncate">Advanced Calculus</h5>
+<div class="w-full bg-border-light dark:bg-border-dark h-1.5 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-purple-500 h-full rounded-full" style="width: 75%"></div>
+</div>
+</div>
+<span class="text-xs font-medium text-text-sub-light dark:text-text-sub-dark">75%</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-3 p-3 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark">
+<div class="size-8 rounded-md bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+<span class="material-symbols-outlined text-[18px]">biotech</span>
+</div>
+<div class="flex-1 min-w-0">
+<h5 class="text-text-main-light dark:text-text-main-dark text-sm font-medium truncate">Biology Module 2</h5>
+<div class="w-full bg-border-light dark:bg-border-dark h-1.5 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-emerald-500 h-full rounded-full" style="width: 30%"></div>
+</div>
+</div>
+<span class="text-xs font-medium text-text-sub-light dark:text-text-sub-dark">30%</span>
+</div>
+</div>
+</div>
+<!-- Recent Tickets -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark p-6 shadow-sm">
+<h4 class="text-text-main-light dark:text-text-main-dark font-bold text-sm mb-4">Previous Tickets</h4>
+<div class="space-y-4">
+<a class="block group" href="#">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium text-text-main-light dark:text-text-main-dark group-hover:text-primary transition-colors line-clamp-1">Payment failed for renewal</p>
+<span class="text-[10px] bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark px-1.5 py-0.5 rounded text-text-sub-light dark:text-text-sub-dark uppercase">Closed</span>
+</div>
+<p class="text-xs text-text-sub-light dark:text-text-sub-dark mt-1">#2039 • Sep 12, 2023</p>
+</a>
+<div class="h-px bg-border-light dark:bg-border-dark w-full"></div>
+<a class="block group" href="#">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium text-text-main-light dark:text-text-main-dark group-hover:text-primary transition-colors line-clamp-1">Physics lecture video lagging</p>
+<span class="text-[10px] bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark px-1.5 py-0.5 rounded text-text-sub-light dark:text-text-sub-dark uppercase">Closed</span>
+</div>
+<p class="text-xs text-text-sub-light dark:text-text-sub-dark mt-1">#1892 • Aug 05, 2023</p>
+</a>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<title>Mock Interview - The Mentor</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1152d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<div class="relative flex min-h-screen flex-col">
+<!-- Navbar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111318] px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<div class="size-6 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">The Mentor</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-9 hidden md:flex">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Universities</a>
+<a class="text-primary text-sm font-medium leading-normal transition-colors" href="#">Visa Prep</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Community</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">My Profile</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-300 dark:hover:bg-slate-700 text-sm font-bold leading-normal tracking-[0.015em] transition-colors">
+<span class="truncate">Log Out</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-primary/20" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBz7f9t76CLwVAzJHm1PHbCPTkZF0RIzVFzu251nILcQYk6pR2GSISVyqAC1GkQrV52tBXjoKmy61q24xKKcO14H15xO1FG4xwkVmHD9wUia-NmoCT7VNfxQGrbGbF4if0w9_REFvyWeVOXZkaz5Sj28kWFb9sMMWhJiBOUhj_J0Rr6K6-5ppp9S8cKttAhJvVdrZyM1atBzTXtkf3k0MfmqXbbuxlNgr12glpv9oGgdWGtLt1vvG5DIUbvFSYBoNiTl6m2Cs-5ukY");'></div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-[1400px]">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 mb-6 text-sm">
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors font-medium" href="#">Home</a>
+<span class="text-slate-500 dark:text-slate-400 font-medium">/</span>
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors font-medium" href="#">Visa Prep</a>
+<span class="text-slate-500 dark:text-slate-400 font-medium">/</span>
+<span class="text-slate-900 dark:text-slate-100 font-medium">Mock Interview</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 h-full">
+<!-- Left Column: Main Interview Area -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Header Info -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-bold uppercase tracking-wide border border-primary/20">Live Session</span>
+<h1 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">F1 Visa Interview: USA</h1>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-base">Session #4 • Consular Officer Simulation</p>
+</div>
+<div class="flex items-center gap-2 bg-red-500/10 border border-red-500/20 px-3 py-1.5 rounded-full animate-pulse">
+<div class="w-2 h-2 rounded-full bg-red-500"></div>
+<span class="text-red-600 dark:text-red-400 text-xs font-bold uppercase tracking-wider">Recording</span>
+</div>
+</div>
+<!-- Video Interface -->
+<div class="relative w-full aspect-video bg-slate-900 rounded-xl overflow-hidden shadow-2xl border border-slate-700 dark:border-slate-800 group">
+<!-- Interviewer Video (Main) -->
+<div class="absolute inset-0 w-full h-full bg-cover bg-center" data-alt="Professional interviewer looking at camera" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDca14OczNtoPRMXnPWud8NQB37aarZaVXpkFZLolPCxLhvQ_2syQOuzbsmbuN94njKYDgJ2fqCa3YAIulDrOMrOG4Qgygydm5z8a-wntfBkcSe2T9uhIIrzTX-X2BPOnIn05DvGEFpSFrNmQ0ip8dS1w0pfh2SADYlIIRhTDMHgjSD2UDFbVg36krLh41fqa8PlIXXRLo5reWgjimtPmgBMGydQ1d9JocxAShbimn6k_3626RSnmYr1jm2uvxWYrl5HKgwyq5jXhI");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
+</div>
+<!-- User PIP (Picture in Picture) -->
+<div class="absolute bottom-6 right-6 w-32 sm:w-48 aspect-[3/4] sm:aspect-video bg-slate-800 rounded-lg overflow-hidden border-2 border-slate-600 shadow-lg z-20">
+<div class="w-full h-full bg-cover bg-center" data-alt="User webcam feed" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDH5v5gs_PI38PEGYcvbkwog6abIpkmvqmJxJRo1OczdVFNClJrOYlEHcLljARbgKTJ7IeJn89CsB8gjzgIygWczOarLlsYLTNBz_k4q3zXvATDsEqWuRPXXli-z6MEwYivXbTs7sb-mkaSMdM27upx-4-O2C6thqDlcNahVGBghLPnrUspwUcMPbNzahz3F3xDzSoqsX-znyjLkxFB41KvyMTbiGCssX8TwRsr2OQETQ07nf8Ghqu7KSbFOc2hxunHiqReSpKdoRg");'></div>
+<div class="absolute bottom-1 right-1 bg-black/50 px-1.5 rounded text-[10px] text-white font-medium">You</div>
+</div>
+<!-- AI Transcript / Captions Overlay -->
+<div class="absolute bottom-8 left-8 right-56 z-10">
+<div class="bg-black/60 backdrop-blur-sm p-4 rounded-lg border-l-4 border-primary max-w-2xl">
+<p class="text-white text-lg font-medium leading-relaxed">"Why did you choose this specific university for your master's degree instead of staying in your home country?"</p>
+</div>
+</div>
+<!-- Overlay Controls -->
+<div class="absolute top-6 right-6 flex flex-col gap-3 z-20">
+<div class="bg-black/40 backdrop-blur-md rounded-lg p-2 text-white border border-white/10">
+<div class="flex items-center gap-2 text-sm font-medium">
+<span class="material-symbols-outlined text-green-400 text-[18px]">wifi</span>
+<span>Stable</span>
+</div>
+</div>
+</div>
+<!-- Center Play Button (Hidden when active usually, visible for pause state) -->
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20 pointer-events-none">
+<!-- Optional pause indicator if needed -->
+</div>
+</div>
+<!-- Controls Bar -->
+<div class="flex flex-wrap items-center justify-between gap-4 bg-white dark:bg-[#1b222e] p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-12 h-12 rounded-full bg-red-100 dark:bg-red-500/20 text-red-600 dark:text-red-400 hover:bg-red-200 dark:hover:bg-red-500/30 transition-colors">
+<span class="material-symbols-outlined">mic_off</span>
+</button>
+<button class="flex items-center justify-center w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">
+<span class="material-symbols-outlined">videocam</span>
+</button>
+<button class="flex items-center justify-center w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">
+<span class="material-symbols-outlined">closed_caption</span>
+</button>
+</div>
+<div class="flex-1 px-4 hidden sm:block">
+<div class="flex items-center gap-3">
+<div class="h-10 flex-1 flex items-center gap-1 justify-center">
+<!-- Audio Waveform Visualization Simulation -->
+<div class="w-1 h-3 bg-primary/40 rounded-full animate-pulse"></div>
+<div class="w-1 h-5 bg-primary/60 rounded-full animate-pulse delay-75"></div>
+<div class="w-1 h-8 bg-primary rounded-full animate-pulse delay-100"></div>
+<div class="w-1 h-4 bg-primary/50 rounded-full animate-pulse delay-150"></div>
+<div class="w-1 h-6 bg-primary/70 rounded-full animate-pulse delay-200"></div>
+<div class="w-1 h-3 bg-primary/40 rounded-full animate-pulse delay-300"></div>
+<div class="w-1 h-8 bg-primary rounded-full animate-pulse delay-75"></div>
+<div class="w-1 h-5 bg-primary/60 rounded-full animate-pulse delay-100"></div>
+<div class="w-1 h-2 bg-primary/30 rounded-full animate-pulse delay-150"></div>
+</div>
+<span class="text-xs font-mono text-slate-500 dark:text-slate-400">00:45 / 02:00</span>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-bold text-sm flex items-center gap-2 shadow-lg shadow-primary/25 transition-all">
+<span>Submit Answer</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Sidebar Stats & Progress -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Progress Card -->
+<div class="bg-white dark:bg-[#1b222e] p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-slate-900 dark:text-white font-bold text-lg">Interview Progress</h3>
+<span class="text-primary text-sm font-bold bg-primary/10 px-2 py-1 rounded">Q3 of 5</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-2.5 mb-6">
+<div class="bg-primary h-2.5 rounded-full transition-all duration-500" style="width: 60%"></div>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3 p-3 rounded-lg bg-green-500/10 border border-green-500/20">
+<span class="material-symbols-outlined text-green-500">check_circle</span>
+<div class="flex-1">
+<p class="text-slate-900 dark:text-white text-sm font-medium">Introduction</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Confidence Score: 92%</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg bg-green-500/10 border border-green-500/20">
+<span class="material-symbols-outlined text-green-500">check_circle</span>
+<div class="flex-1">
+<p class="text-slate-900 dark:text-white text-sm font-medium">Study Plans</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Confidence Score: 88%</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg bg-primary/10 border border-primary/20 ring-1 ring-primary/30">
+<div class="w-6 h-6 rounded-full border-2 border-primary border-t-transparent animate-spin"></div>
+<div class="flex-1">
+<p class="text-slate-900 dark:text-white text-sm font-bold">University Choice</p>
+<p class="text-primary text-xs font-medium">Current Question</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg opacity-50 border border-dashed border-slate-300 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-400">radio_button_unchecked</span>
+<div class="flex-1">
+<p class="text-slate-900 dark:text-white text-sm font-medium">Financial Proof</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg opacity-50 border border-dashed border-slate-300 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-400">radio_button_unchecked</span>
+<div class="flex-1">
+<p class="text-slate-900 dark:text-white text-sm font-medium">Post-Study Plans</p>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Metrics / Stress Level -->
+<div class="bg-white dark:bg-[#1b222e] p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h3 class="text-slate-900 dark:text-white font-bold text-lg">Real-time Analysis</h3>
+<span class="material-symbols-outlined text-slate-400">analytics</span>
+</div>
+<!-- Stress Level Gauge (Simulated with CSS) -->
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="text-slate-500 dark:text-slate-400">Stress Level</span>
+<span class="text-orange-500 font-bold">Moderate</span>
+</div>
+<div class="h-4 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden flex">
+<div class="h-full bg-green-500 w-1/3"></div>
+<div class="h-full bg-yellow-500 w-1/3"></div>
+<div class="h-full bg-orange-500 w-[15%] rounded-r animate-pulse"></div>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Try to slow down your speech rate slightly.</p>
+</div>
+<hr class="border-slate-200 dark:border-slate-700 my-2"/>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg text-center border border-slate-100 dark:border-slate-700">
+<span class="block text-2xl font-black text-slate-900 dark:text-white">85<span class="text-sm align-top font-medium text-slate-500">%</span></span>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">Eye Contact</span>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg text-center border border-slate-100 dark:border-slate-700">
+<span class="block text-2xl font-black text-slate-900 dark:text-white">120</span>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">WPM (Pace)</span>
+</div>
+</div>
+</div>
+<!-- Helper / Tips -->
+<div class="bg-gradient-to-br from-primary/20 to-primary/5 p-6 rounded-xl border border-primary/20">
+<div class="flex gap-3 mb-2">
+<div class="bg-primary rounded-full p-1 h-fit">
+<span class="material-symbols-outlined text-white text-[16px]">lightbulb</span>
+</div>
+<h4 class="text-primary font-bold">Pro Tip</h4>
+</div>
+<p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                            When discussing university choice, mention specific professors, labs, or curriculum details to show genuine research. Avoid generic answers like "It's a top ranked school."
+                        </p>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

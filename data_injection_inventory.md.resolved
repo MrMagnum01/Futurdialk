@@ -1,0 +1,135 @@
+# Data Injection Inventory — Tawjih V4
+
+## PostgreSQL — Already Seeded ✅
+
+| Entity | Current | Status |
+|--------|---------|--------|
+| Users | 3 | ✅ OK (admin + test users) |
+| Schools | 30 | ✅ OK (FR 10, CA 5, MA 5, DE 5, UK 3, TR 2) |
+| Programs | 60 | ✅ OK (2 per school across 6 fields) |
+| Scholarships | 15 | ✅ OK (FR, CA, DE, UK, ES, MA, TR) |
+| Roadmap Templates | 5 | ✅ OK (France L1, France Master, Canada, Germany, Turkey) |
+
+---
+
+## PostgreSQL — Empty (Need Seed) 🔴
+
+### 1. Marketplace — `service_providers` (Target: ~25)
+
+| Category | Items to Add |
+|----------|-------------|
+| `translator` | 4 — Casablanca, Rabat sworn translators for French/English/Arabic |
+| `legalization` | 3 — MAE apostille services, embassy legalization |
+| `exam_help` | 3 — IELTS/TCF prep centers in Casablanca, Rabat, Marrakech |
+| `photo` | 3 — Passport photo studios with OFII/visa format |
+| `medical` | 3 — Travel medical exam clinics (vaccinations, certificates) |
+| `tutor` | 3 — BAC/university tutors (math, physics, French) |
+| `blocked_acct` | 3 — Blocked account services (Fintiba, Expatrio, BNP) |
+| `insurance` | 3 — Student insurance (LMDE, MGEN, Globe Partner) |
+
+### 2. Mentors — [mentors](file:///C:/DEV/Tawjih%20V4/backend/app/routers/mentors.py#13-43) (Target: ~15)
+
+Need to link to existing/new users. Each mentor:
+- Country where they study/studied (FR, CA, DE, UK, TR)
+- University, field, arrival year
+- Specialties, bio, rating
+
+| Country | Mentors |
+|---------|---------|
+| France | 5 — Paris, Lyon, Toulouse (Engineering, Business, Sciences) |
+| Canada | 3 — Montréal, Toronto (CS, Engineering, Medicine) |
+| Germany | 3 — Munich, Berlin (Engineering, Data Science) |
+| UK | 2 — London, Manchester (Business, Law) |
+| Turkey | 2 — Istanbul, Ankara (Engineering, Medicine) |
+
+### 3. Career Paths — [career_paths](file:///C:/DEV/Tawjih%20V4/backend/app/routers/career.py#86-96) (Target: ~20)
+
+| Field | Careers |
+|-------|---------|
+| Engineering | Software Engineer, Civil Engineer, Mechanical Engineer, Data Engineer |
+| Business | Finance Analyst, Marketing Manager, Consultant, Entrepreneur |
+| Medicine | General Practitioner, Pharmacist, Dentist |
+| Sciences | Research Scientist, Lab Technician, Environmental Analyst |
+| Tech | AI/ML Engineer, Cybersecurity Analyst, Cloud Architect |
+| Humanities | Lawyer, Journalist, Teacher, Diplomat |
+
+Each career: title (FR+EN), RIASEC code, salary, demand, skills, growth rate
+
+---
+
+## MongoDB — Empty Collections (Need Seed) 🔴
+
+### 4. Questions — [questions](file:///C:/DEV/Tawjih%20V4/backend/app/routers/visa_prep.py#122-129) collection (Target: ~100)
+
+| Exam | Sections | Questions |
+|------|----------|-----------|
+| IELTS | Reading, Listening, Writing, Speaking | 20 |
+| TOEFL | Reading, Listening, Writing, Speaking | 20 |
+| TCF | Compréhension orale, Compréhension écrite, Expression écrite, Structure | 20 |
+| BAC | Math, Physique-Chimie, SVT, Français, Philosophie | 20 |
+| TestDaF | Leseverstehen, Hörverstehen, Schriftlicher Ausdruck, Mündlicher Ausdruck | 10 |
+| DELE | Comprensión lectora, Comprensión auditiva, Expresión escrita | 10 |
+
+Each: exam_code, section, difficulty (A1→C2 or terminal/S), question text, options, correct answer, explanation, status (pending/approved)
+
+### 5. Career Paths — [career_paths](file:///C:/DEV/Tawjih%20V4/backend/app/routers/career.py#86-96) collection (Target: ~20)
+
+Same as PostgreSQL table above, but in MongoDB for the career router:
+- name, category, riasec_codes, required_education, job_titles
+- automation_risk, market_data (per country: avg_salary, growth_pct, top_employers)
+
+### 6. Market Snapshots — `market_snapshots` collection (Target: ~40)
+
+For each career × country combination:
+- job_postings_count, avg_salary (MAD), salary_growth_yoy
+- unemployment_rate_field, top_employers, required_skills
+
+### 7. Community Posts — `community_posts` (Optional, has fallback)
+
+Currently served from static fallback. Can add 20+ posts:
+- Study tips, acceptance stories, visa guides, scholarship advice
+- Tagged with Moroccan-relevant hashtags
+
+### 8. Housing Guides — `housing_guides` (Optional, has fallback)
+
+Currently 9 cities in static fallback. Can add:
+- 5 more cities (Strasbourg, Bordeaux, Ottawa, Vancouver, Ankara)
+- Halal food tips, mosque locations, Moroccan community info
+
+### 9. Visa Data — [visa_data](file:///C:/DEV/Tawjih%20V4/backend/app/routers/visa_prep.py#79-93) (Optional, has fallback)
+
+Currently 6 countries in static fallback. Can add:
+- ES (Spain) visa data
+- More questions per country (10+ each)
+
+### 10. Language Courses — `language_courses` + `language_lessons` (Target: ~50 lessons)
+
+| Language | Units | Lessons per Unit |
+|----------|-------|-----------------|
+| French (fr) | 5 | 3-5 per unit |
+| English (en) | 5 | 3-5 per unit |
+| German (de) | 3 | 3 per unit |
+| Turkish (tr) | 3 | 3 per unit |
+
+Each lesson: vocabulary, grammar exercises, fill-in-the-blank, translations
+
+### 11. Vocabulary — `vocabulary` collection (Target: ~200 cards)
+
+Flashcards per language: word, translation, example sentence, difficulty
+
+---
+
+## Summary
+
+| Priority | Category | Storage | Count | Status |
+|----------|----------|---------|-------|--------|
+| 🔴 P1 | Questions (exam prep) | MongoDB | ~100 | **Critical — exam pages need this** |
+| 🔴 P1 | Career Paths | MongoDB | ~20 | **Critical — career pages need this** |
+| 🔴 P1 | Market Snapshots | MongoDB | ~40 | **Career detail pages** |
+| 🟠 P2 | Marketplace Providers | PostgreSQL | ~25 | **Marketplace page empty** |
+| 🟠 P2 | Mentors | PostgreSQL | ~15 | **Find Mentors page empty** |
+| 🟡 P3 | Language Courses | MongoDB | ~50 | **Language learning placeholder** |
+| 🟡 P3 | Vocabulary | MongoDB | ~200 | **Flashcard review** |
+| ⚪ P4 | Community Posts | MongoDB | ~20 | Has static fallback |
+| ⚪ P4 | Housing Guides | MongoDB | ~5 | Has static fallback |
+| ⚪ P4 | Visa Data | MongoDB | ~1 | Has static fallback |

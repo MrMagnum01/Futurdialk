@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Full Exam Simulation - The Mentor</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-dark": "#1a2430",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for question navigation */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1a2430;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #3b4554;
+            border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #4b5563;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased h-screen overflow-hidden flex flex-col">
+<!-- Header / Top Bar -->
+<header class="flex-none flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-[#282f39] bg-surface-light dark:bg-[#111418] px-6 py-3 z-20 shadow-md">
+<div class="flex items-center gap-4">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">The Mentor Exam Mode</h2>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">Tawjihi Mathematics Level 2</p>
+</div>
+</div>
+<!-- Timer Center -->
+<div class="hidden md:flex items-center gap-2 bg-slate-100 dark:bg-[#1f2630] rounded-lg px-4 py-2 border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-primary text-xl">timer</span>
+<div class="flex gap-1 text-slate-900 dark:text-white font-mono font-bold text-lg">
+<span>01</span><span class="text-slate-400">:</span><span>45</span><span class="text-slate-400">:</span><span>12</span>
+</div>
+<span class="text-xs text-slate-500 dark:text-slate-400 ml-2 uppercase font-bold tracking-wider">Remaining</span>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-9 px-3 bg-red-500/10 hover:bg-red-500/20 text-red-600 dark:text-red-400 text-sm font-bold border border-red-500/20 transition-colors">
+<span class="truncate">Exit Exam</span>
+</button>
+<button class="flex items-center justify-center rounded-lg size-9 bg-slate-100 hover:bg-slate-200 dark:bg-[#282f39] dark:hover:bg-[#3b4554] text-slate-700 dark:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex flex-1 overflow-hidden">
+<!-- Sidebar: Question Navigator -->
+<aside class="w-72 bg-surface-light dark:bg-[#161c24] border-r border-slate-200 dark:border-[#282f39] flex flex-col flex-none z-10 hidden lg:flex">
+<div class="p-4 border-b border-slate-200 dark:border-[#282f39]">
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-bold text-slate-700 dark:text-slate-200">Progress</span>
+<span class="text-sm font-bold text-primary">12/80</span>
+</div>
+<div class="h-2 w-full bg-slate-200 dark:bg-[#282f39] rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[15%] rounded-full"></div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-4 custom-scrollbar">
+<div class="mb-6">
+<h3 class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">Section 1: Algebra</h3>
+<div class="grid grid-cols-5 gap-2">
+<!-- Answered -->
+<button class="size-9 rounded bg-primary text-white text-sm font-medium flex items-center justify-center hover:opacity-90">1</button>
+<button class="size-9 rounded bg-primary text-white text-sm font-medium flex items-center justify-center hover:opacity-90">2</button>
+<button class="size-9 rounded bg-primary text-white text-sm font-medium flex items-center justify-center hover:opacity-90">3</button>
+<!-- Flagged -->
+<button class="size-9 rounded bg-amber-500/20 text-amber-500 border border-amber-500/50 text-sm font-medium flex items-center justify-center relative">
+                            4
+                            <div class="absolute top-0.5 right-0.5 size-1.5 bg-amber-500 rounded-full"></div>
+</button>
+<button class="size-9 rounded bg-primary text-white text-sm font-medium flex items-center justify-center hover:opacity-90">5</button>
+</div>
+</div>
+<div class="mb-6">
+<h3 class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">Section 2: Calculus</h3>
+<div class="grid grid-cols-5 gap-2">
+<button class="size-9 rounded bg-primary text-white text-sm font-medium flex items-center justify-center hover:opacity-90">6</button>
+<button class="size-9 rounded bg-primary text-white text-sm font-medium flex items-center justify-center hover:opacity-90">7</button>
+<button class="size-9 rounded bg-primary text-white text-sm font-medium flex items-center justify-center hover:opacity-90">8</button>
+<button class="size-9 rounded bg-primary text-white text-sm font-medium flex items-center justify-center hover:opacity-90">9</button>
+<button class="size-9 rounded bg-primary text-white text-sm font-medium flex items-center justify-center hover:opacity-90">10</button>
+<button class="size-9 rounded bg-primary text-white text-sm font-medium flex items-center justify-center hover:opacity-90">11</button>
+<!-- Current -->
+<button class="size-9 rounded bg-surface-light dark:bg-[#282f39] ring-2 ring-primary text-primary text-sm font-bold flex items-center justify-center">12</button>
+<!-- Unanswered -->
+<button class="size-9 rounded bg-slate-100 dark:bg-[#1f2630] text-slate-500 dark:text-slate-400 text-sm font-medium flex items-center justify-center hover:bg-slate-200 dark:hover:bg-[#282f39]">13</button>
+<button class="size-9 rounded bg-slate-100 dark:bg-[#1f2630] text-slate-500 dark:text-slate-400 text-sm font-medium flex items-center justify-center hover:bg-slate-200 dark:hover:bg-[#282f39]">14</button>
+<button class="size-9 rounded bg-slate-100 dark:bg-[#1f2630] text-slate-500 dark:text-slate-400 text-sm font-medium flex items-center justify-center hover:bg-slate-200 dark:hover:bg-[#282f39]">15</button>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-slate-200 dark:border-[#282f39] bg-slate-50 dark:bg-[#111418]">
+<div class="grid grid-cols-3 gap-2 text-[10px] text-slate-500 dark:text-slate-400 text-center">
+<div class="flex flex-col items-center gap-1">
+<div class="size-3 rounded bg-primary"></div>
+<span>Answered</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="size-3 rounded bg-amber-500/20 border border-amber-500/50 relative">
+<div class="absolute top-0.5 right-0.5 size-1 bg-amber-500 rounded-full"></div>
+</div>
+<span>Flagged</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="size-3 rounded bg-slate-100 dark:bg-[#1f2630] ring-1 ring-slate-300 dark:ring-slate-600"></div>
+<span>Unseen</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Question Area -->
+<section class="flex-1 flex flex-col relative overflow-hidden bg-background-light dark:bg-background-dark">
+<!-- Tools Bar -->
+<div class="flex items-center justify-between px-6 py-3 bg-surface-light dark:bg-[#161c24] border-b border-slate-200 dark:border-[#282f39]">
+<div class="flex items-center gap-2">
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Question 12</h2>
+<span class="bg-slate-200 dark:bg-[#282f39] text-slate-600 dark:text-slate-300 text-xs px-2 py-0.5 rounded ml-2">Multiple Choice</span>
+</div>
+<div class="flex items-center bg-slate-100 dark:bg-[#1f2630] rounded-lg p-1 gap-1">
+<button class="p-2 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary rounded hover:bg-white dark:hover:bg-[#282f39] transition-all group" title="Highlight">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110">ink_highlighter</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary rounded hover:bg-white dark:hover:bg-[#282f39] transition-all group" title="Calculator">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110">calculate</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary rounded hover:bg-white dark:hover:bg-[#282f39] transition-all group" title="Notepad">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110">sticky_note_2</span>
+</button>
+<div class="w-px h-5 bg-slate-300 dark:bg-slate-600 mx-1"></div>
+<button class="p-2 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary rounded hover:bg-white dark:hover:bg-[#282f39] transition-all group" title="Eraser">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110">ink_eraser</span>
+</button>
+</div>
+</div>
+<!-- Content Split View -->
+<div class="flex-1 overflow-y-auto p-6 lg:p-10 flex justify-center">
+<div class="max-w-5xl w-full flex flex-col gap-8">
+<!-- Question Prompt -->
+<div class="space-y-4">
+<p class="text-slate-800 dark:text-slate-200 text-lg leading-relaxed">
+                            Given the function <span class="font-mono bg-slate-100 dark:bg-[#282f39] px-1 rounded">f(x) = 3x² - 12x + 7</span>, determine the coordinates of the vertex of the parabola.
+                            Use the method of completing the square or the vertex formula.
+                        </p>
+<!-- Image placeholder for question context if needed -->
+<div class="w-full max-w-md h-48 bg-slate-100 dark:bg-[#1a2430] rounded-lg border border-slate-200 dark:border-[#282f39] flex items-center justify-center overflow-hidden relative">
+<div class="absolute inset-0 opacity-20 bg-[radial-gradient(#136dec_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<span class="text-slate-400 dark:text-slate-500 text-sm font-medium flex items-center gap-2">
+<span class="material-symbols-outlined">image</span> No diagram provided for this question
+                            </span>
+</div>
+</div>
+<div class="h-px bg-slate-200 dark:bg-[#282f39] w-full my-2"></div>
+<!-- Answers Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Option A -->
+<label class="group relative flex items-start gap-4 p-4 rounded-xl border-2 border-slate-200 dark:border-[#282f39] bg-surface-light dark:bg-[#161c24] hover:border-primary/50 cursor-pointer transition-all">
+<input class="mt-1 size-5 border-slate-300 text-primary focus:ring-primary dark:border-slate-600 dark:bg-[#1f2630]" name="answer" type="radio"/>
+<div class="flex-1">
+<span class="font-bold text-slate-500 dark:text-slate-400 mb-1 block text-sm">Option A</span>
+<span class="text-slate-900 dark:text-white font-mono text-lg">(2, -5)</span>
+</div>
+<div class="absolute inset-0 rounded-xl ring-2 ring-transparent group-hover:ring-primary/20 pointer-events-none"></div>
+</label>
+<!-- Option B -->
+<label class="group relative flex items-start gap-4 p-4 rounded-xl border-2 border-primary bg-primary/5 dark:bg-primary/10 cursor-pointer transition-all shadow-sm">
+<input checked="" class="mt-1 size-5 border-slate-300 text-primary focus:ring-primary dark:border-slate-600 dark:bg-[#1f2630]" name="answer" type="radio"/>
+<div class="flex-1">
+<span class="font-bold text-primary mb-1 block text-sm">Option B</span>
+<span class="text-slate-900 dark:text-white font-mono text-lg">(2, 7)</span>
+</div>
+<div class="absolute top-4 right-4 text-primary">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+</label>
+<!-- Option C -->
+<label class="group relative flex items-start gap-4 p-4 rounded-xl border-2 border-slate-200 dark:border-[#282f39] bg-surface-light dark:bg-[#161c24] hover:border-primary/50 cursor-pointer transition-all">
+<input class="mt-1 size-5 border-slate-300 text-primary focus:ring-primary dark:border-slate-600 dark:bg-[#1f2630]" name="answer" type="radio"/>
+<div class="flex-1">
+<span class="font-bold text-slate-500 dark:text-slate-400 mb-1 block text-sm">Option C</span>
+<span class="text-slate-900 dark:text-white font-mono text-lg">(-2, -5)</span>
+</div>
+<div class="absolute inset-0 rounded-xl ring-2 ring-transparent group-hover:ring-primary/20 pointer-events-none"></div>
+</label>
+<!-- Option D -->
+<label class="group relative flex items-start gap-4 p-4 rounded-xl border-2 border-slate-200 dark:border-[#282f39] bg-surface-light dark:bg-[#161c24] hover:border-primary/50 cursor-pointer transition-all">
+<input class="mt-1 size-5 border-slate-300 text-primary focus:ring-primary dark:border-slate-600 dark:bg-[#1f2630]" name="answer" type="radio"/>
+<div class="flex-1">
+<span class="font-bold text-slate-500 dark:text-slate-400 mb-1 block text-sm">Option D</span>
+<span class="text-slate-900 dark:text-white font-mono text-lg">(-2, 7)</span>
+</div>
+<div class="absolute inset-0 rounded-xl ring-2 ring-transparent group-hover:ring-primary/20 pointer-events-none"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<footer class="flex-none bg-surface-light dark:bg-[#111418] border-t border-slate-200 dark:border-[#282f39] p-4 flex items-center justify-between z-20">
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#1f2630] font-bold text-sm transition-colors">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+                    Previous
+                </button>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg text-amber-600 dark:text-amber-500 bg-amber-50 dark:bg-amber-900/10 hover:bg-amber-100 dark:hover:bg-amber-900/20 font-bold text-sm border border-amber-200 dark:border-amber-900/30 transition-colors">
+<span class="material-symbols-outlined text-[20px] fill-1">flag</span>
+                        Flag for Review
+                    </button>
+<button class="flex items-center gap-2 px-6 py-2 rounded-lg bg-primary hover:bg-blue-600 text-white font-bold text-sm shadow-lg shadow-primary/20 transition-all">
+                        Next Question
+                        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</footer>
+</section>
+</main>
+<!-- Modal Overlay for Scratchpad (Hidden by default, visualized here as minimized or floating) -->
+<!-- This is a visual representation of a feature mentioned in the prompt -->
+<div class="fixed bottom-24 right-8 z-50">
+<div class="bg-surface-light dark:bg-[#1e2732] rounded-xl shadow-2xl border border-slate-200 dark:border-[#3b4554] w-64 overflow-hidden hidden md:block">
+<div class="bg-slate-100 dark:bg-[#282f39] px-3 py-2 flex justify-between items-center border-b border-slate-200 dark:border-[#3b4554]">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-sm">edit_note</span>
+<span class="text-xs font-bold uppercase tracking-wider">Scratchpad</span>
+</div>
+<button class="text-slate-400 hover:text-white"><span class="material-symbols-outlined text-sm">close</span></button>
+</div>
+<div class="h-32 p-3">
+<p class="font-mono text-xs text-slate-400">Vertex formula: x = -b / 2a</p>
+<p class="font-mono text-xs text-slate-400 mt-1">a = 3, b = -12</p>
+<p class="font-mono text-xs text-slate-400 mt-1">x = 12 / 6 = 2</p>
+<p class="font-mono text-xs text-slate-400 mt-1">f(2) = 3(4) - 24 + 7</p>
+</div>
+</div>
+</div>
+</body></html>

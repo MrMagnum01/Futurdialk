@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Question Review Queue - The Mentor Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-dark": "#1b2431",
+                        "surface-hover": "#26303e",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex overflow-hidden">
+<!-- Sidebar -->
+<aside class="hidden lg:flex flex-col w-72 h-screen bg-surface-dark border-r border-slate-700/30 sticky top-0 overflow-y-auto">
+<div class="flex flex-col h-full p-4 justify-between">
+<div class="flex flex-col gap-6">
+<!-- Branding -->
+<div class="flex items-center gap-3 px-2 py-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 shadow-lg shadow-primary/20" data-alt="The Mentor logo abstract" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVrQbDsSWeLlhAhj16Ib1xnOzDL60joeACVUnddJB_jJAZwPlgMDL1LJwYrqVyMCl8JA2ihHUdMLkzsTC7LEjYGx_ZSrD7m4Z9PIE4BeeEBSx1Ieqiv4Kfqvd0X5FbOsqQBswB25qriATe29rCMZIoF1BVz__Rv8eSWZyXfuW6OtnsYo_hErgbSmZ89UGrz0aajYUrWPu9C2cSwUxp3TDvv9QU26WIA_L8WMOIa6rIV6UNui9iRyjntS0ftACv1dpkjz7fuvUwwJI");'></div>
+<div class="flex flex-col">
+<h1 class="text-slate-100 text-base font-bold leading-tight">The Mentor Admin</h1>
+<p class="text-slate-400 text-xs font-normal">Moderation Panel</p>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-surface-hover hover:text-slate-100 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-surface-hover hover:text-slate-100 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">school</span>
+<span class="text-sm font-medium">Students</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary border-l-4 border-primary shadow-sm" href="#">
+<span class="material-symbols-outlined text-primary fill-1">forum</span>
+<span class="text-sm font-bold">Question Queue</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-surface-hover hover:text-slate-100 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">description</span>
+<span class="text-sm font-medium">Content</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-surface-hover hover:text-slate-100 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">analytics</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+</nav>
+</div>
+<!-- Settings -->
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-surface-hover hover:text-slate-100 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-slate-100 transition-colors">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<div class="px-3 py-4 border-t border-slate-700/30 flex items-center gap-3 mt-2">
+<div class="bg-primary/20 rounded-full h-8 w-8 flex items-center justify-center text-primary font-bold text-xs">MA</div>
+<div class="flex flex-col">
+<span class="text-xs font-medium text-slate-200">Moderator Account</span>
+<span class="text-[10px] text-slate-500">mod@thementor.com</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-screen overflow-hidden relative">
+<!-- Header -->
+<header class="flex flex-col gap-4 p-6 pb-2 md:p-8 md:pb-4 bg-background-dark sticky top-0 z-10 border-b border-slate-800/50">
+<div class="flex flex-wrap justify-between items-end gap-4">
+<div class="flex flex-col gap-1">
+<h2 class="text-2xl md:text-3xl font-black tracking-tight text-white">Question Review Queue</h2>
+<p class="text-slate-400 text-sm md:text-base">Manage reported posts and new questions awaiting approval.</p>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-dark border border-slate-700 text-slate-300 rounded-lg text-sm font-medium hover:bg-surface-hover hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">history</span>
+                        Audit Log
+                   </button>
+</div>
+</div>
+<!-- Stats Overview -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+<div class="flex flex-col gap-1 rounded-xl p-4 bg-surface-dark border border-slate-700/50 shadow-sm relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-5xl text-blue-400">pending_actions</span>
+</div>
+<p class="text-slate-400 text-xs font-medium uppercase tracking-wider">Pending Approval</p>
+<div class="flex items-baseline gap-2">
+<p class="text-white text-3xl font-bold">24</p>
+<span class="text-emerald-400 text-xs font-medium flex items-center bg-emerald-400/10 px-1.5 py-0.5 rounded">+5%</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-4 bg-surface-dark border border-slate-700/50 shadow-sm relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-5xl text-red-400">flag</span>
+</div>
+<p class="text-slate-400 text-xs font-medium uppercase tracking-wider">Reported Posts</p>
+<div class="flex items-baseline gap-2">
+<p class="text-white text-3xl font-bold">8</p>
+<span class="text-emerald-400 text-xs font-medium flex items-center bg-emerald-400/10 px-1.5 py-0.5 rounded">+12%</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-4 bg-surface-dark border border-slate-700/50 shadow-sm relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-5xl text-orange-400">gavel</span>
+</div>
+<p class="text-slate-400 text-xs font-medium uppercase tracking-wider">Total Strikes</p>
+<div class="flex items-baseline gap-2">
+<p class="text-white text-3xl font-bold">156</p>
+<span class="text-slate-400 text-xs font-medium flex items-center bg-slate-700/30 px-1.5 py-0.5 rounded">This Month</span>
+</div>
+</div>
+</div>
+<!-- Filters & Search -->
+<div class="flex flex-col md:flex-row gap-4 pt-4 border-t border-slate-800/50">
+<div class="relative flex-1">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<span class="material-symbols-outlined text-slate-500">search</span>
+</div>
+<input class="block w-full p-2.5 pl-10 text-sm bg-surface-dark border border-slate-700 rounded-lg placeholder-slate-500 text-white focus:ring-primary focus:border-primary transition-all shadow-sm" placeholder="Search by question content, user, or report ID" type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar">
+<button class="whitespace-nowrap flex items-center gap-2 px-3 py-2 bg-primary text-white rounded-lg text-sm font-medium shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[18px]">list</span>
+                        All Items
+                    </button>
+<button class="whitespace-nowrap flex items-center gap-2 px-3 py-2 bg-surface-dark border border-slate-700 text-slate-300 rounded-lg text-sm font-medium hover:bg-surface-hover hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+                        Pending
+                    </button>
+<button class="whitespace-nowrap flex items-center gap-2 px-3 py-2 bg-surface-dark border border-slate-700 text-slate-300 rounded-lg text-sm font-medium hover:bg-surface-hover hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[18px] text-red-400">flag</span>
+                        Reported
+                    </button>
+<button class="whitespace-nowrap flex items-center gap-2 px-3 py-2 bg-surface-dark border border-slate-700 text-slate-300 rounded-lg text-sm font-medium hover:bg-surface-hover hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">visibility_off</span>
+                        Hidden
+                    </button>
+</div>
+</div>
+</header>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto p-4 md:p-8 pt-2">
+<div class="space-y-4">
+<!-- Review Card: High Priority Report -->
+<div class="bg-surface-dark rounded-xl border border-red-500/30 overflow-hidden shadow-lg shadow-black/20">
+<div class="bg-red-500/10 px-6 py-2 flex items-center justify-between border-b border-red-500/20">
+<div class="flex items-center gap-2 text-red-400">
+<span class="material-symbols-outlined text-sm">warning</span>
+<span class="text-xs font-bold uppercase tracking-wide">Reported • Hate Speech</span>
+</div>
+<span class="text-xs text-slate-400">Reported 20m ago</span>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start gap-4">
+<div class="flex gap-4">
+<img class="w-10 h-10 rounded-full object-cover ring-2 ring-slate-700" data-alt="User Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg1y-vquy7gKr7_LvLK9fzRVo-ZYNp1DxFq1e5iFu2fe69Mf4c3DASX7HGgraqmtoO362S0eca4cOcMBj4Q_2c9VqX33e3ibGCtKYJkv69vd3L1n9AbUOlDwoqMRS1VED1lNGNlyHp3oDZRTnyrI8qk3iV9V0K-pBJoUroarGF28UBFNm-UXEwMGd9dcIA9P-y4m1_otsr97NHM4NFisqu3Mxd0suP-c30MIMKDk-hxumyU2EfbXvjxmTpFZb8WDWgqKrxsJzqpEE"/>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-slate-200 font-semibold text-sm">User: alex_thunder</h3>
+<span class="px-1.5 py-0.5 rounded bg-red-500/20 text-red-400 text-[10px] font-bold">2 Strikes</span>
+</div>
+<p class="text-slate-500 text-xs">Posted in <span class="text-primary hover:underline cursor-pointer">Physics 101</span></p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-xs font-mono text-slate-500 bg-slate-800 px-2 py-1 rounded">ID: #99281</span>
+</div>
+</div>
+<div class="bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
+<h4 class="text-slate-100 font-medium mb-1">Why is gravity considered a theory if it's proven? This class is useless.</h4>
+<p class="text-slate-400 text-sm leading-relaxed">
+                                Honestly the teacher doesn't know anything and just wastes our time. People who believe this stuff are [REDACTED content triggered report filter].
+                            </p>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-4 mt-2">
+<div class="flex items-center gap-2 text-xs text-slate-400">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">flag</span> 3 Reports</span>
+<span class="w-1 h-1 bg-slate-600 rounded-full"></span>
+<span class="flex items-center gap-1">Automated Filter Triggered</span>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 rounded-lg bg-surface-hover hover:bg-slate-700 text-slate-300 text-sm font-medium transition-colors border border-slate-600">Dismiss</button>
+<button class="px-4 py-2 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 text-sm font-medium transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">gavel</span>
+                                    Strike User &amp; Hide
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Review Card: Pending Approval -->
+<div class="bg-surface-dark rounded-xl border border-slate-700/50 overflow-hidden shadow-sm hover:border-slate-600 transition-colors">
+<div class="bg-blue-500/5 px-6 py-2 flex items-center justify-between border-b border-blue-500/10">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-sm">hourglass_top</span>
+<span class="text-xs font-bold uppercase tracking-wide">Pending Approval • New User</span>
+</div>
+<span class="text-xs text-slate-400">Submitted 1h ago</span>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start gap-4">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm">SM</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-slate-200 font-semibold text-sm">User: sarah_math_whiz</h3>
+<span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-bold">New</span>
+</div>
+<p class="text-slate-500 text-xs">Posted in <span class="text-primary hover:underline cursor-pointer">Calculus II</span></p>
+</div>
+</div>
+</div>
+<div class="bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
+<h4 class="text-slate-100 font-medium mb-1">Help with Integration by Parts?</h4>
+<p class="text-slate-400 text-sm leading-relaxed">
+                                I'm stuck on problem 42 in the textbook regarding the integration of e^x * sin(x). Can someone explain the cyclical method used here? I keep getting a negative sign error.
+                            </p>
+<div class="mt-3 flex gap-2">
+<span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">#calculus</span>
+<span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-700 text-slate-300">#homework-help</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-4 mt-2">
+<div class="flex items-center gap-2 text-xs text-slate-400">
+<span class="flex items-center gap-1">AI Safety Score: 98% Safe</span>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 rounded-lg bg-surface-hover hover:bg-slate-700 text-slate-300 text-sm font-medium transition-colors border border-slate-600 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">edit</span> Edit Tags
+                                </button>
+<button class="px-4 py-2 rounded-lg bg-surface-hover hover:bg-slate-700 text-slate-300 text-sm font-medium transition-colors border border-slate-600 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">folder_open</span> Move
+                                </button>
+<button class="px-6 py-2 rounded-lg bg-primary hover:bg-blue-600 text-white shadow-lg shadow-blue-500/20 text-sm font-bold transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">check</span> Approve
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Review Card: Off Topic -->
+<div class="bg-surface-dark rounded-xl border border-slate-700/50 overflow-hidden shadow-sm hover:border-slate-600 transition-colors">
+<div class="bg-orange-500/5 px-6 py-2 flex items-center justify-between border-b border-orange-500/10">
+<div class="flex items-center gap-2 text-orange-400">
+<span class="material-symbols-outlined text-sm">flag</span>
+<span class="text-xs font-bold uppercase tracking-wide">Reported • Off Topic</span>
+</div>
+<span class="text-xs text-slate-400">Reported 2h ago</span>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start gap-4">
+<div class="flex gap-4">
+<img class="w-10 h-10 rounded-full object-cover ring-2 ring-slate-700" data-alt="User Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcnwO2uG05NHMtkNam19zFbQeV_xdyM3IQ6auE3jxtSEK2alDtRiLTMTx-C0SlyK9axfQRxBzbOgUHWZg-lUO1jdloBArgwJNaxjZq_sFMSa0ceXHl-7_aAqFcCsyhMF3nQl1DVdALRNKzBAvYq89_Om56mM7wT4YMXM_YwdyACGnIKtqfExdHLbemNyOaHeIoLL_4GhSF5tlxep1yQIxNkt82InLiOf5D70ab7PTJ1DK1EFiFg8C5lJFKYnQW7xuIvVdLUJFl19E"/>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-slate-200 font-semibold text-sm">User: jake_gamer_99</h3>
+<span class="px-1.5 py-0.5 rounded bg-slate-700 text-slate-300 text-[10px] font-bold">Member</span>
+</div>
+<p class="text-slate-500 text-xs">Posted in <span class="text-primary hover:underline cursor-pointer">Biology Advanced</span></p>
+</div>
+</div>
+</div>
+<div class="bg-slate-800/50 rounded-lg p-4 border border-slate-700/50 opacity-75">
+<h4 class="text-slate-100 font-medium mb-1">Anyone want to play Valorant tonight?</h4>
+<p class="text-slate-400 text-sm leading-relaxed">
+                                Looking for a 5th member for our ranked team. Gold/Plat rank preferred. Message me if interested!
+                            </p>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-4 mt-2">
+<div class="flex items-center gap-2 text-xs text-slate-400">
+<span class="flex items-center gap-1">1 Report (Off-topic)</span>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 rounded-lg bg-surface-hover hover:bg-slate-700 text-slate-300 text-sm font-medium transition-colors border border-slate-600">Allow</button>
+<button class="px-4 py-2 rounded-lg bg-surface-hover hover:bg-slate-700 text-slate-300 text-sm font-medium transition-colors border border-slate-600 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">folder_open</span> Move to General
+                                </button>
+<button class="px-4 py-2 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 text-sm font-medium transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">visibility_off</span> Hide Post
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination/Load More -->
+<div class="flex justify-center pt-4 pb-8">
+<button class="flex items-center gap-2 px-6 py-3 bg-surface-dark border border-slate-700 text-slate-300 rounded-lg text-sm font-medium hover:bg-surface-hover hover:text-white transition-all hover:shadow-lg">
+<span class="material-symbols-outlined">refresh</span>
+                        Load More Questions
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

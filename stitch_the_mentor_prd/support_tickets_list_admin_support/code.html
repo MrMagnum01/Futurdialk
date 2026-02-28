@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Support Tickets List - The Mentor</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<div class="relative flex h-screen w-full overflow-hidden">
+<!-- Sidebar -->
+<div class="flex h-full w-72 flex-col border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111418]">
+<div class="flex flex-col h-full justify-between p-4">
+<div class="flex flex-col gap-4">
+<div class="flex gap-3 items-center mb-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAo21iCGiU-3yvxzWDcyAEFfccNn69Xs7esZDewAY0q2gvDFxAjWAO6H30P8CE37XxGgngENMeBs8J6UAXcJ4ckGWFyOzpPT6L0G9ZQVem0mRYOOC_H4TyZ8GmbjqbbgLa2zCjcurdHplhDPem0YJzfFMjSyY0tIRidr1hRFhiuq7V3DjzGHT8I11sWBTQXd5YGQOEdh6rYN5NOSFcKM9gir0TgQGPRS5WL2FQSaQyTEA-DpPwNLOwUvgPgQ5n4FnNplFy17wEY4KY");'></div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-medium leading-normal">The Mentor</h1>
+<p class="text-slate-500 dark:text-[#9da8b9] text-sm font-normal leading-normal">Admin Panel</p>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#282f39] transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#282f39] transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">school</span>
+<p class="text-sm font-medium leading-normal">Students</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#282f39] transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">group</span>
+<p class="text-sm font-medium leading-normal">Mentors</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary dark:bg-[#282f39] dark:text-white font-medium" href="#">
+<span class="material-symbols-outlined text-[24px] fill-1">confirmation_number</span>
+<p class="text-sm font-medium leading-normal">Support Tickets</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#282f39] transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+</div>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 mt-auto rounded-lg text-slate-700 dark:text-slate-300 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-600 dark:hover:text-red-400 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[24px]">logout</span>
+<p class="text-sm font-medium leading-normal">Logout</p>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex-1 flex flex-col h-full overflow-hidden bg-background-light dark:bg-background-dark">
+<!-- Header -->
+<div class="flex flex-col gap-6 p-6 md:p-8 lg:p-10 pb-4 h-full overflow-y-auto">
+<div class="flex flex-col gap-2">
+<h2 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-tight">Support Tickets</h2>
+<p class="text-slate-500 dark:text-[#9da8b9] text-base font-normal">Manage and resolve student and mentor inquiries effectively.</p>
+</div>
+<!-- Filters & Search -->
+<div class="flex flex-col gap-4">
+<div class="flex flex-col md:flex-row gap-4 w-full justify-between items-start md:items-center">
+<!-- Search -->
+<div class="relative w-full md:max-w-md">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 dark:text-[#9da8b9]">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2.5 border-none rounded-lg bg-white dark:bg-[#282f39] text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-[#9da8b9] focus:ring-2 focus:ring-primary focus:bg-white dark:focus:bg-[#2f3742] transition-colors text-sm" placeholder="Search by ID, requester, or subject..." type="text"/>
+</div>
+<!-- Action Buttons -->
+<button class="flex items-center justify-center gap-2 bg-primary hover:bg-blue-600 text-white px-4 py-2.5 rounded-lg transition-colors font-medium text-sm shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                            Create Ticket
+                        </button>
+</div>
+<!-- Filter Chips -->
+<div class="flex flex-wrap gap-3 items-center">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-white dark:bg-[#282f39] border border-slate-200 dark:border-transparent rounded-lg cursor-pointer hover:border-primary/50 transition-colors group">
+<span class="text-slate-600 dark:text-slate-300 text-sm font-medium">Status: <span class="text-slate-900 dark:text-white font-semibold">All</span></span>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 text-[20px] group-hover:text-primary transition-colors">expand_more</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-white dark:bg-[#282f39] border border-slate-200 dark:border-transparent rounded-lg cursor-pointer hover:border-primary/50 transition-colors group">
+<span class="text-slate-600 dark:text-slate-300 text-sm font-medium">Priority: <span class="text-slate-900 dark:text-white font-semibold">All</span></span>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 text-[20px] group-hover:text-primary transition-colors">expand_more</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-white dark:bg-[#282f39] border border-slate-200 dark:border-transparent rounded-lg cursor-pointer hover:border-primary/50 transition-colors group">
+<span class="text-slate-600 dark:text-slate-300 text-sm font-medium">Agent: <span class="text-slate-900 dark:text-white font-semibold">All</span></span>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 text-[20px] group-hover:text-primary transition-colors">expand_more</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-white dark:bg-[#282f39] border border-slate-200 dark:border-transparent rounded-lg cursor-pointer hover:border-primary/50 transition-colors group">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 text-[18px]">calendar_today</span>
+<span class="text-slate-600 dark:text-slate-300 text-sm font-medium">Date Range</span>
+</div>
+<button class="ml-auto text-sm text-primary hover:text-blue-400 font-medium">Clear filters</button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="w-full flex-1 min-h-0 bg-white dark:bg-[#111418] rounded-xl border border-slate-200 dark:border-[#3b4554] overflow-hidden flex flex-col shadow-sm">
+<div class="overflow-x-auto flex-1">
+<table class="w-full min-w-[1000px] text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-[#1c2027] border-b border-slate-200 dark:border-[#3b4554]">
+<th class="p-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-32">Ticket ID</th>
+<th class="p-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-64">Subject</th>
+<th class="p-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-48">Requester</th>
+<th class="p-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-32">Priority</th>
+<th class="p-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-32">Status</th>
+<th class="p-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-40">Agent</th>
+<th class="p-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-32">Date</th>
+<th class="p-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider w-24 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-[#2f3742]">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-[#1c2027]/50 transition-colors group">
+<td class="p-4 text-sm font-medium text-primary">#TK-2024</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white text-sm font-medium">Login Issue</span>
+<span class="text-slate-500 dark:text-slate-400 text-xs truncate max-w-[200px]">Cannot access student portal...</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs font-bold">A</div>
+<span class="text-slate-700 dark:text-slate-300 text-sm">Ahmad Al-Sayed</span>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400 border border-red-200 dark:border-red-800/50">
+                                            High
+                                        </span>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 border border-green-200 dark:border-green-800/50">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Open
+                                        </span>
+</td>
+<td class="p-4 text-slate-500 dark:text-slate-400 text-sm">Sarah J.</td>
+<td class="p-4 text-slate-500 dark:text-slate-400 text-sm">Oct 24, 2023</td>
+<td class="p-4 text-right">
+<button class="text-slate-400 hover:text-primary dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-[#1c2027]/50 transition-colors group">
+<td class="p-4 text-sm font-medium text-primary">#TK-2023</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white text-sm font-medium">Course Payment Failed</span>
+<span class="text-slate-500 dark:text-slate-400 text-xs truncate max-w-[200px]">Transaction declined by bank...</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xs font-bold">L</div>
+<span class="text-slate-700 dark:text-slate-300 text-sm">Layla Mahmoud</span>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400 border border-yellow-200 dark:border-yellow-800/50">
+                                            Medium
+                                        </span>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400 border border-orange-200 dark:border-orange-800/50">
+<span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span> Pending
+                                        </span>
+</td>
+<td class="p-4 text-slate-500 dark:text-slate-400 text-sm">Omar K.</td>
+<td class="p-4 text-slate-500 dark:text-slate-400 text-sm">Oct 23, 2023</td>
+<td class="p-4 text-right">
+<button class="text-slate-400 hover:text-primary dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-[#1c2027]/50 transition-colors group">
+<td class="p-4 text-sm font-medium text-primary">#TK-2022</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white text-sm font-medium">Mentor Request</span>
+<span class="text-slate-500 dark:text-slate-400 text-xs truncate max-w-[200px]">Requesting change of physics mentor...</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 flex items-center justify-center text-xs font-bold">K</div>
+<span class="text-slate-700 dark:text-slate-300 text-sm">Khaled Yassin</span>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                                            Low
+                                        </span>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 border border-green-200 dark:border-green-800/50">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Open
+                                        </span>
+</td>
+<td class="p-4 text-slate-500 dark:text-slate-400 text-sm">Sarah J.</td>
+<td class="p-4 text-slate-500 dark:text-slate-400 text-sm">Oct 22, 2023</td>
+<td class="p-4 text-right">
+<button class="text-slate-400 hover:text-primary dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-[#1c2027]/50 transition-colors group">
+<td class="p-4 text-sm font-medium text-slate-400 dark:text-slate-500">#TK-2021</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="text-slate-500 dark:text-slate-400 text-sm font-medium line-through decoration-slate-400">Exam Schedule Error</span>
+<span class="text-slate-400 dark:text-slate-600 text-xs truncate max-w-[200px]">Physics exam date mismatch...</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2 opacity-60">
+<div class="w-6 h-6 rounded-full bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 flex items-center justify-center text-xs font-bold">N</div>
+<span class="text-slate-700 dark:text-slate-300 text-sm">Noor Ali</span>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400 border border-red-200 dark:border-red-800/50 opacity-60">
+                                            High
+                                        </span>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-400 border border-slate-200 dark:border-slate-700">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span> Resolved
+                                        </span>
+</td>
+<td class="p-4 text-slate-400 dark:text-slate-600 text-sm">System</td>
+<td class="p-4 text-slate-400 dark:text-slate-600 text-sm">Oct 20, 2023</td>
+<td class="p-4 text-right">
+<button class="text-slate-400 hover:text-primary dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-[#1c2027]/50 transition-colors group">
+<td class="p-4 text-sm font-medium text-slate-400 dark:text-slate-500">#TK-2020</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="text-slate-500 dark:text-slate-400 text-sm font-medium line-through decoration-slate-400">Profile Update</span>
+<span class="text-slate-400 dark:text-slate-600 text-xs truncate max-w-[200px]">Change phone number request...</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2 opacity-60">
+<div class="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold">S</div>
+<span class="text-slate-700 dark:text-slate-300 text-sm">Sami Dawood</span>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300 border border-slate-200 dark:border-slate-700 opacity-60">
+                                            Low
+                                        </span>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-400 border border-slate-200 dark:border-slate-700">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span> Resolved
+                                        </span>
+</td>
+<td class="p-4 text-slate-400 dark:text-slate-600 text-sm">Omar K.</td>
+<td class="p-4 text-slate-400 dark:text-slate-600 text-sm">Oct 19, 2023</td>
+<td class="p-4 text-right">
+<button class="text-slate-400 hover:text-primary dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-4 border-t border-slate-200 dark:border-[#3b4554] bg-slate-50 dark:bg-[#1c2027] flex items-center justify-between">
+<span class="text-sm text-slate-500 dark:text-[#9da8b9]">Showing <span class="font-medium text-slate-900 dark:text-white">1</span> to <span class="font-medium text-slate-900 dark:text-white">5</span> of <span class="font-medium text-slate-900 dark:text-white">48</span> results</span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 text-sm border border-slate-200 dark:border-slate-700 rounded-md text-slate-500 dark:text-slate-400 bg-white dark:bg-[#282f39] hover:bg-slate-50 dark:hover:bg-[#3b4554] disabled:opacity-50 disabled:cursor-not-allowed">Previous</button>
+<button class="px-3 py-1 text-sm border border-slate-200 dark:border-slate-700 rounded-md text-slate-500 dark:text-slate-400 bg-white dark:bg-[#282f39] hover:bg-slate-50 dark:hover:bg-[#3b4554]">Next</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

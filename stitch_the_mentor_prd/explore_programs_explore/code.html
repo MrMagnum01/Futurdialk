@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Explore Programs - The Mentor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ecab",
+                        "primary-dark": "#0eb582",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#10221c",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a382e",
+                        "text-main": "#111816",
+                        "text-sub": "#61897d",
+                    },
+                    fontFamily: {
+                        "display": ['Newsreader', 'serif'],
+                        "body": ['Noto Sans', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Newsreader', serif;
+        }
+        /* Custom scrollbar for sidebar */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full bg-surface-light dark:bg-surface-dark border-b border-[#f0f4f3] dark:border-white/10 px-6 py-4">
+<div class="max-w-[1280px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="size-8 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">The Mentor</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-center gap-8">
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Universities</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary" href="#">Programs</a>
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Consultants</a>
+</nav>
+<div class="flex gap-3">
+<button class="hidden sm:flex h-10 px-5 cursor-pointer items-center justify-center rounded-full bg-primary hover:bg-primary-dark transition-colors text-text-main text-sm font-bold">
+<span>Sign Up</span>
+</button>
+<button class="flex h-10 px-5 cursor-pointer items-center justify-center rounded-full bg-[#f0f4f3] dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 transition-colors text-text-main dark:text-white text-sm font-bold">
+<span>Log In</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 w-full max-w-[1280px] mx-auto px-4 py-8 md:px-6 lg:py-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Sidebar Filters (Desktop) -->
+<aside class="hidden lg:block lg:col-span-3 sticky top-28 h-fit space-y-8">
+<!-- Categories -->
+<div class="flex flex-col gap-4">
+<div class="flex flex-col">
+<h3 class="text-lg font-bold">Categories</h3>
+<p class="text-text-sub dark:text-gray-400 text-sm">Browse by Field</p>
+</div>
+<div class="flex flex-col gap-1">
+<button class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/20 text-text-main dark:text-white font-medium">
+<span class="material-symbols-outlined text-primary">apps</span>
+<span class="text-sm">All Categories</span>
+</button>
+<button class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 text-text-sub dark:text-gray-400 hover:text-text-main dark:hover:text-white transition-colors group">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">business_center</span>
+<span class="text-sm">Business</span>
+</button>
+<button class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 text-text-sub dark:text-gray-400 hover:text-text-main dark:hover:text-white transition-colors group">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">memory</span>
+<span class="text-sm">Engineering</span>
+</button>
+<button class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 text-text-sub dark:text-gray-400 hover:text-text-main dark:hover:text-white transition-colors group">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">medical_services</span>
+<span class="text-sm">Medicine</span>
+</button>
+<button class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 text-text-sub dark:text-gray-400 hover:text-text-main dark:hover:text-white transition-colors group">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">palette</span>
+<span class="text-sm">Arts &amp; Design</span>
+</button>
+<button class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 text-text-sub dark:text-gray-400 hover:text-text-main dark:hover:text-white transition-colors group">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">gavel</span>
+<span class="text-sm">Law</span>
+</button>
+<button class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 text-text-sub dark:text-gray-400 hover:text-text-main dark:hover:text-white transition-colors group">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">science</span>
+<span class="text-sm">Natural Sciences</span>
+</button>
+</div>
+</div>
+<!-- Quick Filters Box -->
+<div class="p-4 bg-white dark:bg-surface-dark rounded-xl border border-gray-100 dark:border-white/5 shadow-sm">
+<h3 class="text-sm font-bold mb-4 uppercase tracking-wider text-text-sub dark:text-gray-400">Filter By</h3>
+<div class="space-y-4">
+<div>
+<label class="text-xs font-semibold mb-1.5 block">Duration</label>
+<div class="flex gap-2 flex-wrap">
+<span class="px-3 py-1 text-xs rounded-full border border-gray-200 dark:border-white/10 cursor-pointer hover:border-primary hover:text-primary transition-colors">1 Year</span>
+<span class="px-3 py-1 text-xs rounded-full bg-primary text-text-main font-bold cursor-pointer">2 Years</span>
+<span class="px-3 py-1 text-xs rounded-full border border-gray-200 dark:border-white/10 cursor-pointer hover:border-primary hover:text-primary transition-colors">3+ Years</span>
+</div>
+</div>
+<div>
+<label class="text-xs font-semibold mb-1.5 block">Mode</label>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-2 text-sm cursor-pointer">
+<input checked="" class="rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span>On Campus</span>
+</label>
+<label class="flex items-center gap-2 text-sm cursor-pointer">
+<input class="rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span>Online / Distance</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Column -->
+<div class="col-span-1 lg:col-span-9 flex flex-col gap-6">
+<!-- Header & Search -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100 dark:border-white/5 relative overflow-hidden">
+<!-- Decorative background elements -->
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="absolute left-10 bottom-10 w-20 h-20 bg-blue-400/10 rounded-full blur-2xl"></div>
+<h1 class="text-3xl md:text-4xl font-bold mb-2 relative z-10">Find Your Future Program</h1>
+<p class="text-text-sub dark:text-gray-400 mb-6 relative z-10">Explore thousands of programs from top universities worldwide.</p>
+<div class="relative z-10">
+<div class="flex items-center bg-white dark:bg-background-dark border border-gray-200 dark:border-white/10 rounded-xl p-2 shadow-sm focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-all">
+<span class="material-symbols-outlined text-text-sub px-3">search</span>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-text-main dark:text-white placeholder-gray-400 h-10" placeholder="Search for degrees, majors, or universities..." type="text"/>
+<button class="hidden sm:block bg-primary hover:bg-primary-dark text-text-main font-bold py-2 px-6 rounded-lg transition-colors">
+                            Search
+                        </button>
+</div>
+<!-- Mobile Search Button -->
+<button class="sm:hidden w-full mt-3 bg-primary hover:bg-primary-dark text-text-main font-bold py-3 px-6 rounded-lg transition-colors">
+                        Search Programs
+                    </button>
+</div>
+<!-- Advanced Filters Row -->
+<div class="flex flex-wrap gap-3 mt-6 relative z-10">
+<div class="relative group">
+<button class="flex items-center gap-2 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-full text-sm font-medium hover:border-primary dark:hover:border-primary transition-colors">
+<span>Subject</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+<div class="relative group">
+<button class="flex items-center gap-2 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-full text-sm font-medium hover:border-primary dark:hover:border-primary transition-colors">
+<span>Country</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+<div class="relative group">
+<button class="flex items-center gap-2 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-full text-sm font-medium hover:border-primary dark:hover:border-primary transition-colors">
+<span>Degree Level</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+<div class="relative group">
+<button class="flex items-center gap-2 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-full text-sm font-medium hover:border-primary dark:hover:border-primary transition-colors">
+<span>Tuition Fee</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+<button class="ml-auto text-sm text-text-sub dark:text-primary hover:text-text-main dark:hover:text-white underline decoration-dashed underline-offset-4">
+                        Reset Filters
+                    </button>
+</div>
+</div>
+<!-- Results Count & Sort -->
+<div class="flex items-center justify-between px-2">
+<p class="text-text-main dark:text-gray-200 font-medium">Showing <span class="font-bold">142</span> programs</p>
+<div class="flex items-center gap-2">
+<span class="text-sm text-text-sub dark:text-gray-400 hidden sm:inline">Sort by:</span>
+<select class="bg-transparent border-none text-sm font-bold text-text-main dark:text-white focus:ring-0 cursor-pointer">
+<option>Relevance</option>
+<option>Tuition (Low to High)</option>
+<option>Ranking</option>
+</select>
+</div>
+</div>
+<!-- Program Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="group bg-white dark:bg-surface-dark rounded-2xl overflow-hidden border border-gray-100 dark:border-white/5 hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col h-full">
+<div class="h-48 bg-gray-200 relative overflow-hidden">
+<img alt="University campus library interior" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="University campus library interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlG1NhOwbK3SbSps6LxVtQ94icVN6nB20SaPMnBRi9eU0JKpDq4jM8Wy5AJEfmYpEGOY58bVFLX4bczV8jG2imeXXRsiGTs-2fHoXdL_SF01KHFxcMVp3a5xW4_nEuDTwHpsTl4E0bNl61ZDiwu3SWM9jxcEvv8oqE6iFZqHGKUNoM0zkEGngLOoUIFuETTCszIpjyvs3sLL0VRPhGuCptu8sEBJ8irpLMojkhjfsisPOt5WnA5fNHYAHquiAipN_MxkPQUig0sdA"/>
+<div class="absolute top-3 right-3">
+<button class="bg-white/90 dark:bg-black/50 p-2 rounded-full hover:bg-primary hover:text-text-main transition-colors text-gray-500 dark:text-white">
+<span class="material-symbols-outlined text-xl">bookmark</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3">
+<span class="bg-primary text-text-main text-xs font-bold px-2 py-1 rounded-md">Master's</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-bold text-lg leading-snug group-hover:text-primary transition-colors">MSc Data Science &amp; AI</h3>
+</div>
+<p class="text-sm text-text-sub dark:text-gray-400 font-medium mb-4">University of London</p>
+<div class="mt-auto space-y-3 pt-4 border-t border-gray-100 dark:border-white/5">
+<div class="flex items-center gap-2 text-sm text-text-sub dark:text-gray-400">
+<span class="material-symbols-outlined text-lg" data-location="London">location_on</span>
+<span>London, UK</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2 text-text-sub dark:text-gray-400">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>1 Year</span>
+</div>
+<span class="font-bold text-text-main dark:text-white">£22,000</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-white dark:bg-surface-dark rounded-2xl overflow-hidden border border-gray-100 dark:border-white/5 hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col h-full">
+<div class="h-48 bg-gray-200 relative overflow-hidden">
+<img alt="Modern glass university building exterior" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern glass university building exterior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkRRAEIHSh4oTIaSBXVhmX_eLHQ5uBi2o9wycNx4l8kpFZH6aRydPLFSqDKOrFBUwFyEM64UbzpYhURSDf0deiBtgC1gY0zqSbv1A-EaJHB-ovzutaFL-DeO110fkk9sKKpzQyutsAvEN_Dt8w_F3EI0Yvd17Z2J_PJftNaV57_Jbo_O4vqO_iOXF_T2G-UOEFr8MdHzQbBYCMelwaqcOTVf7PYrEq-jJZM2JuSOOyHe_COIHUdMnahkO-t9dXTKWAlFtr9F8d_ds"/>
+<div class="absolute top-3 right-3">
+<button class="bg-white/90 dark:bg-black/50 p-2 rounded-full hover:bg-primary hover:text-text-main transition-colors text-gray-500 dark:text-white">
+<span class="material-symbols-outlined text-xl">bookmark</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3">
+<span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100 text-xs font-bold px-2 py-1 rounded-md">Bachelor's</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-bold text-lg leading-snug group-hover:text-primary transition-colors">Business Administration (BBA)</h3>
+</div>
+<p class="text-sm text-text-sub dark:text-gray-400 font-medium mb-4">Hult International Business School</p>
+<div class="mt-auto space-y-3 pt-4 border-t border-gray-100 dark:border-white/5">
+<div class="flex items-center gap-2 text-sm text-text-sub dark:text-gray-400">
+<span class="material-symbols-outlined text-lg" data-location="Boston">location_on</span>
+<span>Boston, USA</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2 text-text-sub dark:text-gray-400">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>4 Years</span>
+</div>
+<span class="font-bold text-text-main dark:text-white">$45,000 / yr</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-white dark:bg-surface-dark rounded-2xl overflow-hidden border border-gray-100 dark:border-white/5 hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col h-full">
+<div class="h-48 bg-gray-200 relative overflow-hidden">
+<img alt="Laboratory equipment and microscope closeup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Laboratory equipment and microscope closeup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVS-d3W1TpH_izPe0CtRuns5NT_zX7MbXCfaSD-XZFu2CbHT8er_MrfbGQfI9BCmi87ZinTUUCPruHfJgW75Yv11pgTM0kgHRXrF1UbQcY6hwUo-QmYXT2xq0MTJz_3LQHYu-KKoHBNgvw-I2m8M3HHDm6WZJPYHc5SjjM562RUcOMwrACjPOZsJ2bkj8KCOXuD3V1e7K5YvfYY_Z7g0dZq5LPcibgtVQv5Q4ypTroZQnezMsSSuwYvkq7_RwIFDaztxD747JGZek"/>
+<div class="absolute top-3 right-3">
+<button class="bg-white/90 dark:bg-black/50 p-2 rounded-full hover:bg-primary hover:text-text-main transition-colors text-gray-500 dark:text-white">
+<span class="material-symbols-outlined text-xl">bookmark</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3">
+<span class="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-100 text-xs font-bold px-2 py-1 rounded-md">PhD</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-bold text-lg leading-snug group-hover:text-primary transition-colors">Biomedical Engineering</h3>
+</div>
+<p class="text-sm text-text-sub dark:text-gray-400 font-medium mb-4">ETH Zürich</p>
+<div class="mt-auto space-y-3 pt-4 border-t border-gray-100 dark:border-white/5">
+<div class="flex items-center gap-2 text-sm text-text-sub dark:text-gray-400">
+<span class="material-symbols-outlined text-lg" data-location="Zurich">location_on</span>
+<span>Zürich, Switzerland</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2 text-text-sub dark:text-gray-400">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>3 Years</span>
+</div>
+<span class="font-bold text-text-main dark:text-white">Funded</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group bg-white dark:bg-surface-dark rounded-2xl overflow-hidden border border-gray-100 dark:border-white/5 hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col h-full">
+<div class="h-48 bg-gray-200 relative overflow-hidden">
+<img alt="Creative art studio with paintings" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Creative art studio with paintings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpe1tZNLnCbUVXS38wuVvBTV8EmLZYg-hR-JqxLk6AjDlFwT70zn_Pz4W02sW1OWV1i8irTzezmpCX3jmwptXga_EmyD5rXX9dHJ8gm9F6ffOST0yKuUpcuqjFOJgoZFhuG1EfQSnlQ2Yo79rFn_gsPLPIDaaDudmX1_YmdJAbN6-F3uNnrIvKnSQH424lTaTkdGRKUMZxl_oeuVNC-eKKEjIL9fUSG6xZxTf9nHwo5DN-JnaXbxiP1Ljw8cpyCEEg86shzROTPIw"/>
+<div class="absolute top-3 right-3">
+<button class="bg-white/90 dark:bg-black/50 p-2 rounded-full hover:bg-primary hover:text-text-main transition-colors text-gray-500 dark:text-white">
+<span class="material-symbols-outlined text-xl">bookmark</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3">
+<span class="bg-primary text-text-main text-xs font-bold px-2 py-1 rounded-md">Master's</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-bold text-lg leading-snug group-hover:text-primary transition-colors">Fine Arts &amp; Design</h3>
+</div>
+<p class="text-sm text-text-sub dark:text-gray-400 font-medium mb-4">Parsons School of Design</p>
+<div class="mt-auto space-y-3 pt-4 border-t border-gray-100 dark:border-white/5">
+<div class="flex items-center gap-2 text-sm text-text-sub dark:text-gray-400">
+<span class="material-symbols-outlined text-lg" data-location="New York">location_on</span>
+<span>New York, USA</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2 text-text-sub dark:text-gray-400">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>2 Years</span>
+</div>
+<span class="font-bold text-text-main dark:text-white">$52,000 / yr</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group bg-white dark:bg-surface-dark rounded-2xl overflow-hidden border border-gray-100 dark:border-white/5 hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col h-full">
+<div class="h-48 bg-gray-200 relative overflow-hidden">
+<img alt="Person coding on a laptop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Person coding on a laptop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR83JRCr8vxrHjOLQdJDReVUntMtt4Wcw46ioPWKqLtuXDr9Q2sTW-vnz6Slb2BBDijLlpmZBjlfjDusBEOS-TXgoLbCFAlsd5h1fvzCHutKKOhF4GSNFmAyz3nHNHCq9daD4Dukeat39p_e994Az0ocyKgvlVp816LGL7hMKSaeejQyyVQZ1WHrXw7XNKAqlrSFP5UR9mG6uilV3YGIcwwOVp_eXwb5QNJqNKMleCRXtLDded4VNi1JoHsumD7E8GDZiSqmRj2sQ"/>
+<div class="absolute top-3 right-3">
+<button class="bg-white/90 dark:bg-black/50 p-2 rounded-full hover:bg-primary hover:text-text-main transition-colors text-gray-500 dark:text-white">
+<span class="material-symbols-outlined text-xl">bookmark</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3">
+<span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100 text-xs font-bold px-2 py-1 rounded-md">Bachelor's</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-bold text-lg leading-snug group-hover:text-primary transition-colors">Computer Science</h3>
+</div>
+<p class="text-sm text-text-sub dark:text-gray-400 font-medium mb-4">University of Toronto</p>
+<div class="mt-auto space-y-3 pt-4 border-t border-gray-100 dark:border-white/5">
+<div class="flex items-center gap-2 text-sm text-text-sub dark:text-gray-400">
+<span class="material-symbols-outlined text-lg" data-location="Toronto">location_on</span>
+<span>Toronto, Canada</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2 text-text-sub dark:text-gray-400">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>4 Years</span>
+</div>
+<span class="font-bold text-text-main dark:text-white">CAD 38,000 / yr</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group bg-white dark:bg-surface-dark rounded-2xl overflow-hidden border border-gray-100 dark:border-white/5 hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col h-full">
+<div class="h-48 bg-gray-200 relative overflow-hidden">
+<img alt="Marketing team meeting in office" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Marketing team meeting in office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP19Az9GxeYYfm2Ytnt4ftByYgO1qZM9AB3NR_YrkhBLytaliilTru-wunLq5tgG5G23F2mmSOQh7b3NTz0hLJvrJUAQdm7psb3mJDjC3YVpiIvYZYWaPLspXwqS6rz6xNKEvlay2E9JfvrDMy7Z-D5HSDvXmr9BdAIymF90-OV_XBy6-87b7n9UWOsFQGgAZneR5Se7fqkT9e1asQB63V7OXUlGa_7NNn55TJsXMoa8CW55kVD5DOyUx1VKFh7wtKnqeXFQPUcmE"/>
+<div class="absolute top-3 right-3">
+<button class="bg-white/90 dark:bg-black/50 p-2 rounded-full hover:bg-primary hover:text-text-main transition-colors text-gray-500 dark:text-white">
+<span class="material-symbols-outlined text-xl">bookmark</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3">
+<span class="bg-primary text-text-main text-xs font-bold px-2 py-1 rounded-md">MBA</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-bold text-lg leading-snug group-hover:text-primary transition-colors">Global MBA</h3>
+</div>
+<p class="text-sm text-text-sub dark:text-gray-400 font-medium mb-4">INSEAD</p>
+<div class="mt-auto space-y-3 pt-4 border-t border-gray-100 dark:border-white/5">
+<div class="flex items-center gap-2 text-sm text-text-sub dark:text-gray-400">
+<span class="material-symbols-outlined text-lg" data-location="Fontainebleau">location_on</span>
+<span>Fontainebleau, France</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2 text-text-sub dark:text-gray-400">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>10 Months</span>
+</div>
+<span class="font-bold text-text-main dark:text-white">€89,000</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-center gap-2 mt-8">
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-white/10 hover:border-primary dark:hover:border-primary transition-colors disabled:opacity-50">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-text-main font-bold shadow-md shadow-primary/20">
+                    1
+                </button>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-surface-dark hover:bg-gray-50 dark:hover:bg-white/5 border border-transparent text-text-sub dark:text-gray-400 font-medium">
+                    2
+                </button>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-surface-dark hover:bg-gray-50 dark:hover:bg-white/5 border border-transparent text-text-sub dark:text-gray-400 font-medium">
+                    3
+                </button>
+<span class="text-text-sub dark:text-gray-400">...</span>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-surface-dark hover:bg-gray-50 dark:hover:bg-white/5 border border-transparent text-text-sub dark:text-gray-400 font-medium">
+                    12
+                </button>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-white/10 hover:border-primary dark:hover:border-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer Simple -->
+<footer class="bg-surface-light dark:bg-surface-dark border-t border-[#f0f4f3] dark:border-white/10 mt-12 py-8 text-center text-sm text-text-sub dark:text-gray-500">
+<div class="flex items-center justify-center gap-2 mb-4">
+<div class="size-6 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">school</span>
+</div>
+<span class="font-bold text-text-main dark:text-white">The Mentor</span>
+</div>
+<p>© 2024 The Mentor. All rights reserved.</p>
+</footer>
+</body></html>

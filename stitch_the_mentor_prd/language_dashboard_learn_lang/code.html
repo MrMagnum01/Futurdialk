@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Language Dashboard - The Mentor</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "primary-content": "#ffffff",
+                        "primary-light": "#ebf3fe",
+                        "primary-dark": "#0b4699",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2430",
+                        "text-main": "#0f172a", // slate-900
+                        "text-secondary": "#475569", // slate-600
+                        "text-muted": "#94a3b8", // slate-400
+                        "border-light": "#e2e8f0", // slate-200
+                        "border-dark": "#334155", // slate-700
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col overflow-x-hidden">
+<div class="relative flex h-full w-full flex-col group/design-root">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navbar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="size-8 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">The Mentor</h2>
+</div>
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-text-secondary dark:text-text-muted flex border-none bg-background-light dark:bg-background-dark items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-main dark:text-white focus:outline-0 focus:ring-0 border-none bg-background-light dark:bg-background-dark focus:border-none h-full placeholder:text-text-muted px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Search courses..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="hidden lg:flex items-center gap-9">
+<a class="text-text-main dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-medium leading-normal" href="#">Courses</a>
+<a class="text-text-main dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Tutoring</a>
+<a class="text-text-main dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Community</a>
+</nav>
+<div class="flex gap-2">
+<button class="flex items-center justify-center overflow-hidden rounded-lg size-10 bg-background-light dark:bg-surface-dark hover:bg-primary/10 dark:hover:bg-primary/20 text-text-main dark:text-white transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-lg size-10 bg-background-light dark:bg-surface-dark hover:bg-primary/10 dark:hover:bg-primary/20 text-text-main dark:text-white transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 px-4 py-2">
+<a class="text-text-secondary dark:text-text-muted text-sm font-medium leading-normal hover:underline" href="#">Home</a>
+<span class="text-text-secondary dark:text-text-muted text-sm font-medium leading-normal">/</span>
+<a class="text-text-secondary dark:text-text-muted text-sm font-medium leading-normal hover:underline" href="#">My Languages</a>
+<span class="text-text-secondary dark:text-text-muted text-sm font-medium leading-normal">/</span>
+<span class="text-text-main dark:text-white text-sm font-medium leading-normal">German Level A1</span>
+</div>
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row flex-wrap justify-between gap-6 p-4">
+<div class="flex min-w-72 flex-col gap-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-8 rounded shadow-sm overflow-hidden relative border border-border-light dark:border-border-dark">
+<div class="absolute inset-0 bg-black" style="background: linear-gradient(180deg, #000 33%, #DD0000 33%, #DD0000 66%, #FFCE00 66%);"></div>
+</div>
+<h1 class="text-text-main dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">German Language Progress</h1>
+</div>
+<p class="text-text-secondary dark:text-text-muted text-base font-normal leading-normal max-w-2xl">Keep up the great work! You are making steady progress towards fluency. Your next live session is in 2 days.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark text-text-main dark:text-white text-sm font-bold shadow-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="truncate">View Schedule</span>
+</button>
+<button class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-primary text-white text-sm font-bold shadow-md hover:bg-primary-dark transition-colors gap-2">
+<span class="material-symbols-outlined text-[20px]">play_circle</span>
+<span class="truncate">Quick Practice</span>
+</button>
+</div>
+</div>
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+<div class="flex flex-col gap-4 rounded-xl p-6 bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<p class="text-text-secondary dark:text-text-muted text-sm font-medium">Units Completed</p>
+<p class="text-text-main dark:text-white text-3xl font-bold">12<span class="text-text-muted text-xl font-normal">/20</span></p>
+</div>
+<div class="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+</div>
+<div class="w-full bg-background-light dark:bg-background-dark rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 60%"></div>
+</div>
+<p class="text-green-600 dark:text-green-400 text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                                +2 this week
+                            </p>
+</div>
+<div class="flex flex-col gap-4 rounded-xl p-6 bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<p class="text-text-secondary dark:text-text-muted text-sm font-medium">Vocabulary Learned</p>
+<p class="text-text-main dark:text-white text-3xl font-bold">450</p>
+</div>
+<div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-primary">
+<span class="material-symbols-outlined">auto_stories</span>
+</div>
+</div>
+<div class="w-full bg-background-light dark:bg-background-dark rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 45%"></div>
+</div>
+<p class="text-green-600 dark:text-green-400 text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                                +15 new words
+                            </p>
+</div>
+<div class="flex flex-col gap-4 rounded-xl p-6 bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<p class="text-text-secondary dark:text-text-muted text-sm font-medium">Current Streak</p>
+<p class="text-text-main dark:text-white text-3xl font-bold">14 <span class="text-text-muted text-xl font-normal">Days</span></p>
+</div>
+<div class="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-lg text-orange-500">
+<span class="material-symbols-outlined">local_fire_department</span>
+</div>
+</div>
+<!-- Weekly Streak Bubbles -->
+<div class="flex justify-between items-center mt-auto">
+<div class="flex flex-col items-center gap-1"><div class="size-2 rounded-full bg-orange-500"></div><span class="text-[10px] text-text-muted">M</span></div>
+<div class="flex flex-col items-center gap-1"><div class="size-2 rounded-full bg-orange-500"></div><span class="text-[10px] text-text-muted">T</span></div>
+<div class="flex flex-col items-center gap-1"><div class="size-2 rounded-full bg-orange-500"></div><span class="text-[10px] text-text-muted">W</span></div>
+<div class="flex flex-col items-center gap-1"><div class="size-2 rounded-full bg-orange-500"></div><span class="text-[10px] text-text-muted">T</span></div>
+<div class="flex flex-col items-center gap-1"><div class="size-2 rounded-full bg-orange-500"></div><span class="text-[10px] text-text-muted">F</span></div>
+<div class="flex flex-col items-center gap-1"><div class="size-2 rounded-full bg-orange-500"></div><span class="text-[10px] text-text-muted">S</span></div>
+<div class="flex flex-col items-center gap-1"><div class="size-2 rounded-full bg-gray-300 dark:bg-gray-600"></div><span class="text-[10px] text-text-muted">S</span></div>
+</div>
+</div>
+</div>
+<!-- Main Dashboard Split -->
+<div class="flex flex-col lg:flex-row gap-6 p-4">
+<!-- Left Column: Learning Path -->
+<div class="flex flex-col flex-1 gap-6">
+<div class="flex items-center justify-between">
+<h2 class="text-text-main dark:text-white text-xl font-bold leading-tight">Your Learning Path</h2>
+<a class="text-primary text-sm font-medium hover:underline" href="#">View full curriculum</a>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Active Unit -->
+<div class="flex flex-col md:flex-row gap-4 p-5 rounded-xl bg-white dark:bg-surface-dark border-2 border-primary/20 shadow-sm relative overflow-hidden group hover:border-primary/40 transition-all">
+<div class="absolute top-0 right-0 p-2 bg-primary/10 rounded-bl-xl text-primary text-xs font-bold uppercase tracking-wider">Current</div>
+<div class="size-16 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-3xl">restaurant</span>
+</div>
+<div class="flex flex-col flex-1 justify-center gap-2">
+<div>
+<h3 class="text-text-main dark:text-white font-bold text-lg">Unit 13: Ordering Food</h3>
+<p class="text-text-secondary dark:text-text-muted text-sm">Learn to order meals, ask for the bill, and discuss dietary restrictions.</p>
+</div>
+<div class="w-full bg-background-light dark:bg-background-dark rounded-full h-1.5 mt-1">
+<div class="bg-primary h-1.5 rounded-full" style="width: 35%"></div>
+</div>
+</div>
+<div class="flex items-center">
+<button class="w-full md:w-auto px-5 py-2.5 bg-primary text-white text-sm font-bold rounded-lg hover:bg-primary-dark transition-colors">
+                                            Continue
+                                        </button>
+</div>
+</div>
+<!-- Upcoming Unit -->
+<div class="flex flex-col md:flex-row gap-4 p-5 rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark opacity-80 hover:opacity-100 transition-opacity">
+<div class="size-16 rounded-lg bg-background-light dark:bg-background-dark flex items-center justify-center shrink-0 text-text-muted">
+<span class="material-symbols-outlined text-3xl">directions_bus</span>
+</div>
+<div class="flex flex-col flex-1 justify-center gap-1">
+<h3 class="text-text-main dark:text-white font-bold text-lg">Unit 14: Transportation</h3>
+<p class="text-text-secondary dark:text-text-muted text-sm">Navigating public transport, buying tickets, and asking for directions.</p>
+</div>
+<div class="flex items-center">
+<button class="size-10 rounded-full border border-border-light dark:border-border-dark flex items-center justify-center text-text-muted" disabled="">
+<span class="material-symbols-outlined">lock</span>
+</button>
+</div>
+</div>
+<!-- Upcoming Unit -->
+<div class="flex flex-col md:flex-row gap-4 p-5 rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark opacity-80 hover:opacity-100 transition-opacity">
+<div class="size-16 rounded-lg bg-background-light dark:bg-background-dark flex items-center justify-center shrink-0 text-text-muted">
+<span class="material-symbols-outlined text-3xl">health_and_safety</span>
+</div>
+<div class="flex flex-col flex-1 justify-center gap-1">
+<h3 class="text-text-main dark:text-white font-bold text-lg">Unit 15: Health &amp; Emergencies</h3>
+<p class="text-text-secondary dark:text-text-muted text-sm">Describing symptoms, visiting a pharmacy, and emergency contacts.</p>
+</div>
+<div class="flex items-center">
+<button class="size-10 rounded-full border border-border-light dark:border-border-dark flex items-center justify-center text-text-muted" disabled="">
+<span class="material-symbols-outlined">lock</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar (Live Sessions & Practice) -->
+<div class="flex flex-col w-full lg:w-80 gap-6">
+<!-- Next Live Session Card -->
+<div class="rounded-xl bg-primary text-white p-6 shadow-lg relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
+<div class="absolute -left-4 -bottom-4 w-32 h-32 bg-black/10 rounded-full blur-xl"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-4">
+<div class="w-2 h-2 rounded-full bg-red-400 animate-pulse"></div>
+<p class="text-xs font-bold uppercase tracking-widest text-white/80">Upcoming Live</p>
+</div>
+<h3 class="text-xl font-bold mb-1">Conversation Practice: Basics</h3>
+<p class="text-white/80 text-sm mb-4">with Sarah Müller</p>
+<div class="flex items-center gap-3 mb-6 bg-white/10 p-3 rounded-lg backdrop-blur-sm">
+<div class="bg-white text-primary rounded px-2 py-1 text-center min-w-[50px]">
+<span class="block text-xs font-bold uppercase">Oct</span>
+<span class="block text-lg font-black leading-none">24</span>
+</div>
+<div class="h-8 w-px bg-white/20"></div>
+<div>
+<span class="block text-sm font-bold">14:00 - 15:00</span>
+<span class="block text-xs opacity-80">Berlin Time</span>
+</div>
+</div>
+<button class="w-full py-2.5 bg-white text-primary text-sm font-bold rounded-lg hover:bg-primary-light transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_add_on</span>
+                                        Add to Calendar
+                                    </button>
+</div>
+</div>
+<!-- Review Section -->
+<div class="bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl p-5">
+<h3 class="text-text-main dark:text-white font-bold text-lg mb-4">Quick Review</h3>
+<div class="flex flex-col gap-3">
+<button class="flex items-center justify-between p-3 rounded-lg hover:bg-background-light dark:hover:bg-background-dark group transition-colors">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">psychology</span>
+</div>
+<div class="text-left">
+<p class="text-text-main dark:text-white text-sm font-semibold">Mistakes Review</p>
+<p class="text-xs text-text-secondary dark:text-text-muted">12 words to practice</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-3 rounded-lg hover:bg-background-light dark:hover:bg-background-dark group transition-colors">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">headphones</span>
+</div>
+<div class="text-left">
+<p class="text-text-main dark:text-white text-sm font-semibold">Listening Drill</p>
+<p class="text-xs text-text-secondary dark:text-text-muted">5 min session</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Achievements Small Widget -->
+<div class="bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl p-5">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-text-main dark:text-white font-bold text-lg">Latest Badge</h3>
+<a class="text-xs font-bold text-primary hover:underline uppercase" href="#">View All</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="size-14 rounded-full bg-gradient-to-br from-yellow-300 to-yellow-600 flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-white text-3xl drop-shadow-sm">workspace_premium</span>
+</div>
+<div>
+<p class="text-text-main dark:text-white font-bold">Early Riser</p>
+<p class="text-xs text-text-secondary dark:text-text-muted">Completed 5 lessons before 9 AM</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

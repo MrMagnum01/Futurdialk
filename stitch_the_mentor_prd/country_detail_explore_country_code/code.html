@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Study in Germany - The Mentor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#13ecab",
+                "background-light": "#f6f8f7",
+                "background-dark": "#10221c",
+              },
+              fontFamily: {
+                "display": ["Lexend", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-[#152a24] px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">The Mentor</h2>
+</div>
+<div class="hidden lg:flex items-center gap-9">
+<a class="text-slate-900 dark:text-slate-100 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-slate-900 dark:text-slate-100 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Universities</a>
+<a class="text-slate-900 dark:text-slate-100 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Programs</a>
+<a class="text-slate-900 dark:text-slate-100 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Countries</a>
+<a class="text-slate-900 dark:text-slate-100 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-slate-900 dark:text-slate-100 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-full h-full">
+<div class="text-slate-500 dark:text-slate-400 flex border-none bg-slate-100 dark:bg-slate-800 items-center justify-center pl-4 rounded-l-full border-r-0">
+<span class="material-symbols-outlined" style="font-size: 24px;">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-full text-slate-900 dark:text-white focus:outline-0 focus:ring-0 border-none bg-slate-100 dark:bg-slate-800 focus:border-none h-full placeholder:text-slate-500 dark:placeholder:text-slate-400 px-4 pl-2 text-base font-normal leading-normal" placeholder="Search" value=""/>
+</div>
+</label>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-slate-900 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-emerald-400 transition-colors">
+<span class="truncate">Sign In</span>
+</button>
+</div>
+</header>
+<main class="flex-1">
+<div class="layout-container flex flex-col items-center">
+<div class="layout-content-container flex flex-col w-full max-w-[1200px] px-4 md:px-10 py-5">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 py-4">
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal hover:text-primary" href="#">Home</a>
+<span class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal">/</span>
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal hover:text-primary" href="#">Countries</a>
+<span class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal">/</span>
+<span class="text-slate-900 dark:text-slate-100 text-sm font-medium leading-normal">Germany</span>
+</div>
+<!-- Hero Section -->
+<div class="relative w-full rounded-2xl overflow-hidden min-h-[400px] flex flex-col justify-end bg-cover bg-center group" data-alt="Beautiful scenic view of Neuschwanstein Castle in Germany" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 50%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCnYLdmeOWNqH4YSgKRrg--Cc2cQx2XMOr0OFSz5vL4jU68nOqJjHr4VidI-4mWtLW_BcGNjdQMRq23_kp365xZcIzsnfWoWJCgH7ewio_NrACKvhGSydQrLTdehk3A3ABqwmDmX-sfC7MfgEUFwbWv4hupavrBQ73RSs-4_kIJFh4tKNDGNntUF3-qCzN38o5bDVdC3drXBky9jCJ0bSi1S2_8mEb-3KzQRzhRZXLeRkBfc3skodQjuM99tvlsXlARYmgjgyPiAq8");'>
+<div class="absolute top-4 right-4 bg-white/90 dark:bg-black/70 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">public</span>
+<span class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">Europe</span>
+</div>
+<div class="p-8 md:p-12 relative z-10">
+<h1 class="text-white text-4xl md:text-6xl font-bold leading-tight mb-4">Study in Germany</h1>
+<p class="text-slate-100 text-lg md:text-xl max-w-2xl font-light">
+                                Discover a world-class education system, vibrant culture, and tuition-free universities in the heart of Europe.
+                            </p>
+<div class="flex flex-wrap gap-4 mt-8">
+<div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 text-white flex items-center gap-3">
+<span class="material-symbols-outlined">payments</span>
+<div>
+<div class="text-xs opacity-80">Avg. Annual Cost</div>
+<div class="font-bold">€10,000 - €12,000</div>
+</div>
+</div>
+<div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 text-white flex items-center gap-3">
+<span class="material-symbols-outlined">school</span>
+<div>
+<div class="text-xs opacity-80">Top University</div>
+<div class="font-bold">TU Munich</div>
+</div>
+</div>
+<div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 text-white flex items-center gap-3">
+<span class="material-symbols-outlined">translate</span>
+<div>
+<div class="text-xs opacity-80">Language</div>
+<div class="font-bold">German / English</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Info Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+<!-- Visa Info -->
+<div class="bg-white dark:bg-[#152a24] p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined">badge</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Student Visa</h3>
+<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                                Non-EU students require a student visa. You must provide proof of financial resources (€11,208/year) via a blocked account.
+                            </p>
+<a class="text-primary font-medium text-sm flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                Visa Guide <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Cost of Living -->
+<div class="bg-white dark:bg-[#152a24] p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Cost of Living</h3>
+<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                                Affordable compared to other Western European countries. Rent ranges from €300-€700 depending on the city.
+                            </p>
+<a class="text-primary font-medium text-sm flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                Budget Breakdown <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Culture -->
+<div class="bg-white dark:bg-[#152a24] p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined">festival</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Life &amp; Culture</h3>
+<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                                Known for efficiency, rich history, and festivals like Oktoberfest. Excellent public transport and safe environment.
+                            </p>
+<a class="text-primary font-medium text-sm flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                Cultural Insights <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Top Student Cities -->
+<div class="mt-16">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-3xl font-bold text-slate-900 dark:text-white">Top Student Cities</h2>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-primary hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- City Card 1 -->
+<div class="group relative overflow-hidden rounded-xl h-80 cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Berlin Brandenburg Gate at sunset" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC1dlwCVEi1BVwN5MwJzZfIzjA_SJ0jKGrQ0KfkuLGVvHxYIXEkBhHZ767XCI9r_TWqW5AVsyn6kICch2YV8MHQoUy9vcUfhB3syseonIKo1f-Zfh2PMsPsqjz0Rnm6Y9K2lBsbou2-n60XsZVxoylGeSbxIGlbbx0Pmh-fjtl4BrcCJ3GLB1aOJGnJhVRYgb7ltyQnIy9dDLoR8MSOIk487fUEBsX2nNg0Wb5iwHPAwgoqGh1qefJNR1nOG4X5PuwxIJRxLHCjY9U");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-5 w-full">
+<h3 class="text-white text-xl font-bold mb-1">Berlin</h3>
+<p class="text-slate-300 text-sm mb-3">The Creative Hub</p>
+<div class="flex items-center gap-2 text-xs text-primary font-medium opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                        Explore Berlin <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- City Card 2 -->
+<div class="group relative overflow-hidden rounded-xl h-80 cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Munich old town hall architecture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA5k85FskpNK4F2B5b91gLl_d4fUbHv6fXyG1EZeHN4vm-Vsc7ELZfM3Nk61AyTGdukfmGyot7ExjjJsTbDSFKH2iXO5xs-99BYewueOpukihkPfY0DwwksXBzrAatkkU246cZ7v9b0iRfgUvG6JiJEz2saaAd8p8tgpJVDf-z4pD_Q-ds1A3FgMtCb8sCvNj_ekjN95WVY495JhgwN3cZYJoMsSeQXnYpOJzOBVZzD1sXqL3-dZ-jwRB_mQ6a1vqDnEh91kF_YHJ4");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-5 w-full">
+<h3 class="text-white text-xl font-bold mb-1">Munich</h3>
+<p class="text-slate-300 text-sm mb-3">Tech &amp; Tradition</p>
+<div class="flex items-center gap-2 text-xs text-primary font-medium opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                        Explore Munich <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- City Card 3 -->
+<div class="group relative overflow-hidden rounded-xl h-80 cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Heidelberg bridge and castle view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCnh494HcVqYUGhHTdD2heEM-pFyris7eoKdX7x1yyCnPkSm0gUSOOjz17mOiRYv9ZXZ6gmyuIRIk7iU-aX5lIcFbPqw_IJnYUPw6NBMkaZGf5UQFXZ2Vb71az-DwCysEyl1PBOszQ1tJ0vvLCiw0SGk-sqCdgRJOciT8Cx_7U13EootJpeDuwdjQSZYzXTHoqwzHmKfP-Jwk2unCmQDf4sJa4_vDQzntAU0uBS3fHsc6ms0YZZv5Da4p7mrzrNdLV9sIpEDl285jE");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-5 w-full">
+<h3 class="text-white text-xl font-bold mb-1">Heidelberg</h3>
+<p class="text-slate-300 text-sm mb-3">Historic Charm</p>
+<div class="flex items-center gap-2 text-xs text-primary font-medium opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                        Explore Heidelberg <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- City Card 4 -->
+<div class="group relative overflow-hidden rounded-xl h-80 cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Hamburg warehouse district canals" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCF29J14ek63g63VOwcWd-minXdgLbnbwTWO9pGUJATbu-bgKVF_z0zxmkj3zwz-Kk4WyZg5rHcBF46XlOxlNy3JL28mXWCagdBKOdi0qZTyAYdB7azwefUKLa2sOD4vjcstUHQg8LUa5wXKheDpbpUXFXBs63MVSOgIo8Am1Wr7WwTV_uuJioJYF_IjH8Pbflx61ybAVm110jKEOpk4vCwWUpdqFizNErb4U0eZVZ2Ye4VHGKk8QWkOnI4D5JFB4N2MvitPl9m_G0");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-5 w-full">
+<h3 class="text-white text-xl font-bold mb-1">Hamburg</h3>
+<p class="text-slate-300 text-sm mb-3">Maritime Spirit</p>
+<div class="flex items-center gap-2 text-xs text-primary font-medium opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                        Explore Hamburg <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Universities List -->
+<div class="mt-16 flex flex-col md:flex-row gap-10">
+<div class="flex-1">
+<div class="flex items-end justify-between mb-6">
+<div>
+<h2 class="text-3xl font-bold text-slate-900 dark:text-white">Top Universities</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-2">Ranked by international student satisfaction and academic excellence.</p>
+</div>
+<a class="text-primary font-semibold hidden md:block hover:underline" href="#">View all 145</a>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Uni Item 1 -->
+<div class="bg-white dark:bg-[#152a24] p-4 rounded-xl border border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-center gap-6 hover:border-primary/50 transition-colors group">
+<div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center shrink-0 text-2xl font-bold text-slate-400 dark:text-slate-500">
+                                        1
+                                    </div>
+<div class="flex-1 text-center sm:text-left">
+<h4 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Technical University of Munich</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Munich • Public • Focus: Engineering</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-center">
+<div class="text-xs text-slate-400 uppercase tracking-wider">Ranking</div>
+<div class="font-bold text-slate-900 dark:text-white">#37 Global</div>
+</div>
+<button class="bg-slate-100 dark:bg-slate-800 p-2 rounded-full text-slate-900 dark:text-white hover:bg-primary hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Uni Item 2 -->
+<div class="bg-white dark:bg-[#152a24] p-4 rounded-xl border border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-center gap-6 hover:border-primary/50 transition-colors group">
+<div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center shrink-0 text-2xl font-bold text-slate-400 dark:text-slate-500">
+                                        2
+                                    </div>
+<div class="flex-1 text-center sm:text-left">
+<h4 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Ludwig Maximilian University</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Munich • Public • Focus: Research</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-center">
+<div class="text-xs text-slate-400 uppercase tracking-wider">Ranking</div>
+<div class="font-bold text-slate-900 dark:text-white">#54 Global</div>
+</div>
+<button class="bg-slate-100 dark:bg-slate-800 p-2 rounded-full text-slate-900 dark:text-white hover:bg-primary hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Uni Item 3 -->
+<div class="bg-white dark:bg-[#152a24] p-4 rounded-xl border border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-center gap-6 hover:border-primary/50 transition-colors group">
+<div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center shrink-0 text-2xl font-bold text-slate-400 dark:text-slate-500">
+                                        3
+                                    </div>
+<div class="flex-1 text-center sm:text-left">
+<h4 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Heidelberg University</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Heidelberg • Public • Focus: Medicine</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-center">
+<div class="text-xs text-slate-400 uppercase tracking-wider">Ranking</div>
+<div class="font-bold text-slate-900 dark:text-white">#87 Global</div>
+</div>
+<button class="bg-slate-100 dark:bg-slate-800 p-2 rounded-full text-slate-900 dark:text-white hover:bg-primary hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Uni Item 4 -->
+<div class="bg-white dark:bg-[#152a24] p-4 rounded-xl border border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-center gap-6 hover:border-primary/50 transition-colors group">
+<div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center shrink-0 text-2xl font-bold text-slate-400 dark:text-slate-500">
+                                        4
+                                    </div>
+<div class="flex-1 text-center sm:text-left">
+<h4 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">RWTH Aachen University</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Aachen • Public • Focus: Technology</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-center">
+<div class="text-xs text-slate-400 uppercase tracking-wider">Ranking</div>
+<div class="font-bold text-slate-900 dark:text-white">#99 Global</div>
+</div>
+<button class="bg-slate-100 dark:bg-slate-800 p-2 rounded-full text-slate-900 dark:text-white hover:bg-primary hover:text-slate-900 transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="block md:hidden text-center mt-4">
+<a class="text-primary font-semibold hover:underline" href="#">View all 145</a>
+</div>
+</div>
+</div>
+<!-- Side Bar -->
+<div class="w-full md:w-80 shrink-0 flex flex-col gap-6">
+<!-- Stat Card -->
+<div class="bg-primary p-6 rounded-2xl text-slate-900">
+<h3 class="font-bold text-xl mb-4">Quick Facts</h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined mt-0.5">group</span>
+<div>
+<div class="font-bold">400k+</div>
+<div class="text-sm opacity-80">International Students</div>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined mt-0.5">school</span>
+<div>
+<div class="font-bold">400+</div>
+<div class="text-sm opacity-80">Universities</div>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined mt-0.5">work</span>
+<div>
+<div class="font-bold">18 Months</div>
+<div class="text-sm opacity-80">Post-study work visa</div>
+</div>
+</li>
+</ul>
+</div>
+<!-- Map Widget -->
+<div class="bg-white dark:bg-[#152a24] rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800">
+<div class="bg-slate-200 dark:bg-slate-800 h-48 w-full bg-cover bg-center relative" data-location="Germany" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDBZRYvUCS9jCQZILhdzT2C5z-wEKLJ1lZLBW-NzHfPDbAcL97A8U4stKT2RyR5zunaLSnsaEr0NIaJXc2MziYGHtYiC8Re_MwF3Gtp3tl1Mfv2pzTMoeS16Mw4dEWAslPKFAgQYdD3GlqiW15-_Gm6iRfyeZZ1-c2D-DQhucu_maTpzbE4-Ld1vASfzHD5R-njMZALeHD3Lrd2MINyYKjSkCak7u_DQO4l246GgxcaXK7_CDh4NwEC38ADAqXRbTIDuvprN0d4Cys");'>
+<div class="absolute inset-0 bg-black/10 flex items-center justify-center">
+<button class="bg-white text-slate-900 px-4 py-2 rounded-full font-bold shadow-lg flex items-center gap-2 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-primary">map</span> View Map
+                                         </button>
+</div>
+</div>
+<div class="p-4">
+<h4 class="font-bold text-slate-900 dark:text-white mb-1">Explore Locations</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400">Find universities near you in Germany.</p>
+</div>
+</div>
+<!-- CTA -->
+<div class="bg-background-dark dark:bg-slate-800 text-white p-6 rounded-2xl relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-bold text-lg mb-2">Need Guidance?</h3>
+<p class="text-sm text-slate-300 mb-4">Talk to our expert counselors for free.</p>
+<button class="w-full py-3 bg-primary text-slate-900 font-bold rounded-xl hover:bg-white transition-colors">Book Consultation</button>
+</div>
+<!-- Abstract decorative circle -->
+<div class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+</div>
+</div>
+</div>
+<!-- FAQs Section -->
+<div class="mt-20 mb-10 w-full max-w-4xl mx-auto">
+<h2 class="text-3xl font-bold text-slate-900 dark:text-white text-center mb-10">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<details class="group bg-white dark:bg-[#152a24] rounded-xl border border-slate-100 dark:border-slate-800 open:border-primary/50">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none font-bold text-slate-900 dark:text-white">
+<span>Do I need to speak German to study in Germany?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    While many undergraduate programs are taught in German, there is a growing number of English-taught programs, especially at the Master's level. However, learning basic German is highly recommended for daily life.
+                                </div>
+</details>
+<details class="group bg-white dark:bg-[#152a24] rounded-xl border border-slate-100 dark:border-slate-800 open:border-primary/50">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none font-bold text-slate-900 dark:text-white">
+<span>Are universities really free in Germany?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    Yes! Public universities in 15 out of 16 German states charge no tuition fees for undergraduate students, regardless of nationality. You only pay a semester contribution of around €150-€350.
+                                </div>
+</details>
+<details class="group bg-white dark:bg-[#152a24] rounded-xl border border-slate-100 dark:border-slate-800 open:border-primary/50">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none font-bold text-slate-900 dark:text-white">
+<span>Can I work while studying?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    Yes, international students from outside the EU are allowed to work 120 full days or 240 half days per year.
+                                </div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Simplified) -->
+<footer class="bg-white dark:bg-[#152a24] border-t border-slate-200 dark:border-slate-800 py-10 px-10">
+<div class="layout-content-container max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">The Mentor</h2>
+</div>
+<div class="text-slate-500 dark:text-slate-400 text-sm">
+                    © 2024 The Mentor. All rights reserved.
+                </div>
+</div>
+</footer>
+</div>
+</body></html>

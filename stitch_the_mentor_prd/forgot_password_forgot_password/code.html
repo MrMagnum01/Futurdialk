@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Forgot Password - The Mentor</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ecab",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#10221c",
+                        "text-main": "#111816",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-sans text-text-main dark:text-white">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-10 py-4 bg-white dark:bg-[#152a23]">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-text-main dark:text-white text-xl font-bold font-display leading-tight tracking-[-0.015em]">The Mentor</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center hidden md:flex">
+<nav class="flex items-center gap-9">
+<a class="text-text-main dark:text-slate-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-text-main dark:text-slate-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Exam Prep</a>
+<a class="text-text-main dark:text-slate-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Consultancy</a>
+<a class="text-text-main dark:text-slate-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">About Us</a>
+</nav>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-text-main text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="truncate">Login</span>
+</button>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-text-main dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col items-center justify-center p-6 relative overflow-hidden">
+<!-- Decorative Background Elements -->
+<div class="absolute top-[-10%] left-[-5%] w-[400px] h-[400px] bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-[-10%] right-[-5%] w-[300px] h-[300px] bg-primary/15 rounded-full blur-3xl pointer-events-none"></div>
+<div class="w-full max-w-md bg-white dark:bg-[#152a23] rounded-xl shadow-lg border border-slate-100 dark:border-slate-800 p-8 md:p-10 relative z-10">
+<div class="flex flex-col items-center text-center mb-8">
+<div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-4 text-primary dark:text-primary">
+<span class="material-symbols-outlined text-3xl">lock_reset</span>
+</div>
+<h1 class="text-text-main dark:text-white font-display text-3xl font-bold mb-2">Forgot Password?</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                    No worries, we'll send you reset instructions.
+                </p>
+</div>
+<form class="flex flex-col gap-5">
+<div class="flex flex-col gap-2">
+<label class="text-text-main dark:text-slate-200 text-sm font-medium" for="email">Email address</label>
+<div class="relative">
+<input class="w-full h-12 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-4 pl-11 text-text-main dark:text-white text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" id="email" name="email" placeholder="Enter your email" required="" type="email"/>
+<div class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+</div>
+</div>
+<button class="w-full h-12 bg-primary hover:bg-[#0fd69a] text-text-main font-bold rounded-lg text-sm transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2 mt-2" type="submit">
+<span>Send Reset Link</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</form>
+<div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-center">
+<a class="inline-flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                    Back to Login
+                </a>
+</div>
+</div>
+<div class="mt-8 text-center text-slate-400 text-xs">
+<p>© 2024 The Mentor. All rights reserved.</p>
+</div>
+</main>
+</body></html>

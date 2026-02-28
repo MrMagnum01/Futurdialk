@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Compare Programs - The Mentor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ecab",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#10221c",
+                        "text-main": "#111816",
+                        "text-secondary": "#61897d",
+                        "border-color": "#dbe6e2",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main antialiased min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-color bg-white/90 backdrop-blur-md px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-text-main">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-text-main text-lg font-bold leading-tight tracking-[-0.015em]">The Mentor</h2>
+</div>
+<nav class="hidden lg:flex items-center gap-9">
+<a class="text-text-main text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Programs</a>
+<a class="text-text-main text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Universities</a>
+<a class="text-text-main text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Scholarships</a>
+<a class="text-text-main text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-text-main text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">About Us</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="flex flex-col min-w-40 !h-10 max-w-64 relative hidden md:block">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-text-secondary absolute left-3 top-1/2 -translate-y-1/2">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-main focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-color bg-background-light focus:border-primary h-full placeholder:text-text-secondary pl-10 pr-4 text-sm font-normal leading-normal transition-all" placeholder="Search programs..." value=""/>
+</div>
+</label>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-text-main text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors shadow-sm">
+<span class="truncate">Sign In</span>
+</button>
+</div>
+</header>
+<main class="flex-1 flex flex-col">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1 w-full">
+<!-- Title Section -->
+<div class="flex flex-wrap justify-between items-end gap-6 mb-8">
+<div class="flex min-w-72 flex-col gap-2">
+<h1 class="text-text-main text-4xl font-black leading-tight tracking-[-0.033em]">Compare Programs</h1>
+<p class="text-text-secondary text-lg font-normal leading-normal">See how your top choices stack up against each other.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-white border border-border-color text-text-main text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-50 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span class="truncate">Add Program</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-text-main text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-text-main/90 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span class="truncate">Download PDF</span>
+</button>
+</div>
+</div>
+<!-- Comparison Table -->
+<div class="mb-12 overflow-x-auto rounded-xl border border-border-color bg-white shadow-sm">
+<table class="w-full min-w-[800px] border-collapse">
+<thead>
+<tr class="bg-gray-50/50">
+<th class="sticky left-0 z-10 bg-gray-50/95 backdrop-blur-sm border-b border-r border-border-color p-5 text-left text-text-secondary w-[200px] text-xs font-semibold uppercase tracking-wider">Features</th>
+<th class="border-b border-border-color p-5 text-left w-[300px] relative group">
+<div class="flex items-start justify-between">
+<div>
+<div class="h-10 w-10 rounded bg-blue-100 flex items-center justify-center text-blue-700 font-bold mb-3">MIT</div>
+<h3 class="text-text-main text-lg font-bold leading-tight">Computer Science</h3>
+<p class="text-text-secondary text-sm">MIT</p>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-text-secondary hover:text-red-500">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</th>
+<th class="border-b border-border-color p-5 text-left w-[300px] bg-primary/5 relative group">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+<div class="flex items-start justify-between">
+<div>
+<div class="h-10 w-10 rounded bg-red-100 flex items-center justify-center text-red-700 font-bold mb-3">SU</div>
+<h3 class="text-text-main text-lg font-bold leading-tight">Data Science</h3>
+<p class="text-text-secondary text-sm">Stanford University</p>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-text-secondary hover:text-red-500">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</th>
+<th class="border-b border-border-color p-5 text-left w-[300px] relative group">
+<div class="flex items-start justify-between">
+<div>
+<div class="h-10 w-10 rounded bg-yellow-100 flex items-center justify-center text-yellow-700 font-bold mb-3">UCB</div>
+<h3 class="text-text-main text-lg font-bold leading-tight">Software Eng.</h3>
+<p class="text-text-secondary text-sm">Berkeley</p>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-text-secondary hover:text-red-500">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<!-- Tuition Fees -->
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="sticky left-0 z-10 bg-white border-b border-r border-border-color p-5 text-text-main text-sm font-medium">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-secondary text-[18px]">payments</span>
+                                            Tuition Fees
+                                        </div>
+</td>
+<td class="border-b border-border-color p-5 text-text-secondary text-sm">
+<span class="block text-text-main font-bold text-base">$57,590</span>
+<span class="text-xs">per year</span>
+</td>
+<td class="border-b border-border-color p-5 text-text-secondary text-sm bg-primary/5">
+<span class="block text-text-main font-bold text-base">$62,000</span>
+<span class="text-xs">per year</span>
+</td>
+<td class="border-b border-border-color p-5 text-text-secondary text-sm relative">
+<span class="block text-text-main font-bold text-base">$48,000</span>
+<span class="text-xs">per year</span>
+<span class="absolute top-2 right-2 inline-flex items-center rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-800 ring-1 ring-inset ring-green-600/20">Best Value</span>
+</td>
+</tr>
+<!-- QS Ranking -->
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="sticky left-0 z-10 bg-white border-b border-r border-border-color p-5 text-text-main text-sm font-medium">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-secondary text-[18px]">trophy</span>
+                                            QS World Ranking
+                                        </div>
+</td>
+<td class="border-b border-border-color p-5 text-text-secondary text-sm relative">
+<span class="block text-text-main font-bold text-lg">#1</span>
+<span class="absolute top-2 right-2 inline-flex items-center rounded-full bg-yellow-100 px-2 py-0.5 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Top Ranked</span>
+</td>
+<td class="border-b border-border-color p-5 text-text-secondary text-sm bg-primary/5">
+<span class="block text-text-main font-bold text-lg">#2</span>
+</td>
+<td class="border-b border-border-color p-5 text-text-secondary text-sm">
+<span class="block text-text-main font-bold text-lg">#5</span>
+</td>
+</tr>
+<!-- Duration -->
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="sticky left-0 z-10 bg-white border-b border-r border-border-color p-5 text-text-main text-sm font-medium">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-secondary text-[18px]">schedule</span>
+                                            Duration
+                                        </div>
+</td>
+<td class="border-b border-border-color p-5 text-text-secondary text-sm">
+                                        4 Years
+                                    </td>
+<td class="border-b border-border-color p-5 text-text-secondary text-sm bg-primary/5 relative">
+<span class="font-semibold text-text-main">2 Years</span>
+<span class="absolute top-4 right-2 inline-flex items-center rounded-full bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-800 ring-1 ring-inset ring-blue-600/20">Fastest</span>
+</td>
+<td class="border-b border-border-color p-5 text-text-secondary text-sm">
+                                        4 Years
+                                    </td>
+</tr>
+<!-- Requirements -->
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="sticky left-0 z-10 bg-white border-b border-r border-border-color p-5 text-text-main text-sm font-medium">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-secondary text-[18px]">translate</span>
+                                            IELTS / TOEFL
+                                        </div>
+</td>
+<td class="border-b border-border-color p-5 text-text-secondary text-sm">
+                                        7.5 / 100
+                                    </td>
+<td class="border-b border-border-color p-5 text-text-secondary text-sm bg-primary/5">
+                                        7.0 / 100
+                                    </td>
+<td class="border-b border-border-color p-5 text-text-secondary text-sm">
+                                        7.0 / 90
+                                    </td>
+</tr>
+<!-- Location -->
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="sticky left-0 z-10 bg-white border-b border-r border-border-color p-5 text-text-main text-sm font-medium">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-secondary text-[18px]">location_on</span>
+                                            Location
+                                        </div>
+</td>
+<td class="border-b border-border-color p-5 text-text-secondary text-sm">
+<div class="flex flex-col gap-2">
+<span>Cambridge, MA</span>
+<div class="h-24 w-full rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-tr from-blue-100 to-blue-50" data-alt="Map location placeholder for Cambridge, MA" data-location="Cambridge, MA" style=""></div>
+<span class="material-symbols-outlined absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-blue-400">map</span>
+</div>
+</div>
+</td>
+<td class="border-b border-border-color p-5 text-text-secondary text-sm bg-primary/5">
+<div class="flex flex-col gap-2">
+<span>Stanford, CA</span>
+<div class="h-24 w-full rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-tr from-red-100 to-red-50" data-alt="Map location placeholder for Stanford, CA" data-location="Stanford, CA" style=""></div>
+<span class="material-symbols-outlined absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-red-400">map</span>
+</div>
+</div>
+</td>
+<td class="border-b border-border-color p-5 text-text-secondary text-sm">
+<div class="flex flex-col gap-2">
+<span>Berkeley, CA</span>
+<div class="h-24 w-full rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-tr from-yellow-100 to-yellow-50" data-alt="Map location placeholder for Berkeley, CA" data-location="Berkeley, CA" style=""></div>
+<span class="material-symbols-outlined absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-yellow-500">map</span>
+</div>
+</div>
+</td>
+</tr>
+<!-- CTA Row -->
+<tr class="bg-gray-50/30">
+<td class="sticky left-0 z-10 bg-white/50 backdrop-blur-sm border-r border-border-color p-5"></td>
+<td class="p-5">
+<button class="w-full rounded-lg bg-text-main text-white h-10 px-4 text-sm font-bold hover:bg-black transition-colors">Apply Now</button>
+</td>
+<td class="p-5 bg-primary/5">
+<button class="w-full rounded-lg bg-primary text-text-main h-10 px-4 text-sm font-bold hover:bg-primary/90 transition-colors shadow-sm">Apply Now</button>
+</td>
+<td class="p-5">
+<button class="w-full rounded-lg bg-text-main text-white h-10 px-4 text-sm font-bold hover:bg-black transition-colors">Apply Now</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Verdict Section -->
+<div class="flex flex-col gap-10 mb-12">
+<div class="flex flex-col gap-4">
+<h2 class="text-text-main text-3xl font-bold leading-tight">Our Verdict</h2>
+<p class="text-text-secondary text-base font-normal leading-normal max-w-[720px]">
+                                Based on your preferences for low tuition and high ranking, <strong>Berkeley</strong> offers the best value, while <strong>MIT</strong> offers the highest prestige. Stanford provides the quickest route to graduation.
+                            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="flex flex-col gap-4 rounded-xl border border-border-color bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="size-12 rounded-full bg-green-50 flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined text-[28px]">savings</span>
+</div>
+<div>
+<h3 class="text-text-main text-lg font-bold mb-1">Best Value: Berkeley</h3>
+<p class="text-text-secondary text-sm">At $48k/year, it's significantly more affordable than competitors while maintaining top-tier education standards.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col gap-4 rounded-xl border border-border-color bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="size-12 rounded-full bg-yellow-50 flex items-center justify-center text-yellow-600">
+<span class="material-symbols-outlined text-[28px]">trophy</span>
+</div>
+<div>
+<h3 class="text-text-main text-lg font-bold mb-1">Top Ranked: MIT</h3>
+<p class="text-text-secondary text-sm">Ranked #1 globally for Computer Science. The prestige of an MIT degree is unmatched.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col gap-4 rounded-xl border border-border-color bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="size-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined text-[28px]">timer</span>
+</div>
+<div>
+<h3 class="text-text-main text-lg font-bold mb-1">Fastest: Stanford</h3>
+<p class="text-text-secondary text-sm">Their intensive 2-year program allows you to enter the workforce sooner than traditional 4-year degrees.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Individual Cards CTA -->
+<div class="bg-white border border-border-color rounded-xl p-8 mb-10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+<h3 class="text-2xl font-bold text-text-main">Ready to apply?</h3>
+<a class="text-primary font-bold hover:underline flex items-center gap-1" href="#">
+                                View all programs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col gap-4 rounded-lg border border-solid border-border-color bg-background-light p-6 transition-all hover:border-primary">
+<div class="flex items-center justify-between">
+<h4 class="text-text-main text-lg font-bold">MIT</h4>
+<span class="text-xs font-medium bg-yellow-100 text-yellow-800 px-2 py-1 rounded">#1 Rank</span>
+</div>
+<div class="my-2">
+<p class="text-text-secondary text-sm">Tuition</p>
+<p class="text-text-main text-2xl font-black">$57,590 <span class="text-sm font-normal text-text-secondary">/yr</span></p>
+</div>
+<button class="mt-auto w-full rounded-lg bg-white border border-border-color text-text-main h-10 font-bold hover:bg-gray-50 transition-colors">View Details</button>
+</div>
+<div class="flex flex-col gap-4 rounded-lg border-2 border-solid border-primary bg-white p-6 relative shadow-md transform md:-translate-y-2">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-text-main text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Recommended</div>
+<div class="flex items-center justify-between mt-2">
+<h4 class="text-text-main text-lg font-bold">Stanford</h4>
+<span class="text-xs font-medium bg-blue-100 text-blue-800 px-2 py-1 rounded">Fastest</span>
+</div>
+<div class="my-2">
+<p class="text-text-secondary text-sm">Tuition</p>
+<p class="text-text-main text-2xl font-black">$62,000 <span class="text-sm font-normal text-text-secondary">/yr</span></p>
+</div>
+<button class="mt-auto w-full rounded-lg bg-primary text-text-main h-10 font-bold hover:bg-primary/90 transition-colors shadow-sm">Start Application</button>
+</div>
+<div class="flex flex-col gap-4 rounded-lg border border-solid border-border-color bg-background-light p-6 transition-all hover:border-primary">
+<div class="flex items-center justify-between">
+<h4 class="text-text-main text-lg font-bold">Berkeley</h4>
+<span class="text-xs font-medium bg-green-100 text-green-800 px-2 py-1 rounded">Best Value</span>
+</div>
+<div class="my-2">
+<p class="text-text-secondary text-sm">Tuition</p>
+<p class="text-text-main text-2xl font-black">$48,000 <span class="text-sm font-normal text-text-secondary">/yr</span></p>
+</div>
+<button class="mt-auto w-full rounded-lg bg-white border border-border-color text-text-main h-10 font-bold hover:bg-gray-50 transition-colors">View Details</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

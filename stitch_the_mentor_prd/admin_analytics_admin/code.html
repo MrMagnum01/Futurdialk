@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Analytics - The Mentor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "primary-dark": "#0b4cb4",
+                        "primary-light": "#5c9bff",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-dark": "#1a2430",
+                        "surface-border": "#283240",
+                        "text-main": "#e2e8f0",
+                        "text-sub": "#94a3b8"
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-text-main antialiased overflow-hidden">
+<div class="flex h-screen w-full">
+<!-- Sidebar -->
+<div class="hidden lg:flex flex-col w-72 h-full bg-background-dark border-r border-surface-border p-4 flex-shrink-0">
+<div class="flex flex-col gap-4 h-full justify-between">
+<div class="flex flex-col gap-6">
+<!-- Brand -->
+<div class="flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 border border-surface-border relative" data-alt="The Mentor logo icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDCyTBj1mc_gvUoril4EyoN0w3EahYcyARM0dQoWW40pOKj4DcD5PVHTRVr-Jew7Dd7lHhO5sNBWuxY6GY8EI4Y13ZdHZEifFKC-oRjyOye8ZO1lcA15QsL0CwnFbWv3-F_DRisyVe_Evx0kzLW_bE1eRV6v8WmXmwSYNWBnhbDRhHJreaUgavM-b0NM9YT14l-NUoQuT-MhgpS3skfW6GkEVw9ip9uZBuqnKA0elVUbPl5PFRJswQOajwEJchzSf-6o6BZpSJyWa4");'>
+<div class="absolute inset-0 rounded-full bg-primary/10"></div>
+</div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-semibold leading-tight">The Mentor</h1>
+<p class="text-text-sub text-xs font-normal">Admin Console</p>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary group transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-sub hover:text-white hover:bg-surface-dark transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">group</span>
+<span class="text-sm font-medium">Users</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-sub hover:text-white hover:bg-surface-dark transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">school</span>
+<span class="text-sm font-medium">Programs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-sub hover:text-white hover:bg-surface-dark transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">payments</span>
+<span class="text-sm font-medium">Financials</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-sub hover:text-white hover:bg-surface-dark transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">analytics</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Actions -->
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-sub hover:text-white hover:bg-surface-dark transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-sub hover:text-red-400 hover:bg-red-500/10 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">logout</span>
+<span class="text-sm font-medium">Log Out</span>
+</a>
+<!-- User Profile Snippet -->
+<div class="mt-4 pt-4 border-t border-surface-border flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-8 w-8 bg-slate-700" data-alt="Admin user profile photo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCRE35tjEjSkdR4myFH3K8idiyCbNtDFKxHTZttUhV1t56THkhKenIcNVgU12EZeecx3_3p_JQPKz9jpgLxEXeWIJi1DTpMavAxKUSi-VVAFM6fry0XwP2enH7mpH4VN7PrsvMFirrlne3u_ePudgZUIVkDoV8erwhPCIBM2UgQ2P0yLESSc_hK7U_K62E8P6r2ioD9btyJ53PP1wE1ew-_AEEkTldwvkQzQ5Ua0NMJ9d9PjzS7DuKumdkXAwX0uHUerOwtAzvff4Y");'></div>
+<div class="flex flex-col">
+<p class="text-white text-sm font-medium">Alex Morgan</p>
+<p class="text-text-sub text-xs">Super Admin</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex-1 flex flex-col h-full overflow-hidden bg-background-light dark:bg-background-dark relative">
+<!-- Mobile Header -->
+<header class="lg:hidden flex items-center justify-between p-4 bg-surface-dark border-b border-surface-border">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-8 w-8 bg-primary" data-alt="Mobile logo icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCdqDjDmMH55LL4qVT-eYnwhOJPiv6uShzouSHnnOsDnVJpoFqi6A5Cqndw-pt2LIWrvsSvP6zMFNKbiDeY9ZBOcEfFRHfMaQ5N4n5npkk_XVm-xBWbdM5FDybESBa_6-2-uOX3rzFdGB_MgVUKiyPRdj6eLdaZIE_jmMooU96QgoWgEpuqPmMxz_owyAWBFPTzejtzJX9WQ2KzQ6dbWKtOUXTh4FGSrngf0hdge4MOJrLzEK8vh8mQ4OfuSVg_nQgcNDFuj4XDlGA");'></div>
+<span class="text-white font-semibold">The Mentor</span>
+</div>
+<button class="text-white p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="flex-1 overflow-y-auto p-4 md:p-8">
+<div class="max-w-[1200px] mx-auto flex flex-col gap-8">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="flex flex-col gap-1">
+<h2 class="text-slate-900 dark:text-white text-3xl font-bold tracking-tight">Analytics Overview</h2>
+<p class="text-slate-500 dark:text-text-sub">Platform performance and student engagement metrics.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-surface-dark border border-slate-200 dark:border-surface-border rounded-lg text-slate-700 dark:text-text-main text-sm font-medium hover:bg-slate-50 dark:hover:bg-surface-border transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">calendar_today</span>
+                                Last 30 Days
+                            </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-lg text-sm font-medium transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" style="font-size: 20px;">download</span>
+                                Export Report
+                            </button>
+</div>
+</div>
+<!-- KPI Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1 -->
+<div class="bg-white dark:bg-surface-dark p-6 rounded-xl border border-slate-200 dark:border-surface-border shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<p class="text-slate-500 dark:text-text-sub text-sm font-medium">Active Users</p>
+<span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg" style="font-size: 20px;">group</span>
+</div>
+<div class="flex items-end justify-between">
+<p class="text-slate-900 dark:text-white text-2xl font-bold">12,405</p>
+<div class="flex items-center text-emerald-500 text-sm font-medium bg-emerald-500/10 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined" style="font-size: 16px;">trending_up</span>
+<span>12%</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white dark:bg-surface-dark p-6 rounded-xl border border-slate-200 dark:border-surface-border shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<p class="text-slate-500 dark:text-text-sub text-sm font-medium">Success Rate</p>
+<span class="material-symbols-outlined text-purple-500 p-2 bg-purple-500/10 rounded-lg" style="font-size: 20px;">check_circle</span>
+</div>
+<div class="flex items-end justify-between">
+<p class="text-slate-900 dark:text-white text-2xl font-bold">87%</p>
+<div class="flex items-center text-emerald-500 text-sm font-medium bg-emerald-500/10 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined" style="font-size: 16px;">trending_up</span>
+<span>5%</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white dark:bg-surface-dark p-6 rounded-xl border border-slate-200 dark:border-surface-border shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<p class="text-slate-500 dark:text-text-sub text-sm font-medium">Total Revenue</p>
+<span class="material-symbols-outlined text-emerald-500 p-2 bg-emerald-500/10 rounded-lg" style="font-size: 20px;">attach_money</span>
+</div>
+<div class="flex items-end justify-between">
+<p class="text-slate-900 dark:text-white text-2xl font-bold">JOD 45K</p>
+<div class="flex items-center text-emerald-500 text-sm font-medium bg-emerald-500/10 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined" style="font-size: 16px;">trending_up</span>
+<span>18%</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white dark:bg-surface-dark p-6 rounded-xl border border-slate-200 dark:border-surface-border shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<p class="text-slate-500 dark:text-text-sub text-sm font-medium">Popular Program</p>
+<span class="material-symbols-outlined text-orange-500 p-2 bg-orange-500/10 rounded-lg" style="font-size: 20px;">local_fire_department</span>
+</div>
+<div class="flex items-end justify-between">
+<p class="text-slate-900 dark:text-white text-2xl font-bold truncate pr-2">Comp Sci</p>
+<div class="flex items-center text-emerald-500 text-sm font-medium bg-emerald-500/10 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined" style="font-size: 16px;">trending_up</span>
+<span>3%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Charts Row -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+<!-- Growth Chart -->
+<div class="lg:col-span-2 bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-surface-border shadow-sm p-6">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold">User Growth</h3>
+<p class="text-slate-500 dark:text-text-sub text-sm">New registrations over time</p>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="text-xs text-text-sub">Students</span>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="w-3 h-3 rounded-full bg-slate-600"></div>
+<span class="text-xs text-text-sub">Mentors</span>
+</div>
+</div>
+</div>
+<div class="h-[240px] w-full relative">
+<!-- Simulated Chart Lines -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 800 240">
+<!-- Grid lines -->
+<line stroke="#283240" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="800" y1="200" y2="200"></line>
+<line stroke="#283240" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="800" y1="140" y2="140"></line>
+<line stroke="#283240" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="800" y1="80" y2="80"></line>
+<!-- Area Gradient Definition -->
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#136dec" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#136dec" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Chart Path (Primary) -->
+<path d="M0 180 C 100 180, 150 120, 200 130 C 250 140, 300 160, 350 150 C 400 140, 450 80, 500 90 C 550 100, 600 120, 650 110 C 700 100, 750 60, 800 50" fill="none" stroke="#136dec" stroke-linecap="round" stroke-width="3"></path>
+<!-- Chart Fill (Primary) -->
+<path d="M0 180 C 100 180, 150 120, 200 130 C 250 140, 300 160, 350 150 C 400 140, 450 80, 500 90 C 550 100, 600 120, 650 110 C 700 100, 750 60, 800 50 V 240 H 0 Z" fill="url(#chartGradient)" opacity="0.5"></path>
+<!-- Chart Path (Secondary - Mentor) -->
+<path d="M0 210 C 100 210, 150 190, 200 195 C 250 200, 300 190, 350 185 C 400 180, 450 160, 500 165 C 550 170, 600 180, 650 175 C 700 170, 750 150, 800 145" fill="none" stroke="#475569" stroke-dasharray="5 5" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+<!-- X Axis Labels -->
+<div class="absolute bottom-0 left-0 right-0 flex justify-between text-xs text-text-sub transform translate-y-6">
+<span>Week 1</span>
+<span>Week 2</span>
+<span>Week 3</span>
+<span>Week 4</span>
+<span>Week 5</span>
+<span>Week 6</span>
+</div>
+</div>
+<div class="mt-8 pt-4 border-t border-surface-border flex justify-between items-center">
+<div>
+<p class="text-2xl font-bold text-white">1,200</p>
+<p class="text-xs text-text-sub">New Users this month</p>
+</div>
+<div class="text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-full text-sm font-medium">
+                                    +15% Growth
+                                </div>
+</div>
+</div>
+<!-- Top Programs List -->
+<div class="bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-surface-border shadow-sm p-6 flex flex-col">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold mb-4">Top Programs</h3>
+<div class="flex flex-col gap-4 overflow-y-auto flex-1 max-h-[300px] lg:max-h-none pr-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-500 flex-shrink-0">
+<span class="material-symbols-outlined">code</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center mb-1">
+<p class="text-white text-sm font-medium truncate">Computer Science</p>
+<p class="text-text-sub text-xs">45%</p>
+</div>
+<div class="w-full bg-surface-border rounded-full h-1.5">
+<div class="bg-blue-500 h-1.5 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-500 flex-shrink-0">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center mb-1">
+<p class="text-white text-sm font-medium truncate">Medicine</p>
+<p class="text-text-sub text-xs">28%</p>
+</div>
+<div class="w-full bg-surface-border rounded-full h-1.5">
+<div class="bg-purple-500 h-1.5 rounded-full" style="width: 28%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center text-orange-500 flex-shrink-0">
+<span class="material-symbols-outlined">engineering</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center mb-1">
+<p class="text-white text-sm font-medium truncate">Engineering</p>
+<p class="text-text-sub text-xs">15%</p>
+</div>
+<div class="w-full bg-surface-border rounded-full h-1.5">
+<div class="bg-orange-500 h-1.5 rounded-full" style="width: 15%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-500 flex-shrink-0">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center mb-1">
+<p class="text-white text-sm font-medium truncate">Business Admin</p>
+<p class="text-text-sub text-xs">12%</p>
+</div>
+<div class="w-full bg-surface-border rounded-full h-1.5">
+<div class="bg-emerald-500 h-1.5 rounded-full" style="width: 12%"></div>
+</div>
+</div>
+</div>
+</div>
+<button class="mt-4 w-full py-2 text-sm text-primary font-medium hover:bg-primary/5 rounded-lg transition-colors">
+                                View All Programs
+                            </button>
+</div>
+</div>
+<!-- Map Section -->
+<div class="w-full bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-surface-border shadow-sm p-6 mb-8">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold">Active Students Map</h3>
+<p class="text-slate-500 dark:text-text-sub text-sm">Geographic distribution of student logins</p>
+</div>
+<button class="p-2 hover:bg-surface-border rounded-lg text-text-sub transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="relative w-full aspect-[16/9] md:aspect-[21/9] bg-background-dark rounded-lg overflow-hidden border border-surface-border">
+<!-- Background Map Image -->
+<div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-luminosity" data-alt="Dark map world background" data-location="World" style="background-image: url('https://placeholder.pics/svg/300');"></div>
+<!-- Map Overlays (Simulated Pins) -->
+<div class="absolute inset-0 pointer-events-none">
+<!-- Pin 1: Amman -->
+<div class="absolute top-[40%] left-[56%] flex flex-col items-center group cursor-pointer pointer-events-auto">
+<div class="w-3 h-3 bg-primary rounded-full shadow-[0_0_15px_rgba(19,109,236,0.8)] animate-pulse"></div>
+<div class="mt-2 bg-surface-dark/90 backdrop-blur px-3 py-1 rounded-md border border-surface-border opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+<p class="text-xs text-white whitespace-nowrap font-medium">Amman: 5.2k</p>
+</div>
+</div>
+<!-- Pin 2: Irbid -->
+<div class="absolute top-[38%] left-[56.5%] flex flex-col items-center group cursor-pointer pointer-events-auto">
+<div class="w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_rgba(19,109,236,0.6)]"></div>
+</div>
+<!-- Pin 3: Aqaba -->
+<div class="absolute top-[45%] left-[55.5%] flex flex-col items-center group cursor-pointer pointer-events-auto">
+<div class="w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_rgba(19,109,236,0.6)]"></div>
+</div>
+<!-- Decorative grid overlay -->
+<div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+</div>
+</div>
+<div class="flex flex-wrap gap-6 mt-6">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-sm text-text-sub">High Activity (&gt;1k)</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary/50"></div>
+<span class="text-sm text-text-sub">Medium Activity (100-1k)</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary/20"></div>
+<span class="text-sm text-text-sub">Low Activity (&lt;100)</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

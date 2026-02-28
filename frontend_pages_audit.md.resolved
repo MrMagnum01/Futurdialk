@@ -1,0 +1,90 @@
+# Frontend Pages Audit — What's Still Stub vs Real
+
+> 22 real page components built | 25 routes still using `StubPage` placeholder
+
+---
+
+## ✅ Real Pages (22 components — done)
+
+| Route | Component | Lines |
+|-------|-----------|-------|
+| `/` | Landing | 199 |
+| `/login` | Login | 105 |
+| `/register` | Register | 143 |
+| `/onboarding/step/:step` | Onboarding | 290 |
+| `/dashboard` | Dashboard | 112 |
+| `/explore` | ExplorePrograms | 267 |
+| `/career` | CareerAdvisor | 161 |
+| `/prep` | ExamPrepHome | 226 |
+| `/roadmap` | RoadmapList | 145 |
+| `/documents` | DocumentVault | 178 |
+| `/community` | CommunityHub | 149 |
+| `/budget` | BudgetCalculator | 152 |
+| `/scholarships` | ScholarshipSearch | 173 |
+| `/housing` | HousingGuides | 164 |
+| `/marketplace` | Marketplace | 88 |
+| `/visa-prep` | VisaPrep | 143 |
+| `/learn` | LanguageLearning | 112 |
+| `/profile` | Profile | 240 |
+| `/settings` | Settings | 103 |
+| `/admin` | AdminDashboard | 286 |
+| `/admin/translations` | AdminTranslations | 212 |
+
+---
+
+## ❌ Stub Pages (25 routes — still `StubPage`)
+
+### 🔴 Priority 1 — Core User Flow (must-have before data phase)
+
+| # | Route | Title | Why Critical |
+|---|-------|-------|-------------|
+| 1 | `/explore/program/:id` | Program Detail | Users need to view individual programs |
+| 2 | `/explore/school/:id` | School Detail | Users need to view school info |
+| 3 | `/career/path/:id` | Career Path Detail | Links from career cards go here |
+| 4 | `/roadmap/:id` | Roadmap Detail | Users need to see their roadmap steps |
+| 5 | `/roadmap/:id/step/:stepId` | Step Detail | Upload docs, mark steps complete |
+| 6 | `/prep/:examCode` | Exam Dashboard | Per-exam progress + start tests |
+| 7 | `/prep/:examCode/practice` | Section Practice | Core exam prep feature |
+| 8 | `/prep/:examCode/results/:attemptId` | Results Detail | View scores after completing test |
+
+### 🟡 Priority 2 — Important Features
+
+| # | Route | Title | Module |
+|---|-------|-------|--------|
+| 9 | `/explore/compare` | Compare Programs | Explore |
+| 10 | `/explore/:countryCode` | Country Detail | Explore |
+| 11 | `/career/discover` | Career Discovery Quiz | Career — RIASEC quiz |
+| 12 | `/career/compare` | Compare Careers | Career |
+| 13 | `/prep/:examCode/diagnostic` | Diagnostic Test | Exam Prep |
+| 14 | `/prep/:examCode/simulation` | Full Exam Simulation | Exam Prep |
+| 15 | `/documents/generate` | Generate Document | Documents |
+| 16 | `/community/qa` | Q&A Forum | Community |
+| 17 | `/community/stories` | Success Stories | Community |
+| 18 | `/community/mentors` | Find Mentors | Community |
+| 19 | `/notifications` | Notification Center | Notifications |
+
+### 🟢 Priority 3 — Can Wait
+
+| # | Route | Title | Module |
+|---|-------|-------|--------|
+| 20 | `/forgot-password` | Forgot Password | Auth |
+| 21 | `/verify-email` | Email Verification | Auth |
+| 22 | `/prep/leaderboard` | Global Leaderboard | Exam Prep |
+| 23 | `/prep/:examCode/writing` | Writing Practice | Exam Prep |
+| 24 | `/prep/:examCode/speaking` | Speaking Practice | Exam Prep |
+| 25 | `/visa-prep/:country` | Mock Visa Interview | Visa |
+| 26 | `/learn/:lang` | Language Dashboard | Language |
+| 27 | `/learn/:lang/lesson/:id` | Lesson | Language |
+| 28 | `/settings/notifications` | Notification Settings | Settings |
+
+---
+
+## Summary
+
+| Priority | Count | Recommendation |
+|----------|-------|---------------|
+| 🔴 P1 Core | **8 pages** | Build these before data phase |
+| 🟡 P2 Important | **11 pages** | Build alongside or right after data |
+| 🟢 P3 Can Wait | **9 pages** | Defer to later iterations |
+
+> **Minimum to move to data phase: 8 Priority 1 pages** — these are the detail/interaction views that the existing list/home pages link to.

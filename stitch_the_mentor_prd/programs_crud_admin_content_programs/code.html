@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Programs Management - The Mentor Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#135bec",
+                        "primary-content": "#ffffff",
+                        "primary-dark": "#0e46b9",
+                        "primary-light": "#e8f0fe",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2233",
+                        "text-main": "#111318",
+                        "text-sub": "#616f89",
+                        "border-light": "#f0f2f4",
+                        "border-dark": "#2a3447",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Lexend", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-gray-100 min-h-screen flex flex-col">
+<div class="relative flex h-full w-full flex-col overflow-x-hidden">
+<!-- Header / TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="size-8 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">The Mentor Admin</h2>
+</div>
+<label class="flex flex-col min-w-40 !h-10 max-w-64 hidden md:flex">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-text-sub dark:text-gray-400 flex border-none bg-background-light dark:bg-background-dark items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-main dark:text-white focus:outline-0 focus:ring-0 border-none bg-background-light dark:bg-background-dark focus:border-none h-full placeholder:text-text-sub dark:placeholder:text-gray-500 px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Global Search" value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="hidden lg:flex items-center gap-9">
+<a class="text-text-main dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-text-main dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Universities</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Programs</a>
+<a class="text-text-main dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Students</a>
+<a class="text-text-main dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-background-light dark:bg-background-dark p-2 rounded-full text-text-main dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors relative">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-background-dark"></span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-white dark:border-gray-600 shadow-sm" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAV4IfcvXlVp87l-0EirvGAyivqNzzYonSboH5yuVvG0BYBHkqhaA0J2oW5oMXQ-fzSKx55CDk8CNWg9RPsc_h5PboIRkKPZO0XLlS0MkzlPWThHdxkaKsu9fAEaWGXRnPZQYYHR6c6YtKm2RkNsnzByYTU81F72giuuwM91x-q-WQH_hWXt8eAdLfDAF4Oa--AWuRR-1vcc5c1Hz4dvEGVnjkExYJzczvgSHdRbm33FkPw64sid-gBnQOG8yiMMdeVFRjJM77H1Mo");'></div>
+</div>
+</div>
+</header>
+<div class="layout-container flex h-full grow flex-col md:flex-row">
+<!-- Sidebar Navigation (Desktop) -->
+<aside class="hidden md:flex flex-col w-64 border-r border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark h-[calc(100vh-65px)] sticky top-[65px] overflow-y-auto">
+<div class="flex flex-col gap-4 p-4">
+<div class="flex flex-col px-3">
+<h1 class="text-text-main dark:text-white text-xs font-bold uppercase tracking-wider opacity-50 mb-4">Management</h1>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-sub dark:text-gray-400 hover:bg-background-light dark:hover:bg-background-dark hover:text-primary transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">dashboard</span>
+<span class="text-sm font-medium">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:text-primary-light" href="#">
+<span class="material-symbols-outlined text-primary fill-current">library_books</span>
+<span class="text-sm font-medium">Programs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-sub dark:text-gray-400 hover:bg-background-light dark:hover:bg-background-dark hover:text-primary transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">account_balance</span>
+<span class="text-sm font-medium">Universities</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-sub dark:text-gray-400 hover:bg-background-light dark:hover:bg-background-dark hover:text-primary transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">group</span>
+<span class="text-sm font-medium">Users</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-sub dark:text-gray-400 hover:bg-background-light dark:hover:bg-background-dark hover:text-primary transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">bar_chart</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+</div>
+</div>
+<div class="mt-auto flex flex-col gap-4 p-4 border-t border-border-light dark:border-border-dark">
+<div class="flex flex-col px-3">
+<h1 class="text-text-main dark:text-white text-xs font-bold uppercase tracking-wider opacity-50 mb-2">System</h1>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-sub dark:text-gray-400 hover:bg-background-light dark:hover:bg-background-dark hover:text-primary transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">settings</span>
+<span class="text-sm font-medium">Configuration</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-sub dark:text-gray-400 hover:bg-background-light dark:hover:bg-background-dark hover:text-red-500 transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-red-500">logout</span>
+<span class="text-sm font-medium">Log Out</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex flex-1 flex-col p-6 md:p-10 overflow-y-auto">
+<div class="max-w-[1200px] mx-auto w-full flex flex-col gap-6">
+<!-- Page Header -->
+<div class="flex flex-wrap items-end justify-between gap-4">
+<div class="flex min-w-72 flex-col gap-2">
+<div class="flex items-center gap-2 text-text-sub dark:text-gray-400 text-sm">
+<span>Content</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-text-main dark:text-white font-medium">Programs</span>
+</div>
+<h1 class="text-text-main dark:text-white text-3xl font-bold leading-tight tracking-[-0.033em]">Programs Management</h1>
+<p class="text-text-sub dark:text-gray-400 text-base font-normal leading-normal max-w-2xl">Manage and update academic program details, requirements, tuition fees and application deadlines across all partner universities.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark text-text-main dark:text-white text-sm font-bold shadow-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-all">
+<span class="material-symbols-outlined text-[20px]">file_upload</span>
+<span class="truncate">Import CSV</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-md hover:bg-primary-dark transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span class="truncate">Add New Program</span>
+</button>
+</div>
+</div>
+<!-- Filters & Toolbar -->
+<div class="flex flex-col gap-4 bg-surface-light dark:bg-surface-dark p-4 rounded-xl border border-border-light dark:border-border-dark shadow-sm">
+<!-- Top Row: Search & Batch Actions -->
+<div class="flex flex-col md:flex-row justify-between gap-4 items-center">
+<div class="relative w-full md:w-96">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-text-sub dark:text-gray-500">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2.5 border border-border-light dark:border-border-dark rounded-lg leading-5 bg-background-light dark:bg-background-dark text-text-main dark:text-white placeholder-text-sub dark:placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary sm:text-sm" placeholder="Search by program name, code or ID..." type="text"/>
+</div>
+<div class="flex gap-2 w-full md:w-auto justify-end">
+<button class="flex items-center justify-center gap-2 rounded-lg h-9 px-3 text-text-sub dark:text-gray-400 hover:text-primary hover:bg-primary/5 transition-colors text-sm font-medium">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Batch Edit Deadlines</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-lg h-9 px-3 text-text-sub dark:text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors text-sm font-medium">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span>Delete Selected</span>
+</button>
+</div>
+</div>
+<!-- Bottom Row: Dropdown Filters -->
+<div class="flex flex-wrap gap-3 pt-2 border-t border-border-light dark:border-border-dark">
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold uppercase text-text-sub dark:text-gray-500 tracking-wider">Filters:</span>
+</div>
+<div class="relative group">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-background-dark text-text-main dark:text-white text-sm hover:border-primary transition-colors">
+<span>University: All</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<div class="relative group">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-background-dark text-text-main dark:text-white text-sm hover:border-primary transition-colors">
+<span>Subject: Computer Science</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<div class="relative group">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-background-dark text-text-main dark:text-white text-sm hover:border-primary transition-colors">
+<span>Tuition Range</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<div class="relative group">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-background-dark text-text-main dark:text-white text-sm hover:border-primary transition-colors">
+<span>Status: Active</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<button class="ml-auto text-sm text-primary hover:text-primary-dark font-medium">Reset All</button>
+</div>
+</div>
+<!-- Programs Table -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-light dark:border-border-dark shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-background-light dark:bg-background-dark border-b border-border-light dark:border-border-dark">
+<th class="p-4 w-10">
+<input class="rounded border-gray-300 text-primary focus:ring-primary bg-white dark:bg-background-dark dark:border-gray-600" type="checkbox"/>
+</th>
+<th class="p-4 text-xs font-semibold tracking-wide text-text-sub dark:text-gray-400 uppercase cursor-pointer hover:text-primary group">
+<div class="flex items-center gap-1">
+                                                Program Name
+                                                <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">arrow_upward</span>
+</div>
+</th>
+<th class="p-4 text-xs font-semibold tracking-wide text-text-sub dark:text-gray-400 uppercase cursor-pointer hover:text-primary">
+                                            University
+                                        </th>
+<th class="p-4 text-xs font-semibold tracking-wide text-text-sub dark:text-gray-400 uppercase cursor-pointer hover:text-primary">
+                                            Subject
+                                        </th>
+<th class="p-4 text-xs font-semibold tracking-wide text-text-sub dark:text-gray-400 uppercase cursor-pointer hover:text-primary text-right">
+<div class="flex items-center justify-end gap-1">
+                                                Tuition
+                                                <span class="material-symbols-outlined text-[14px]">swap_vert</span>
+</div>
+</th>
+<th class="p-4 text-xs font-semibold tracking-wide text-text-sub dark:text-gray-400 uppercase cursor-pointer hover:text-primary">
+                                            Deadline
+                                        </th>
+<th class="p-4 text-xs font-semibold tracking-wide text-text-sub dark:text-gray-400 uppercase text-center">
+                                            Status
+                                        </th>
+<th class="p-4 text-xs font-semibold tracking-wide text-text-sub dark:text-gray-400 uppercase text-right">
+                                            Actions
+                                        </th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-light dark:divide-border-dark">
+<!-- Row 1 -->
+<tr class="hover:bg-background-light dark:hover:bg-background-dark/50 transition-colors group">
+<td class="p-4">
+<input class="rounded border-gray-300 text-primary focus:ring-primary bg-white dark:bg-background-dark dark:border-gray-600" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="font-medium text-text-main dark:text-white">B.Sc. Computer Science</span>
+<span class="text-xs text-text-sub dark:text-gray-500">ID: PRG-2023-001</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-gray-200 dark:bg-gray-700 bg-cover" data-alt="University Logo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBU86KVc6MNf6uSFFO2jh3xIPhcDr2r_yzoP9Q2e-YJ7e0pu5Eux5nL4i6nb4EaTOpu5Woi7HZ37HKUe66VMYP7IeklxADIEsYTtM4QdJPymrdK45q76yaBhaPXor4-Us0MW1WuiY4ExW2kKM7RrIieW42P3Iys3W2h-6EutRbvv0vtJso7XRLrprkrEqS9jfOJfWZmEoxEfpC_toqeX16z8SMxgHkVtlFAddoClF36VBaZ2gi8sPVFwm9BiH_7wo0R_xQBeQ0TiHM');"></div>
+<span class="text-sm text-text-main dark:text-gray-300">University of Jordan</span>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center rounded-md bg-blue-50 dark:bg-blue-900/20 px-2 py-1 text-xs font-medium text-blue-700 dark:text-blue-300 ring-1 ring-inset ring-blue-700/10">IT &amp; Computing</span>
+</td>
+<td class="p-4 text-right">
+<span class="text-sm font-medium text-text-main dark:text-gray-300">$12,000</span>
+</td>
+<td class="p-4">
+<span class="text-sm text-text-sub dark:text-gray-400">Sep 15, 2024</span>
+</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center rounded-full bg-green-50 dark:bg-green-900/20 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-300 ring-1 ring-inset ring-green-600/20">Active</span>
+</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-text-sub hover:text-primary hover:bg-primary/10 rounded transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 text-text-sub hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded transition-colors" title="Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-background-light dark:hover:bg-background-dark/50 transition-colors group">
+<td class="p-4">
+<input class="rounded border-gray-300 text-primary focus:ring-primary bg-white dark:bg-background-dark dark:border-gray-600" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="font-medium text-text-main dark:text-white">B.Eng. Civil Engineering</span>
+<span class="text-xs text-text-sub dark:text-gray-500">ID: PRG-2023-042</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-gray-200 dark:bg-gray-700 bg-cover" data-alt="University Logo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDL0_c7_rBK3nBmX6a9oIGnVey-ZN0KvOjrv7hki6g3YzRk70MunqNEXNmB2fjLNarMM0NheMDWIuu8wPhAX2Qk6hORQrF6wKISa4GSTW7s5jpsXtUTX_LbBgmPf2awvIJ7-gtnggP-8cWX4f8_qo7ZkqWBVrmxsESUT1iTa1A7uz9NJIH8SdpuIT0bnle9dhrL35TSk-dhdlFtuWz92lOoHRHXnSfoJBoMCZf__eG3CZD53dNImO_NXb-odbeA71IAmWONdO7laLU');"></div>
+<span class="text-sm text-text-main dark:text-gray-300">Princess Sumaya Univ</span>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center rounded-md bg-orange-50 dark:bg-orange-900/20 px-2 py-1 text-xs font-medium text-orange-700 dark:text-orange-300 ring-1 ring-inset ring-orange-700/10">Engineering</span>
+</td>
+<td class="p-4 text-right">
+<span class="text-sm font-medium text-text-main dark:text-gray-300">$14,500</span>
+</td>
+<td class="p-4">
+<span class="text-sm text-text-sub dark:text-gray-400">Oct 01, 2024</span>
+</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center rounded-full bg-green-50 dark:bg-green-900/20 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-300 ring-1 ring-inset ring-green-600/20">Active</span>
+</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-text-sub hover:text-primary hover:bg-primary/10 rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 text-text-sub hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-background-light dark:hover:bg-background-dark/50 transition-colors group">
+<td class="p-4">
+<input class="rounded border-gray-300 text-primary focus:ring-primary bg-white dark:bg-background-dark dark:border-gray-600" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="font-medium text-text-main dark:text-white">MBA - Business Administration</span>
+<span class="text-xs text-text-sub dark:text-gray-500">ID: PRG-2023-105</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-gray-200 dark:bg-gray-700 bg-cover" data-alt="University Logo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBxqrZa7N7lWTOs_xv-OO83R7Id1zjUm1MuPvaAtKuxredTtl-LEgLpJYsgceYkGSd-M0Pt54YZd6Si50F-ir0axdUO77Kx-TYrLv7K-fRO_gHBnaAi_IbIciiGBci0STiTx8pFzeIwzZBU_H7twn1Chc82wAreftMwJ2WKL27RD2DO8mMuoj5vl8mD1wHPluatRD2ZDx1qUHQcQbcupMx90zd7glM_oinkwHXxTqdlGYBL5I2vihTC9XVmtHtHo6ORk50k-Yqs4Zk');"></div>
+<span class="text-sm text-text-main dark:text-gray-300">German Jordanian Univ</span>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center rounded-md bg-purple-50 dark:bg-purple-900/20 px-2 py-1 text-xs font-medium text-purple-700 dark:text-purple-300 ring-1 ring-inset ring-purple-700/10">Business</span>
+</td>
+<td class="p-4 text-right">
+<span class="text-sm font-medium text-text-main dark:text-gray-300">$22,000</span>
+</td>
+<td class="p-4">
+<span class="text-sm text-text-sub dark:text-gray-400">Aug 30, 2024</span>
+</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-700 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 ring-1 ring-inset ring-gray-500/10">Draft</span>
+</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-text-sub hover:text-primary hover:bg-primary/10 rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 text-text-sub hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-background-light dark:hover:bg-background-dark/50 transition-colors group">
+<td class="p-4">
+<input class="rounded border-gray-300 text-primary focus:ring-primary bg-white dark:bg-background-dark dark:border-gray-600" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="font-medium text-text-main dark:text-white">Medicine (MBBS)</span>
+<span class="text-xs text-text-sub dark:text-gray-500">ID: PRG-2023-099</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-gray-200 dark:bg-gray-700 bg-cover" data-alt="University Logo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMSqyxEe21NQL5HAXsO3Maowd8Qab8IeoL58VsbLnUwttkFf6J1PVJHgLvb9Cpv5RPZt8iWlj6ZHMLrfAg8kg1oRXPM4LmhDzdGY4abVZ8t-aPQcV-sjBT_1dHW8Kq2-GTOitmkeai-Ptp8okpQ8q-RY7g8YI5JdY3L7ZfPQ2QCqhUXavMAgBL7j9D2FybDV8jgM8khByiHy_gS1viDdP5y4PDFHtiskeniqfH9S_sTUHww2giIJKHXVTwkQBvtOeRi19J3MkNUEg');"></div>
+<span class="text-sm text-text-main dark:text-gray-300">JUST</span>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center rounded-md bg-red-50 dark:bg-red-900/20 px-2 py-1 text-xs font-medium text-red-700 dark:text-red-300 ring-1 ring-inset ring-red-700/10">Health</span>
+</td>
+<td class="p-4 text-right">
+<span class="text-sm font-medium text-text-main dark:text-gray-300">$45,000</span>
+</td>
+<td class="p-4">
+<span class="text-sm text-text-sub dark:text-gray-400">Jul 15, 2024</span>
+</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center rounded-full bg-yellow-50 dark:bg-yellow-900/20 px-2 py-1 text-xs font-medium text-yellow-800 dark:text-yellow-500 ring-1 ring-inset ring-yellow-600/20">Closing Soon</span>
+</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-text-sub hover:text-primary hover:bg-primary/10 rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 text-text-sub hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between border-t border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark px-4 py-3 sm:px-6">
+<div class="flex flex-1 justify-between sm:hidden">
+<a class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50" href="#">Previous</a>
+<a class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50" href="#">Next</a>
+</div>
+<div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+<div>
+<p class="text-sm text-text-sub dark:text-gray-400">
+                                        Showing <span class="font-medium text-text-main dark:text-white">1</span> to <span class="font-medium text-text-main dark:text-white">10</span> of <span class="font-medium text-text-main dark:text-white">2,456</span> results
+                                    </p>
+</div>
+<div>
+<nav aria-label="Pagination" class="isolate inline-flex -space-x-px rounded-md shadow-sm">
+<a class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 dark:ring-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 focus:z-20 focus:outline-offset-0" href="#">
+<span class="sr-only">Previous</span>
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</a>
+<a aria-current="page" class="relative z-10 inline-flex items-center bg-primary px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" href="#">1</a>
+<a class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-text-main dark:text-gray-300 ring-1 ring-inset ring-gray-300 dark:ring-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 focus:z-20 focus:outline-offset-0" href="#">2</a>
+<a class="relative hidden items-center px-4 py-2 text-sm font-semibold text-text-main dark:text-gray-300 ring-1 ring-inset ring-gray-300 dark:ring-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 focus:z-20 focus:outline-offset-0 md:inline-flex" href="#">3</a>
+<span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 dark:text-gray-400 ring-1 ring-inset ring-gray-300 dark:ring-gray-700 focus:outline-offset-0">...</span>
+<a class="relative hidden items-center px-4 py-2 text-sm font-semibold text-text-main dark:text-gray-300 ring-1 ring-inset ring-gray-300 dark:ring-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 focus:z-20 focus:outline-offset-0 md:inline-flex" href="#">8</a>
+<a class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 dark:ring-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 focus:z-20 focus:outline-offset-0" href="#">
+<span class="sr-only">Next</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

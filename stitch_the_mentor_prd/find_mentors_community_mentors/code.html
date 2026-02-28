@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Find Mentors - The Mentor</title>
+<!-- Fonts and Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "primary-dark": "#0b4cb5",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2433",
+                        "text-main": "#111418",
+                        "text-secondary": "#617289",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 bg-surface-light dark:bg-surface-dark border-b border-[#f0f2f4] dark:border-gray-800 px-10 py-3 flex items-center justify-between whitespace-nowrap w-full">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">The Mentor</h2>
+</div>
+<label class="hidden lg:flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-text-secondary dark:text-gray-400 flex border-none bg-background-light dark:bg-gray-800 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-main dark:text-white focus:outline-0 focus:ring-0 border-none bg-background-light dark:bg-gray-800 focus:border-none h-full placeholder:text-text-secondary dark:placeholder:text-gray-500 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search" value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-text-main dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-text-main dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Universities</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Mentors</a>
+<a class="text-text-main dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Blog</a>
+<a class="text-text-main dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">About Us</a>
+</div>
+<div class="flex gap-2">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary-dark transition-colors">
+<span class="truncate">Sign In</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-background-light dark:bg-gray-800 text-text-main dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="truncate">Join Now</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center w-full px-4 sm:px-10 py-8">
+<div class="max-w-[1200px] w-full flex flex-col gap-10">
+<!-- Hero & Search Section -->
+<section class="flex flex-col gap-6">
+<div class="flex flex-wrap justify-between gap-4 items-end">
+<div class="flex flex-col gap-2 max-w-2xl">
+<h1 class="text-text-main dark:text-white text-4xl sm:text-5xl font-black leading-tight tracking-[-0.033em]">Find Your Mentor</h1>
+<p class="text-text-secondary dark:text-gray-400 text-lg font-normal leading-normal">Connect with experienced mentors and student ambassadors to guide your academic journey.</p>
+</div>
+<!-- Stats Section (Compact) -->
+<div class="flex gap-4">
+<div class="flex flex-col items-center md:items-start px-4 border-l-2 border-primary/20">
+<span class="text-2xl font-bold text-text-main dark:text-white">450+</span>
+<span class="text-xs text-text-secondary uppercase tracking-wider">Mentors</span>
+</div>
+<div class="flex flex-col items-center md:items-start px-4 border-l-2 border-primary/20">
+<span class="text-2xl font-bold text-text-main dark:text-white">120+</span>
+<span class="text-xs text-text-secondary uppercase tracking-wider">Universities</span>
+</div>
+</div>
+</div>
+<!-- Main Search Bar -->
+<div class="relative w-full">
+<div class="flex w-full items-stretch rounded-xl h-14 shadow-sm ring-1 ring-gray-200 dark:ring-gray-700 bg-white dark:bg-surface-dark overflow-hidden">
+<div class="text-text-secondary flex items-center justify-center pl-4">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</div>
+<input class="w-full flex-1 bg-transparent border-none focus:ring-0 text-text-main dark:text-white px-4 text-base placeholder:text-text-secondary" placeholder="Search by name, university, or subject..."/>
+<button class="bg-primary text-white px-8 font-bold text-sm hover:bg-primary-dark transition-colors">
+                            Search
+                        </button>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex gap-3 flex-wrap items-center">
+<span class="text-sm font-bold text-text-secondary mr-2">Filter by:</span>
+<button class="flex h-9 items-center gap-x-2 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-surface-dark px-4 hover:border-primary hover:text-primary transition-all group">
+<p class="text-text-main dark:text-white text-sm font-medium group-hover:text-primary">University</p>
+<span class="material-symbols-outlined text-[20px] text-text-main dark:text-white group-hover:text-primary">expand_more</span>
+</button>
+<button class="flex h-9 items-center gap-x-2 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-surface-dark px-4 hover:border-primary hover:text-primary transition-all group">
+<p class="text-text-main dark:text-white text-sm font-medium group-hover:text-primary">Subject Expertise</p>
+<span class="material-symbols-outlined text-[20px] text-text-main dark:text-white group-hover:text-primary">expand_more</span>
+</button>
+<button class="flex h-9 items-center gap-x-2 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-surface-dark px-4 hover:border-primary hover:text-primary transition-all group">
+<p class="text-text-main dark:text-white text-sm font-medium group-hover:text-primary">Language</p>
+<span class="material-symbols-outlined text-[20px] text-text-main dark:text-white group-hover:text-primary">expand_more</span>
+</button>
+<button class="flex h-9 items-center gap-x-2 rounded-full border border-dashed border-gray-300 dark:border-gray-600 bg-transparent px-4 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all ml-auto">
+<span class="material-symbols-outlined text-[20px] text-text-secondary">tune</span>
+<p class="text-text-secondary text-sm font-medium">All Filters</p>
+</button>
+</div>
+</section>
+<!-- Mentors Grid -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-bold text-text-main dark:text-white">Recommended Mentors</h3>
+<div class="flex items-center gap-2 text-sm text-text-secondary">
+<span>Sort by:</span>
+<select class="bg-transparent border-none font-bold text-text-main dark:text-white focus:ring-0 p-0 pr-6 cursor-pointer">
+<option>Relevance</option>
+<option>Rating</option>
+<option>Newest</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Mentor Card 1 -->
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-24 bg-gradient-to-r from-blue-500 to-primary relative">
+<div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md rounded-full px-2 py-1 flex items-center gap-1 text-white text-xs font-bold">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Top Mentor</span>
+</div>
+</div>
+<div class="px-6 pb-6 pt-0 relative flex-1 flex flex-col">
+<div class="size-20 rounded-full border-4 border-white dark:border-surface-dark overflow-hidden -mt-10 mb-3 bg-gray-200">
+<img alt="Sarah Johnson" class="w-full h-full object-cover" data-alt="Portrait of a smiling professional woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8IL4XRqnbfeovyd6V4v0Gs0-jlo_ofIkGfkA6EpqlZI8A-qXukUAUnfj53FuvJ64_sUVR5_9QM17S5hL57wSJYLcMiRMlGZM1OY4t4j5lrkcoSeym_Sxp3RzLmbOhMyvhQNbRp_1_z-9ROuEL0BvkOWvR4VliOznPm4M5G8pbYt8OngmV8EYsBo3ayfVmFaWv1DZYexxBu2LFEVkzZzSNPlid5hlOpwv8F8fFLeMYq7ws1oHgAPyrt92TL3P0LWyq-Ot9s5B2VYQ"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="text-lg font-bold text-text-main dark:text-white">Sarah Johnson</h4>
+<p class="text-primary text-sm font-medium">Data Science Lead</p>
+</div>
+<div class="flex items-center gap-1 text-amber-500">
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="text-sm font-bold text-text-main dark:text-white">4.9</span>
+<span class="text-xs text-text-secondary">(120)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-4 text-sm text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">school</span>
+<span>Stanford University Alumni</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-background-light dark:bg-gray-800 text-text-secondary text-xs px-2 py-1 rounded">Python</span>
+<span class="bg-background-light dark:bg-gray-800 text-text-secondary text-xs px-2 py-1 rounded">Career Advice</span>
+<span class="bg-background-light dark:bg-gray-800 text-text-secondary text-xs px-2 py-1 rounded">Machine Learning</span>
+</div>
+<div class="mt-auto flex flex-col gap-3">
+<div class="flex items-center justify-between text-xs text-text-secondary mb-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-green-600">videocam</span>
+<span>Available for calls</span>
+</div>
+<span>$80/session</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-white h-10 rounded-lg text-sm font-bold hover:bg-primary-dark transition-colors">Book Session</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-text-secondary transition-colors">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Mentor Card 2 -->
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-24 bg-gradient-to-r from-emerald-500 to-teal-600 relative"></div>
+<div class="px-6 pb-6 pt-0 relative flex-1 flex flex-col">
+<div class="size-20 rounded-full border-4 border-white dark:border-surface-dark overflow-hidden -mt-10 mb-3 bg-gray-200">
+<img alt="Michael Chen" class="w-full h-full object-cover" data-alt="Portrait of a smiling young man in glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYLVBOZyEkRNRQ2_E9kQuDLr3yMdvALxPwwH2XFVorAIOStljlKV6nbGwslPhShWOcMt1xU8Dh7J4AzN4UJKxf9W6l_1HtXFRbXidEOElxbVXfsJyPUuF2ZJF61tC-HhyZYLrshwYZlfrU8rh76xIqAgei0RT6DE7gaDdM8zny6TRYZ8dzNsWMQerrhIgxICjRp6Y59rkSjV0fevgWlr7eHXQ4e4n1XIwrSwwPgW08-G_T6xvhCeF_TC81M9vZCJmlEbhicYAdM3A"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="text-lg font-bold text-text-main dark:text-white">Michael Chen</h4>
+<p class="text-primary text-sm font-medium">Student Ambassador</p>
+</div>
+<div class="flex items-center gap-1 text-amber-500">
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="text-sm font-bold text-text-main dark:text-white">4.7</span>
+<span class="text-xs text-text-secondary">(45)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-4 text-sm text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">school</span>
+<span>MIT, Computer Science</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-background-light dark:bg-gray-800 text-text-secondary text-xs px-2 py-1 rounded">Admissions</span>
+<span class="bg-background-light dark:bg-gray-800 text-text-secondary text-xs px-2 py-1 rounded">Essay Review</span>
+<span class="bg-background-light dark:bg-gray-800 text-text-secondary text-xs px-2 py-1 rounded">Student Life</span>
+</div>
+<div class="mt-auto flex flex-col gap-3">
+<div class="flex items-center justify-between text-xs text-text-secondary mb-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-green-600">videocam</span>
+<span>Available today</span>
+</div>
+<span>Free intro</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-white h-10 rounded-lg text-sm font-bold hover:bg-primary-dark transition-colors">Book Session</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-text-secondary transition-colors">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Mentor Card 3 -->
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-24 bg-gradient-to-r from-purple-500 to-indigo-600 relative"></div>
+<div class="px-6 pb-6 pt-0 relative flex-1 flex flex-col">
+<div class="size-20 rounded-full border-4 border-white dark:border-surface-dark overflow-hidden -mt-10 mb-3 bg-gray-200">
+<img alt="Emily Davis" class="w-full h-full object-cover" data-alt="Portrait of a confident woman in business attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfDLAsAck54hDG5tBbDWQpwhf3GWxufsq7M0IKXfOIh-fWe3pPS0wkIyBLzQ8mPnJGkn05VBP0xKzb4ZF39J_i6o7-Em-IYFSJ9FUhZ_a4ttzGCFYJi6uvp58_3Y33rqr91ALKvhmT6yjxEkkU_8bmU0uaVNllDaCyQNBCazqTSKObZaV3XrZW7Y5-Y1Jt6qulKSjiERYzUV1z1YQyMQvqE4cu4V3SRbohFaYHM_2vOykVBdScqUZP7B0vfNRO0xyBIPogkX6pNo4"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="text-lg font-bold text-text-main dark:text-white">Emily Davis</h4>
+<p class="text-primary text-sm font-medium">Marketing Director</p>
+</div>
+<div class="flex items-center gap-1 text-amber-500">
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="text-sm font-bold text-text-main dark:text-white">5.0</span>
+<span class="text-xs text-text-secondary">(82)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-4 text-sm text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">business</span>
+<span>Unilever, London</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-background-light dark:bg-gray-800 text-text-secondary text-xs px-2 py-1 rounded">Brand Strategy</span>
+<span class="bg-background-light dark:bg-gray-800 text-text-secondary text-xs px-2 py-1 rounded">Interview Prep</span>
+<span class="bg-background-light dark:bg-gray-800 text-text-secondary text-xs px-2 py-1 rounded">Resume</span>
+</div>
+<div class="mt-auto flex flex-col gap-3">
+<div class="flex items-center justify-between text-xs text-text-secondary mb-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-gray-400">schedule</span>
+<span>Next slot: Tue</span>
+</div>
+<span>$65/session</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-white h-10 rounded-lg text-sm font-bold hover:bg-primary-dark transition-colors">Book Session</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-text-secondary transition-colors">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Mentor Card 4 -->
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-24 bg-gradient-to-r from-orange-400 to-red-500 relative"></div>
+<div class="px-6 pb-6 pt-0 relative flex-1 flex flex-col">
+<div class="size-20 rounded-full border-4 border-white dark:border-surface-dark overflow-hidden -mt-10 mb-3 bg-gray-200">
+<img alt="David Kim" class="w-full h-full object-cover" data-alt="Portrait of a man smiling outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-wgbGUuh1YIDx2IBADWFiRpZ5QaudKwjGWp5AyuisYGl-FCeu54WAni8Pj6_jfL7Y5i1eu-Y0jTJGPMKINwyYWiQefoLYBS_M4acgTqIwzE6MoT4bwYjEFJmPm9IvmM5j5cTct1Xc87qcb4PIR0yOrqX_kVBXlnlqR8BBmWdoKq0jkrACziwZgoPyMXD9HSK2plyMjRTKiKze4YzmHxAfy6NW4dtGpGjPBY92Taw3A3sIGngViZ-KjhUeT_IboV3Cj39SosYZht8"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="text-lg font-bold text-text-main dark:text-white">David Kim</h4>
+<p class="text-primary text-sm font-medium">PhD Candidate</p>
+</div>
+<div class="flex items-center gap-1 text-amber-500">
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="text-sm font-bold text-text-main dark:text-white">4.8</span>
+<span class="text-xs text-text-secondary">(24)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-4 text-sm text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">school</span>
+<span>Oxford University</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-background-light dark:bg-gray-800 text-text-secondary text-xs px-2 py-1 rounded">Research</span>
+<span class="bg-background-light dark:bg-gray-800 text-text-secondary text-xs px-2 py-1 rounded">Physics</span>
+<span class="bg-background-light dark:bg-gray-800 text-text-secondary text-xs px-2 py-1 rounded">Grad School</span>
+</div>
+<div class="mt-auto flex flex-col gap-3">
+<div class="flex items-center justify-between text-xs text-text-secondary mb-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-green-600">videocam</span>
+<span>Available now</span>
+</div>
+<span>$50/session</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-white h-10 rounded-lg text-sm font-bold hover:bg-primary-dark transition-colors">Book Session</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-text-secondary transition-colors">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Mentor Card 5 -->
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-24 bg-gradient-to-r from-cyan-500 to-blue-500 relative"></div>
+<div class="px-6 pb-6 pt-0 relative flex-1 flex flex-col">
+<div class="size-20 rounded-full border-4 border-white dark:border-surface-dark overflow-hidden -mt-10 mb-3 bg-gray-200">
+<img alt="Priya Patel" class="w-full h-full object-cover" data-alt="Portrait of a young woman with a friendly expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl1c3mEQ_6uIQ3BtD6XW6eTZFI3JlMQtvDoAm8pnXS-9SMI22Cm0ILCgpPa4Y53qiOqYdmTYc5EMDuWXEvULn583UTHfP8ywgRsc8zdkLZ8V-WacksqzbszX-SzycB8qNe2npTExeUAFAamwUF-vCpU4RZPDyccTGNCFwzfB--A3BMfYE_RkW5GoCmypHJKXfKgqsJbH8nc6EpqXTna6vPNtdQxx0j5hDwT665jkDcYE1B4nqgp9kx4hsRkyx56y8HnE4AZxqpkmc"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="text-lg font-bold text-text-main dark:text-white">Priya Patel</h4>
+<p class="text-primary text-sm font-medium">UX Designer</p>
+</div>
+<div class="flex items-center gap-1 text-amber-500">
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="text-sm font-bold text-text-main dark:text-white">4.9</span>
+<span class="text-xs text-text-secondary">(56)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-4 text-sm text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">business</span>
+<span>Google, San Francisco</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-background-light dark:bg-gray-800 text-text-secondary text-xs px-2 py-1 rounded">Portfolio Review</span>
+<span class="bg-background-light dark:bg-gray-800 text-text-secondary text-xs px-2 py-1 rounded">Design Thinking</span>
+<span class="bg-background-light dark:bg-gray-800 text-text-secondary text-xs px-2 py-1 rounded">Figma</span>
+</div>
+<div class="mt-auto flex flex-col gap-3">
+<div class="flex items-center justify-between text-xs text-text-secondary mb-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-gray-400">schedule</span>
+<span>Next slot: Tomorrow</span>
+</div>
+<span>$90/session</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-white h-10 rounded-lg text-sm font-bold hover:bg-primary-dark transition-colors">Book Session</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-text-secondary transition-colors">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Mentor Card 6 -->
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-24 bg-gradient-to-r from-pink-500 to-rose-500 relative"></div>
+<div class="px-6 pb-6 pt-0 relative flex-1 flex flex-col">
+<div class="size-20 rounded-full border-4 border-white dark:border-surface-dark overflow-hidden -mt-10 mb-3 bg-gray-200">
+<img alt="James Wilson" class="w-full h-full object-cover" data-alt="Portrait of a man in a casual suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuwNh1nl1e2vgKzuF0uV_GVnvxm3Tvkbfawzby4g6NmcyjAvkjlqlLfhVUKarh_ijY_8TFGx881Da1HD-hTggUMVM5p_2iYrUHtCc5zXu6hOiTSrrrHJOmP3kWsTtKgdgRlFaUbB4T0cR1HhekJvrItZJjg2O32Xb7gbO2U3xrnAfG_5I-8f0rP9narDSf8YxNci-QHTGKWQCYrg6XHiMGjHZIqzO8_iMUAqldgyIJfUqPOhUHWyqmV9hQq1Ub25tuRkLIXV1JUXE"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="text-lg font-bold text-text-main dark:text-white">James Wilson</h4>
+<p class="text-primary text-sm font-medium">Investment Banker</p>
+</div>
+<div class="flex items-center gap-1 text-amber-500">
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="text-sm font-bold text-text-main dark:text-white">4.6</span>
+<span class="text-xs text-text-secondary">(31)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-4 text-sm text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">business</span>
+<span>Goldman Sachs, NY</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-background-light dark:bg-gray-800 text-text-secondary text-xs px-2 py-1 rounded">Finance</span>
+<span class="bg-background-light dark:bg-gray-800 text-text-secondary text-xs px-2 py-1 rounded">Networking</span>
+<span class="bg-background-light dark:bg-gray-800 text-text-secondary text-xs px-2 py-1 rounded">Resume</span>
+</div>
+<div class="mt-auto flex flex-col gap-3">
+<div class="flex items-center justify-between text-xs text-text-secondary mb-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-green-600">videocam</span>
+<span>Available now</span>
+</div>
+<span>$120/session</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-white h-10 rounded-lg text-sm font-bold hover:bg-primary-dark transition-colors">Book Session</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-text-secondary transition-colors">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-12">
+<button class="flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-200 dark:border-gray-700 text-text-main dark:text-white font-bold text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                        Show More Mentors
+                        <span class="material-symbols-outlined">arrow_downward</span>
+</button>
+</div>
+</section>
+<!-- Call to Action Section -->
+<section class="mt-8 mb-12 rounded-2xl bg-gradient-to-br from-primary-dark to-primary p-10 text-white overflow-hidden relative">
+<!-- Abstract pattern -->
+<div class="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="max-w-xl">
+<h2 class="text-3xl font-black mb-4">Are you an expert in your field?</h2>
+<p class="text-blue-100 text-lg mb-6">Join our community of mentors and help guide the next generation of students and professionals. Share your knowledge and grow your network.</p>
+<button class="bg-white text-primary px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors shadow-lg">Become a Mentor</button>
+</div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-[120px] text-white/20">diversity_3</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="bg-white dark:bg-surface-dark border-t border-gray-200 dark:border-gray-800 pt-16 pb-8">
+<div class="max-w-[1200px] mx-auto px-10">
+<div class="flex flex-col md:flex-row justify-between gap-10 mb-12">
+<div class="flex flex-col gap-4 max-w-xs">
+<div class="flex items-center gap-2 text-text-main dark:text-white">
+<div class="size-6 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h3 class="text-lg font-bold">The Mentor</h3>
+</div>
+<p class="text-text-secondary text-sm leading-relaxed">Connecting ambitious students with world-class mentors from top universities and companies.</p>
+</div>
+<div class="flex gap-16 flex-wrap">
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-text-main dark:text-white">Platform</h4>
+<div class="flex flex-col gap-2">
+<a class="text-text-secondary text-sm hover:text-primary transition-colors" href="#">Browse Mentors</a>
+<a class="text-text-secondary text-sm hover:text-primary transition-colors" href="#">How it Works</a>
+<a class="text-text-secondary text-sm hover:text-primary transition-colors" href="#">Pricing</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-text-main dark:text-white">Company</h4>
+<div class="flex flex-col gap-2">
+<a class="text-text-secondary text-sm hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-text-secondary text-sm hover:text-primary transition-colors" href="#">Careers</a>
+<a class="text-text-secondary text-sm hover:text-primary transition-colors" href="#">Blog</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-text-main dark:text-white">Support</h4>
+<div class="flex flex-col gap-2">
+<a class="text-text-secondary text-sm hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="text-text-secondary text-sm hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-text-secondary text-sm hover:text-primary transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-100 dark:border-gray-800">
+<p class="text-text-secondary text-sm">© 2023 The Mentor. All rights reserved.</p>
+<div class="flex gap-4 mt-4 md:mt-0">
+<a class="text-text-secondary hover:text-primary transition-colors" href="#"><span class="sr-only">Twitter</span><svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg></a>
+<a class="text-text-secondary hover:text-primary transition-colors" href="#"><span class="sr-only">Instagram</span><svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg></a>
+<a class="text-text-secondary hover:text-primary transition-colors" href="#"><span class="sr-only">LinkedIn</span><svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg></a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

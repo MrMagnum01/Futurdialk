@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Language Learning Home - The Mentor</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "primary-light": "#d0e1fd",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-slate-200 dark:border-b-slate-700 bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-8 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">The Mentor</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Universities</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Learn</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Consultation</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Community</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="hidden lg:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg focus:outline-0 focus:ring-2 focus:ring-primary/20 border-none bg-slate-100 dark:bg-slate-800 dark:text-white placeholder:text-slate-500 pl-10 pr-4 text-sm font-normal leading-normal h-full" placeholder="Search courses..." value=""/>
+</div>
+</label>
+<div class="flex gap-3 items-center">
+<button class="relative text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-500 ring-2 ring-white transform translate-x-1/2 -translate-y-1/2"></span>
+</button>
+<div class="h-8 w-8 rounded-full bg-slate-200 overflow-hidden border border-slate-300 dark:border-slate-600" data-alt="User profile avatar">
+<img alt="User Profile" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKTxlioaL2Vkufd2REISM3-QJvYU7kUbJ5hamLBGnktJaaGCWRlTDs-3m_jUH3mVignFMc8gH8X82Nqxm40NXD2ViWg0W4pbULY9SV_Sf-zUhjTWEvolHrHK8aVFPQk7iawjn3egJ0cwZNFEgBQVFQ7uh2NkX-SmI6KQF_Tg9NsKZbWLxu0sXY2aDVQqkhmhbUuUeO7nE4xnBtUzKMVElMDU5QHNSetVyB_Pymj64msMibkA0ox5GxZOhcYTO4rWpcLbPOUYggIhY"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col items-center py-8 px-4 sm:px-8 lg:px-40 w-full max-w-[1440px] mx-auto">
+<div class="w-full max-w-[1024px] flex flex-col gap-8">
+<!-- Hero Section -->
+<div class="flex flex-col md:flex-row justify-between items-end gap-4 border-b border-slate-200 dark:border-slate-700 pb-6">
+<div class="flex min-w-72 flex-col gap-2">
+<h1 class="text-4xl font-black leading-tight tracking-[-0.033em] text-slate-900 dark:text-white">Language Hub</h1>
+<p class="text-slate-500 dark:text-slate-400 text-lg font-normal leading-normal">Master a new language to unlock global opportunities.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+                            Filters
+                        </button>
+</div>
+</div>
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 relative overflow-hidden group">
+<div class="absolute right-0 top-0 h-24 w-24 bg-orange-100 dark:bg-orange-900/20 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-2 text-orange-600 dark:text-orange-400">
+<span class="material-symbols-outlined filled text-[24px]">local_fire_department</span>
+<p class="text-sm font-bold uppercase tracking-wider">Daily Streak</p>
+</div>
+<p class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">12 Days</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">You're on fire! Keep it up.</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 relative overflow-hidden group">
+<div class="absolute right-0 top-0 h-24 w-24 bg-blue-100 dark:bg-blue-900/20 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-[24px]">military_tech</span>
+<p class="text-sm font-bold uppercase tracking-wider">Total XP</p>
+</div>
+<p class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">450 XP</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">50 XP to next level.</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 relative overflow-hidden group">
+<div class="absolute right-0 top-0 h-24 w-24 bg-emerald-100 dark:bg-emerald-900/20 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-2 text-emerald-600 dark:text-emerald-400">
+<span class="material-symbols-outlined text-[24px]">stairs</span>
+<p class="text-sm font-bold uppercase tracking-wider">Current Level</p>
+</div>
+<p class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">B1</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Intermediate German</p>
+</div>
+</div>
+</div>
+<!-- Continue Learning / Recommendation -->
+<div class="flex flex-col gap-4">
+<h2 class="text-slate-900 dark:text-white text-2xl font-bold leading-tight">Recommended for You</h2>
+<div class="w-full @container">
+<div class="flex flex-col @xl:flex-row bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md transition-shadow">
+<div class="w-full @xl:w-1/3 bg-slate-200 dark:bg-slate-700 relative min-h-[200px]">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Scenic view of Munich architecture and streets" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0OHOq33FRNqX_mL902nFMgL0s2vdEnxFbHfDsmLrwllBK2g_B4oOFv3CTWkYSu1K620CwF7x8yQ1AfoPqc16IrdfFJ98rQ2REP9ed7ZfNI3SJFBLx7doIl-zBKZhXDaoZbik8CZJ-JZCPO_VE99LkW82uhS6pfk5Ex4WXJ8lIiFJ7nHZfym2vLhzvQCWxPJxRdx1BDqf3wRgE9KquuKMoctdyW8j6QdRvsDf5INYEuIC3OWyH0Ymlh7mb1S_HuqNbrSFkl9b5FJk');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<span class="bg-primary px-2 py-1 rounded text-xs font-bold uppercase tracking-wide mb-2 inline-block">Germany Track</span>
+<p class="text-lg font-bold">Munich Awaits</p>
+</div>
+</div>
+<div class="flex-1 p-6 flex flex-col justify-center">
+<div class="flex justify-between items-start mb-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wide">Continue Learning</p>
+<div class="w-16 h-16 rounded-full border-4 border-emerald-500/20 flex items-center justify-center relative -mt-2">
+<span class="text-emerald-600 font-bold text-sm">65%</span>
+<svg class="absolute inset-0 w-full h-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-emerald-500" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="65, 100" stroke-width="3"></path>
+</svg>
+</div>
+</div>
+<h3 class="text-slate-900 dark:text-white text-xl font-bold mb-2">German for Beginners: Unit 3 - Daily Life</h3>
+<p class="text-slate-600 dark:text-slate-300 mb-6 text-sm">Learn how to order food, ask for directions, and navigate public transport in Germany.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-slate-500 text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                                        15 min lesson
+                                    </span>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all shadow-lg shadow-primary/30 flex items-center gap-2">
+<span>Resume Lesson</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Course Grid -->
+<div class="flex flex-col gap-6 pt-4">
+<div class="flex items-center justify-between">
+<h2 class="text-slate-900 dark:text-white text-2xl font-bold leading-tight">Explore Courses</h2>
+<a class="text-primary font-medium text-sm hover:underline" href="#">View all</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- English Card -->
+<div class="group flex flex-col bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="h-40 bg-slate-100 relative overflow-hidden">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-yellow-400 text-yellow-950 text-xs font-bold px-2 py-1 rounded shadow-sm">Popular</span>
+</div>
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="London Big Ben and red bus typical English scene" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAIVtab-2W6JUC1RYbQYt4tCHtEQWt6fGUao7Be1HwY-6h_-q3A8aKIzCBGL25tbhOY34CtxHVMZhCBxt7mxTk5VTpl5J7ZDra_ZZrSMPEZ6nDSXghffEtc4noNvIa5p66eYzlVv8D141aDDSXme2_jPFoP9Pblzh63BJMjRcN1rwD7mqfDeHZPekN790cN4Ar-QUTYv5LfU3CSiZXnLMEtG73sFxO8539rU9URYIdUZLSLzTV3GOsrxL_7Q4zKS5P-6-VxBcBHWVk');"></div>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Business English</h3>
+<div class="flex items-center gap-1 text-slate-500 text-xs font-medium bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">bar_chart</span>
+                                        Adv.
+                                    </div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Master professional communication for the global workplace. Presentations, emails, and negotiations.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+<div class="flex -space-x-2">
+<img alt="Student" class="w-7 h-7 rounded-full border-2 border-white dark:border-slate-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCshP57t4Y8mGevf6h0R68Sefj2CI55P4bkVDPB28XLJZu8oVtlymPAVJq8g1NG4rPhiJ_tKIGjUEhmnkzaCW4-0AuIa5F1wbYOa6i1BDMVb8iZ1rgy5XAnPW9lcN2QLLtyNzRaZt2rI_poS8KTX7OrcMMjbp1EStp5Bflisqp-Gi4jm4BeG1600FC-TWzaSaRLf3TzdBYqtX7Bbur948Qq7IDIpGjsIaI7l7_JX9ysdhznk0da-VrDXU9NdER9Fpb3VXSGuE0QKVA"/>
+<img alt="Student" class="w-7 h-7 rounded-full border-2 border-white dark:border-slate-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAavpWPFYDwbTZKvBBeoHhRanxo09FdwI07YMed9mX4aAbT7VTAbh_D8Xc1QPfMOIRzaTAFN5SG0QAvAUTm_SlS45F_ktqpsiPytRevtuw9wLXwCPCHtYx1_xdLgIRlgnxYXLMlGy8wVT1fxUw3HvlYqrZ_ps6P3swuf0ItinLBKUhvYsYr8Xpt-JhfbF6Zel4j5MEtn8Rl3E5D0j7RBYsSU4YNtNQ9K9j461C4oVPF_ANBGFyoOU-5nPCtze5gze5-_yQZo6MJeg"/>
+<div class="w-7 h-7 rounded-full border-2 border-white dark:border-slate-800 bg-slate-100 flex items-center justify-center text-[10px] font-bold text-slate-600">+2k</div>
+</div>
+<button class="text-primary font-bold text-sm hover:underline">Start Learning</button>
+</div>
+</div>
+</div>
+<!-- French Card -->
+<div class="group flex flex-col bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="h-40 bg-slate-100 relative overflow-hidden">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-emerald-400 text-emerald-950 text-xs font-bold px-2 py-1 rounded shadow-sm">New</span>
+</div>
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Eiffel Tower view in Paris France" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC15DMFZCGdxpR06CJku-p209iXOWN7gKHZ3Oj6gsXRQiFXqf6HXL9SFGGi2SIQdICpmvznfcABHJ00n9dqcptD5rEK027BxvAkvRDfFjchDn6ASpKfqGgP-nnNum00ApVX9IqZFK0A_aX-DVmXTFLvh2AuvJLeE77tBumKwKKLDGGp68r3eTYglQeQX2ycY4GtAREdZYrZknaK_ffWS22FOtraVrAH8iY1IbsdgQCFDHHUT8wcEmlLpKBr2Dko3T6gFrsL2R9cytU');"></div>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">French for Travel</h3>
+<div class="flex items-center gap-1 text-slate-500 text-xs font-medium bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">child_care</span>
+                                        Beg.
+                                    </div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Essentials for your trip to Paris. Ordering croissants, metro navigation, and polite greetings.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+<div class="flex -space-x-2">
+<img alt="Student" class="w-7 h-7 rounded-full border-2 border-white dark:border-slate-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn_PzLwZgYXRnKRNPIgFq1desVp06LNUy3xLIYSMvM7K1ZgIZXnGvAkX291ThjFRhohqNV4PoDq6SAisAN8oLtxnAEVPOAUZqBDE-b2kQEwHpMNgk_V17BeAHapfokvn0Stchk5ZV4iszQuN8jNhBxi7FBN4s61dDSOGmm_k65uGUDrz7OBG7vocZtzdssdsmHy-3PTOedhbAys2pvL2GXzA19ShTxzODDiv8aWuBIu1gw1x9dvnHNSsI0v6ZWLP9iaYaOR8abr-4"/>
+<img alt="Student" class="w-7 h-7 rounded-full border-2 border-white dark:border-slate-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR4xkTOaAYtBq_V3pT8OW8TwSgQQok7f7TpWVgnGHT8Sf4TeIe3Cd0pb-1huUzIszjIZnHZ-SdX-qF_8m1L8V8E0cBeWN09SVhm6_EsCtw7eUZrWP_SpBCdR41FxgzTPd077Hgrqz4HS888cy69A4hSwOVylXeFDKcDwJw6e3oqBcpS4JEMrK9lg1OKktoGaKFbVOwY56eIHRgMlCtXXRt2wTsCe1H2vuY-euJyCXW5aO8cBjohYuLHRhKl4UlJ1Lsni5VBnA_XHQ"/>
+<div class="w-7 h-7 rounded-full border-2 border-white dark:border-slate-800 bg-slate-100 flex items-center justify-center text-[10px] font-bold text-slate-600">+450</div>
+</div>
+<button class="text-primary font-bold text-sm hover:underline">Start Learning</button>
+</div>
+</div>
+</div>
+<!-- German Card -->
+<div class="group flex flex-col bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="h-40 bg-slate-100 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Brandenburg Gate in Berlin Germany" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2FWdI0jPdIs1RMiOTmte4B1jT1WasnBYuZrHGbTP_VagulraJ-ZO5JKn8-JnNh4MOveflNjARqxsccTFxP1ID38a8gl452qnAWLlBZyDHtT6fYn0uYU6jIkEvOsa9INFpjZJUi0aOwkK2bvGuLwK3Vsjipo3cjLbMxay2zfeRvnJlx5xn9NB6FitztC6rvrmumVKjxmebiBaQAGdnIO_9T9o4hLSC2snKuEGY_1g3tk5HEd76kCecTX7uIUXzvA8hW9uC4mRpz1w');"></div>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Academic German</h3>
+<div class="flex items-center gap-1 text-slate-500 text-xs font-medium bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">school</span>
+                                        Int.
+                                    </div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Prepare for your university studies in Germany. Technical vocabulary and essay writing.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+<div class="flex -space-x-2">
+<img alt="Student" class="w-7 h-7 rounded-full border-2 border-white dark:border-slate-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzQCcLgT-FErsok5rIP9FzuyEzgNvcb9Nud8WwZ8BeWsjJdYdR7AGgd14gvRmxzwDEuirnI3p-UkY5jM5piG46fUAzY0VHj1KBg2afstc9sf_asnOkYD_Fj5m87MA5hKmtxDRMquoE4nyKfs6G4BV02IXhLgXYabAVeNaQg0xrUiZqaGyFjNU9sOB6oK-znUm29843bmHh5yWojOumhhlH7C4qa_cU0OTIwYmVMpow8WNpu9bv-u3eVC7qCFPI7lV1cSZQ2_9MGDw"/>
+<img alt="Student" class="w-7 h-7 rounded-full border-2 border-white dark:border-slate-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK9acfZxp1oKry4EGQBHv809wWND7tgtgdGvzik3q9mEaSpFdU5mQmF3CLKp8DfkiTmJLTr19BqpSvO0LhFZyxLplbpmRNVyz_Svyqv7XBYibUIL7gamJ4H_zQHVQBkaFVltUR-zvlwvNijn-BR8TBeXWklxsJHYNQ6bfeIOrpZ3vgzfMxHWiRKnudsfAVQJhqfQeEgKAvqYI9Mvl18uo1opzqHsEev7ofVJ3VsaNfhVuuzW0ObdNPO06C5NsXokbKiq-_e0TLkQ0"/>
+<div class="w-7 h-7 rounded-full border-2 border-white dark:border-slate-800 bg-slate-100 flex items-center justify-center text-[10px] font-bold text-slate-600">+1.2k</div>
+</div>
+<button class="text-primary font-bold text-sm hover:underline">Start Learning</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Learning Tools / Categories -->
+<div class="flex flex-col gap-4 pt-4 pb-12">
+<h2 class="text-slate-900 dark:text-white text-2xl font-bold leading-tight">Tools &amp; Resources</h2>
+<div class="flex flex-wrap gap-4">
+<button class="flex-1 min-w-[140px] p-4 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 flex flex-col items-center justify-center gap-2 hover:bg-primary/5 dark:hover:bg-slate-700 hover:border-primary/30 transition-all group">
+<div class="h-10 w-10 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">translate</span>
+</div>
+<span class="font-medium text-slate-700 dark:text-slate-200">Dictionary</span>
+</button>
+<button class="flex-1 min-w-[140px] p-4 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 flex flex-col items-center justify-center gap-2 hover:bg-primary/5 dark:hover:bg-slate-700 hover:border-primary/30 transition-all group">
+<div class="h-10 w-10 rounded-full bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center text-pink-600 dark:text-pink-400 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">style</span>
+</div>
+<span class="font-medium text-slate-700 dark:text-slate-200">Flashcards</span>
+</button>
+<button class="flex-1 min-w-[140px] p-4 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 flex flex-col items-center justify-center gap-2 hover:bg-primary/5 dark:hover:bg-slate-700 hover:border-primary/30 transition-all group">
+<div class="h-10 w-10 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center text-teal-600 dark:text-teal-400 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<span class="font-medium text-slate-700 dark:text-slate-200">Community</span>
+</button>
+<button class="flex-1 min-w-[140px] p-4 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 flex flex-col items-center justify-center gap-2 hover:bg-primary/5 dark:hover:bg-slate-700 hover:border-primary/30 transition-all group">
+<div class="h-10 w-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600 dark:text-amber-400 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">quiz</span>
+</div>
+<span class="font-medium text-slate-700 dark:text-slate-200">Practice Quiz</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

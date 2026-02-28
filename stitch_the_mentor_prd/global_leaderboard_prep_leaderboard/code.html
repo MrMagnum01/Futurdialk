@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Global Leaderboard - The Mentor</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3713ec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for leaderboard table */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1d1c27; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3f3b54; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5a5575; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased selection:bg-primary selection:text-white overflow-x-hidden min-h-screen flex flex-col">
+<!-- Header / Navbar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-[#2b2839] bg-background-light/80 dark:bg-[#121118]/80 backdrop-blur-md px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">The Mentor</h2>
+</div>
+<nav class="flex items-center gap-9 hidden lg:flex">
+<a class="text-slate-600 dark:text-[#a19db9] hover:text-primary dark:hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Home</a>
+<a class="text-slate-600 dark:text-[#a19db9] hover:text-primary dark:hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Courses</a>
+<a class="text-primary dark:text-white text-sm font-medium leading-normal" href="#">Leaderboard</a>
+<a class="text-slate-600 dark:text-[#a19db9] hover:text-primary dark:hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Universities</a>
+<a class="text-slate-600 dark:text-[#a19db9] hover:text-primary dark:hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Blog</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64 group">
+<div class="flex w-full flex-1 items-stretch rounded-full h-full border border-transparent focus-within:border-primary/50 transition-all bg-white dark:bg-[#2b2839]">
+<div class="text-slate-400 dark:text-[#a19db9] flex border-none items-center justify-center pl-4 rounded-l-full border-r-0">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-full text-slate-900 dark:text-white focus:outline-0 focus:ring-0 border-none bg-transparent focus:border-none h-full placeholder:text-slate-400 dark:placeholder:text-[#a19db9] px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Search students..." value=""/>
+</div>
+</label>
+<div class="flex gap-3">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-slate-200 dark:bg-[#2b2839] hover:bg-slate-300 dark:hover:bg-[#3f3b54] text-slate-900 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors">
+<span class="truncate">Log In</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary/90 text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors shadow-lg shadow-primary/25">
+<span class="truncate">Sign Up</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center w-full px-4 sm:px-10 py-8">
+<div class="w-full max-w-[1200px] flex flex-col gap-8">
+<!-- Page Title & Hero Stats -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-end">
+<div class="lg:col-span-2 flex flex-col gap-3">
+<h1 class="text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] text-slate-900 dark:text-white">
+                        Global <span class="text-primary">Leaderboard</span>
+</h1>
+<p class="text-slate-500 dark:text-[#a19db9] text-base md:text-lg font-normal leading-normal max-w-2xl">
+                        Compete with students worldwide. Earn points by taking mock tests, completing daily challenges, and mastering subjects.
+                    </p>
+</div>
+<!-- User Personal Stats (Mini Dashboard) -->
+<div class="lg:col-span-1 bg-white dark:bg-[#1d1c27] border border-slate-200 dark:border-[#3f3b54] rounded-xl p-4 flex justify-between items-center shadow-sm">
+<div class="flex flex-col gap-1 text-center flex-1 border-r border-slate-200 dark:border-[#3f3b54]">
+<span class="text-2xl font-bold text-primary">#42</span>
+<span class="text-xs text-slate-500 dark:text-[#a19db9] font-medium uppercase tracking-wider">Rank</span>
+</div>
+<div class="flex flex-col gap-1 text-center flex-1 border-r border-slate-200 dark:border-[#3f3b54]">
+<span class="text-2xl font-bold text-slate-900 dark:text-white">1,250</span>
+<span class="text-xs text-slate-500 dark:text-[#a19db9] font-medium uppercase tracking-wider">Points</span>
+</div>
+<div class="flex flex-col gap-1 text-center flex-1">
+<span class="text-2xl font-bold text-emerald-400">Top 2%</span>
+<span class="text-xs text-slate-500 dark:text-[#a19db9] font-medium uppercase tracking-wider">Percentile</span>
+</div>
+</div>
+</div>
+<!-- Filters Section -->
+<div class="bg-white dark:bg-[#1d1c27] rounded-2xl p-4 md:p-6 border border-slate-200 dark:border-[#2b2839] shadow-sm flex flex-col gap-6">
+<!-- Top Row Filters: Time Period + Search -->
+<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex p-1 bg-slate-100 dark:bg-[#2b2839] rounded-full w-full md:w-auto overflow-hidden">
+<button class="flex-1 md:flex-none px-6 py-2 rounded-full text-sm font-bold bg-white dark:bg-primary text-slate-900 dark:text-white shadow-sm transition-all">
+                            All Time
+                        </button>
+<button class="flex-1 md:flex-none px-6 py-2 rounded-full text-sm font-medium text-slate-500 dark:text-[#a19db9] hover:text-slate-900 dark:hover:text-white transition-all">
+                            Monthly
+                        </button>
+<button class="flex-1 md:flex-none px-6 py-2 rounded-full text-sm font-medium text-slate-500 dark:text-[#a19db9] hover:text-slate-900 dark:hover:text-white transition-all">
+                            Weekly
+                        </button>
+</div>
+<div class="flex gap-3 w-full md:w-auto">
+<!-- Select Inputs -->
+<div class="relative w-full md:w-48">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-[#a19db9] material-symbols-outlined text-[20px]">school</span>
+<select class="form-select w-full pl-10 pr-4 py-2.5 bg-slate-100 dark:bg-[#2b2839] border-none rounded-xl text-sm font-medium text-slate-900 dark:text-white focus:ring-2 focus:ring-primary cursor-pointer appearance-none">
+<option>All Exams</option>
+<option>SAT Prep</option>
+<option>Tawjihi</option>
+<option>IGCSE</option>
+</select>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-[#a19db9] pointer-events-none material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+<div class="relative w-full md:w-48">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-[#a19db9] material-symbols-outlined text-[20px]">public</span>
+<select class="form-select w-full pl-10 pr-4 py-2.5 bg-slate-100 dark:bg-[#2b2839] border-none rounded-xl text-sm font-medium text-slate-900 dark:text-white focus:ring-2 focus:ring-primary cursor-pointer appearance-none">
+<option>Global</option>
+<option>Jordan</option>
+<option>UAE</option>
+<option>Saudi Arabia</option>
+</select>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-[#a19db9] pointer-events-none material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Leaderboard Table -->
+<div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-[#2b2839]">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-[#2b2839]/50 border-b border-slate-200 dark:border-[#2b2839] text-xs uppercase tracking-wider text-slate-500 dark:text-[#a19db9]">
+<th class="p-4 font-semibold w-24 text-center">Rank</th>
+<th class="p-4 font-semibold">Student</th>
+<th class="p-4 font-semibold hidden md:table-cell">Exam Focus</th>
+<th class="p-4 font-semibold text-right">Tests Taken</th>
+<th class="p-4 font-semibold text-right">Avg. Score</th>
+<th class="p-4 font-semibold text-right text-primary">Total Points</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 dark:divide-[#2b2839]">
+<!-- Top 1 Gold -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-[#2b2839]/30 transition-colors">
+<td class="p-4 text-center">
+<div class="inline-flex items-center justify-center size-8 rounded-full bg-yellow-400/20 text-yellow-500 font-black text-lg">
+<span class="material-symbols-outlined text-[20px]">emoji_events</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="size-10 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 p-[2px]">
+<img alt="Top ranked student profile picture" class="rounded-full w-full h-full object-cover border-2 border-white dark:border-[#1d1c27]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0xrHTiacKSVOlJtn6h1Pjb8Jpnrvz-aUMreokyT10ijcg5MZ0PF9Vzohc-R-KoGQTamWuGLD3weNtGGYdJM2yI2oJzY5YtfZWrrlsvsFb0nG3g41KnsanMNGygU-AsAvFMP1U88IqG6XnQcgI3NmRjiudZnEygHXYBT3yXrHd9mtpimVSXGJrFxZMOGnGC0tZ3mf3dwUWI42snsfVrVNhcjmzBD-ubwqf0R9oBv5h1iOGFBMnKmRJk2R2dvL2ZnNssXtrn2qlknE"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-yellow-500 text-[#1d1c27] text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-white dark:border-[#1d1c27]">1</div>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Sarah Al-Majali</p>
+<p class="text-xs text-slate-500 dark:text-[#a19db9]">Amman, Jordan</p>
+</div>
+</div>
+</td>
+<td class="p-4 hidden md:table-cell text-sm text-slate-600 dark:text-slate-300">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100 dark:bg-[#2b2839] text-xs font-medium">
+<span class="size-1.5 rounded-full bg-purple-500"></span> Tawjihi
+                                    </span>
+</td>
+<td class="p-4 text-right text-sm font-medium text-slate-600 dark:text-slate-300">42</td>
+<td class="p-4 text-right text-sm font-bold text-green-500">98.5%</td>
+<td class="p-4 text-right font-black text-slate-900 dark:text-white text-lg">12,450</td>
+</tr>
+<!-- Top 2 Silver -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-[#2b2839]/30 transition-colors">
+<td class="p-4 text-center">
+<div class="inline-flex items-center justify-center size-8 rounded-full bg-slate-300/20 text-slate-400 font-black text-lg">
+                                        2
+                                    </div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="size-10 rounded-full bg-gradient-to-br from-slate-300 to-slate-500 p-[2px]">
+<img alt="Second ranked student profile picture" class="rounded-full w-full h-full object-cover border-2 border-white dark:border-[#1d1c27]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCego7KtwvB2wuajT9TUN-Jrg12w-O_Tzw4Lptcn7W8mB-B1h22ayvuc3XHalx3G9I1FD5qT5ZpRIfnuwIjMDzgCAid7wLhunR1rc2wmuGEx7d2LJ6TCleIKexwrIGbNvFzc_-ud9to47-mVJA3MB5_gO4RNHbU_RH7KLKcozKplbgsSkfkocx1pIsWw2d8iCBHEFpwpvWbqYkL10W55RxcSrFrjv42cWg-0RT9IGo8icmhs3BlQs6BbN2Zmh_moWkvvEo5J-1et64"/>
+</div>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Omar Hassan</p>
+<p class="text-xs text-slate-500 dark:text-[#a19db9]">Dubai, UAE</p>
+</div>
+</div>
+</td>
+<td class="p-4 hidden md:table-cell text-sm text-slate-600 dark:text-slate-300">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100 dark:bg-[#2b2839] text-xs font-medium">
+<span class="size-1.5 rounded-full bg-blue-500"></span> SAT Prep
+                                    </span>
+</td>
+<td class="p-4 text-right text-sm font-medium text-slate-600 dark:text-slate-300">38</td>
+<td class="p-4 text-right text-sm font-bold text-green-500">96.2%</td>
+<td class="p-4 text-right font-black text-slate-900 dark:text-white text-lg">11,200</td>
+</tr>
+<!-- Top 3 Bronze -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-[#2b2839]/30 transition-colors">
+<td class="p-4 text-center">
+<div class="inline-flex items-center justify-center size-8 rounded-full bg-orange-700/20 text-orange-600 font-black text-lg">
+                                        3
+                                    </div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="size-10 rounded-full bg-gradient-to-br from-orange-600 to-orange-800 p-[2px]">
+<img alt="Third ranked student profile picture" class="rounded-full w-full h-full object-cover border-2 border-white dark:border-[#1d1c27]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqwtIKVbesgyS6Ej5Z01zvnenkP-qVPtugPbrIkUL8tRupSkpCsmyntJQ5YhTOCaa6oARGtKxxaH1BxAHIj3diSIglnJmCE-1m1CzRdykEvzJR3SWxFhGzrmpmd1PgHhojGEO8790XmuXCCUA_HOTwgRSi4B4C_ujsoEwYH8_5kcbtUEr6q3UECRRT4ZjfRxtUApm7eNzgLjuOdcyWmE3Azt2oaEDoeFAHArTYQy50vI_eBO-0iYxdFXpFfb6VS1LK1_f-Fr_Hu6g"/>
+</div>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Layla Mahmoud</p>
+<p class="text-xs text-slate-500 dark:text-[#a19db9]">Cairo, Egypt</p>
+</div>
+</div>
+</td>
+<td class="p-4 hidden md:table-cell text-sm text-slate-600 dark:text-slate-300">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100 dark:bg-[#2b2839] text-xs font-medium">
+<span class="size-1.5 rounded-full bg-rose-500"></span> IGCSE
+                                    </span>
+</td>
+<td class="p-4 text-right text-sm font-medium text-slate-600 dark:text-slate-300">35</td>
+<td class="p-4 text-right text-sm font-bold text-green-500">95.8%</td>
+<td class="p-4 text-right font-black text-slate-900 dark:text-white text-lg">10,850</td>
+</tr>
+<!-- Standard Rows -->
+<tr class="group hover:bg-slate-50 dark:hover:bg-[#2b2839]/30 transition-colors">
+<td class="p-4 text-center text-slate-500 dark:text-[#a19db9] font-semibold">4</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<img alt="Student profile picture" class="size-10 rounded-full object-cover border border-slate-200 dark:border-[#2b2839]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdPP6rQvmzmjisE-HCJdgtqmdOETIn1WhfFFiJinY6Z50SonVZfUP4chFJkZCvZObWFXmnxFT7Znn-VGuGYl3AD3wEeP0S98JSfJt_AFTGjRegdP8FuwN6b1hsGeF2hmMsmjT3O65P2geYZgeyRswtZPRxU-SxDG7_O4p-VyNsMwL1eCyPTS98F3fncKtw8NUxMSjYEte1456-QqTwYonIqSoc9L41lBJKqQ3_ql-5C1eJq-aDPlb3Z3cCYU1-Q6PapRFrHUAG0wQ"/>
+<div>
+<p class="font-semibold text-slate-900 dark:text-white">Kareem Zaid</p>
+<p class="text-xs text-slate-500 dark:text-[#a19db9]">Riyadh, KSA</p>
+</div>
+</div>
+</td>
+<td class="p-4 hidden md:table-cell text-sm text-slate-600 dark:text-slate-300">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100 dark:bg-[#2b2839] text-xs font-medium">
+<span class="size-1.5 rounded-full bg-purple-500"></span> Tawjihi
+                                    </span>
+</td>
+<td class="p-4 text-right text-sm font-medium text-slate-600 dark:text-slate-300">31</td>
+<td class="p-4 text-right text-sm font-bold text-emerald-500">92.1%</td>
+<td class="p-4 text-right font-bold text-slate-900 dark:text-white">9,540</td>
+</tr>
+<tr class="group hover:bg-slate-50 dark:hover:bg-[#2b2839]/30 transition-colors">
+<td class="p-4 text-center text-slate-500 dark:text-[#a19db9] font-semibold">5</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<img alt="Student profile picture" class="size-10 rounded-full object-cover border border-slate-200 dark:border-[#2b2839]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg3DZ7-aRYsToGfmddOO7goPAHFDmzZV6DUfCr8dVMB_1PDryJWquROv_TArZYVLMgeSVmVBEHxRMUpmj8xxgTHBW4zse1AmkXHBhTEJ0RDnHEwBI6JngF1Blu7NcyTGxG-fe40nGngch6f4eT2s-KcJ_a2llNVA8U6iDSRt8LFvxM9y2yjxKGCVkzE1PLGmhQyrQlaRH6muv7UJVzd7wpOtQbqKSRkCj7mN0wRC2rsDUlUIVJ-a-JLVRh0CCRLOyIwWZTjcnX2_I"/>
+<div>
+<p class="font-semibold text-slate-900 dark:text-white">Ahmed Al-Sayed</p>
+<p class="text-xs text-slate-500 dark:text-[#a19db9]">Doha, Qatar</p>
+</div>
+</div>
+</td>
+<td class="p-4 hidden md:table-cell text-sm text-slate-600 dark:text-slate-300">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100 dark:bg-[#2b2839] text-xs font-medium">
+<span class="size-1.5 rounded-full bg-blue-500"></span> SAT Prep
+                                    </span>
+</td>
+<td class="p-4 text-right text-sm font-medium text-slate-600 dark:text-slate-300">29</td>
+<td class="p-4 text-right text-sm font-bold text-emerald-500">91.4%</td>
+<td class="p-4 text-right font-bold text-slate-900 dark:text-white">8,920</td>
+</tr>
+<tr class="group hover:bg-slate-50 dark:hover:bg-[#2b2839]/30 transition-colors">
+<td class="p-4 text-center text-slate-500 dark:text-[#a19db9] font-semibold">6</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<img alt="Student profile picture" class="size-10 rounded-full object-cover border border-slate-200 dark:border-[#2b2839]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdBxIoWtObr3tHRzTtlK__vSSSQhcbkJt4lhZwUbIEFM0nvNBhzHgqYg1k36iaKC6RFolZTXPquqVn-f8FjS4cDzJrfQJKu8R_3Tq0ssio0eZSiQrqy58VS9uV-2Z2zOCzI4k8OtsFIGzh8zwXq-_tH2PmMJmn17iveGYrdsFYfL5JjYQ_jPm4fySnco0AOadruPD3u3GrxRboey8xzhJZQOoSsczDkXlM6x7EoQjoM33ZQWXQEEhcKSS4y4RGQb-GOJDoPskVddA"/>
+<div>
+<p class="font-semibold text-slate-900 dark:text-white">Nour El-Deen</p>
+<p class="text-xs text-slate-500 dark:text-[#a19db9]">Beirut, Lebanon</p>
+</div>
+</div>
+</td>
+<td class="p-4 hidden md:table-cell text-sm text-slate-600 dark:text-slate-300">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100 dark:bg-[#2b2839] text-xs font-medium">
+<span class="size-1.5 rounded-full bg-rose-500"></span> IGCSE
+                                    </span>
+</td>
+<td class="p-4 text-right text-sm font-medium text-slate-600 dark:text-slate-300">28</td>
+<td class="p-4 text-right text-sm font-bold text-emerald-500">89.9%</td>
+<td class="p-4 text-right font-bold text-slate-900 dark:text-white">8,450</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between pt-2 border-t border-slate-200 dark:border-[#2b2839]">
+<p class="text-sm text-slate-500 dark:text-[#a19db9]">Showing <span class="font-medium text-slate-900 dark:text-white">1</span> to <span class="font-medium text-slate-900 dark:text-white">6</span> of <span class="font-medium text-slate-900 dark:text-white">2,456</span> students</p>
+<div class="flex gap-2">
+<button class="size-8 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-[#2b2839] text-slate-400 dark:text-[#a19db9] hover:bg-primary hover:text-white transition-colors disabled:opacity-50">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="size-8 flex items-center justify-center rounded-lg bg-primary text-white text-sm font-bold">1</button>
+<button class="size-8 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-[#2b2839] text-slate-600 dark:text-[#a19db9] hover:bg-slate-200 dark:hover:bg-[#3f3b54] text-sm font-medium transition-colors">2</button>
+<button class="size-8 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-[#2b2839] text-slate-600 dark:text-[#a19db9] hover:bg-slate-200 dark:hover:bg-[#3f3b54] text-sm font-medium transition-colors">3</button>
+<span class="flex items-center justify-center text-slate-400 dark:text-[#a19db9]">...</span>
+<button class="size-8 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-[#2b2839] text-slate-600 dark:text-[#a19db9] hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky User Rank (Gamification Element) -->
+<div class="sticky bottom-0 w-full z-40 px-4 pb-4 flex justify-center pointer-events-none">
+<div class="pointer-events-auto w-full max-w-[1200px] bg-primary rounded-xl shadow-2xl shadow-primary/40 border border-primary/50 backdrop-blur-xl p-3 flex items-center justify-between gap-4 animate-in slide-in-from-bottom-5 duration-500">
+<div class="flex items-center gap-4 flex-1">
+<div class="flex-shrink-0 flex items-center justify-center size-10 rounded-full bg-white/20 text-white font-black text-lg backdrop-blur-sm">
+                    42
+                </div>
+<div class="flex items-center gap-3">
+<img alt="Current user profile picture" class="size-10 rounded-full object-cover border-2 border-white/30 hidden sm:block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPwYQKmWWvIE6Pw58o-JlUUvPJMVnSFEeAFGgc5OhcbvEOo0H3pmI6Q8REsKU0Qe-nzwo2WwgrbNEIp9DBsWKXRidvwRKWJSACYOBVjLrb2KOuUjFaL5ny_tJCsiIHNr1ah-nRBVVt3ZtfKnGYlaSrxkVuPCd17sVCKxH99ez80I2LDohWTp4t0nhJRrXwM0_Y-6HYzZ9qQHIuWlxOdknu-g6IVRFjH_I8ohxuYitiKhfnZCTzxUm8ZMvEY1I9ESBMNbZ0AEyKkPI"/>
+<div class="flex flex-col">
+<p class="font-bold text-white text-sm sm:text-base">You</p>
+<p class="text-xs text-white/70">Top 2% • Keep it up!</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6 sm:gap-10 mr-2 sm:mr-6">
+<div class="flex flex-col items-end">
+<span class="text-[10px] uppercase tracking-wider font-medium text-white/60">Tests</span>
+<span class="font-bold text-white">24</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-[10px] uppercase tracking-wider font-medium text-white/60">Points</span>
+<span class="font-bold text-white">1,250</span>
+</div>
+<div class="flex flex-col items-end hidden sm:flex">
+<span class="text-[10px] uppercase tracking-wider font-medium text-white/60">Next Rank</span>
+<span class="font-bold text-white flex items-center gap-1">+120 <span class="material-symbols-outlined text-[14px]">trending_up</span></span>
+</div>
+</div>
+</div>
+</div>
+</body></html>

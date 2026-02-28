@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Writing Practice - The Mentor</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "primary-50": "#eff6ff",
+                        "primary-100": "#dbeafe",
+                        "primary-200": "#bfdbfe",
+                        "primary-600": "#2563eb",
+                        "primary-700": "#1d4ed8",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark px-10 py-3 shadow-sm z-20 relative">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined !text-[32px]">school</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">The Mentor</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<nav class="hidden lg:flex items-center gap-9">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Universities</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Career Guidance</a>
+<a class="text-primary font-bold text-sm leading-normal" href="#">Prep</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex h-10 px-4 bg-primary hover:bg-primary-700 transition-colors text-white text-sm font-bold leading-normal rounded-lg items-center justify-center gap-2">
+<span class="material-symbols-outlined !text-[20px]">logout</span>
+<span class="truncate">Log Out</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDQ2VO__ixsiNWep0X00XFeVYYOj5ikOYYI_4Fl5WMP0H05L1wu27NVO-Dv36GZ63QofFMaV4D6ObBRL6aOpvT9mRmEOnSID_zRa5YFQ_NzcQ1JZIUVds27gxcZLuX61AatVM3zt23y1vJ99tv3tYFB_sxWayjiETPR79wupKI5FKMnWbRZPaf7UvRbGsY3XdalALO4tHflPnEd-xzY6EnJ6JlmxIaIMUIPpMLiYEuuwvNo6mFYxGBEcAbSo-0iuFtLH5EpBF9iHQc");'></div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col lg:flex-row h-[calc(100vh-64px)] overflow-hidden">
+<!-- Left Panel: Prompt & Tools (Scrollable) -->
+<aside class="w-full lg:w-[400px] xl:w-[450px] bg-surface-light dark:bg-surface-dark border-r border-slate-200 dark:border-slate-800 flex flex-col h-full overflow-y-auto z-10 shadow-lg lg:shadow-none">
+<!-- Breadcrumbs -->
+<div class="px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+<div class="flex flex-wrap gap-2 text-xs">
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary" href="#">Prep</a>
+<span class="text-slate-400">/</span>
+<span class="text-slate-900 dark:text-slate-100 font-medium">Writing Practice</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-6">
+<!-- Question Block -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="px-2 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider rounded">Task 2: Opinion Essay</span>
+<div class="flex items-center gap-1 text-slate-500 text-sm">
+<span class="material-symbols-outlined !text-[18px]">timer</span>
+<span>40:00</span>
+</div>
+</div>
+<h1 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">
+                        Compare and Contrast: Online vs. Traditional Learning
+                    </h1>
+<div class="prose prose-sm dark:prose-invert text-slate-600 dark:text-slate-300 leading-relaxed">
+<p>
+                            Discuss the advantages and disadvantages of online learning versus traditional classroom learning. Which method do you believe is more effective for high school students and why? Provide specific examples to support your opinion.
+                        </p>
+</div>
+</div>
+<hr class="border-slate-200 dark:border-slate-700"/>
+<!-- AI Tools Section -->
+<div class="flex flex-col gap-4">
+<h3 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary !text-[20px]">smart_toy</span>
+                        AI Writing Assistant
+                    </h3>
+<!-- Score Estimator Card -->
+<div class="bg-primary/5 border border-primary/20 rounded-xl p-4 flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">Estimated Score</span>
+<span class="text-2xl font-black text-primary">--<span class="text-sm text-slate-400 font-normal">/9.0</span></span>
+</div>
+<div class="w-full bg-white dark:bg-slate-800 rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full w-[0%] transition-all duration-1000"></div>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Start writing to get a real-time prediction based on vocabulary, coherence, and grammar.</p>
+</div>
+<!-- Checklist -->
+<div class="flex flex-col gap-2">
+<span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Requirements</span>
+<div class="flex items-center gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
+<div class="size-5 rounded-full border-2 border-slate-300 dark:border-slate-600 flex items-center justify-center"></div>
+<span class="text-sm text-slate-600 dark:text-slate-300">Min 250 words</span>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
+<div class="size-5 rounded-full border-2 border-slate-300 dark:border-slate-600 flex items-center justify-center"></div>
+<span class="text-sm text-slate-600 dark:text-slate-300">Use transition words</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right Panel: Editor Area -->
+<section class="flex-1 flex flex-col bg-background-light dark:bg-background-dark h-full relative">
+<!-- Editor Toolbar -->
+<div class="h-14 bg-surface-light dark:bg-surface-dark border-b border-slate-200 dark:border-slate-800 flex items-center px-4 justify-between shrink-0">
+<div class="flex items-center gap-1">
+<button class="p-2 text-slate-500 hover:text-primary hover:bg-primary-50 dark:hover:bg-primary-900/20 rounded transition-colors" title="Bold">
+<span class="material-symbols-outlined !text-[20px]">format_bold</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-primary hover:bg-primary-50 dark:hover:bg-primary-900/20 rounded transition-colors" title="Italic">
+<span class="material-symbols-outlined !text-[20px]">format_italic</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-primary hover:bg-primary-50 dark:hover:bg-primary-900/20 rounded transition-colors" title="Underline">
+<span class="material-symbols-outlined !text-[20px]">format_underlined</span>
+</button>
+<div class="w-px h-6 bg-slate-200 dark:bg-slate-700 mx-2"></div>
+<button class="p-2 text-slate-500 hover:text-primary hover:bg-primary-50 dark:hover:bg-primary-900/20 rounded transition-colors" title="List">
+<span class="material-symbols-outlined !text-[20px]">format_list_bulleted</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-primary hover:bg-primary-50 dark:hover:bg-primary-900/20 rounded transition-colors" title="Ordered List">
+<span class="material-symbols-outlined !text-[20px]">format_list_numbered</span>
+</button>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-xs font-medium text-slate-400 uppercase tracking-widest hidden sm:inline-block">Draft Saved</span>
+<button class="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-primary bg-primary-50 dark:bg-primary-900/20 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 transition-colors">
+<span class="material-symbols-outlined !text-[18px]">spellcheck</span>
+<span>Check Grammar</span>
+</button>
+</div>
+</div>
+<!-- Writing Area -->
+<div class="flex-1 overflow-y-auto p-8 lg:p-12 relative">
+<div class="max-w-3xl mx-auto h-full flex flex-col">
+<textarea class="flex-1 w-full bg-transparent border-none p-0 text-slate-800 dark:text-slate-200 text-lg leading-relaxed focus:ring-0 placeholder:text-slate-300 dark:placeholder:text-slate-600 resize-none font-display" placeholder="Start typing your essay here... Focus on clear arguments and structured paragraphs." spellcheck="false"></textarea>
+</div>
+</div>
+<!-- Editor Footer -->
+<div class="h-16 bg-surface-light dark:bg-surface-dark border-t border-slate-200 dark:border-slate-800 flex items-center justify-between px-6 shrink-0 z-20">
+<div class="flex items-center gap-6">
+<div class="flex flex-col">
+<span class="text-xs text-slate-500 dark:text-slate-400">Words</span>
+<span class="text-sm font-bold text-slate-900 dark:text-white">0</span>
+</div>
+<div class="w-px h-8 bg-slate-200 dark:bg-slate-700"></div>
+<div class="flex flex-col">
+<span class="text-xs text-slate-500 dark:text-slate-400">Characters</span>
+<span class="text-sm font-bold text-slate-900 dark:text-white">0</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="hidden sm:flex px-6 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                        Save Draft
+                    </button>
+<button class="px-6 py-2.5 rounded-lg bg-primary hover:bg-primary-700 text-white font-bold text-sm shadow-lg shadow-primary/30 transition-all flex items-center gap-2">
+<span>Submit for Review</span>
+<span class="material-symbols-outlined !text-[18px]">send</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+</body></html>

@@ -1,0 +1,67 @@
+# Tawjih V4 — Full Platform Audit
+
+## 1. Backend API Health
+- [ ] Backend container running
+- [ ] All routers registered in main.py
+- [ ] Health endpoint responds
+
+## 2. Auth Flow (Critical)
+- [ ] POST /api/auth/register — creates user + profile + gamification
+- [ ] POST /api/auth/login — returns JWT tokens
+- [ ] POST /api/auth/refresh — refreshes access token
+- [ ] GET /api/auth/me — returns current user
+- [ ] Duplicate email → 409
+- [ ] Wrong password → 401
+
+## 3. Onboarding Flow
+- [ ] Step 1: Role selection (Lycéen, Universitaire, Master, Parent)
+- [ ] Step 2: Academic info (BAC score, field)
+- [ ] Step 3: Target countries selection
+- [ ] Step 4: Target field of study
+- [ ] Step 5: Language proficiency
+- [ ] Onboarding completion → redirects to dashboard
+
+## 4. Frontend Pages (19 pages)
+- [ ] Landing (/) — stats, hero, features sections
+- [ ] Login (/login) — form, validation, JWT storage
+- [ ] Register (/register) — form, role selector, redirects
+- [ ] Dashboard (/dashboard) — personalized, auth-gated
+- [ ] Explore Programs (/explore) — 60 programs, filters, 🇲🇦 badges
+- [ ] Scholarship Search (/scholarships) — 15 scholarships, filters
+- [ ] Budget Calculator (/budget) — French labels, MAD, country select
+- [ ] Roadmap List (/roadmap) — 5 templates, create roadmap
+- [ ] Profile (/profile) — user data display
+- [ ] Settings (/settings) — load/save settings
+- [ ] Document Vault (/documents) — 6 templates, 5 checklists
+- [ ] Community Hub (/community) — posts, trending, groups
+- [ ] Visa Prep (/visa-prep) — 6 countries, Q&A, tips
+- [ ] Housing Guides (/housing) — country tabs, city guides, MAD
+- [ ] Marketplace (/marketplace) — 9 services, MAD pricing
+- [ ] Language Learning (/learn) — 5 languages, exam badges
+- [ ] Exam Prep Home (/prep) — BAC, IELTS, TCF, TOEFL
+- [ ] Admin Dashboard (/admin) — stats, users, content tabs
+- [ ] Admin Translations (/admin/translations) — translation editor
+
+## 5. API Endpoints (Data)
+- [ ] GET /api/explore/programs — pagination, search, filters
+- [ ] GET /api/explore/schools — all schools
+- [ ] GET /api/scholarships — list + match
+- [ ] GET /api/financial/budget — budget data per country
+- [ ] GET /api/roadmap/templates — 5 templates
+- [ ] GET /api/documents/templates — 6 templates
+- [ ] GET /api/documents/checklist/{country} — checklists
+- [ ] GET /api/visa-prep/countries — 6 countries
+- [ ] GET /api/visa-prep/questions/{country} — questions per country
+- [ ] GET /api/visa-prep/tips — general tips
+- [ ] GET /api/community/feed — posts, trending, groups
+- [ ] GET /api/housing/cities — all cities
+- [ ] GET /api/housing/cities/{country} — cities by country
+- [ ] GET /api/admin/stats — platform stats
+- [ ] GET /api/admin/users — user list
+- [ ] GET /api/admin/content/overview — content breakdown
+
+## 6. Cross-Cutting
+- [ ] Language switcher (FR/EN) works on all pages
+- [ ] Navigation links work between pages
+- [ ] 404 page for invalid routes
+- [ ] API error handling (network errors, 401, 403)

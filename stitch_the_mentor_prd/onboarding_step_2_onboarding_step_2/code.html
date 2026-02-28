@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Mentor - Onboarding Step 2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ecab",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#10221c",
+                        "text-main": "#111816",
+                        "text-muted": "#61897d",
+                        "border-color": "#dbe6e2",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for cleaner look if needed */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(97, 137, 125, 0.2);
+            border-radius: 20px;
+        }
+        
+        /* Remove default arrow for custom select styling */
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2361897d' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 1rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col antialiased">
+<!-- Top Navigation -->
+<header class="w-full border-b border-border-color bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+<div class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3 text-text-main dark:text-white">
+<div class="size-8 text-primary flex items-center justify-center bg-background-dark rounded-full">
+<span class="material-symbols-outlined text-[20px]">school</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight">The Mentor</h1>
+</div>
+<div class="flex items-center gap-6">
+<a class="text-sm font-medium text-text-muted hover:text-primary transition-colors hidden sm:block" href="#">Need Help?</a>
+<button class="flex items-center justify-center h-9 px-5 bg-background-light border border-border-color rounded-full text-text-main text-sm font-semibold hover:bg-white transition-colors">
+                    Save &amp; Exit
+                </button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-[640px] flex flex-col gap-8">
+<!-- Progress Indicator -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end mb-1">
+<span class="text-text-main dark:text-white text-sm font-semibold uppercase tracking-wider">Step 2 of 5</span>
+<span class="text-text-muted text-sm">Educational Background</span>
+</div>
+<div class="h-2 w-full bg-border-color/50 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/5 rounded-full transition-all duration-500 ease-out"></div>
+</div>
+</div>
+<!-- Form Container -->
+<div class="bg-white dark:bg-[#152a23] rounded-lg p-8 sm:p-10 shadow-sm border border-border-color/50">
+<div class="mb-8">
+<h2 class="text-3xl sm:text-4xl font-bold text-text-main dark:text-white mb-3">Your Education</h2>
+<p class="text-text-muted text-lg">Tell us about your current academic standing so we can tailor the right study plan for you.</p>
+</div>
+<form class="flex flex-col gap-6" onsubmit="event.preventDefault();">
+<!-- School Input -->
+<div class="flex flex-col gap-2">
+<label class="text-text-main dark:text-white font-medium text-base" for="school">Current School or University</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-text-muted group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">domain</span>
+</div>
+<input class="w-full pl-12 pr-4 py-3.5 bg-background-light dark:bg-background-dark border border-border-color rounded-xl text-text-main dark:text-white placeholder:text-text-muted/60 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all font-sans text-base" id="school" name="school" placeholder="e.g. King Hussein School for Excellence" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Grade Level Select -->
+<div class="flex flex-col gap-2">
+<label class="text-text-main dark:text-white font-medium text-base" for="grade">Current Grade Level</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-text-muted group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">school</span>
+</div>
+<select class="w-full pl-12 pr-10 py-3.5 bg-background-light dark:bg-background-dark border border-border-color rounded-xl text-text-main dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all font-sans text-base appearance-none cursor-pointer" id="grade" name="grade">
+<option disabled="" selected="" value="">Select Grade</option>
+<option value="9">Grade 9</option>
+<option value="10">Grade 10</option>
+<option value="11">Grade 11 (Tawjihi 1)</option>
+<option value="12">Grade 12 (Tawjihi 2)</option>
+<option value="uni">University / College</option>
+</select>
+</div>
+</div>
+<!-- Stream/Major Select -->
+<div class="flex flex-col gap-2">
+<label class="text-text-main dark:text-white font-medium text-base" for="stream">Field of Study</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-text-muted group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<select class="w-full pl-12 pr-10 py-3.5 bg-background-light dark:bg-background-dark border border-border-color rounded-xl text-text-main dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all font-sans text-base appearance-none cursor-pointer" id="stream" name="stream">
+<option disabled="" selected="" value="">Select Stream</option>
+<option value="scientific">Scientific</option>
+<option value="literary">Literary</option>
+<option value="industrial">Industrial</option>
+<option value="it">Information Technology</option>
+<option value="agriculture">Agriculture</option>
+<option value="hotel">Hotel &amp; Tourism</option>
+<option value="home_ec">Home Economics</option>
+</select>
+</div>
+</div>
+</div>
+<!-- GPA Input -->
+<div class="flex flex-col gap-2">
+<label class="text-text-main dark:text-white font-medium text-base" for="gpa">Current GPA / Average (Optional)</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-text-muted group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">equalizer</span>
+</div>
+<input class="w-full pl-12 pr-4 py-3.5 bg-background-light dark:bg-background-dark border border-border-color rounded-xl text-text-main dark:text-white placeholder:text-text-muted/60 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all font-sans text-base" id="gpa" max="100" min="0" name="gpa" placeholder="e.g. 85.5" step="0.1" type="number"/>
+<div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-text-muted text-sm font-semibold">
+                                %
+                            </div>
+</div>
+<p class="text-xs text-text-muted pl-1">This helps us estimate your target scores.</p>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center justify-between pt-6 mt-2 border-t border-border-color/50">
+<button class="flex items-center gap-2 px-6 py-3 rounded-full text-text-main font-semibold hover:bg-background-light transition-colors group" type="button">
+<span class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                            Back
+                        </button>
+<button class="flex items-center gap-2 px-8 py-3 bg-primary hover:bg-opacity-90 rounded-full text-text-main font-bold shadow-lg shadow-primary/20 transition-all hover:translate-y-[-1px] active:translate-y-[1px] group" type="submit">
+                            Next Step
+                            <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Trust/Footer Elements -->
+<div class="flex justify-center items-center gap-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted">lock</span>
+<span class="text-xs text-text-muted font-medium">Data Encrypted</span>
+</div>
+<div class="w-1 h-1 bg-text-muted rounded-full"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted">verified_user</span>
+<span class="text-xs text-text-muted font-medium">Official Curriculum</span>
+</div>
+</div>
+</div>
+</main>
+</body></html>

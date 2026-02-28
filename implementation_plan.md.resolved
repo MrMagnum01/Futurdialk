@@ -1,0 +1,158 @@
+# Tawjih V4 — Full Platform Scaffold with Docker
+
+Build the Tawjih V4 AI-native study abroad platform from the ground up using Docker Compose, based on the 2871-line spec (18 modules, 30+ exams, 13 languages).
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Scope**: This plan covers the **initial project scaffold only** — Docker infrastructure, backend skeleton (FastAPI + all DB connections), frontend skeleton (React + Vite + React Router with route stubs), auth API, and database migrations. Actual module logic (exam simulation engine, AI career advisor, etc.) will follow in subsequent phases.
+
+> [!WARNING]
+> **OpenAI / WhatsApp keys**: The `.env` file will have placeholder values. You'll need to supply real API keys for AI features to work.
+
+> [!IMPORTANT]
+> **Frontend approach**: The `stitch_the_mentor_prd` folder has 60 pre-designed HTML pages (using TailwindCSS CDN + Lexend font). The React app will reference these designs and progressively convert them into React components. For the initial scaffold, the landing page and auth pages will be fully integrated; other pages will have route stubs.
+
+---
+
+## Proposed Changes
+
+### Docker Infrastructure
+
+#### [NEW] [docker-compose.yml](file:///c:/DEV/Tawjih%20V4/docker-compose.yml)
+All 7 services orchestrated:
+
+| Service | Image | Ports | Volumes |
+|---------|-------|-------|---------|
+| `db` | postgres:16 | 5433:5432 | `pgdata` |
+| `mongo` | mongo:7 | 27018:27017 | `mongodata` |
+| `minio` | minio/minio | 9001:9001, 9002:9000 | `miniodata` |
+| `redis` | redis:7 | 6380:6379 | `redisdata` |
+| `backend` | ./backend Dockerfile | 8089:8000 | Source mounted for dev |
+| `frontend` | ./frontend Dockerfile | 3089:80 | Source mounted for dev |
+| `worker` | ./backend Dockerfile (celery) | — | Shares backend code |
+
+#### [NEW] [.env](file:///c:/DEV/Tawjih%20V4/.env)
+Environment variables as per spec section 26.2: `DATABASE_URL`, `MONGODB_URL`, `MINIO_*`, `REDIS_URL`, `OPENAI_API_KEY`, `JWT_SECRET`, `ENCRYPTION_KEY`, etc.
+
+---
+
+### Backend (FastAPI)
+
+#### [NEW] [backend/Dockerfile](file:///c:/DEV/Tawjih%20V4/backend/Dockerfile)
+Python 3.12 slim image, pip install requirements, uvicorn entrypoint on port 8000.
+
+#### [NEW] [backend/requirements.txt](file:///c:/DEV/Tawjih%20V4/backend/requirements.txt)
+Core deps: `fastapi`, `uvicorn[standard]`, `sqlalchemy[asyncio]`, `asyncpg`, `alembic`, `motor`, `pymongo`, `minio`, `redis[hiredis]`, `celery[redis]`, `python-jose[cryptography]`, `passlib[bcrypt]`, `pydantic[email]`, `python-multipart`, `httpx`.
+
+#### [NEW] [backend/app/main.py](file:///c:/DEV/Tawjih%20V4/backend/app/main.py)
+FastAPI application with CORS, health endpoint (`/api/health`), and router includes for auth, profile, prep, career, roadmap, documents, community, gamification, admin, marketplace, financial, housing, mentors, visa-prep, learn, copilot, notifications, integrations.
+
+#### [NEW] [backend/app/core/config.py](file:///c:/DEV/Tawjih%20V4/backend/app/core/config.py)
+Pydantic Settings class loading from environment variables.
+
+#### [NEW] [backend/app/core/database.py](file:///c:/DEV/Tawjih%20V4/backend/app/core/database.py)
+- Async SQLAlchemy engine + session factory for PostgreSQL
+- Motor async client for MongoDB
+- MinIO client
+- Redis async client
+
+#### [NEW] [backend/app/core/security.py](file:///c:/DEV/Tawjih%20V4/backend/app/core/security.py)
+JWT token creation/verification, bcrypt password hashing, OAuth2 dependency for route protection.
+
+#### [NEW] [backend/app/models/](file:///c:/DEV/Tawjih%20V4/backend/app/models/)
+SQLAlchemy ORM models matching spec schemas:
+- `user.py` — users table (sec 3.3)
+- `student_profile.py` — student_profiles (sec 3.4)
+- `school.py` — schools (sec 3.5)
+- `program.py` — programs (sec 3.6)
+- `exam.py` — exam_attempts, exam_progress (sec 5.5-5.6)
+- `roadmap.py` — roadmap_templates, user_roadmaps (sec 6.3-6.4)
+- `notification.py` — notification_queue (sec 9.5)
+- `scholarship.py` — scholarships (sec 10.2)
+- `gamification.py` — user_gamification, study_groups (sec 15.3-15.4)
+- `mentor.py` — mentors (sec 12.3)
+- `marketplace.py` — service_providers, service_reviews (sec 14.2-14.3)
+- `visa.py` — visa_mock_sessions (sec 18.4)
+- `learning.py` — learning_progress (sec 19.6)
+- `integration.py` — platform_connections (sec 17.4)
+- `pre_departure.py` — pre_departure_checklists (sec 11.4)
+
+#### [NEW] [backend/app/routers/auth.py](file:///c:/DEV/Tawjih%20V4/backend/app/routers/auth.py)
+Full auth flow: `POST /api/auth/register`, `POST /api/auth/login`, `POST /api/auth/refresh`, `POST /api/auth/verify-email`.
+
+#### [NEW] [backend/app/routers/](file:///c:/DEV/Tawjih%20V4/backend/app/routers/) (stub routers)
+One file per module with placeholder endpoints:
+`profile.py`, `prep.py`, `career.py`, `roadmap.py`, `documents.py`, `community.py`, `gamification.py`, `admin.py`, `marketplace.py`, `financial.py`, `housing.py`, `mentors.py`, `visa_prep.py`, `learn.py`, `copilot.py`, `notifications.py`, `integrations.py`
+
+#### [NEW] [backend/alembic.ini](file:///c:/DEV/Tawjih%20V4/backend/alembic.ini) + [backend/alembic/](file:///c:/DEV/Tawjih%20V4/backend/alembic/)
+Alembic configuration for PostgreSQL migrations. Initial migration creates all tables.
+
+---
+
+### Frontend (React + Vite)
+
+#### [NEW] [frontend/Dockerfile](file:///c:/DEV/Tawjih%20V4/frontend/Dockerfile)
+Multi-stage: Node 20 for build, Nginx for serve. Dev mode uses Vite dev server.
+
+#### [NEW] [frontend/](file:///c:/DEV/Tawjih%20V4/frontend/)
+React 18 + Vite project initialized via `npm create vite@latest`:
+- `src/App.jsx` — React Router with all routes defined
+- `src/main.jsx` — App entry point
+- `src/pages/` — Page components (Landing, Login, Register, Dashboard, etc.)
+- `src/components/` — Shared components (Header, Footer, Layout)
+- `src/api/` — API client with axios + JWT interceptor
+- `src/contexts/` — AuthContext for user state
+- `tailwind.config.js` — TailwindCSS v3 with the design system colors from Stitch designs
+- `nginx.conf` — SPA-friendly Nginx config
+
+#### Frontend Routes (matching spec + Stitch designs)
+All 60+ Stitch page directories will be mapped to React Router routes. The initial scaffold includes working implementations for:
+- `/` — Landing page (from [landing_page/code.html](file:///c:/DEV/Tawjih%20V4/stitch_the_mentor_prd/landing_page/code.html))
+- `/login` — Login
+- `/register` — Register
+- `/onboarding/step/:step` — 5-step onboarding
+
+All other routes will have stub components showing the page title.
+
+---
+
+### MinIO Setup
+
+#### [NEW] [scripts/init-minio.sh](file:///c:/DEV/Tawjih%20V4/scripts/init-minio.sh)
+Creates required buckets on first run: `tawjihi-audio`, `tawjihi-images`, `tawjihi-recordings`, `tawjihi-documents`.
+
+---
+
+## Verification Plan
+
+### Automated Tests
+
+1. **Docker Compose startup** — Run `docker compose up -d` in `c:\DEV\Tawjih V4`. All 7 services should start and become healthy.
+   ```
+   docker compose up -d --build
+   docker compose ps  # All services should show "running" or "healthy"
+   ```
+
+2. **Backend health check** — `GET http://localhost:8089/api/health` should return `{"status": "ok", "services": {...}}` with all DB connections confirmed.
+   ```
+   curl http://localhost:8089/api/health
+   ```
+
+3. **Frontend loads** — Open `http://localhost:3089` in browser. Landing page should render with the Tawjih design.
+
+4. **Database migration** — Alembic migration runs successfully:
+   ```
+   docker compose exec backend alembic upgrade head
+   ```
+
+5. **Auth flow** — Register a user, login, get JWT token:
+   ```
+   curl -X POST http://localhost:8089/api/auth/register -H "Content-Type: application/json" -d '{"email":"test@test.com","password":"Test1234!","full_name":"Test User","role":"student"}'
+   curl -X POST http://localhost:8089/api/auth/login -H "Content-Type: application/json" -d '{"email":"test@test.com","password":"Test1234!"}'
+   ```
+
+### Manual Verification
+- Open browser to `http://localhost:3089` and verify the landing page matches the Stitch design
+- Navigate to `/login` and `/register` routes and confirm they render
+- Check MinIO console at `http://localhost:9001` (credentials from .env)

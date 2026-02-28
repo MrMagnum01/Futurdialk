@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Documents Vault - The Mentor</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-10 py-3 sticky top-0 z-50 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"></path>
+</svg>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">The Mentor</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Home</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Universities</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Scholarships</a>
+<a class="text-primary font-bold text-sm leading-normal" href="#">My Documents</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Profile</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white hover:bg-blue-700 transition-colors text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Log Out</span>
+</button>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-slate-100 dark:border-slate-800" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAu6_Z7ToHSeyBS7JfS6gI_FdWMUKMde-bH7OGs7AWu1U234nIl0ZdZoXFuVehBAhnuEeD-aqVuijHEt6vW-_OC_h7DTIeyfwDiVDM9uSPRI7THvXHl8P3SzAl5nPDKGo8ckIvtn5ZAtmJcDD8-7eYA80w5-bD0sO_HQ2v7aHAPx_bg6UkW9YniwaDDM2g-geQ1kna9G3oo2G7dhPMe6uSSqWwXQEraHMnPdozkRiFJ14J-9VUIXDFj4elA8heTdQEmCOwt-9sdDYs");'></div>
+</div>
+</div>
+</header>
+<!-- Main Layout -->
+<main class="flex-1 flex justify-center py-8 px-4 sm:px-10 lg:px-40">
+<div class="flex flex-col w-full max-w-[1200px] gap-8">
+<!-- Page Title Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div class="flex flex-col gap-2">
+<h1 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">My Documents Vault</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal">Securely manage, organize, and track the status of your application documents.</p>
+</div>
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-6 bg-primary text-white hover:bg-blue-700 transition-all shadow-md hover:shadow-lg text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined text-[20px]">cloud_upload</span>
+<span class="truncate">Upload Document</span>
+</button>
+</div>
+<!-- Stats / Health Indicators -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Total -->
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-slate-900 dark:text-white text-base font-medium">Total Documents</p>
+<span class="material-symbols-outlined text-slate-400">folder_open</span>
+</div>
+<div class="flex items-baseline gap-2">
+<p class="text-slate-900 dark:text-white text-3xl font-bold leading-tight">24</p>
+<span class="text-green-600 text-sm font-medium bg-green-50 px-2 py-0.5 rounded-full dark:bg-green-900/30">+2 this month</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full mt-2">
+<div class="bg-primary h-1.5 rounded-full" style="width: 80%"></div>
+</div>
+</div>
+<!-- Missing -->
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-red-200 dark:border-red-900/50 bg-red-50/50 dark:bg-red-900/10 shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-slate-900 dark:text-white text-base font-medium">Missing Files</p>
+<span class="material-symbols-outlined text-red-500">warning</span>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-bold leading-tight">2</p>
+<p class="text-red-600 text-sm font-medium flex items-center gap-1">
+                            Action Needed
+                        </p>
+<div class="w-full bg-red-100 dark:bg-red-900/30 h-1.5 rounded-full mt-2">
+<div class="bg-red-500 h-1.5 rounded-full" style="width: 40%"></div>
+</div>
+</div>
+<!-- Expired -->
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-orange-200 dark:border-orange-900/50 bg-orange-50/50 dark:bg-orange-900/10 shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-slate-900 dark:text-white text-base font-medium">Expired Documents</p>
+<span class="material-symbols-outlined text-orange-500">history</span>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-bold leading-tight">1</p>
+<p class="text-orange-600 text-sm font-medium">Renewal Required</p>
+<div class="w-full bg-orange-100 dark:bg-orange-900/30 h-1.5 rounded-full mt-2">
+<div class="bg-orange-500 h-1.5 rounded-full" style="width: 25%"></div>
+</div>
+</div>
+</div>
+<!-- Toolbar -->
+<div class="flex flex-col md:flex-row gap-4 items-center justify-between bg-white dark:bg-slate-900 p-2 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<!-- Tabs -->
+<div class="flex gap-1 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-hide">
+<button class="flex shrink-0 items-center justify-center gap-2 rounded-lg bg-slate-100 dark:bg-slate-800 px-4 py-2 text-slate-900 dark:text-white text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors active:bg-slate-300">
+                            All Files
+                        </button>
+<button class="flex shrink-0 items-center justify-center gap-2 rounded-lg bg-transparent px-4 py-2 text-slate-600 dark:text-slate-400 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                            Transcripts
+                        </button>
+<button class="flex shrink-0 items-center justify-center gap-2 rounded-lg bg-transparent px-4 py-2 text-slate-600 dark:text-slate-400 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                            Certificates
+                        </button>
+<button class="flex shrink-0 items-center justify-center gap-2 rounded-lg bg-transparent px-4 py-2 text-slate-600 dark:text-slate-400 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                            ID Documents
+                        </button>
+<button class="flex shrink-0 items-center justify-center gap-2 rounded-lg bg-transparent px-4 py-2 text-slate-600 dark:text-slate-400 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                            Applications
+                        </button>
+</div>
+<!-- Search -->
+<div class="relative w-full md:w-80">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 border-none rounded-lg leading-5 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary sm:text-sm" placeholder="Search by name or category..." type="text"/>
+</div>
+</div>
+<!-- Recent Documents Section (Grid View) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="group relative flex flex-col gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 hover:shadow-md transition-shadow">
+<div class="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<img alt="Document preview" class="object-cover w-full h-full opacity-80 group-hover:scale-105 transition-transform duration-300" data-alt="Paper document texture background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeSqDYhETruq95oMR3i0oAZayu-psdg_H0018NJIlCr_Eld06aCVMeVEv_-pqBo7uB3yxO5wXWdbY7rB4V1eMcuhyBQYOp3IwLx2xkTuGTmQ4weXqGurb-GRrjw8aVpEJT6vJYMzkpSlJZkWhLUuvPKIVO1eaUBFppDaUQ82J_SFAxm-_Dp4awPtFKlznn6jG8jr0zxUVf57SESJMMXuL2w9NbKmlRXi3BInt7g2wPllv2Olyc_ishGfBtgcDYHiJPHgODF0v1qoA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<span class="material-symbols-outlined absolute bottom-3 left-3 text-white">description</span>
+<span class="absolute top-3 right-3 px-2 py-1 bg-green-500/90 text-white text-xs font-bold rounded">Verified</span>
+</div>
+<div class="flex flex-col">
+<div class="flex justify-between items-start">
+<h3 class="text-slate-900 dark:text-white text-base font-bold line-clamp-1">High School Transcript</h3>
+<button class="text-slate-400 hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<p class="text-slate-500 text-sm">Updated 2 days ago</p>
+<div class="mt-3 flex gap-2">
+<span class="bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 px-2 py-1 rounded text-xs font-medium">PDF</span>
+<span class="bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400 px-2 py-1 rounded text-xs font-medium">2.4 MB</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative flex flex-col gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 hover:shadow-md transition-shadow">
+<div class="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<div class="w-full h-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-slate-400 dark:text-slate-500">picture_as_pdf</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+<span class="material-symbols-outlined absolute bottom-3 left-3 text-slate-700 dark:text-white">description</span>
+</div>
+<div class="flex flex-col">
+<div class="flex justify-between items-start">
+<h3 class="text-slate-900 dark:text-white text-base font-bold line-clamp-1">IELTS Certificate</h3>
+<button class="text-slate-400 hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<p class="text-slate-500 text-sm">Updated 1 month ago</p>
+<div class="mt-3 flex gap-2">
+<span class="bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 px-2 py-1 rounded text-xs font-medium">PDF</span>
+<span class="bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400 px-2 py-1 rounded text-xs font-medium">1.1 MB</span>
+</div>
+</div>
+</div>
+<!-- Card 3 (Expired) -->
+<div class="group relative flex flex-col gap-3 rounded-xl border border-orange-200 dark:border-orange-900/50 bg-white dark:bg-slate-900 p-4 hover:shadow-md transition-shadow ring-1 ring-orange-100 dark:ring-orange-900/20">
+<div class="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<img alt="Passport document" class="object-cover w-full h-full opacity-80 group-hover:scale-105 transition-transform duration-300" data-alt="Passport close up view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3MIMB-XhhvjEiJdTvqAHSFBB2S4Hoim1zXq4X9yQGD6LpeMovAHgcg_HRRgjgGfTLL2qZf0eGLj5PcwlUbmrJM78fn9BUnd-i3-4MFWa4-uhHzPi8uO-q7jdPn_HX3Je7pX2uADVpiQrCB8TqWsb1Kv1hAhMl1_tvrwPltkz2H5UJQytkkIMY5h7oEqTbEebAOK5_w6A-pc_FWMPbHGdvuaq7EqWMEOxbj_vgGTytPDdxWS17Ig8TsT1L_Hj29PMZrewE3mRT6nc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<span class="material-symbols-outlined absolute bottom-3 left-3 text-white">badge</span>
+<span class="absolute top-3 right-3 px-2 py-1 bg-orange-500 text-white text-xs font-bold rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">warning</span> Expired
+                            </span>
+</div>
+<div class="flex flex-col">
+<div class="flex justify-between items-start">
+<h3 class="text-slate-900 dark:text-white text-base font-bold line-clamp-1">Passport Copy</h3>
+<button class="text-slate-400 hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<p class="text-slate-500 text-sm">Expired on Oct 12, 2023</p>
+<div class="mt-3 flex gap-2">
+<span class="bg-red-50 text-red-700 dark:bg-red-900/30 dark:text-red-300 px-2 py-1 rounded text-xs font-medium">Update Now</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative flex flex-col gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 hover:shadow-md transition-shadow">
+<div class="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<div class="w-full h-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-slate-400 dark:text-slate-500">image</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+<span class="material-symbols-outlined absolute bottom-3 left-3 text-slate-700 dark:text-white">image</span>
+</div>
+<div class="flex flex-col">
+<div class="flex justify-between items-start">
+<h3 class="text-slate-900 dark:text-white text-base font-bold line-clamp-1">Personal Photo (ID)</h3>
+<button class="text-slate-400 hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<p class="text-slate-500 text-sm">Updated 3 months ago</p>
+<div class="mt-3 flex gap-2">
+<span class="bg-purple-50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 px-2 py-1 rounded text-xs font-medium">JPG</span>
+<span class="bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400 px-2 py-1 rounded text-xs font-medium">450 KB</span>
+</div>
+</div>
+</div>
+<!-- Missing File Placeholder -->
+<div class="group relative flex flex-col justify-center items-center gap-3 rounded-xl border-2 border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-6 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer min-h-[280px]">
+<div class="size-14 rounded-full bg-white dark:bg-slate-700 flex items-center justify-center shadow-sm text-primary">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<div class="text-center">
+<h3 class="text-slate-900 dark:text-white text-base font-bold">Recommendation Letter</h3>
+<p class="text-red-500 text-sm mt-1 font-medium">Missing File</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-2">Drag &amp; drop or click to upload</p>
+</div>
+</div>
+</div>
+<!-- Table View Option (Optional but good for management) -->
+<div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden">
+<div class="p-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50">
+<h3 class="text-slate-900 dark:text-white font-bold text-lg">Detailed List</h3>
+<button class="text-slate-500 hover:text-primary flex items-center gap-1 text-sm font-medium">
+<span class="material-symbols-outlined text-[18px]">filter_list</span> Filter
+                        </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm text-slate-600 dark:text-slate-400">
+<thead class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+<tr>
+<th class="px-6 py-4 font-semibold text-slate-900 dark:text-white" scope="col">Document Name</th>
+<th class="px-6 py-4 font-semibold text-slate-900 dark:text-white" scope="col">Category</th>
+<th class="px-6 py-4 font-semibold text-slate-900 dark:text-white" scope="col">Status</th>
+<th class="px-6 py-4 font-semibold text-slate-900 dark:text-white" scope="col">Date Added</th>
+<th class="px-6 py-4 font-semibold text-slate-900 dark:text-white text-right" scope="col">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4 font-medium text-slate-900 dark:text-white flex items-center gap-3">
+<div class="size-8 rounded bg-red-100 text-red-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+</div>
+                                        Grade 12 Transcript
+                                    </td>
+<td class="px-6 py-4">Transcripts</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-semibold text-green-600 dark:bg-green-900/30 dark:text-green-400">
+<span class="h-1.5 w-1.5 rounded-full bg-green-600 dark:bg-green-400"></span> Verified
+                                        </span>
+</td>
+<td class="px-6 py-4">Oct 24, 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary">
+<span class="material-symbols-outlined">download</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4 font-medium text-slate-900 dark:text-white flex items-center gap-3">
+<div class="size-8 rounded bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">image</span>
+</div>
+                                        National ID Front
+                                    </td>
+<td class="px-6 py-4">ID Documents</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-400">
+                                            Pending Review
+                                        </span>
+</td>
+<td class="px-6 py-4">Nov 02, 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary">
+<span class="material-symbols-outlined">download</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

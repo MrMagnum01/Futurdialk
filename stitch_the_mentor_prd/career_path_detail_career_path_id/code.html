@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Career Path Detail - The Mentor</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ecab",
+                        "primary-content": "#0a3a2a",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#10221c",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#162e25",
+                        "border-light": "#e0e7e5",
+                        "border-dark": "#234238",
+                        "text-primary-light": "#111816",
+                        "text-primary-dark": "#e8fdf5",
+                        "text-secondary-light": "#61897d",
+                        "text-secondary-dark": "#8bad9f",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-primary-light dark:text-text-primary-dark font-display min-h-screen flex flex-col">
+<!-- Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark px-10 py-3 transition-colors">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-[32px]">school</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">The Mentor</h2>
+</div>
+<div class="hidden lg:flex items-center gap-9">
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Universities</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Scholarships</a>
+<a class="text-sm font-medium leading-normal text-primary" href="#">Career Paths</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Consultation</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">About Us</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark overflow-hidden">
+<div class="text-text-secondary-light dark:text-text-secondary-dark flex items-center justify-center pl-4 pr-2">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full min-w-0 flex-1 resize-none bg-transparent border-none text-sm focus:outline-0 focus:ring-0 placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark h-full px-2" placeholder="Search careers..."/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-primary-content hover:bg-opacity-90 transition-colors text-sm font-bold tracking-[0.015em]">
+<span class="truncate">Sign Up</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-background-light dark:bg-surface-dark border border-border-light dark:border-border-dark hover:bg-border-light dark:hover:bg-border-dark transition-colors text-sm font-bold tracking-[0.015em]">
+<span class="truncate">Log In</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full max-w-[1200px] mx-auto px-4 py-8">
+<!-- Breadcrumbs -->
+<nav class="flex flex-wrap gap-2 mb-6 text-sm">
+<a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary transition-colors font-medium" href="#">Home</a>
+<span class="text-text-secondary-light dark:text-text-secondary-dark font-medium">/</span>
+<a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary transition-colors font-medium" href="#">Career Paths</a>
+<span class="text-text-secondary-light dark:text-text-secondary-dark font-medium">/</span>
+<span class="font-medium">Software Architect</span>
+</nav>
+<!-- Header Hero Section -->
+<div class="relative rounded-2xl overflow-hidden mb-8 shadow-sm">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-background-dark/40 to-transparent z-10"></div>
+<div class="h-[320px] w-full bg-cover bg-center" data-alt="Modern office software architecture meeting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7O7MnOg56M9-41u33xdSYMZDG9IttANuWdZctuP_07c_7O3zRhqN0zKzp-nAQ1hbs1aJVkPSKisqlrS_wEYUNDjQF7Z3gmggyONCj68JgkRKsSxs37479dMfCyzmvZPvisn_DHF_kTe5p8k-q2RThCI6R4rW374dP-AC88G-12wjMg5xtpZP4QHqcISpPH2Xj8TJhjUxtGihqtLMa-8MrqG-FdDQntHbkl2bW6-l4jXfjop_QZwV9gfGat0NG7HwtfMmrxx57blo');"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 z-20 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<div class="flex items-center gap-3 mb-3">
+<span class="bg-primary text-primary-content text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">High Demand</span>
+<span class="bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Tech Sector</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Software Architect</h1>
+<p class="text-gray-200 text-lg max-w-2xl">Design the high-level structures of software systems and guide development teams toward scalable solutions.</p>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center justify-center gap-2 bg-white text-background-dark px-6 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+                        Save Path
+                    </button>
+<button class="flex items-center justify-center gap-2 bg-primary text-primary-content px-6 py-3 rounded-xl font-bold hover:bg-opacity-90 transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]">school</span>
+                        Find Programs
+                    </button>
+</div>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Main Content Column -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Quick Stats Row -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl border border-border-light dark:border-border-dark flex flex-col items-center text-center gap-2">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark font-medium">Avg Salary</p>
+<p class="font-bold text-lg">$145k</p>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl border border-border-light dark:border-border-dark flex flex-col items-center text-center gap-2">
+<div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark font-medium">Growth Rate</p>
+<p class="font-bold text-lg">+22%</p>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl border border-border-light dark:border-border-dark flex flex-col items-center text-center gap-2">
+<div class="w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-500">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark font-medium">Education</p>
+<p class="font-bold text-lg">Bachelor's+</p>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl border border-border-light dark:border-border-dark flex flex-col items-center text-center gap-2">
+<div class="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500">
+<span class="material-symbols-outlined">work_history</span>
+</div>
+<div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark font-medium">Experience</p>
+<p class="font-bold text-lg">5+ Years</p>
+</div>
+</div>
+</div>
+<!-- Overview Section -->
+<section class="bg-surface-light dark:bg-surface-dark p-6 md:p-8 rounded-2xl border border-border-light dark:border-border-dark">
+<h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">description</span>
+                        Overview
+                    </h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark leading-relaxed mb-6">
+                        A Software Architect is a high-level software developer who makes high-level design choices and dictates technical standards, including software coding standards, tools, and platforms. They are the visionaries behind the technical solutions that drive modern businesses, bridging the gap between complex business problems and technological solutions.
+                    </p>
+<h4 class="font-bold mb-3">Key Responsibilities</h4>
+<ul class="grid md:grid-cols-2 gap-3">
+<li class="flex items-start gap-3 p-3 bg-background-light dark:bg-background-dark rounded-lg">
+<span class="material-symbols-outlined text-primary mt-0.5 text-sm">check_circle</span>
+<span class="text-sm">Define software architecture and design patterns</span>
+</li>
+<li class="flex items-start gap-3 p-3 bg-background-light dark:bg-background-dark rounded-lg">
+<span class="material-symbols-outlined text-primary mt-0.5 text-sm">check_circle</span>
+<span class="text-sm">Select appropriate technology stacks and tools</span>
+</li>
+<li class="flex items-start gap-3 p-3 bg-background-light dark:bg-background-dark rounded-lg">
+<span class="material-symbols-outlined text-primary mt-0.5 text-sm">check_circle</span>
+<span class="text-sm">Mentor development teams and review code</span>
+</li>
+<li class="flex items-start gap-3 p-3 bg-background-light dark:bg-background-dark rounded-lg">
+<span class="material-symbols-outlined text-primary mt-0.5 text-sm">check_circle</span>
+<span class="text-sm">Ensure system scalability, security, and performance</span>
+</li>
+</ul>
+</section>
+<!-- Skills & Tools -->
+<section class="bg-surface-light dark:bg-surface-dark p-6 md:p-8 rounded-2xl border border-border-light dark:border-border-dark">
+<h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">psychology</span>
+                        Required Skills &amp; Tools
+                    </h3>
+<div class="mb-6">
+<h4 class="text-sm font-bold text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider mb-3">Technical Skills</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-sm font-medium">System Design</span>
+<span class="px-3 py-1.5 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-sm font-medium">Cloud Computing (AWS/Azure)</span>
+<span class="px-3 py-1.5 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-sm font-medium">Microservices</span>
+<span class="px-3 py-1.5 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-sm font-medium">DevOps</span>
+<span class="px-3 py-1.5 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-sm font-medium">Java / C# / Python</span>
+<span class="px-3 py-1.5 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-sm font-medium">Database Design</span>
+</div>
+</div>
+<div>
+<h4 class="text-sm font-bold text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider mb-3">Soft Skills</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg bg-primary/10 border border-primary/20 text-primary-content dark:text-primary text-sm font-medium">Leadership</span>
+<span class="px-3 py-1.5 rounded-lg bg-primary/10 border border-primary/20 text-primary-content dark:text-primary text-sm font-medium">Communication</span>
+<span class="px-3 py-1.5 rounded-lg bg-primary/10 border border-primary/20 text-primary-content dark:text-primary text-sm font-medium">Problem Solving</span>
+<span class="px-3 py-1.5 rounded-lg bg-primary/10 border border-primary/20 text-primary-content dark:text-primary text-sm font-medium">Strategic Thinking</span>
+</div>
+</div>
+</section>
+<!-- Academic Path -->
+<section class="bg-surface-light dark:bg-surface-dark p-6 md:p-8 rounded-2xl border border-border-light dark:border-border-dark">
+<h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">menu_book</span>
+                        Recommended Academic Path
+                    </h3>
+<div class="relative pl-8 border-l-2 border-border-light dark:border-border-dark space-y-8">
+<div class="relative">
+<div class="absolute -left-[41px] top-0 size-6 rounded-full bg-primary border-4 border-surface-light dark:border-surface-dark"></div>
+<h4 class="font-bold text-lg">Bachelor's Degree</h4>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark mb-2">4 Years • Computer Science or Software Engineering</p>
+<p class="text-sm mb-4">Focus on algorithms, data structures, and programming fundamentals. This is the foundation for your career.</p>
+<a class="inline-flex items-center text-sm font-bold text-primary hover:underline" href="#">View Undergraduate Programs <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span></a>
+</div>
+<div class="relative">
+<div class="absolute -left-[41px] top-0 size-6 rounded-full bg-border-light dark:bg-border-dark border-4 border-surface-light dark:border-surface-dark"></div>
+<h4 class="font-bold text-lg">Industry Experience</h4>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark mb-2">3-5 Years • Junior to Senior Developer</p>
+<p class="text-sm">Gain hands-on experience coding, debugging, and understanding the software development lifecycle (SDLC).</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[41px] top-0 size-6 rounded-full bg-border-light dark:bg-border-dark border-4 border-surface-light dark:border-surface-dark"></div>
+<h4 class="font-bold text-lg">Master's Degree (Optional)</h4>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark mb-2">1-2 Years • Specialized Architecture or MBA</p>
+<p class="text-sm mb-4">Advanced study in distributed systems or business management can accelerate your move into architecture roles.</p>
+<a class="inline-flex items-center text-sm font-bold text-primary hover:underline" href="#">View Graduate Programs <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span></a>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar -->
+<div class="space-y-8">
+<!-- Recommended Programs Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl border border-border-light dark:border-border-dark overflow-hidden sticky top-24">
+<div class="p-6 border-b border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50">
+<h3 class="font-bold text-lg">Top University Programs</h3>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Based on this career path</p>
+</div>
+<div class="divide-y divide-border-light dark:divide-border-dark">
+<!-- Program 1 -->
+<div class="p-4 hover:bg-background-light dark:hover:bg-background-dark transition-colors group cursor-pointer">
+<div class="flex items-start gap-3">
+<div class="size-12 rounded-lg bg-gray-100 overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="University campus building modern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXP8zp6NeB4WFMT_6MKCab92osrT4yC0n7-6RfbJY0-BTFiQ1Zb6rgwXQ6m1BanU3gj4F3puyA6IST-LMKDCabagIT5OsC4f9hk6QBlryggsbx5TjcTMYOi2-ztcGEvv2w8bBtG8C0_c4lDGiC_WpSOz1vVXR75nNXV__2yHQ-NktsWFEkDqF4eM0RAMzmYsOczumHmGQhWPYSFX1WwURKlmv6hnWazdMnW_INFXjN1bKJ3R-ZEsmi2yJX5WToisOOp5f9a8rw1TM"/>
+</div>
+<div>
+<h4 class="font-bold text-sm group-hover:text-primary transition-colors">BSc Computer Science</h4>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Stanford University</p>
+<div class="flex items-center gap-1 mt-1 text-xs text-yellow-500 font-medium">
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+                                        4.9 (2k reviews)
+                                    </div>
+</div>
+</div>
+</div>
+<!-- Program 2 -->
+<div class="p-4 hover:bg-background-light dark:hover:bg-background-dark transition-colors group cursor-pointer">
+<div class="flex items-start gap-3">
+<div class="size-12 rounded-lg bg-gray-100 overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Historic university library building" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoVxb2o191hSS_3uY2afxHcDV3FvCe_MXF0I4M0He1hzlfzis289CCE6mb73ajjTH64A-U-zwr_2TzbtMcgdIJJ8HDHspQTS7nsszUOSM02XjzKXmTOZLMq20knyFrSSRiXKWhWHGNLKpWrD4f_TDrwAZ_ffOG5fuGhKka6TPSgK9L1sIQuH-PIXi6Xvuz0-WGl4qJsWwA-Hmn_XTcHdC3JA7C_r0HlexRyjZeAf_KuY3lfsC_4YFLbw3jKbNsAkva5lW9LLfgx3Q"/>
+</div>
+<div>
+<h4 class="font-bold text-sm group-hover:text-primary transition-colors">MSc Software Eng.</h4>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">MIT</p>
+<div class="flex items-center gap-1 mt-1 text-xs text-yellow-500 font-medium">
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+                                        4.8 (1.8k reviews)
+                                    </div>
+</div>
+</div>
+</div>
+<!-- Program 3 -->
+<div class="p-4 hover:bg-background-light dark:hover:bg-background-dark transition-colors group cursor-pointer">
+<div class="flex items-start gap-3">
+<div class="size-12 rounded-lg bg-gray-100 overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Students walking on university campus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAijOJopoEf58wvfjgAD-azyWahwDRLDbTOreDRC5zpWlKm1rAGvN5C5uGS8_9P8lft1Aa8snmFItAg_hBvg1W-wa7j1vXFWgMUdKswQKRqNm80SCbS2XKldDL52pC-H_t3EqyvV-JsXSulJ3JeEzlGhBypldBvyZQ9E3jQjpHm-43BOHC0pE6hHzX50x3kKAmuQ-xPJzmgvti6BB_VPn5cwcZ4WZhoiDmnKw7u9t6vl5KsXDrqDhHr3UemvVm4Uy0TUuJOVwqJPaM"/>
+</div>
+<div>
+<h4 class="font-bold text-sm group-hover:text-primary transition-colors">BEng Software</h4>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">University of Toronto</p>
+<div class="flex items-center gap-1 mt-1 text-xs text-yellow-500 font-medium">
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+                                        4.7 (950 reviews)
+                                    </div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-border-light dark:border-border-dark">
+<button class="w-full py-2 text-sm font-bold text-primary border border-primary rounded-lg hover:bg-primary/5 transition-colors">View All Programs</button>
+</div>
+</div>
+<!-- Related Careers -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl border border-border-light dark:border-border-dark p-6">
+<h3 class="font-bold text-lg mb-4">Similar Career Paths</h3>
+<div class="flex flex-col gap-3">
+<a class="group block p-3 rounded-lg bg-background-light dark:bg-background-dark hover:ring-1 hover:ring-primary transition-all" href="#">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-bold text-sm group-hover:text-primary">DevOps Engineer</h4>
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary text-[18px]">arrow_forward</span>
+</div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Focuses on deployment &amp; operations</p>
+</a>
+<a class="group block p-3 rounded-lg bg-background-light dark:bg-background-dark hover:ring-1 hover:ring-primary transition-all" href="#">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-bold text-sm group-hover:text-primary">Data Architect</h4>
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary text-[18px]">arrow_forward</span>
+</div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Focuses on data structure &amp; databases</p>
+</a>
+<a class="group block p-3 rounded-lg bg-background-light dark:bg-background-dark hover:ring-1 hover:ring-primary transition-all" href="#">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-bold text-sm group-hover:text-primary">Tech Lead</h4>
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary text-[18px]">arrow_forward</span>
+</div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Focuses on team management &amp; code</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-12 border-t border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark py-12 px-10">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+<h2 class="text-lg font-bold">The Mentor</h2>
+</div>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark mb-4">Guiding your educational journey with data-driven insights and expert mentorship.</p>
+<div class="flex gap-4">
+<a class="text-text-secondary-light hover:text-primary" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-text-secondary-light hover:text-primary" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-4">Platform</h4>
+<ul class="space-y-2 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+<li><a class="hover:text-primary" href="#">Browse Universities</a></li>
+<li><a class="hover:text-primary" href="#">Career Paths</a></li>
+<li><a class="hover:text-primary" href="#">Scholarship Finder</a></li>
+<li><a class="hover:text-primary" href="#">Consultants</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Resources</h4>
+<ul class="space-y-2 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+<li><a class="hover:text-primary" href="#">Blog</a></li>
+<li><a class="hover:text-primary" href="#">Student Stories</a></li>
+<li><a class="hover:text-primary" href="#">Application Guides</a></li>
+<li><a class="hover:text-primary" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Stay Updated</h4>
+<div class="flex gap-2">
+<input class="bg-background-light dark:bg-background-dark border-border-light dark:border-border-dark rounded-lg px-3 py-2 text-sm flex-1 focus:ring-primary focus:border-primary" placeholder="Enter email" type="email"/>
+<button class="bg-primary text-primary-content font-bold px-4 py-2 rounded-lg text-sm hover:bg-opacity-90">Join</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto mt-12 pt-8 border-t border-border-light dark:border-border-dark flex flex-col md:flex-row justify-between items-center text-sm text-text-secondary-light dark:text-text-secondary-dark">
+<p>© 2023 The Mentor. All rights reserved.</p>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

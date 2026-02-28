@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Mentor - Admin Settings</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-dark": "#1c2632", // Added for card backgrounds
+                        "border-dark": "#282f39", // Added for borders
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display overflow-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 flex flex-col border-r border-border-dark bg-background-dark flex-shrink-0">
+<div class="h-16 flex items-center px-6 border-b border-border-dark">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-primary" style="font-size: 28px;">school</span>
+<h2 class="text-lg font-bold tracking-tight">The Mentor</h2>
+</div>
+</div>
+<div class="flex flex-col flex-1 overflow-y-auto p-4 gap-6">
+<!-- User Profile Snippet -->
+<div class="flex items-center gap-3 px-2">
+<div class="h-10 w-10 rounded-full bg-cover bg-center" data-alt="Admin user profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDS2bwBdVygTpy8sZI7GcIig7p0jUkx6KzZv5xTYbg6J4ciS5WasXZC1u2Y8zUFMjBAij-e6F94bTS4htQiuaItEhCh1G-eUSA02NrW-b9UufFC9CQpsNPuXQjKlVsVCIW5oOashBk1b4M4LIZf4gpI1Qy8Jl1bYQAdKHqmtGxgrIGna-qd7aSCjtKr_SmKkosM_ApCIZtyZ-g8o8t0n5fvlo-UgZ9sfFsaDj5wBOu4UFv4KzuxHjb0xOaB_RLfXhSfD6jm2p_QxG0');"></div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-white">Admin Console</span>
+<span class="text-xs text-slate-400">v2.4.0</span>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white hover:bg-surface-dark rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white hover:bg-surface-dark rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Users</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white hover:bg-surface-dark rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">article</span>
+<span class="text-sm font-medium">Content</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white hover:bg-surface-dark rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+</nav>
+<div class="border-t border-border-dark my-1"></div>
+<nav class="flex flex-col gap-1">
+<div class="px-3 py-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Settings</div>
+<a class="flex items-center gap-3 px-3 py-2 bg-surface-dark text-white rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-primary">settings</span>
+<span class="text-sm font-medium">General</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white hover:bg-surface-dark rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">extension</span>
+<span class="text-sm font-medium">API Integrations</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white hover:bg-surface-dark rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm font-medium">Billing &amp; Fees</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white hover:bg-surface-dark rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="text-sm font-medium">Roles &amp; Permissions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-white hover:bg-surface-dark rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="text-sm font-medium">System Logs</span>
+</a>
+</nav>
+</div>
+<div class="p-4 border-t border-border-dark">
+<button class="flex w-full items-center gap-3 px-3 py-2 text-slate-400 hover:text-red-400 hover:bg-surface-dark rounded-lg transition-colors">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-sm font-medium">Log Out</span>
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full bg-background-dark overflow-hidden relative">
+<!-- Header -->
+<header class="h-16 flex items-center justify-between px-8 border-b border-border-dark bg-background-dark shrink-0">
+<div class="flex items-center gap-4">
+<h1 class="text-xl font-bold text-white">Platform Settings</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+<span class="material-symbols-outlined">search</span>
+</span>
+<input class="pl-10 pr-4 py-2 bg-surface-dark border-none rounded-lg text-sm text-white placeholder-slate-400 focus:ring-1 focus:ring-primary w-64" placeholder="Search settings..." type="text"/>
+</div>
+<button class="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-surface-dark">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-surface-dark">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-8">
+<div class="max-w-5xl mx-auto space-y-8 pb-10">
+<!-- Maintenance Mode Section -->
+<section class="bg-surface-dark border border-border-dark rounded-xl overflow-hidden">
+<div class="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="h-12 w-12 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-orange-500">construction</span>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-white">Maintenance Mode</h3>
+<p class="text-slate-400 text-sm mt-1">Temporarily disable access to the platform for all non-admin users. Use this during scheduled updates.</p>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<span class="text-sm font-medium text-slate-400">Disabled</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-700 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- General Settings -->
+<div class="space-y-6">
+<h3 class="text-lg font-bold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">tune</span>
+                                General Configuration
+                            </h3>
+<div class="bg-surface-dark border border-border-dark rounded-xl p-6 space-y-6">
+<div>
+<label class="block text-sm font-medium text-slate-300 mb-2">Platform Name</label>
+<input class="w-full bg-background-dark border border-border-dark rounded-lg px-4 py-2.5 text-white focus:border-primary focus:ring-1 focus:ring-primary placeholder-slate-500" type="text" value="The Mentor: Tawjihi"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-300 mb-2">Support Email</label>
+<input class="w-full bg-background-dark border border-border-dark rounded-lg px-4 py-2.5 text-white focus:border-primary focus:ring-1 focus:ring-primary placeholder-slate-500" type="email" value="support@thementor.edu"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-300 mb-2">Default Language</label>
+<select class="w-full bg-background-dark border border-border-dark rounded-lg px-4 py-2.5 text-white focus:border-primary focus:ring-1 focus:ring-primary">
+<option>English (US)</option>
+<option>Arabic</option>
+<option>French</option>
+</select>
+</div>
+</div>
+<!-- Platform Fees -->
+<h3 class="text-lg font-bold text-white flex items-center gap-2 pt-2">
+<span class="material-symbols-outlined text-primary">monetization_on</span>
+                                Platform Fees
+                            </h3>
+<div class="bg-surface-dark border border-border-dark rounded-xl p-6 space-y-4">
+<div class="flex items-center justify-between py-2 border-b border-border-dark/50 pb-4">
+<div>
+<p class="text-sm font-medium text-white">Student Transaction Fee</p>
+<p class="text-xs text-slate-400">Percentage taken from student payments</p>
+</div>
+<div class="flex items-center gap-2">
+<input class="w-20 bg-background-dark border border-border-dark rounded-lg px-3 py-1.5 text-right text-white focus:border-primary focus:ring-0" type="number" value="2.5"/>
+<span class="text-slate-400">%</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-2 pt-2">
+<div>
+<p class="text-sm font-medium text-white">Mentor Payout Fee</p>
+<p class="text-xs text-slate-400">Fixed fee per withdrawal</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-slate-400">$</span>
+<input class="w-20 bg-background-dark border border-border-dark rounded-lg px-3 py-1.5 text-right text-white focus:border-primary focus:ring-0" type="number" value="5.00"/>
+</div>
+</div>
+</div>
+</div>
+<!-- API Integrations -->
+<div class="space-y-6">
+<h3 class="text-lg font-bold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">hub</span>
+                                API Integrations
+                            </h3>
+<div class="bg-surface-dark border border-border-dark rounded-xl overflow-hidden">
+<!-- Google Maps -->
+<div class="p-5 border-b border-border-dark flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 bg-white/5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-green-400">map</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-white">Google Maps Platform</p>
+<p class="text-xs text-slate-400">Geocoding &amp; Places API</p>
+</div>
+</div>
+<button class="text-xs font-medium text-primary hover:text-white border border-border-dark bg-background-dark px-3 py-1.5 rounded-lg transition-colors">Configure</button>
+</div>
+<!-- SendGrid -->
+<div class="p-5 border-b border-border-dark flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 bg-white/5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-400">mail</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-white">SendGrid Email</p>
+<p class="text-xs text-slate-400">Transactional emails</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-green-500"></span>
+<button class="text-xs font-medium text-slate-300 hover:text-white transition-colors">Edit</button>
+</div>
+</div>
+<!-- Stripe -->
+<div class="p-5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 bg-white/5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-purple-400">credit_card</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-white">Stripe Payments</p>
+<p class="text-xs text-slate-400">Payment processing</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-green-500"></span>
+<button class="text-xs font-medium text-slate-300 hover:text-white transition-colors">Edit</button>
+</div>
+</div>
+</div>
+<!-- Role Permissions Preview -->
+<h3 class="text-lg font-bold text-white flex items-center gap-2 pt-2">
+<span class="material-symbols-outlined text-primary">admin_panel_settings</span>
+                                Role Defaults
+                            </h3>
+<div class="bg-surface-dark border border-border-dark rounded-xl p-6">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-sm text-white">New Instructors require approval</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-slate-700 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-sm text-white">Students can create public posts</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-slate-700 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="pt-2">
+<button class="w-full py-2 border border-border-dark rounded-lg text-sm text-primary hover:bg-background-dark transition-colors">Manage All Roles</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- System Logs -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">history</span>
+                                Recent Activity Logs
+                            </h3>
+<button class="text-sm text-primary hover:text-blue-400">View All Logs</button>
+</div>
+<div class="bg-surface-dark border border-border-dark rounded-xl overflow-hidden">
+<table class="w-full text-left text-sm text-slate-400">
+<thead class="bg-background-dark text-slate-200 border-b border-border-dark">
+<tr>
+<th class="px-6 py-3 font-medium">Action</th>
+<th class="px-6 py-3 font-medium">User</th>
+<th class="px-6 py-3 font-medium">Date</th>
+<th class="px-6 py-3 font-medium text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-dark">
+<tr class="hover:bg-background-dark/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-400 text-lg">edit</span>
+<span class="text-white">Updated Platform Fees</span>
+</div>
+</td>
+<td class="px-6 py-4">Super Admin</td>
+<td class="px-6 py-4">Oct 24, 2023 • 14:30</td>
+<td class="px-6 py-4 text-right">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-900 text-green-300">
+                                                Success
+                                            </span>
+</td>
+</tr>
+<tr class="hover:bg-background-dark/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-orange-400 text-lg">vpn_key</span>
+<span class="text-white">Rotated API Keys (Stripe)</span>
+</div>
+</td>
+<td class="px-6 py-4">System</td>
+<td class="px-6 py-4">Oct 23, 2023 • 09:15</td>
+<td class="px-6 py-4 text-right">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-900 text-green-300">
+                                                Success
+                                            </span>
+</td>
+</tr>
+<tr class="hover:bg-background-dark/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-red-400 text-lg">block</span>
+<span class="text-white">Failed Login Attempt</span>
+</div>
+</td>
+<td class="px-6 py-4">Unknown (IP: 192.168.1.1)</td>
+<td class="px-6 py-4">Oct 22, 2023 • 23:45</td>
+<td class="px-6 py-4 text-right">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-900 text-red-300">
+                                                Warning
+                                            </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<div class="flex justify-end gap-4 pt-4 border-t border-border-dark">
+<button class="px-6 py-2.5 rounded-lg border border-border-dark text-slate-300 hover:text-white hover:bg-surface-dark font-medium transition-colors">Cancel</button>
+<button class="px-6 py-2.5 rounded-lg bg-primary hover:bg-blue-600 text-white font-medium shadow-lg shadow-blue-500/20 transition-all">Save Changes</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

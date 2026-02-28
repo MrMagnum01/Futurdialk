@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Roadmaps - The Mentor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#136dec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+            },
+            fontFamily: {
+              "display": ["Public Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-10 py-3 shadow-sm">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-8 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">The Mentor</h2>
+</div>
+<label class="flex flex-col min-w-40 !h-10 max-w-64 hidden md:flex">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full ring-1 ring-slate-200 dark:ring-slate-700 focus-within:ring-2 focus-within:ring-primary transition-all">
+<div class="text-slate-500 dark:text-slate-400 flex border-none bg-slate-50 dark:bg-slate-800 items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg rounded-l-none text-slate-900 dark:text-white focus:outline-0 focus:ring-0 border-none bg-slate-50 dark:bg-slate-800 h-full placeholder:text-slate-400 px-4 pl-2 text-sm font-normal leading-normal" placeholder="Search" value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="hidden lg:flex items-center gap-9">
+<a class="text-slate-900 dark:text-slate-200 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Dashboard</a>
+<a class="text-slate-900 dark:text-slate-200 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Universities</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Roadmaps</a>
+<a class="text-slate-900 dark:text-slate-200 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Community</a>
+<a class="text-slate-900 dark:text-slate-200 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Resources</a>
+</nav>
+<div class="flex gap-3">
+<button class="flex size-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex size-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700">
+<div class="w-full h-full bg-cover bg-center" data-alt="User profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAL6wscu0dwG5sesSJ7vl5W6qMHtaD9MXReCSkNBA5R0D9oMEj0mNpZmFAHOyU9QYWWEhTaA4PC-KtTVISiUQn4OI47MvUpyk0hHTNU3ApT754zTtwMuWGVgH_oug7atcEcrY2WH9YzkRBHQCRfKiycXHyLqEnvnWTm7-SfyjHZdDfpFP7oT0AJa1tA2iCHGG4B_fXanH6_uYJ7TFt7-OARf_sRr0Ehh636SqChoOWd-VrVbePMHP8ooFTZdfop4pKqyWZvhnKqr_4')"></div>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+<div class="flex flex-col gap-2">
+<h1 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">My Roadmaps</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal">Track your progress towards your academic goals and upcoming applications.</p>
+</div>
+<button class="flex items-center gap-2 bg-primary hover:bg-blue-600 text-white px-5 py-2.5 rounded-lg font-bold text-sm transition-all shadow-md shadow-blue-500/20">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Add New Roadmap</span>
+</button>
+</div>
+<!-- Quick Stats -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+<div class="bg-white dark:bg-slate-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Active Roadmaps</p>
+<span class="material-symbols-outlined text-primary bg-blue-50 dark:bg-blue-900/20 p-1.5 rounded-lg">map</span>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-bold">4</p>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Completed Steps</p>
+<span class="material-symbols-outlined text-green-600 bg-green-50 dark:bg-green-900/20 p-1.5 rounded-lg">check_circle</span>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-bold">12</p>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Upcoming Deadlines</p>
+<span class="material-symbols-outlined text-orange-500 bg-orange-50 dark:bg-orange-900/20 p-1.5 rounded-lg">event_upcoming</span>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-bold">2</p>
+</div>
+</div>
+<!-- Section Title -->
+<h2 class="text-slate-900 dark:text-white text-xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">play_circle</span>
+            Active Plans
+        </h2>
+<!-- Roadmap Cards Grid -->
+<div class="grid grid-cols-1 gap-6">
+<!-- Card 1: Tawjihi Study Plan -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col md:flex-row">
+<!-- Image Section -->
+<div class="w-full md:w-64 h-48 md:h-auto bg-cover bg-center shrink-0 relative" data-alt="Student studying math formulas" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCErdCKPXoDYJzWkjujRGEEGM5if4jhZHXJYRSYLh1lo89fVPjMEan61aHIys9nC4u1iGGB07c-XgywFRJ5gH-b_SXQ4Pkleby5CsyqVGB3EM_ozQfqT_zSOw0tpYsOXIgrUVuWTTRxShwDL0P822LFy4YoHSdvYZ-nlItH0pMBDhRpPRW92afbVbM3DcouP8H-7PJ2ihS58XpFdZf2iUX8grdg5s0B-lwiq3lzSGqKVWZMHJBAui1HU-5vIzMeVzTT0Wzv6Udv5ko');">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:hidden"></div>
+<div class="absolute bottom-3 left-3 md:hidden">
+<span class="px-2 py-1 bg-primary text-white text-xs font-bold rounded">Scientific Stream</span>
+</div>
+</div>
+<!-- Content Section -->
+<div class="p-6 flex flex-col justify-between flex-1 gap-4">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="hidden md:inline-block px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-primary dark:text-blue-300 text-xs font-bold rounded uppercase tracking-wide">Scientific Stream</span>
+<span class="text-slate-400 text-xs font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                                    Target: June 15, 2024
+                                </span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-xl font-bold mb-1 group-hover:text-primary transition-colors">Tawjihi Study Plan</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Comprehensive preparation for the national exam focusing on Math and Physics.</p>
+</div>
+<div class="radial-progress text-primary text-xs font-bold" style="--value:65; --size:3rem;">65%</div>
+</div>
+<!-- Progress Bar & Current Step -->
+<div class="space-y-3">
+<div class="flex items-center justify-between text-sm">
+<span class="font-medium text-slate-700 dark:text-slate-300 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+                                Current: Mastering Calculus Limits
+                            </span>
+<span class="text-slate-400 text-xs">Step 8 of 12</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 65%"></div>
+</div>
+</div>
+<div class="pt-2 border-t border-slate-100 dark:border-slate-800 flex justify-end">
+<button class="flex items-center gap-1 text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-bold transition-colors">
+                            View Roadmap
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: University Applications -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col md:flex-row">
+<!-- Image Section -->
+<div class="w-full md:w-64 h-48 md:h-auto bg-cover bg-center shrink-0 relative" data-alt="University campus building" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCKwNcX5Q-vZ-nWqgNRoXa4M_-GOvJVhod2CTt-fV0g18mAYXPJNA19_kcYN731zBJmGoiJ_DhacO9qSNDR4zvy-OxnaNL3JRC3Yo_FJZqJTtmttVrrjuFL5QDwl7Z93FpgZNM8RoIowSMHdL63G4T8ICo3MKiPOIZdq7pEXuAO76PrftCD_GxaCMKbPZo4TopMpvyF3oNUuSuDuVn2E6VPlAgCIIhhNm279kP-X17ZbS8Aa9ffF-YdzkJBMOQm0XLlPv710PS8yRA');">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:hidden"></div>
+<div class="absolute bottom-3 left-3 md:hidden">
+<span class="px-2 py-1 bg-purple-600 text-white text-xs font-bold rounded">Admissions</span>
+</div>
+</div>
+<!-- Content Section -->
+<div class="p-6 flex flex-col justify-between flex-1 gap-4">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="hidden md:inline-block px-2 py-0.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 text-xs font-bold rounded uppercase tracking-wide">Admissions</span>
+<span class="text-slate-400 text-xs font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                                    Target: Aug 01, 2024
+                                </span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-xl font-bold mb-1 group-hover:text-primary transition-colors">University Applications 2024</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Tracking applications for JU, PSUT, and JUST universities.</p>
+</div>
+<div class="radial-progress text-purple-600 text-xs font-bold" style="--value:30; --size:3rem;">30%</div>
+</div>
+<!-- Progress Bar & Current Step -->
+<div class="space-y-3">
+<div class="flex items-center justify-between text-sm">
+<span class="font-medium text-slate-700 dark:text-slate-300 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+                                Current: Collecting Recommendation Letters
+                            </span>
+<span class="text-slate-400 text-xs">Step 3 of 10</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2.5">
+<div class="bg-purple-600 h-2.5 rounded-full" style="width: 30%"></div>
+</div>
+</div>
+<div class="pt-2 border-t border-slate-100 dark:border-slate-800 flex justify-end">
+<button class="flex items-center gap-1 text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 text-sm font-bold transition-colors">
+                            View Roadmap
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Scholarship Hunt -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col md:flex-row">
+<!-- Image Section -->
+<div class="w-full md:w-64 h-48 md:h-auto bg-cover bg-center shrink-0 relative" data-alt="Stacks of money and graduation cap" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDU-wzndYWEQg15oYpmNvV_FMdblDu67CFIXeZrxrWCxFRiz20-97gwsSGSv-umFBxP3QjCkYqfOLqGyd1WB96RcPOvsnXizLqatSLN5UvWPBU0NlBf1COEIDE1KM1RiNfkoZoWU9wPmPHrhUu6KTXUjCaIAXHkU_RpGU6cpZxKJnBTmdovo_7y10UN4TfxjSAUFGupyImZcJ3cE0P3s6531jV_E8F5akKH04Zz8JWxzL_XYbqlbwLOebmtWaui-rL21lhLbwHHZ5o');">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:hidden"></div>
+<div class="absolute bottom-3 left-3 md:hidden">
+<span class="px-2 py-1 bg-green-600 text-white text-xs font-bold rounded">Financial Aid</span>
+</div>
+</div>
+<!-- Content Section -->
+<div class="p-6 flex flex-col justify-between flex-1 gap-4">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="hidden md:inline-block px-2 py-0.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 text-xs font-bold rounded uppercase tracking-wide">Financial Aid</span>
+<span class="text-slate-400 text-xs font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                                    Target: Sep 10, 2024
+                                </span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-xl font-bold mb-1 group-hover:text-primary transition-colors">Scholarship Hunt</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Identifying and applying for merit-based scholarships and grants.</p>
+</div>
+<div class="radial-progress text-green-600 text-xs font-bold" style="--value:10; --size:3rem;">10%</div>
+</div>
+<!-- Progress Bar & Current Step -->
+<div class="space-y-3">
+<div class="flex items-center justify-between text-sm">
+<span class="font-medium text-slate-700 dark:text-slate-300 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+                                Current: Researching Available Grants
+                            </span>
+<span class="text-slate-400 text-xs">Step 1 of 8</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2.5">
+<div class="bg-green-600 h-2.5 rounded-full" style="width: 10%"></div>
+</div>
+</div>
+<div class="pt-2 border-t border-slate-100 dark:border-slate-800 flex justify-end">
+<button class="flex items-center gap-1 text-slate-700 dark:text-slate-300 hover:text-green-600 dark:hover:text-green-400 text-sm font-bold transition-colors">
+                            View Roadmap
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4: English Proficiency -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col md:flex-row opacity-60 hover:opacity-100">
+<!-- Image Section -->
+<div class="w-full md:w-64 h-48 md:h-auto bg-cover bg-center shrink-0 relative grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="English dictionary close up" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAPGJcGziuWazisHh9fdnpvd4G21viHI9Gez6oJRABslX9uKTESPClFJntqaj_V7qsRe0k1yI414MoiQg8eExKJJFGAnePGt8LyIpcAmhVA1O9d6HW_zZh49cIoEDV7_beGIo9yxmTBBhtWHTNE3yZ4cc9mDCxUjiZwMkHjcsf6qXWPpImB0AD1M_Wi43BqIi5eoai9w8LZNbMH_jldvuWbeqRqTr5gqgQA00xJ3gIwGriZ0XIIZ9kZenmkZf1U2IcDbI626QFfSSo');">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:hidden"></div>
+<div class="absolute bottom-3 left-3 md:hidden">
+<span class="px-2 py-1 bg-slate-600 text-white text-xs font-bold rounded">Language</span>
+</div>
+</div>
+<!-- Content Section -->
+<div class="p-6 flex flex-col justify-between flex-1 gap-4">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="hidden md:inline-block px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold rounded uppercase tracking-wide">Language</span>
+<span class="text-red-500 text-xs font-bold flex items-center gap-1 bg-red-50 dark:bg-red-900/20 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                                    Paused
+                                </span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-xl font-bold mb-1 group-hover:text-primary transition-colors">IELTS Preparation</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Targeting a band score of 7.5 for international admissions.</p>
+</div>
+<div class="radial-progress text-slate-400 text-xs font-bold" style="--value:45; --size:3rem;">45%</div>
+</div>
+<!-- Progress Bar & Current Step -->
+<div class="space-y-3">
+<div class="flex items-center justify-between text-sm">
+<span class="font-medium text-slate-500 dark:text-slate-500 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-slate-300"></span>
+                                Paused at: Practice Speaking Tests
+                            </span>
+<span class="text-slate-400 text-xs">Step 4 of 9</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2.5">
+<div class="bg-slate-400 h-2.5 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<div class="pt-2 border-t border-slate-100 dark:border-slate-800 flex justify-end">
+<button class="flex items-center gap-1 text-slate-500 hover:text-primary text-sm font-bold transition-colors">
+                            Resume
+                            <span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination / Footer Note -->
+<div class="mt-10 flex justify-center pb-10">
+<button class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary font-medium text-sm flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined">history</span>
+                View Archived Roadmaps
+            </button>
+</div>
+</main>
+<!-- Simple Footer (optional for context) -->
+<footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-6 text-center text-slate-400 text-sm">
+<div class="max-w-[1200px] mx-auto px-4">
+<p>© 2024 The Mentor. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

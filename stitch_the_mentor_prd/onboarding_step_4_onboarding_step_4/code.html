@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Mentor - Onboarding Step 4</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ecab",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#10221c",
+                        "primary-dark": "#0eb582", // Manually calculated darker shade for hover
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background-color: #334155;
+        }
+        
+        /* Select arrow styling override */
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3e%3c/path%3e%3c/svg%3e");
+            background-position: right 1rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+        }
+        .dark select {
+             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3e%3c/path%3e%3c/svg%3e");
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navbar / Header -->
+<div class="w-full flex justify-center border-b border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm sticky top-0 z-10">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap px-6 py-4 lg:px-10">
+<div class="flex items-center gap-3 text-slate-900 dark:text-white cursor-pointer group">
+<div class="size-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-colors">
+<span class="material-symbols-outlined text-[20px]">school</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">The Mentor</h2>
+</div>
+<div class="hidden sm:flex items-center gap-4 text-sm font-medium text-slate-500 dark:text-slate-400">
+<button class="hover:text-slate-900 dark:hover:text-white transition-colors">Save Draft</button>
+<button class="hover:text-slate-900 dark:hover:text-white transition-colors">Help</button>
+</div>
+</header>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="px-4 md:px-40 flex flex-1 justify-center py-8 md:py-12">
+<div class="layout-content-container flex flex-col max-w-[720px] flex-1 w-full">
+<!-- Progress Bar -->
+<div class="flex flex-col gap-3 px-4 mb-8">
+<div class="flex gap-6 justify-between items-end">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Step 4 of 5</p>
+<span class="text-slate-500 dark:text-slate-400 text-sm">80% Completed</span>
+</div>
+<div class="rounded-full bg-slate-200 dark:bg-slate-700 h-2 overflow-hidden">
+<div class="h-full rounded-full bg-primary transition-all duration-500 ease-out" style="width: 80%;"></div>
+</div>
+</div>
+<!-- Header Text -->
+<div class="flex flex-col gap-3 px-4 mb-8">
+<h1 class="text-slate-900 dark:text-white tracking-tight text-3xl md:text-4xl font-bold leading-tight">Your Languages</h1>
+<p class="text-slate-500 dark:text-slate-400 text-lg font-normal leading-relaxed">
+                            Tell us about your language proficiency so we can tailor our university and exam recommendations for you.
+                        </p>
+</div>
+<!-- Form Content -->
+<form class="flex flex-col gap-8 px-4 w-full">
+<!-- Native Language Section -->
+<div class="flex flex-col gap-4">
+<label class="flex flex-col gap-2 w-full">
+<span class="text-slate-900 dark:text-white text-base font-semibold">Native Language</span>
+<select class="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent h-14 px-4 text-base transition-shadow cursor-pointer">
+<option disabled="" selected="" value="">Select your native language</option>
+<option value="ar">Arabic</option>
+<option value="en">English</option>
+<option value="fr">French</option>
+<option value="es">Spanish</option>
+<option value="de">German</option>
+<option value="zh">Chinese</option>
+</select>
+</label>
+</div>
+<!-- English Proficiency Section -->
+<div class="flex flex-col gap-6 pt-4">
+<h3 class="text-slate-900 dark:text-white tracking-tight text-2xl font-bold leading-tight border-b border-slate-100 dark:border-slate-800 pb-2">English Proficiency</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Proficiency Level -->
+<label class="flex flex-col gap-2">
+<span class="text-slate-900 dark:text-white text-base font-medium">CEFR Level</span>
+<select class="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent h-14 px-4 text-base transition-shadow cursor-pointer">
+<option disabled="" selected="" value="">Select level</option>
+<option value="a1">A1 (Beginner)</option>
+<option value="a2">A2 (Elementary)</option>
+<option value="b1">B1 (Intermediate)</option>
+<option value="b2">B2 (Upper Intermediate)</option>
+<option value="c1">C1 (Advanced)</option>
+<option value="c2">C2 (Proficient)</option>
+</select>
+</label>
+<!-- Test Type -->
+<label class="flex flex-col gap-2">
+<span class="text-slate-900 dark:text-white text-base font-medium">Standardized Test</span>
+<select class="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent h-14 px-4 text-base transition-shadow cursor-pointer">
+<option selected="" value="none">None yet</option>
+<option value="ielts">IELTS Academic</option>
+<option value="toefl">TOEFL iBT</option>
+<option value="duolingo">Duolingo English Test</option>
+<option value="pte">PTE Academic</option>
+</select>
+</label>
+</div>
+<!-- Scores Input (Conditional appearance logic would go here in JS, displaying static for UI) -->
+<div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-3 mb-4 text-slate-900 dark:text-white font-medium">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                                    Test Scores
+                                </div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+<label class="flex flex-col gap-1">
+<span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Reading</span>
+<input class="w-full rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent h-10 px-3 text-sm placeholder:text-slate-400" placeholder="0.0" type="number"/>
+</label>
+<label class="flex flex-col gap-1">
+<span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Listening</span>
+<input class="w-full rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent h-10 px-3 text-sm placeholder:text-slate-400" placeholder="0.0" type="number"/>
+</label>
+<label class="flex flex-col gap-1">
+<span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Speaking</span>
+<input class="w-full rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent h-10 px-3 text-sm placeholder:text-slate-400" placeholder="0.0" type="number"/>
+</label>
+<label class="flex flex-col gap-1">
+<span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Writing</span>
+<input class="w-full rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent h-10 px-3 text-sm placeholder:text-slate-400" placeholder="0.0" type="number"/>
+</label>
+</div>
+</div>
+</div>
+<!-- Add Another Language -->
+<div class="flex items-center justify-start pt-2">
+<button class="group flex items-center gap-2 px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800 transition-all font-medium text-sm border border-dashed border-slate-300 dark:border-slate-600 hover:border-primary" type="button">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:rotate-90">add</span>
+                                Add another language
+                            </button>
+</div>
+<!-- Checkbox: Learn New Language -->
+<div class="flex pt-4">
+<label class="flex items-start gap-4 p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 cursor-pointer hover:border-primary/50 transition-colors w-full group">
+<div class="relative flex items-center">
+<input class="peer h-6 w-6 cursor-pointer appearance-none rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 checked:bg-primary checked:border-primary transition-all" type="checkbox"/>
+<span class="material-symbols-outlined absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-black opacity-0 peer-checked:opacity-100 text-sm pointer-events-none font-bold">check</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-slate-900 dark:text-white text-base font-semibold group-hover:text-primary transition-colors">I want to learn a new language</span>
+<span class="text-slate-500 dark:text-slate-400 text-sm font-normal">Check this if you are interested in preparatory language courses before your main studies.</span>
+</div>
+</label>
+</div>
+<!-- Navigation Buttons -->
+<div class="flex flex-col-reverse sm:flex-row items-center justify-between gap-4 pt-8 mt-4 border-t border-slate-100 dark:border-slate-800">
+<button class="w-full sm:w-auto h-12 px-8 rounded-full bg-transparent border border-transparent text-slate-500 dark:text-slate-400 text-base font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" type="button">
+                                Back
+                            </button>
+<button class="w-full sm:w-auto h-12 px-8 rounded-full bg-primary hover:bg-primary-dark text-slate-900 text-base font-bold transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2" type="button">
+                                Continue
+                                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Footer decoration/info -->
+<div class="w-full py-6 text-center">
+<p class="text-xs text-slate-400 dark:text-slate-600">The Mentor © 2024. All rights reserved.</p>
+</div>
+</div>
+</div>
+</body></html>

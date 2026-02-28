@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Career Advisor Home - The Mentor</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#13ecab",
+              "background-light": "#f6f8f7",
+              "background-dark": "#10221c",
+              "secondary-dark": "#1a3832",
+              "text-main": "#111816",
+              "text-muted": "#61897d",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              "DEFAULT": "1rem", 
+              "lg": "2rem", 
+              "xl": "3rem", 
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-background-light text-text-main font-display antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-gray-200 bg-white/90 backdrop-blur-md px-10 py-4 shadow-sm">
+<div class="flex items-center gap-4 text-text-main">
+<div class="flex size-8 items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined">school</span>
+</div>
+<h2 class="text-text-main text-xl font-bold leading-tight tracking-tight">The Mentor</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-text-main text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-text-main text-sm font-medium hover:text-primary transition-colors" href="#">Universities</a>
+<a class="text-text-main text-sm font-bold text-primary" href="#">Career Advisor</a>
+<a class="text-text-main text-sm font-medium hover:text-primary transition-colors" href="#">Events</a>
+<a class="text-text-main text-sm font-medium hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex gap-3">
+<button class="flex h-10 items-center justify-center rounded-full bg-background-light px-5 text-sm font-bold text-text-main hover:bg-gray-200 transition-colors">
+                    Sign In
+                </button>
+<button class="flex h-10 items-center justify-center rounded-full bg-primary px-5 text-sm font-bold text-text-main shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-shadow">
+                    Register
+                </button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<div class="@container px-4 py-6 md:px-10">
+<div class="relative flex min-h-[560px] flex-col gap-6 overflow-hidden rounded-xl bg-secondary-dark px-4 py-12 md:py-24 items-center justify-center text-center shadow-2xl">
+<!-- Abstract Background Pattern -->
+<div class="absolute inset-0 z-0 opacity-20" data-alt="Abstract dotted pattern background" style="background-image: radial-gradient(#13ecab 1px, transparent 1px); background-size: 32px 32px;">
+</div>
+<div class="relative z-10 flex flex-col items-center gap-6 max-w-4xl">
+<div class="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary backdrop-blur-sm">
+<span class="material-symbols-outlined mr-2 text-[18px]">auto_awesome</span>
+                        AI-Powered Career Guidance
+                    </div>
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.02em] md:text-6xl lg:text-7xl">
+                        Find Your True Calling
+                    </h1>
+<p class="text-gray-300 text-lg md:text-xl font-normal max-w-2xl leading-relaxed">
+                        Navigate your future with confidence using our AI-powered career guidance tools and expert mentorship. Discover paths you never knew existed.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-4 w-full justify-center">
+<button class="group flex h-14 items-center justify-center gap-3 rounded-full bg-primary px-8 text-base font-bold text-text-main transition-all hover:bg-[#0fd69a] hover:scale-[1.02]">
+<span class="material-symbols-outlined">quiz</span>
+                            Start Discovery Quiz
+                        </button>
+<button class="group flex h-14 items-center justify-center gap-3 rounded-full bg-white/10 px-8 text-base font-bold text-white backdrop-blur-sm transition-all hover:bg-white/20 hover:scale-[1.02]">
+<span class="material-symbols-outlined">smart_toy</span>
+                            Chat with AI Mentor
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Career Paths Grid -->
+<div class="layout-container px-4 py-16 md:px-20 lg:px-40">
+<div class="flex flex-col gap-12">
+<div class="flex flex-col gap-4 text-center md:text-left">
+<h2 class="text-text-main text-3xl font-black md:text-4xl tracking-tight">
+                        Explore Career Paths
+                    </h2>
+<p class="text-text-muted text-lg max-w-2xl">
+                        Discover the most in-demand professions and what it takes to succeed in them.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="group flex flex-col gap-4 rounded-lg border border-gray-200 bg-white p-6 transition-all hover:border-primary hover:shadow-xl hover:shadow-primary/5">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-600 group-hover:bg-primary group-hover:text-text-main transition-colors">
+<span class="material-symbols-outlined text-[28px]">memory</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-text-main text-xl font-bold">Engineering &amp; Tech</h3>
+<p class="text-text-muted">Software development, AI research, civil engineering, and robotics innovations.</p>
+</div>
+<a class="mt-auto flex items-center text-sm font-bold text-primary group-hover:translate-x-1 transition-transform" href="#">
+                            Explore Path <span class="material-symbols-outlined ml-1 text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col gap-4 rounded-lg border border-gray-200 bg-white p-6 transition-all hover:border-primary hover:shadow-xl hover:shadow-primary/5">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-red-50 text-red-600 group-hover:bg-primary group-hover:text-text-main transition-colors">
+<span class="material-symbols-outlined text-[28px]">stethoscope</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-text-main text-xl font-bold">Medical Sciences</h3>
+<p class="text-text-muted">Medicine, specialized nursing, pharmacy, and cutting-edge biotech research.</p>
+</div>
+<a class="mt-auto flex items-center text-sm font-bold text-primary group-hover:translate-x-1 transition-transform" href="#">
+                            Explore Path <span class="material-symbols-outlined ml-1 text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col gap-4 rounded-lg border border-gray-200 bg-white p-6 transition-all hover:border-primary hover:shadow-xl hover:shadow-primary/5">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-purple-50 text-purple-600 group-hover:bg-primary group-hover:text-text-main transition-colors">
+<span class="material-symbols-outlined text-[28px]">gavel</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-text-main text-xl font-bold">Business &amp; Law</h3>
+<p class="text-text-muted">Corporate law, international finance, entrepreneurship, and market analysis.</p>
+</div>
+<a class="mt-auto flex items-center text-sm font-bold text-primary group-hover:translate-x-1 transition-transform" href="#">
+                            Explore Path <span class="material-symbols-outlined ml-1 text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Card 4 -->
+<div class="group flex flex-col gap-4 rounded-lg border border-gray-200 bg-white p-6 transition-all hover:border-primary hover:shadow-xl hover:shadow-primary/5">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-orange-50 text-orange-600 group-hover:bg-primary group-hover:text-text-main transition-colors">
+<span class="material-symbols-outlined text-[28px]">palette</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-text-main text-xl font-bold">Arts &amp; Design</h3>
+<p class="text-text-muted">Graphic design, interior architecture, fine arts, and digital media production.</p>
+</div>
+<a class="mt-auto flex items-center text-sm font-bold text-primary group-hover:translate-x-1 transition-transform" href="#">
+                            Explore Path <span class="material-symbols-outlined ml-1 text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Card 5 -->
+<div class="group flex flex-col gap-4 rounded-lg border border-gray-200 bg-white p-6 transition-all hover:border-primary hover:shadow-xl hover:shadow-primary/5">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-green-50 text-green-600 group-hover:bg-primary group-hover:text-text-main transition-colors">
+<span class="material-symbols-outlined text-[28px]">eco</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-text-main text-xl font-bold">Environmental Science</h3>
+<p class="text-text-muted">Sustainability, ecology, renewable energy, and conservation management.</p>
+</div>
+<a class="mt-auto flex items-center text-sm font-bold text-primary group-hover:translate-x-1 transition-transform" href="#">
+                            Explore Path <span class="material-symbols-outlined ml-1 text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Card 6 -->
+<div class="group flex flex-col gap-4 rounded-lg border border-gray-200 bg-white p-6 transition-all hover:border-primary hover:shadow-xl hover:shadow-primary/5">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-teal-50 text-teal-600 group-hover:bg-primary group-hover:text-text-main transition-colors">
+<span class="material-symbols-outlined text-[28px]">psychology</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-text-main text-xl font-bold">Psychology &amp; Social</h3>
+<p class="text-text-muted">Clinical psychology, counseling, social work, and community outreach.</p>
+</div>
+<a class="mt-auto flex items-center text-sm font-bold text-primary group-hover:translate-x-1 transition-transform" href="#">
+                            Explore Path <span class="material-symbols-outlined ml-1 text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Alumni Stories Slider -->
+<div class="w-full overflow-hidden bg-white py-16">
+<div class="px-4 md:px-20 lg:px-40 mb-8">
+<h2 class="text-text-main text-3xl font-black md:text-4xl tracking-tight">
+                    Alumni Success Stories
+                </h2>
+<p class="text-text-muted mt-2">See where their choices took them.</p>
+</div>
+<div class="flex overflow-x-auto pb-8 pt-2 px-4 md:px-20 lg:px-40 gap-6 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden snap-x">
+<div class="min-w-[280px] md:min-w-[320px] snap-center">
+<div class="group relative flex h-full flex-col overflow-hidden rounded-lg bg-background-light shadow-sm transition-transform hover:-translate-y-1">
+<div class="relative aspect-[4/5] w-full overflow-hidden" data-alt="Portrait of a female doctor smiling in a hospital setting">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBat29on5WPf5UiKgNJi5-E_XFRsM2aqZn0X6oZuwPqRUP9qhkfGvzBxo1DqetApQoVXiUNZamQ00-hO_MiarZA16ZGXW52c2OP8QRofo9ImYgnarxVMdz3sAVyt_qKp2uyltqruu6keDLpbj0TcA25EAwnl8T_EeX2h_OhFRRNbpyey4sXfxXAZ9GcYsYCxAtpaDLcazOvmZEoysXIR1q2olFFxlMkcrObxdgUxVd7q9TCVwS8spnMqZow9n-G8q9gVsXyiN_X8HM");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<p class="text-xs font-bold uppercase tracking-wider text-primary">Medicine</p>
+<h3 class="text-lg font-bold">Dr. Sarah's Journey</h3>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-5">
+<p class="text-text-muted text-sm leading-relaxed">"The mentorship program helped me choose the right specialization. Now I lead a team of surgeons."</p>
+<a class="text-sm font-bold text-text-main underline decoration-primary decoration-2 underline-offset-4 mt-2" href="#">Read Story</a>
+</div>
+</div>
+</div>
+<div class="min-w-[280px] md:min-w-[320px] snap-center">
+<div class="group relative flex h-full flex-col overflow-hidden rounded-lg bg-background-light shadow-sm transition-transform hover:-translate-y-1">
+<div class="relative aspect-[4/5] w-full overflow-hidden" data-alt="Portrait of a young man working on a laptop in a modern office">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC653TE-o7BbUC-NIau8Db5l28Onzbi1EwK9KOnxzucquudCP3GnqD5o4wvtHty6zU9QQIdP8RAgCgydi-1-PAEJaXUo1_qCzTP4aPDrcwmBsWf5MvqgVgwSf_iBwD0Dmnht7XyDgAYf-LPlhcrdF3oqtpyjRYyGF89bUw77dMsCEwu--kDueJW8g6hRmHAXIOmiB4i3U8_PqxdiZ1rOF6kMCZgewBFJ_MByzsGyG4r9HQ7uGItxhz-j21T1TE5fnZCTNiFq2jB5qo");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<p class="text-xs font-bold uppercase tracking-wider text-primary">Technology</p>
+<h3 class="text-lg font-bold">Ahmed's Tech Startup</h3>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-5">
+<p class="text-text-muted text-sm leading-relaxed">"I was confused between CS and CE. The aptitude test clarified my strengths in software logic."</p>
+<a class="text-sm font-bold text-text-main underline decoration-primary decoration-2 underline-offset-4 mt-2" href="#">Read Story</a>
+</div>
+</div>
+</div>
+<div class="min-w-[280px] md:min-w-[320px] snap-center">
+<div class="group relative flex h-full flex-col overflow-hidden rounded-lg bg-background-light shadow-sm transition-transform hover:-translate-y-1">
+<div class="relative aspect-[4/5] w-full overflow-hidden" data-alt="Portrait of a female lawyer in a courtroom">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA9T_9CjllH_ignc0W8uxGr2L6rlhuVGVOT9quAWvlKRahgtOZ04CQe30bn5XOS2ANpzixbQ8K31O81OnhSrFZHarucMZpu0q5I_MroZ3nUtIPvbSrAomx7QaEJHxHyUiT5_IACvwZ71PbI53cnwspVSiZxmpBI6rqmPvnGFAJNvSEFze4rKq96QOfTmjQ9bzTWsXEqIZox-C4t6VV49qAGaevC-3yjyzmpTj2dBKa4j6CVTmiQO_dsELCTgLcy90S3I6chfW3OfiE");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<p class="text-xs font-bold uppercase tracking-wider text-primary">Law</p>
+<h3 class="text-lg font-bold">Layla's Legal Career</h3>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-5">
+<p class="text-text-muted text-sm leading-relaxed">"Advocating for justice was always a dream, but I needed the roadmap to get there."</p>
+<a class="text-sm font-bold text-text-main underline decoration-primary decoration-2 underline-offset-4 mt-2" href="#">Read Story</a>
+</div>
+</div>
+</div>
+<div class="min-w-[280px] md:min-w-[320px] snap-center">
+<div class="group relative flex h-full flex-col overflow-hidden rounded-lg bg-background-light shadow-sm transition-transform hover:-translate-y-1">
+<div class="relative aspect-[4/5] w-full overflow-hidden" data-alt="Portrait of a creative designer in a colorful studio">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCzDRDfF--00t3MPmRs0peqmT5Y0quk4RX8dSc2jdBAL0wMWAAQjWv1y66lXlRVo40Nb2T_aFg5FACox_KX87_Y_eoSgov8Q0UoUG-TJhF0EXdHWYNmIFKkp1DZY4tHg8fN2NyGza7FeZ4GpOILIQATeN7e3Bs03z-vnAAjyIxLFSc9hXqVgGIePh_IuyGe3NC6z44FZ20UmsN2eifOb3MP-tpx0wEqdL6exlhLmXyr793BEGzOBLRZtwSIwq8Heixj4_CheJXOhlc");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<p class="text-xs font-bold uppercase tracking-wider text-primary">Design</p>
+<h3 class="text-lg font-bold">Omar's Design Studio</h3>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-5">
+<p class="text-text-muted text-sm leading-relaxed">"My mentor encouraged me to pursue my creative side professionally. Best decision ever."</p>
+<a class="text-sm font-bold text-text-main underline decoration-primary decoration-2 underline-offset-4 mt-2" href="#">Read Story</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Section -->
+<div class="layout-container px-4 py-16 md:px-20 lg:px-40">
+<div class="relative overflow-hidden rounded-xl bg-secondary-dark px-6 py-16 text-center md:px-16 md:py-24">
+<!-- Abstract Background -->
+<div class="absolute inset-0 opacity-10" data-alt="Striped pattern background" style="background-image: linear-gradient(45deg, #13ecab 25%, transparent 25%, transparent 50%, #13ecab 50%, #13ecab 75%, transparent 75%, transparent); background-size: 60px 60px;">
+</div>
+<div class="relative z-10 flex flex-col items-center gap-6">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-secondary-dark shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-[32px]">lightbulb</span>
+</div>
+<h2 class="text-white text-3xl font-black md:text-5xl max-w-2xl leading-tight">
+                        Not sure where to start?
+                    </h2>
+<p class="text-gray-300 text-lg md:text-xl font-normal max-w-2xl">
+                        Take our 5-minute personality and aptitude test to get personalized career recommendations tailored just for you.
+                    </p>
+<button class="mt-4 flex h-14 min-w-[200px] items-center justify-center rounded-full bg-primary px-8 text-lg font-bold text-text-main shadow-lg shadow-primary/20 transition-all hover:-translate-y-1 hover:shadow-primary/40 hover:bg-[#0fd69a]">
+                        Take the Quiz
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="border-t border-gray-200 bg-white px-10 py-12">
+<div class="flex flex-col items-center justify-between gap-6 md:flex-row">
+<div class="flex items-center gap-2">
+<div class="flex size-6 items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-[16px]">school</span>
+</div>
+<span class="font-bold text-text-main">The Mentor</span>
+</div>
+<p class="text-sm text-text-muted">© 2024 The Mentor. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-text-muted hover:text-primary" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+<a class="text-text-muted hover:text-primary" href="#"><span class="material-symbols-outlined">alternate_email</span></a> <!-- Twitter/X substitute -->
+<a class="text-text-muted hover:text-primary" href="#"><span class="material-symbols-outlined">photo_camera</span></a> <!-- Instagram substitute -->
+</div>
+</div>
+</footer>
+</div>
+</body></html>

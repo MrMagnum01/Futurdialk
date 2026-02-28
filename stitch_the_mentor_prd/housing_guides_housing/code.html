@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Mentor - Housing Guides</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#136dec",
+                "background-light": "#f6f7f8",
+                "background-dark": "#101822",
+                "text-main": "#111418",
+                "text-muted": "#617289",
+              },
+              fontFamily: {
+                "display": ["Public Sans", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-slate-100 flex flex-col min-h-screen">
+<div class="relative flex h-auto w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined !text-[32px]">school</span>
+</div>
+<h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">The Mentor</h2>
+</div>
+<div class="hidden lg:flex items-center gap-9">
+<a class="text-text-main dark:text-slate-200 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Universities</a>
+<a class="text-text-main dark:text-slate-200 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Courses</a>
+<a class="text-text-main dark:text-slate-200 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Scholarships</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Housing</a>
+<a class="text-text-main dark:text-slate-200 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Contact</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-text-muted dark:text-slate-400 flex border-none bg-slate-100 dark:bg-slate-800 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-main dark:text-white focus:outline-0 focus:ring-0 border-none bg-slate-100 dark:bg-slate-800 focus:border-none h-full placeholder:text-text-muted px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search guides..." value=""/>
+</div>
+</label>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white hover:bg-blue-600 transition-colors text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Log In</span>
+</button>
+</div>
+</header>
+<main class="flex flex-col flex-1">
+<!-- Hero Section -->
+<div class="@container w-full bg-white dark:bg-slate-900">
+<div class="max-w-[1440px] mx-auto p-4 md:p-8 lg:px-40 lg:py-10">
+<div class="flex min-h-[400px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-8 relative overflow-hidden group" data-alt="Modern student apartment interior with bright windows" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDfLHMoywmE8d_GmrCa5EFltxMI14sKaMd-QCYTJmlx3pyGEiWvSjWZkSbAYB1JYwVaihsIavXlKwTkSyd_4uNo-R484OFLgliP2rf-pMvIafEcZ5TklpERbUwkrMDqpH-hD0jX-65x2CBXjVSiuiu_l4kLsYLbiPQxIKTFUjHmSp9PzQgEwq-cIj4JKrYuIL-P0_Npm9ty1vCF5vePX-WpP7jA3uZTSMIdbJhShwCWA_bFrTxq8FAya-CN85jbkO35kww3Y7DGDIc");'>
+<div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
+<div class="flex flex-col gap-4 text-center relative z-10 max-w-3xl">
+<h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em]">
+                                    Find Your Home Away From Home
+                                </h1>
+<p class="text-slate-200 text-lg md:text-xl font-normal leading-normal max-w-2xl mx-auto">
+                                    Comprehensive guides, trusted reviews, and direct booking resources for student accommodation worldwide.
+                                </p>
+</div>
+<div class="flex gap-4 relative z-10 pt-4">
+<button class="flex min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-blue-600 transition-colors text-white text-base font-bold shadow-lg shadow-blue-900/20">
+                                    Browse Guides
+                                </button>
+<button class="flex min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white text-base font-bold transition-all">
+                                    Partner Listings
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="max-w-[1440px] mx-auto w-full px-4 md:px-8 lg:px-40 py-10 flex flex-col gap-16">
+<!-- Essential Guides Section -->
+<section class="flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<h2 class="text-text-main dark:text-white text-[28px] font-bold leading-tight tracking-[-0.015em]">Essential Housing Guides</h2>
+<a class="text-primary font-bold text-sm hover:underline flex items-center gap-1" href="#">View all <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Featured Article -->
+<div class="flex flex-col bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-100 dark:border-slate-700 h-full">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="Students looking at a laptop together in a bright room" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDI5gPOBcx2u0fTdnIlH-Ox64iudtvKDDi4z1jLdgykXp5sFkuMp3G-YkFYJz-jiNeDwASbifSIS00lWOlTbCOocQd149LWHFLGeL2cgyRK-EMbH2Octh5bhZMwAVVa-2RKrOb7aY63Fh0rRdRH6yxSD27iWJzax74WmZW1yKYFsn1nyrDH4JTWcBrwc5Zbmp-vWmTsYc5KkjRo5gYvTgav-JTn-VVeGqNaYZ53HRyFlGUEa4oBDQFXZzMhVD5Rj7aZJbCstgCg114");'></div>
+<div class="flex flex-col justify-between p-6 flex-grow gap-4">
+<div>
+<div class="flex gap-2 mb-2">
+<span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-bold uppercase tracking-wider">Top Guide</span>
+</div>
+<h3 class="text-text-main dark:text-white text-xl font-bold leading-tight mb-2">How to find a flat: The Ultimate Checklist</h3>
+<p class="text-text-muted dark:text-slate-400 text-base">A step-by-step guide to searching for off-campus housing efficiently without getting overwhelmed.</p>
+</div>
+<button class="self-start text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                                        Read Article <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Secondary Articles Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- Article 2 -->
+<div class="flex flex-col bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-100 dark:border-slate-700">
+<div class="h-40 bg-center bg-no-repeat bg-cover" data-alt="Person signing a contract with a pen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgPrmyiwcRH5YmyBjk-yAVJEFoDvjb5Bu47tkj-nGgf7sZ_iki112jfMrVKRLwYRjs33LkOnK8rakGiHAEw2qFPXmKn_EKxbMeOPE4W_U3I9Fm-O0TCPFOB3NRWGthkulyGRDlk4DiBkbMdEOz3IlRFRgRjeAVNgLz_aq4qZprRuAvgaNbpTI3EfSKu2MdgvnBdKmgSsm1hnTn7bLTJ3eFVqjzRmWh1XnDWvhG40aIh4HrXl1cRJvj-uOhMULJnX3pgZTFmz0GcJ0");'></div>
+<div class="p-4 flex flex-col gap-2 flex-grow">
+<h3 class="text-text-main dark:text-white text-base font-bold">Understanding Rental Contracts</h3>
+<p class="text-text-muted dark:text-slate-400 text-sm line-clamp-3">Don't sign until you read this breakdown of common lease terms and hidden clauses.</p>
+</div>
+</div>
+<!-- Article 3 -->
+<div class="flex flex-col bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-100 dark:border-slate-700">
+<div class="h-40 bg-center bg-no-repeat bg-cover" data-alt="Piggy bank with coins and calculator" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNgRx29FZa803sCm9fCvaRdZ5VpVCJXHfBuOwjPCoJh_k-8LGQT3n1KAkR4N2LaJexHT3mloqG7ceylR0qdeB_3PwAA35p8LyydpMVJdsgWCMwgJPywsxLTryqRXK5GNL-EpaM7KcX1DAAFCOr8SplrQ9vJIUERGF6aM0nzGTPZkUL8cm0IiOk0wij-IEELDFH4VV7_DE17UQnxzX3zOL_1XrOd8A6Vm1vT9jmbJSvUY4XGgXaCYeV0UiLHbidb7iJzIpOQBgjXW0");'></div>
+<div class="p-4 flex flex-col gap-2 flex-grow">
+<h3 class="text-text-main dark:text-white text-base font-bold">Budgeting for Student Living</h3>
+<p class="text-text-muted dark:text-slate-400 text-sm line-clamp-3">Manage your finances with our student-friendly budget tips and cost calculators.</p>
+</div>
+</div>
+<!-- Article 4 -->
+<div class="flex flex-col bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-100 dark:border-slate-700">
+<div class="h-40 bg-center bg-no-repeat bg-cover" data-alt="Group of friends chatting in a living room" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA4HNSF6coK8nhRZn5ZHNUj91aO9IbP_bNHsTTzT-S0R9MaMoEYzN-zAbe8CMpeeYKDDb5ySaHmV69O5zcL0gX-Oo6p-9xtpF3itPPzcYl91Kt7U5zH25mPn5yde5_3hy_BsmkgGEZ9MAECh5W0jaQ6rdAppG7hEQcbWl4FAWv8Xb7wH9dDbpDygJwIler03IjhBmFv4Nh0yjwgRF5mvD6HtcSMV4pP_nF4STCxVzURcbqCelZdRy0zhlzuAQVAu8OPaegztbRfCFw");'></div>
+<div class="p-4 flex flex-col gap-2 flex-grow">
+<h3 class="text-text-main dark:text-white text-base font-bold">Finding Roommates 101</h3>
+<p class="text-text-muted dark:text-slate-400 text-sm line-clamp-3">Tips on how to interview potential flatmates and set house rules early.</p>
+</div>
+</div>
+<!-- Article 5 -->
+<div class="flex flex-col bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-100 dark:border-slate-700">
+<div class="h-40 bg-center bg-no-repeat bg-cover" data-alt="Modern smart lock on a door" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGLuM4KocZr7RajHbFjDivxhwx2k1zeqR9suYS6tb5ypyW_55SwnbXmUzNIQDzQHlb1YvM_i9sXwm3oft7S2FfaD6ZQPvWPhrxaAV0XZ8_fSilLzQAmU-Xfd0-dgq2C1h53bVpQQqdL9sdyDxkkzR0M4jmSpD1r5BI5Yf0BQoy7empKH_DI2WV1xhbeUPT_ZZqKDJ0X-84gh99Cd757Xmdy5SyPqELngU_hHD65T5aM03BZLuIUh4AFEH6CAat3vOl4bnym34T-9k");'></div>
+<div class="p-4 flex flex-col gap-2 flex-grow">
+<h3 class="text-text-main dark:text-white text-base font-bold">Safety Tips for Renters</h3>
+<p class="text-text-muted dark:text-slate-400 text-sm line-clamp-3">Key things to look for to ensure a safe and secure living environment.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Map & Neighborhoods -->
+<section class="flex flex-col gap-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h2 class="text-text-main dark:text-white text-[28px] font-bold leading-tight tracking-[-0.015em]">Popular Neighborhoods</h2>
+<p class="text-text-muted dark:text-slate-400 mt-2">Explore the best areas for students in major cities.</p>
+</div>
+<div class="flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg p-1 gap-1 w-fit">
+<button class="px-4 py-2 rounded-md bg-white dark:bg-slate-700 shadow-sm text-sm font-bold text-text-main dark:text-white">London</button>
+<button class="px-4 py-2 rounded-md hover:bg-white/50 dark:hover:bg-slate-700/50 text-sm font-medium text-text-muted dark:text-slate-400 transition-colors">Berlin</button>
+<button class="px-4 py-2 rounded-md hover:bg-white/50 dark:hover:bg-slate-700/50 text-sm font-medium text-text-muted dark:text-slate-400 transition-colors">Paris</button>
+</div>
+</div>
+<div class="bg-slate-200 dark:bg-slate-800 rounded-xl h-[400px] w-full relative overflow-hidden group">
+<!-- Placeholder Map Image -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Illustrated map of London streets" data-location="London" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4XkI4ODx-uVKW9cA_t4e3_n6GboLwBt0P3jPLbQjqG_40I7w60wqgkgw9ri8ZqC7CwJ2MFL34vM8wT81z8Osh_CQZkEg3BokaUipf_1YSISxoCIzosO75V0XN-ha2TsrKHOZNl0xQGl5znOU9dJ5Zr4FL5R9CtANMMpGqGiDVke5puIvMEA7sfqsidwuR8HqKE2om_PRbxGHS4orYbEUuMThQivPmmugO-ghtBgLCIC8mcWBt0faFMcehmQc47AGziHLUoVEHsyY");'></div>
+<!-- Interactive Pins (Visual only) -->
+<div class="absolute top-1/4 left-1/3 transform -translate-x-1/2 -translate-y-1/2 group/pin cursor-pointer">
+<div class="w-8 h-8 bg-primary rounded-full border-2 border-white shadow-lg flex items-center justify-center animate-bounce">
+<span class="material-symbols-outlined text-white text-sm">home</span>
+</div>
+<div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white dark:bg-slate-900 px-3 py-2 rounded-lg shadow-xl opacity-0 group-hover/pin:opacity-100 transition-opacity w-48 text-center pointer-events-none">
+<p class="text-xs font-bold text-text-main dark:text-white">Camden Town</p>
+<p class="text-[10px] text-text-muted">Avg. Rent: £250/wk</p>
+</div>
+</div>
+<div class="absolute top-1/2 left-2/3 transform -translate-x-1/2 -translate-y-1/2 group/pin cursor-pointer">
+<div class="w-8 h-8 bg-primary rounded-full border-2 border-white shadow-lg flex items-center justify-center animate-bounce" style="animation-delay: 0.2s;">
+<span class="material-symbols-outlined text-white text-sm">home</span>
+</div>
+<div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white dark:bg-slate-900 px-3 py-2 rounded-lg shadow-xl opacity-0 group-hover/pin:opacity-100 transition-opacity w-48 text-center pointer-events-none">
+<p class="text-xs font-bold text-text-main dark:text-white">Shoreditch</p>
+<p class="text-[10px] text-text-muted">Avg. Rent: £280/wk</p>
+</div>
+</div>
+<button class="absolute bottom-4 right-4 bg-white dark:bg-slate-900 text-text-main dark:text-white px-4 py-2 rounded-lg shadow-lg text-sm font-bold flex items-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">map</span> View Full Map
+                            </button>
+</div>
+</section>
+<!-- Reviews & Residences Section -->
+<section class="grid lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 flex flex-col gap-6">
+<h2 class="text-text-main dark:text-white text-[28px] font-bold leading-tight tracking-[-0.015em]">Top Rated Residences</h2>
+<!-- Residence Card 1 -->
+<div class="flex flex-col sm:flex-row bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="sm:w-1/3 min-h-[160px] bg-cover bg-center" data-alt="Modern dormitory bedroom with desk" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDbL-OmcCzyuVv8iBj0CJvEfh4ohS2BhK69DQxzt8cwDKI7hTgTZCv1JKDuJlgykL5D3X5rYg44vVvw1u5z-g5BPkqr02MuRoS95Gy2bWxkObnNzCG3zeO4Ynxb_i9CXy1EmLbs47y1g7TXRAU5jEGkmsPlU9gpxDEUqQQsRD_e8ane9RdTr1ull82r_ynWFLHfpvh0JD24_GP2P5vdHypXkVBmcHDoACEa55msdJrfZZRR6WTe1pK7rgdpNPuZfYc9lgP99PhKRJw");'></div>
+<div class="p-6 flex flex-col justify-between flex-1 gap-4">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold text-text-main dark:text-white">Chapter Spitalfields</h3>
+<p class="text-sm text-text-muted">London, UK • 0.5 miles to campus</p>
+</div>
+<div class="flex items-center bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded text-green-700 dark:text-green-400 font-bold text-sm gap-1">
+<span>4.8</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+</div>
+</div>
+<p class="mt-3 text-sm text-text-muted dark:text-slate-400">"Amazing facilities and great community events. The study rooms are perfect for exam season."</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-primary/10 text-primary hover:bg-primary hover:text-white rounded-lg text-sm font-bold transition-colors">View Details</button>
+<button class="px-4 py-2 text-text-muted hover:text-text-main dark:hover:text-white text-sm font-medium transition-colors">Read 128 Reviews</button>
+</div>
+</div>
+</div>
+<!-- Residence Card 2 -->
+<div class="flex flex-col sm:flex-row bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="sm:w-1/3 min-h-[160px] bg-cover bg-center" data-alt="Cozy student living room area" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCWYFN70Deojhj8bqnREwUBP6dJ_JYz-8iuh4IVk5vwYom9dvpzl5JG36ygMlOrfCBxVjnfap6MuC3XhFtEklbe3-YJvpJqQfP51zozpaVj4NA8Qth9HBora__muMyb_KfMxYoIpXIXFbxxDvea2oZWqPGB1hWPA1Hdd7GxohEtq4AmdVu4DMqzEz9XFo8tsK_DVyKBdfzQy-hY_x6vCOzx4IOFwGoURBaI35_bl64J9ppPIbkEMLkzlJaAkmO_fVfAmysz8GHOlRY");'></div>
+<div class="p-6 flex flex-col justify-between flex-1 gap-4">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold text-text-main dark:text-white">Urbanest Westminster</h3>
+<p class="text-sm text-text-muted">London, UK • 1.2 miles to campus</p>
+</div>
+<div class="flex items-center bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded text-green-700 dark:text-green-400 font-bold text-sm gap-1">
+<span>4.6</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+</div>
+</div>
+<p class="mt-3 text-sm text-text-muted dark:text-slate-400">"Location is unbeatable. A bit pricey but the views from the common room are worth it."</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-primary/10 text-primary hover:bg-primary hover:text-white rounded-lg text-sm font-bold transition-colors">View Details</button>
+<button class="px-4 py-2 text-text-muted hover:text-text-main dark:hover:text-white text-sm font-medium transition-colors">Read 94 Reviews</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Request Viewing Sidebar -->
+<div class="bg-primary rounded-xl p-6 text-white h-fit shadow-xl shadow-blue-900/10">
+<div class="flex items-center gap-3 mb-4">
+<div class="p-2 bg-white/20 rounded-lg">
+<span class="material-symbols-outlined">calendar_month</span>
+</div>
+<h3 class="text-xl font-bold">Request a Viewing</h3>
+</div>
+<p class="text-blue-100 mb-6 text-sm">Found a place you like? Schedule a virtual or in-person viewing with our partner agents directly.</p>
+<form class="flex flex-col gap-4">
+<div>
+<label class="text-xs font-bold uppercase tracking-wider text-blue-200 mb-1 block">Location / Residence</label>
+<input class="w-full rounded-lg bg-white/10 border border-blue-400/30 text-white placeholder:text-blue-200 focus:ring-2 focus:ring-white focus:border-transparent px-3 py-2 text-sm" placeholder="e.g. Chapter Spitalfields" type="text"/>
+</div>
+<div>
+<label class="text-xs font-bold uppercase tracking-wider text-blue-200 mb-1 block">Preferred Date</label>
+<input class="w-full rounded-lg bg-white/10 border border-blue-400/30 text-white placeholder:text-blue-200 focus:ring-2 focus:ring-white focus:border-transparent px-3 py-2 text-sm" type="date"/>
+</div>
+<button class="mt-2 w-full bg-white text-primary font-bold py-3 rounded-lg hover:bg-blue-50 transition-colors shadow-md" type="button">
+                                    Schedule Now
+                                </button>
+</form>
+<p class="text-xs text-blue-200 mt-4 text-center">No fees charged for booking via The Mentor.</p>
+</div>
+</section>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-10 px-10">
+<div class="layout-content-container max-w-[960px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined !text-[24px]">school</span>
+</div>
+<h2 class="text-text-main dark:text-white text-lg font-bold">The Mentor</h2>
+</div>
+<div class="flex gap-6 text-text-muted dark:text-slate-400 text-sm">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Help Center</a>
+</div>
+<p class="text-text-muted dark:text-slate-500 text-sm">© 2023 The Mentor. All rights reserved.</p>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

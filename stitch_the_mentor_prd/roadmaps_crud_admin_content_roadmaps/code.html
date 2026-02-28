@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Roadmaps CRUD - The Mentor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#136dec",
+                        secondary: "#475569",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        display: ["Lexend", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        "2xl": "1rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased overflow-hidden">
+<div class="flex h-screen w-full flex-row">
+<!-- Sidebar -->
+<div class="hidden lg:flex flex-col w-72 h-full bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 shrink-0">
+<div class="flex items-center gap-3 p-6">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Admin user avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDaapTpVW-wk52UOMrJe_d12zzbFz_lYb_rr-g4-CroCuy6OzINzffgmlONR4dKt3-I804z3WpfdkjMwtP-OEz9TgKEM-t8EHGdwy2-A88iEcdq4RwXmZ2YHsPGbNSuneaH758msdDhhYTkK2sSf3glSWTRytkKpTb64Gv6vojX9XzGuetZxD7OD1X08LtKVNy9GDYZszCpKGIE-fLNn3xjm4AxiJzKH9PdNxRBorp1WFM4Z09E4Yk0j8eQ46NdivrfdoMcUEeEXrs");'></div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-normal">The Mentor</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">Admin Console</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 px-4 py-2 overflow-y-auto">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">group</span>
+<p class="text-sm font-medium leading-normal">Students</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary dark:text-primary-400 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl fill-1">map</span>
+<p class="text-sm font-medium leading-normal">Roadmaps</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">description</span>
+<p class="text-sm font-medium leading-normal">Content</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">bar_chart</span>
+<p class="text-sm font-medium leading-normal">Analytics</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+</nav>
+<div class="mt-auto p-4 border-t border-slate-200 dark:border-slate-800">
+<button class="flex items-center gap-3 px-3 py-2 w-full rounded-lg text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
+<span class="material-symbols-outlined text-xl">logout</span>
+<p class="text-sm font-medium leading-normal">Log Out</p>
+</button>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- Header -->
+<header class="flex flex-col gap-6 px-8 py-6 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+<div class="flex flex-wrap justify-between items-start gap-4">
+<div class="flex flex-col gap-1">
+<h2 class="text-slate-900 dark:text-white text-3xl font-bold tracking-tight">Roadmap Management</h2>
+<p class="text-slate-500 dark:text-slate-400 text-base">Create and manage goal-based study timelines for students.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center gap-2 h-10 px-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[20px]">upload</span>
+                            Import Template
+                        </button>
+<button class="flex items-center justify-center gap-2 h-10 px-6 rounded-lg bg-primary text-white text-sm font-bold shadow-sm hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                            Create Roadmap
+                        </button>
+</div>
+</div>
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="flex flex-col gap-2 p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Roadmaps</p>
+<div class="flex items-end gap-2">
+<p class="text-slate-900 dark:text-white text-2xl font-bold leading-none">24</p>
+<span class="text-emerald-600 dark:text-emerald-400 text-xs font-bold bg-emerald-100 dark:bg-emerald-900/30 px-1.5 py-0.5 rounded">+2%</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Active Students</p>
+<div class="flex items-end gap-2">
+<p class="text-slate-900 dark:text-white text-2xl font-bold leading-none">1,205</p>
+<span class="text-emerald-600 dark:text-emerald-400 text-xs font-bold bg-emerald-100 dark:bg-emerald-900/30 px-1.5 py-0.5 rounded">+15%</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Completion Rate</p>
+<div class="flex items-end gap-2">
+<p class="text-slate-900 dark:text-white text-2xl font-bold leading-none">68%</p>
+<span class="text-emerald-600 dark:text-emerald-400 text-xs font-bold bg-emerald-100 dark:bg-emerald-900/30 px-1.5 py-0.5 rounded">+5%</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Draft Templates</p>
+<div class="flex items-end gap-2">
+<p class="text-slate-900 dark:text-white text-2xl font-bold leading-none">3</p>
+<span class="text-slate-400 text-xs font-medium">Needs review</span>
+</div>
+</div>
+</div>
+<!-- Filters & Search -->
+<div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+<div class="relative w-full md:w-96">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2.5 text-sm rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 placeholder-slate-400 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Search roadmaps by name, goal, or tag..." type="text"/>
+</div>
+<div class="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+<button class="flex shrink-0 items-center gap-2 px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                            All Streams
+                            <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+<button class="flex shrink-0 items-center gap-2 px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                            Sort By: Recent
+                            <span class="material-symbols-outlined text-[18px]">sort</span>
+</button>
+<div class="w-px h-8 bg-slate-200 dark:bg-slate-700 mx-1"></div>
+<button class="flex shrink-0 items-center justify-center p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" title="List View">
+<span class="material-symbols-outlined text-[20px]">list</span>
+</button>
+<button class="flex shrink-0 items-center justify-center p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors" title="Grid View">
+<span class="material-symbols-outlined text-[20px] fill-1">grid_view</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Scrollable Content Area -->
+<main class="flex-1 overflow-y-auto p-8">
+<!-- Main Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 h-full">
+<!-- Left Column: Roadmap List -->
+<div class="lg:col-span-1 flex flex-col gap-4">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold">Recent Roadmaps</h3>
+<!-- List Item 1 (Active) -->
+<div class="group flex flex-col p-4 rounded-xl border border-primary bg-white dark:bg-slate-800 shadow-sm cursor-pointer relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<span class="bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs px-2 py-0.5 rounded-full font-medium">Scientific</span>
+<span class="text-slate-400 text-xs">• Edited 2h ago</span>
+</div>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<h4 class="text-slate-900 dark:text-white font-semibold text-base mb-1">Physics Intensive: Mechanics</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm line-clamp-2 mb-3">Accelerated path covering Newton's laws through energy conservation for advanced students.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200 bg-cover bg-center" data-alt="Student avatar 1" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDFLjw7ZQEy0gZVMZBgHJED0egiOgqj11isMujAGMCRChlcRoUgglo99vXsWKbgBoNBx5L0YCQSKljvx5LE6QEFi95fmcY0mlTnAOb91eL8S2TnpSCD1Omz-OlHyXfpw7FAUZd105KUhHUl3A4Stn4NrrA6Fhwmu_NQpxrCBuntAl09PW1j9whXUld7ZJCdpM4uYUJcG9Km5lNBDSz0URNnFF8BsyT42Oam1o6tztWeSXov1pd9oqxQzuEYCCZinErSZcNVVFX4ifI')"></div>
+<div class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-800 bg-slate-300 bg-cover bg-center" data-alt="Student avatar 2" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDk_BCdv5yt59Hn-whAGJ76TFhIfHmwKqALrPSC_GWufdCKM8TfWVld7Q4l50lafKZ2Nxe6sr6GyBvgSer1gXG4BtsHJiJAy4ZaA_NjpoENnT4tnJ-5fZ6ANB5Sa3o9uhtrC3JaksD81yw4hZTCWBTCjYNX2aR0_D78vQZRc2HFFRxbNqE5pdmxYsfm5H5OScHoDIRq5JxrGoN42iB99ZK2DqWfTYK_6iSZKzhBG5srVRdTs1uz_fEPz6tMcZHUFQTrY6XtiEbJiug')"></div>
+<div class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-800 bg-slate-100 flex items-center justify-center text-[10px] text-slate-600 font-bold">+42</div>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-xs">
+<span class="material-symbols-outlined text-[14px]">account_tree</span>
+                                    12 Nodes
+                                </div>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="group flex flex-col p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-primary/50 transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<span class="bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 text-xs px-2 py-0.5 rounded-full font-medium">Literary</span>
+<span class="text-slate-400 text-xs">• Edited 1d ago</span>
+</div>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<h4 class="text-slate-900 dark:text-white font-semibold text-base mb-1">History: Modern Era Deep Dive</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm line-clamp-2 mb-3">Comprehensive timeline covering WWI to Cold War with focus on geopolitical shifts.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200 bg-cover bg-center" data-alt="Student avatar 3" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDwg1jSq9y9N9fPOh36uHbYVAlzloRng5g0nGzCHNWNQrWEjqaMFOTv0C1FkurZf7IWWLAfKl0cYRtbYVaXgu4gFrB7VxIuaR5U6w0-q2LV9sgMRw3ulb9lYcMOMnIPYxJ6z3kHdDeTsAsSAtuX9ZUPTliLN1GEM8THSXbR_KDC8p_jALfr9FkKG3JcSicMrdzphRpm5PxU_t81G2wtDe1OkDbcag3Oh4wskW8H8r6L2F9G9DyFgoTPzk5sM180wU1R12DGsfgJkYw')"></div>
+<div class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-800 bg-slate-100 flex items-center justify-center text-[10px] text-slate-600 font-bold">+15</div>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-xs">
+<span class="material-symbols-outlined text-[14px]">account_tree</span>
+                                    8 Nodes
+                                </div>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="group flex flex-col p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-primary/50 transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<span class="bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 text-xs px-2 py-0.5 rounded-full font-medium">Industrial</span>
+<span class="text-slate-400 text-xs">• Edited 3d ago</span>
+</div>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<h4 class="text-slate-900 dark:text-white font-semibold text-base mb-1">Electrical Basics 101</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm line-clamp-2 mb-3">Standard curriculum roadmap for first year electrical engineering prep.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200 bg-cover bg-center" data-alt="Student avatar 4" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBt_OEBpRknd1R5LjBk5S4E5d6pQQKF9AzQHl5PjEccL0thaNSadUdn0BTfRjEy3Rloqeqe0H4jQg862PzCjvJxBCVg-czkSLuCyTLbBwtMB4v5OZqOH1u_dUqArK5j8qbERzcLeYs71mG71rGvvVS6S1Z6mD9zyaoGxl-5CFEKZKPcrGX21WBXZB_FPKMkaA_ePBJJSGHzr_gqLWl9QmHgwMV5IoMV8wvnsE-SHxR65E0mfZLC_e6nMzRBDlr3e3L_Rw5eQcv7-BA')"></div>
+<div class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-800 bg-slate-100 flex items-center justify-center text-[10px] text-slate-600 font-bold">+89</div>
+</div>
+<div class="flex items-center gap-1 text-slate-500 text-xs">
+<span class="material-symbols-outlined text-[14px]">account_tree</span>
+                                    24 Nodes
+                                </div>
+</div>
+</div>
+</div>
+<!-- Right Column: Visual Editor -->
+<div class="lg:col-span-2 flex flex-col h-[600px] lg:h-auto rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden shadow-sm relative">
+<!-- Editor Toolbar -->
+<div class="flex items-center justify-between px-4 py-3 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50">
+<div class="flex items-center gap-2">
+<h3 class="text-slate-900 dark:text-white font-bold text-sm">Physics Intensive: Mechanics</h3>
+<span class="px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-xs font-semibold">Draft</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-1.5 rounded hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400" title="Undo">
+<span class="material-symbols-outlined text-[20px]">undo</span>
+</button>
+<button class="p-1.5 rounded hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400" title="Redo">
+<span class="material-symbols-outlined text-[20px]">redo</span>
+</button>
+<div class="w-px h-5 bg-slate-300 dark:bg-slate-600 mx-1"></div>
+<button class="p-1.5 rounded hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400" title="Zoom Out">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400 w-10 text-center">100%</span>
+<button class="p-1.5 rounded hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400" title="Zoom In">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+<button class="ml-2 px-3 py-1.5 rounded bg-primary text-white text-xs font-bold hover:bg-primary/90 transition-colors">
+                                    Save Changes
+                                </button>
+</div>
+</div>
+<!-- Editor Canvas Area -->
+<div class="flex-1 relative bg-slate-50 dark:bg-slate-900 overflow-hidden group/canvas">
+<!-- Background Grid Pattern -->
+<div class="absolute inset-0 opacity-10 dark:opacity-5 pointer-events-none" style="background-image: radial-gradient(#64748b 1px, transparent 1px); background-size: 20px 20px;"></div>
+<!-- Floating Tools Palette -->
+<div class="absolute top-4 left-4 flex flex-col gap-2 p-2 rounded-lg bg-white dark:bg-slate-800 shadow-lg border border-slate-200 dark:border-slate-700 z-10">
+<button class="p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400 tooltip-container group/tool" title="Add Step">
+<span class="material-symbols-outlined text-[24px]">add_box</span>
+</button>
+<button class="p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400" title="Add Decision">
+<span class="material-symbols-outlined text-[24px]">diamond</span>
+</button>
+<button class="p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400" title="Add Resource">
+<span class="material-symbols-outlined text-[24px]">description</span>
+</button>
+<button class="p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400" title="Add Connector">
+<span class="material-symbols-outlined text-[24px]">timeline</span>
+</button>
+</div>
+<!-- Canvas Nodes (Simulated) -->
+<!-- Start Node -->
+<div class="absolute top-12 left-[300px] w-48 p-3 rounded-lg bg-emerald-50 dark:bg-emerald-900/20 border-2 border-emerald-500 shadow-sm z-10 cursor-move">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-emerald-600 text-[20px]">flag</span>
+<span class="font-bold text-emerald-900 dark:text-emerald-100 text-sm">Start: Kinematics</span>
+</div>
+<div class="text-xs text-emerald-800 dark:text-emerald-200/70">Initial assessment and intro videos.</div>
+<!-- Connection Point -->
+<div class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white dark:bg-slate-800 border-2 border-emerald-500 rounded-full"></div>
+</div>
+<!-- Connector Line 1 -->
+<div class="absolute top-[138px] left-[395px] w-0.5 h-16 bg-slate-300 dark:bg-slate-600 z-0"></div>
+<div class="absolute top-[200px] left-[392px] text-slate-300 dark:text-slate-600">
+<span class="material-symbols-outlined text-[12px] rotate-90">arrow_forward_ios</span>
+</div>
+<!-- Step Node 1 -->
+<div class="absolute top-48 left-[300px] w-48 p-3 rounded-lg bg-white dark:bg-slate-800 border-2 border-primary shadow-md z-10 cursor-move">
+<div class="flex justify-between items-start mb-2">
+<span class="font-bold text-slate-900 dark:text-white text-sm">Newton's 1st Law</span>
+<button class="text-slate-400 hover:text-red-500"><span class="material-symbols-outlined text-[16px]">close</span></button>
+</div>
+<div class="flex gap-2 mb-2">
+<span class="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 text-[10px] font-bold px-1.5 py-0.5 rounded">VIDEO</span>
+<span class="bg-orange-50 dark:bg-orange-900/30 text-orange-600 dark:text-orange-300 text-[10px] font-bold px-1.5 py-0.5 rounded">QUIZ</span>
+</div>
+<!-- Connection Points -->
+<div class="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white dark:bg-slate-800 border-2 border-primary rounded-full"></div>
+<div class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white dark:bg-slate-800 border-2 border-primary rounded-full"></div>
+</div>
+<!-- Connector Line 2 (Branching) -->
+<svg class="absolute top-[280px] left-[250px] w-[300px] h-[100px] z-0 pointer-events-none overflow-visible">
+<path class="dark:stroke-slate-600" d="M145 0 L145 40 L40 40 L40 80" fill="none" stroke="#cbd5e1" stroke-width="2"></path>
+<path class="dark:stroke-slate-600" d="M145 0 L145 40 L250 40 L250 80" fill="none" stroke="#cbd5e1" stroke-width="2"></path>
+</svg>
+<!-- Step Node 2 (Left Branch) -->
+<div class="absolute top-[360px] left-[180px] w-48 p-3 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 shadow-sm z-10 hover:border-primary transition-colors cursor-move">
+<div class="flex justify-between items-start mb-2">
+<span class="font-bold text-slate-900 dark:text-white text-sm">Practice Problems</span>
+</div>
+<div class="text-xs text-slate-500 dark:text-slate-400 mb-2">Set A: Basic Friction</div>
+<div class="flex gap-2">
+<span class="bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 text-[10px] font-bold px-1.5 py-0.5 rounded">DOC</span>
+</div>
+<div class="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-full"></div>
+</div>
+<!-- Step Node 3 (Right Branch) -->
+<div class="absolute top-[360px] left-[460px] w-48 p-3 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 shadow-sm z-10 hover:border-primary transition-colors cursor-move">
+<div class="flex justify-between items-start mb-2">
+<span class="font-bold text-slate-900 dark:text-white text-sm">Lab Simulation</span>
+</div>
+<div class="text-xs text-slate-500 dark:text-slate-400 mb-2">Incline Plane Sim</div>
+<div class="flex gap-2">
+<span class="bg-pink-50 dark:bg-pink-900/30 text-pink-600 dark:text-pink-300 text-[10px] font-bold px-1.5 py-0.5 rounded">INTERACTIVE</span>
+</div>
+<div class="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-full"></div>
+</div>
+</div>
+<!-- Editor Context Panel (Right Side) -->
+<div class="absolute top-0 right-0 bottom-0 w-72 bg-white dark:bg-slate-800 border-l border-slate-200 dark:border-slate-700 shadow-xl transform translate-x-0 transition-transform flex flex-col">
+<div class="p-4 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50">
+<h4 class="font-bold text-slate-900 dark:text-white text-sm">Node Properties</h4>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-4 flex-1 overflow-y-auto flex flex-col gap-4">
+<div>
+<label class="block text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1.5">Node Title</label>
+<input class="w-full text-sm rounded bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-primary focus:border-primary" type="text" value="Newton's 1st Law"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1.5">Description</label>
+<textarea class="w-full text-sm rounded bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-primary focus:border-primary resize-none" rows="3">Introduction to inertia and force equilibrium.</textarea>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1.5">Attached Resources</label>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 p-2 rounded bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+<div class="w-8 h-8 rounded bg-red-100 flex items-center justify-center text-red-600">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-medium truncate text-slate-900 dark:text-white">Lecture 1.4.mp4</p>
+<p class="text-[10px] text-slate-500">14 mins</p>
+</div>
+<button class="text-slate-400 hover:text-red-500"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+<div class="flex items-center gap-2 p-2 rounded bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+<div class="w-8 h-8 rounded bg-blue-100 flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined text-[18px]">assignment</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-medium truncate text-slate-900 dark:text-white">Quiz: Forces Intro</p>
+<p class="text-[10px] text-slate-500">10 Questions</p>
+</div>
+<button class="text-slate-400 hover:text-red-500"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+<button class="w-full py-2 rounded border border-dashed border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400 text-xs font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                                            + Add Resource
+                                        </button>
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1.5">Prerequisites</label>
+<select class="w-full text-sm rounded bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-primary focus:border-primary">
+<option>Start: Kinematics</option>
+<option>-- None --</option>
+</select>
+</div>
+</div>
+<div class="p-4 border-t border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50">
+<button class="w-full py-2 bg-primary text-white rounded font-medium text-sm shadow hover:bg-primary/90 transition-colors">Apply Changes</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

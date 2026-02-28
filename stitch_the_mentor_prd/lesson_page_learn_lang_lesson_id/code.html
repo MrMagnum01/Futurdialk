@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Mentor - Lesson Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 flex h-screen overflow-hidden">
+<!-- Main Sidebar / Tools (Left) -->
+<aside class="flex w-72 flex-col border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-[#15202e] shrink-0 z-10">
+<!-- Brand -->
+<div class="flex items-center gap-3 px-6 py-5 border-b border-slate-100 dark:border-slate-800">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">The Mentor</h2>
+</div>
+<!-- Sidebar Content -->
+<div class="flex flex-col flex-1 overflow-y-auto p-4 gap-6">
+<!-- Tools Section -->
+<div class="flex flex-col gap-2">
+<div class="px-2">
+<h3 class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">Lesson Tools</h3>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">format_list_bulleted</span>
+<span class="text-sm font-medium">Lesson Index</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined fill-current">forum</span>
+<span class="text-sm font-medium">Ask a Tutor</span>
+<span class="ml-auto w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">menu_book</span>
+<span class="text-sm font-medium">Resources</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">edit_note</span>
+<span class="text-sm font-medium">My Notes</span>
+</a>
+</nav>
+</div>
+<hr class="border-slate-100 dark:border-slate-800"/>
+<!-- Progress Section -->
+<div class="flex flex-col gap-3 px-2">
+<div class="flex justify-between items-end">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Progress</span>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">45%</span>
+</div>
+<div class="h-2 w-full rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 45%;"></div>
+</div>
+<p class="text-xs text-slate-400 leading-relaxed mt-1">You are doing great! Finish this video to unlock the next quiz.</p>
+</div>
+<!-- Upcoming List -->
+<div class="flex flex-col gap-2 mt-auto">
+<div class="px-2">
+<h3 class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">Next Up</h3>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-lg border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50">
+<div class="grid place-items-center w-8 h-8 rounded bg-white dark:bg-slate-700 shadow-sm shrink-0">
+<span class="material-symbols-outlined text-slate-400 text-[18px]">lock</span>
+</div>
+<div>
+<p class="text-sm font-medium text-slate-700 dark:text-slate-300 line-clamp-1">Newton's Third Law</p>
+<p class="text-xs text-slate-500">12 min • Video</p>
+</div>
+</div>
+</div>
+</div>
+<!-- User Profile (Bottom Sidebar) -->
+<div class="p-4 border-t border-slate-100 dark:border-slate-800">
+<button class="flex w-full items-center gap-3 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-left">
+<div class="w-10 h-10 rounded-full bg-cover bg-center border-2 border-white dark:border-slate-700 shadow-sm" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDBZEqtFqDHBGTFgT_iuDhAfiEVzxXEWvvTeY5xlW8QVUQW6DR2cgGf-jfsc97e6dTN8M6k4Y8z5WGmvwyrJL5-xiUtzeJolXhTxlyDAyT91alPVWvEZnGY7r29bgpyE7nl9HzUQDfrnzrlsEHz-DTXuaVpdzJ-EsDwwL4E9vPADmEuCVQIvuD0mxFQN2n6JtJjGuMxvpwZqVdfviC-iX_GsLNERZ32jDqsL2r_raHyJgZzra96jjNtnE042PAfLryMJXmpwipMxX8");'></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-slate-900 dark:text-white truncate">Alex Morgan</p>
+<p class="text-xs text-slate-500 truncate">Physics Student</p>
+</div>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- Header -->
+<header class="flex items-center justify-between px-8 py-4 bg-white dark:bg-[#15202e] border-b border-slate-200 dark:border-slate-800 shrink-0">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-sm">
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">Courses</a>
+<span class="text-slate-300 dark:text-slate-600">/</span>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">Physics 101</a>
+<span class="text-slate-300 dark:text-slate-600">/</span>
+<span class="font-medium text-slate-900 dark:text-white">Newton's Laws</span>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-3">
+<button class="hidden sm:flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+                    Previous
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-blue-600 rounded-lg shadow-sm shadow-blue-500/30 transition-all">
+                    Next Lesson
+                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark">
+<div class="max-w-5xl mx-auto px-6 py-8 pb-20">
+<!-- Lesson Title -->
+<div class="mb-8">
+<h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">Chapter 3: Newton's Second Law</h1>
+<p class="text-lg text-slate-500 dark:text-slate-400">Understanding Force, Mass, and Acceleration relationships in dynamic systems.</p>
+</div>
+<!-- Video Player Container -->
+<div class="w-full aspect-video bg-black rounded-xl overflow-hidden shadow-xl mb-10 relative group cursor-pointer">
+<!-- Placeholder for video thumbnail -->
+<div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-40 transition-opacity" data-alt="Physics blackboard with formulas" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAkKEMkTu9coHmSVD_ekbbTbq6MVnC1SH7Recr7RYoBA6_B6cvW9zJbUcLETFwM97AHBitUs9U9EFUGgIWyYNWobJ4BrIEcXNur5c-YFsA1jQzl1cDdrUtz9fTEB9c850xnKn4-LaNeT5buLfolf-2bFcnqLueyH5FIo-nok97hDHzDDXqptM3X1K98n3kty5EWZZdFK_KEbL4r5cwimwtJIdpTGpnZJ8-emjE07d0Z3GXoDrPmCNv2agVRVWLFQUtUlJouMcGJx38');"></div>
+<!-- Play Button Overlay -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-20 h-20 rounded-full bg-primary/90 text-white flex items-center justify-center pl-1 shadow-[0_0_40px_rgba(19,109,236,0.6)] group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-[48px] fill">play_arrow</span>
+</div>
+</div>
+<!-- Video Controls (Mock) -->
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 pt-12 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="h-1 w-full bg-white/30 rounded-full overflow-hidden cursor-pointer">
+<div class="h-full w-1/3 bg-primary"></div>
+</div>
+<div class="flex justify-between items-center text-white">
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">play_arrow</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">volume_up</span>
+<span class="text-xs font-medium">04:20 / 12:45</span>
+</div>
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">closed_caption</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">settings</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">fullscreen</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Theory / Content -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Main Text Column -->
+<div class="lg:col-span-2 space-y-6">
+<div class="prose prose-slate dark:prose-invert max-w-none">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Key Concepts</h3>
+<p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Newton's second law is a quantitative description of the changes that a force can produce on the motion of a body. It states that the time rate of change of the momentum of a body is equal in both magnitude and direction to the force imposed on it.
+                            </p>
+<div class="my-6 p-6 bg-blue-50 dark:bg-blue-900/20 border-l-4 border-primary rounded-r-lg">
+<p class="text-lg font-mono text-primary font-bold mb-1">F = ma</p>
+<p class="text-sm text-slate-600 dark:text-slate-400">Where <strong>F</strong> is the net force, <strong>m</strong> is the mass, and <strong>a</strong> is the acceleration.</p>
+</div>
+<p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                                The momentum of a body is equal to the product of its mass and its velocity. Momentum, like velocity, is a vector quantity, having both magnitude and direction. A force applied to a body can change the magnitude of the momentum or its direction or both.
+                            </p>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mt-8 mb-4">Example Problem</h3>
+<p class="text-slate-600 dark:text-slate-300 mb-4">
+                                Calculate the force needed to accelerate a 2,000 kg car at 5 m/s².
+                            </p>
+</div>
+<!-- Interactive Quiz Card -->
+<div class="mt-8 border border-slate-200 dark:border-slate-700 rounded-xl bg-white dark:bg-[#15202e] shadow-sm overflow-hidden">
+<div class="bg-slate-50 dark:bg-slate-800/50 px-6 py-4 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center">
+<span class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">quiz</span>
+                                    Quick Check
+                                </span>
+<span class="text-xs font-medium px-2 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded">Easy</span>
+</div>
+<div class="p-6">
+<p class="text-slate-800 dark:text-slate-200 font-medium mb-4">If the mass of an object is doubled while the force remains constant, what happens to the acceleration?</p>
+<div class="space-y-3">
+<label class="flex items-center gap-4 p-4 border border-slate-200 dark:border-slate-700 rounded-lg cursor-pointer hover:border-primary hover:bg-blue-50 dark:hover:bg-blue-900/10 transition-all group">
+<input class="w-5 h-5 text-primary border-slate-300 focus:ring-primary dark:bg-slate-800 dark:border-slate-600" name="quiz1" type="radio"/>
+<span class="text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">It doubles</span>
+</label>
+<label class="flex items-center gap-4 p-4 border-2 border-primary bg-blue-50/50 dark:bg-blue-900/20 rounded-lg cursor-pointer transition-all">
+<div class="relative flex items-center justify-center">
+<input checked="" class="peer w-5 h-5 text-primary border-slate-300 focus:ring-primary appearance-none" name="quiz1" type="radio"/>
+<span class="material-symbols-outlined absolute text-primary text-sm pointer-events-none">check</span>
+</div>
+<span class="text-slate-900 dark:text-white font-medium">It is halved</span>
+</label>
+<label class="flex items-center gap-4 p-4 border border-slate-200 dark:border-slate-700 rounded-lg cursor-pointer hover:border-primary hover:bg-blue-50 dark:hover:bg-blue-900/10 transition-all group">
+<input class="w-5 h-5 text-primary border-slate-300 focus:ring-primary dark:bg-slate-800 dark:border-slate-600" name="quiz1" type="radio"/>
+<span class="text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">It remains the same</span>
+</label>
+</div>
+<div class="mt-6 flex justify-end">
+<button class="bg-primary hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-medium shadow-sm transition-colors">
+                                        Check Answer
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sticky Sidebar for Supplementary -->
+<div class="lg:col-span-1 space-y-6">
+<!-- Instructor Card -->
+<div class="bg-white dark:bg-[#15202e] rounded-xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm">
+<h4 class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">Instructor</h4>
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-cover bg-center" data-alt="Female professor portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDS_9xMzyfpUzSJEKI49lOpJX1OB6LqJMB0WTDeaBnngu7XJ9nHclOBaqL7bjGXakKliNglFXBlvH7cZtS9K-d3IvTyacR84FzfmGN75uSiCLgkXV7BsyTd5ag4kvcl2kIsGvuKbuN0LSH7hRCMRmdnyTeSuTIYqz8Klkfr_xKZOOIbPQAChSrvsGPlxrasBU56ATFt6qKMfYRQwKXb5xIOdIDoKCBEOVUZr8YIbrlPMehwv_N3aABmLV4C6EHNVQTSQU7lB3GyMCA');"></div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Dr. Sarah Jenkins</p>
+<p class="text-xs text-slate-500">PhD in Astrophysics</p>
+</div>
+</div>
+<div class="mt-4 flex gap-2">
+<button class="flex-1 py-2 px-3 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-medium rounded hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                                    Bio
+                                </button>
+<button class="flex-1 py-2 px-3 bg-primary/10 text-primary text-sm font-medium rounded hover:bg-primary/20 transition-colors">
+                                    Message
+                                </button>
+</div>
+</div>
+<!-- Downloads -->
+<div class="bg-white dark:bg-[#15202e] rounded-xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm">
+<h4 class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">Lesson Materials</h4>
+<ul class="space-y-3">
+<li>
+<a class="flex items-center gap-3 group" href="#">
+<div class="size-8 rounded bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm">picture_as_pdf</span>
+</div>
+<div class="min-w-0">
+<p class="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover:text-primary truncate">Lecture Slides.pdf</p>
+<p class="text-xs text-slate-400">2.4 MB</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-slate-400 group-hover:text-slate-600">download</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 group" href="#">
+<div class="size-8 rounded bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm">description</span>
+</div>
+<div class="min-w-0">
+<p class="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover:text-primary truncate">Practice Problems.docx</p>
+<p class="text-xs text-slate-400">1.1 MB</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-slate-400 group-hover:text-slate-600">download</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Discussion Snippet -->
+<div class="bg-white dark:bg-[#15202e] rounded-xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm">
+<div class="flex justify-between items-center mb-4">
+<h4 class="text-sm font-bold text-slate-500 uppercase tracking-wider">Discussion</h4>
+<span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded-full">12 new</span>
+</div>
+<div class="space-y-4">
+<div class="flex gap-3">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Student avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaThrrJWnAolQjr4aVgJMxarOaVwVQTrOcBT8ZyPhjnjEFIF8bPsZDX9XanL6SeYlOTl-a-V2l2F0SWzE4LrKI_qTdOIF6xRjU_-zLq2RKPA2UUkphJ32USuPmyd2wIZK-otDe4FG_7BOrYymCfWFaDZDF7duJdA9neGyA7i7kcB8d7JL3fAOvizPAN5wOfQ86g4w46VAMlr1OsWdOz4yM4tUHrJoEw-kgj08VA9Cz9G_s8rZlcuK7fmAw91e3DeHSnwEIJ6xSYoQ"/>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-900 dark:text-white">Mark D.</p>
+<p class="text-sm text-slate-600 dark:text-slate-300 mt-1">Can someone explain the 3rd variable again?</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                                View all comments
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

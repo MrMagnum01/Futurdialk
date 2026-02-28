@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Mentor - Diagnostic Test</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "primary-content": "#ffffff",
+                        "primary-dark": "#0c4fb3",
+                        "primary-light": "#e0ecfc",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2433",
+                        "text-main": "#111418",
+                        "text-secondary": "#617289",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-text-main flex flex-col h-screen overflow-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-gray-200 bg-surface-light px-10 py-3 shrink-0 z-10 shadow-sm">
+<div class="flex items-center gap-4 text-text-main">
+<div class="size-8 text-primary flex items-center justify-center bg-primary-light rounded-lg">
+<span class="material-symbols-outlined text-2xl">school</span>
+</div>
+<h2 class="text-text-main text-xl font-bold leading-tight tracking-[-0.015em]">The Mentor</h2>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary-light text-primary hover:bg-primary/20 transition-colors text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined mr-2 text-lg">bookmark</span>
+<span class="truncate">Save for later</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gray-100 text-text-main hover:bg-gray-200 transition-colors text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined mr-2 text-lg">logout</span>
+<span class="truncate">Exit Test</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar (Left) -->
+<aside class="w-80 bg-surface-light border-r border-gray-200 flex flex-col overflow-y-auto hidden lg:flex shrink-0">
+<div class="p-6 border-b border-gray-100">
+<div class="flex flex-col gap-1">
+<h1 class="text-text-main text-lg font-bold leading-normal">Test Progress</h1>
+<p class="text-text-secondary text-sm font-normal">Diagnostic Assessment</p>
+</div>
+<div class="mt-6 flex flex-col gap-2">
+<div class="flex justify-between items-end mb-1">
+<span class="text-sm font-medium text-text-main">Question 3 of 20</span>
+<span class="text-xs font-semibold text-primary">15%</span>
+</div>
+<div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[15%] rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="p-4 flex-1">
+<h3 class="text-xs font-bold text-text-secondary uppercase tracking-wider mb-3 px-2">Sections</h3>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg bg-primary-light border border-primary/20 shadow-sm cursor-pointer group transition-all">
+<div class="text-primary bg-white p-1.5 rounded-md shadow-sm group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">calculate</span>
+</div>
+<div class="flex-1">
+<p class="text-text-main text-sm font-bold leading-tight">Mathematics</p>
+<p class="text-primary text-xs mt-0.5 font-medium">Current Section</p>
+</div>
+<span class="material-symbols-outlined text-primary text-lg">play_circle</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors opacity-60">
+<div class="text-text-secondary bg-gray-100 p-1.5 rounded-md">
+<span class="material-symbols-outlined text-[20px]">science</span>
+</div>
+<div class="flex-1">
+<p class="text-text-main text-sm font-medium leading-tight">Physics</p>
+<p class="text-text-secondary text-xs mt-0.5">Upcoming</p>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-lg">lock</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors opacity-60">
+<div class="text-text-secondary bg-gray-100 p-1.5 rounded-md">
+<span class="material-symbols-outlined text-[20px]">biotech</span>
+</div>
+<div class="flex-1">
+<p class="text-text-main text-sm font-medium leading-tight">Chemistry</p>
+<p class="text-text-secondary text-xs mt-0.5">Upcoming</p>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-lg">lock</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors opacity-60">
+<div class="text-text-secondary bg-gray-100 p-1.5 rounded-md">
+<span class="material-symbols-outlined text-[20px]">genetics</span>
+</div>
+<div class="flex-1">
+<p class="text-text-main text-sm font-medium leading-tight">Biology</p>
+<p class="text-text-secondary text-xs mt-0.5">Upcoming</p>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-lg">lock</span>
+</div>
+</div>
+</div>
+<!-- Timer Widget in Sidebar Bottom -->
+<div class="p-6 border-t border-gray-200 bg-gray-50">
+<p class="text-xs font-bold text-text-secondary uppercase tracking-wider mb-3 text-center">Time Remaining</p>
+<div class="flex gap-2 justify-center">
+<div class="flex flex-col items-center">
+<div class="bg-white border border-gray-200 rounded-lg w-12 h-12 flex items-center justify-center shadow-sm">
+<span class="text-lg font-bold text-text-main font-mono">01</span>
+</div>
+<span class="text-[10px] text-text-secondary mt-1">Hr</span>
+</div>
+<span class="text-xl font-bold text-text-secondary mt-2">:</span>
+<div class="flex flex-col items-center">
+<div class="bg-white border border-gray-200 rounded-lg w-12 h-12 flex items-center justify-center shadow-sm">
+<span class="text-lg font-bold text-text-main font-mono">45</span>
+</div>
+<span class="text-[10px] text-text-secondary mt-1">Min</span>
+</div>
+<span class="text-xl font-bold text-text-secondary mt-2">:</span>
+<div class="flex flex-col items-center">
+<div class="bg-white border border-gray-200 rounded-lg w-12 h-12 flex items-center justify-center shadow-sm">
+<span class="text-lg font-bold text-primary font-mono animate-pulse">30</span>
+</div>
+<span class="text-[10px] text-text-secondary mt-1">Sec</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Question Area (Center) -->
+<main class="flex-1 overflow-y-auto bg-background-light p-6 md:p-10 flex justify-center">
+<div class="max-w-3xl w-full flex flex-col gap-6 pb-20">
+<!-- Question Header -->
+<div class="flex flex-col gap-2">
+<span class="bg-blue-100 text-primary w-fit px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Calculus</span>
+<h1 class="text-2xl md:text-3xl font-bold text-text-main leading-tight">
+                        Question 3: Derivatives
+                    </h1>
+</div>
+<!-- Question Card -->
+<div class="bg-surface-light rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+<div class="p-6 md:p-8 border-b border-gray-100">
+<p class="text-lg text-text-main leading-relaxed">
+                            Find the derivative of the function <span class="font-mono bg-gray-100 px-1 rounded text-sm mx-1">f(x) = 3x² + 2x - 5</span> at the point where <span class="font-mono bg-gray-100 px-1 rounded text-sm mx-1">x = 4</span>.
+                        </p>
+<!-- Optional Image placeholder for questions with diagrams -->
+<div class="mt-6 hidden">
+<div class="h-48 bg-gray-100 rounded-lg flex items-center justify-center border border-dashed border-gray-300">
+<span class="text-gray-400 text-sm">Diagram or Function Graph would appear here</span>
+</div>
+</div>
+</div>
+<!-- Options -->
+<div class="bg-gray-50/50 p-6 md:p-8 flex flex-col gap-4">
+<label class="group relative flex items-center p-4 rounded-xl border-2 border-transparent bg-white shadow-sm cursor-pointer hover:border-primary/30 transition-all">
+<input class="peer sr-only" name="answer" type="radio"/>
+<div class="flex items-center justify-center w-8 h-8 rounded-full border-2 border-gray-200 text-gray-400 font-bold mr-4 peer-checked:bg-primary peer-checked:border-primary peer-checked:text-white transition-colors group-hover:border-primary/50">
+                                A
+                            </div>
+<span class="text-text-main font-medium flex-1">24</span>
+<div class="absolute inset-0 border-2 border-primary rounded-xl opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
+</label>
+<label class="group relative flex items-center p-4 rounded-xl border-2 border-transparent bg-white shadow-sm cursor-pointer hover:border-primary/30 transition-all">
+<input class="peer sr-only" name="answer" type="radio"/>
+<div class="flex items-center justify-center w-8 h-8 rounded-full border-2 border-gray-200 text-gray-400 font-bold mr-4 peer-checked:bg-primary peer-checked:border-primary peer-checked:text-white transition-colors group-hover:border-primary/50">
+                                B
+                            </div>
+<span class="text-text-main font-medium flex-1">26</span>
+<div class="absolute inset-0 border-2 border-primary rounded-xl opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
+</label>
+<label class="group relative flex items-center p-4 rounded-xl border-2 border-transparent bg-white shadow-sm cursor-pointer hover:border-primary/30 transition-all">
+<input class="peer sr-only" name="answer" type="radio"/>
+<div class="flex items-center justify-center w-8 h-8 rounded-full border-2 border-gray-200 text-gray-400 font-bold mr-4 peer-checked:bg-primary peer-checked:border-primary peer-checked:text-white transition-colors group-hover:border-primary/50">
+                                C
+                            </div>
+<span class="text-text-main font-medium flex-1">14</span>
+<div class="absolute inset-0 border-2 border-primary rounded-xl opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
+</label>
+<label class="group relative flex items-center p-4 rounded-xl border-2 border-transparent bg-white shadow-sm cursor-pointer hover:border-primary/30 transition-all">
+<input class="peer sr-only" name="answer" type="radio"/>
+<div class="flex items-center justify-center w-8 h-8 rounded-full border-2 border-gray-200 text-gray-400 font-bold mr-4 peer-checked:bg-primary peer-checked:border-primary peer-checked:text-white transition-colors group-hover:border-primary/50">
+                                D
+                            </div>
+<span class="text-text-main font-medium flex-1">20</span>
+<div class="absolute inset-0 border-2 border-primary rounded-xl opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
+</label>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="flex items-center justify-between pt-4">
+<button class="flex items-center gap-2 px-6 h-12 rounded-lg font-bold text-text-secondary hover:bg-gray-200 hover:text-text-main transition-colors disabled:opacity-50">
+<span class="material-symbols-outlined">arrow_back</span>
+                        Previous
+                    </button>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 h-12 rounded-lg font-bold text-primary hover:bg-primary-light transition-colors">
+<span class="material-symbols-outlined">flag</span>
+                            Mark for Review
+                        </button>
+<button class="flex items-center gap-2 px-8 h-12 bg-primary text-white rounded-lg font-bold shadow-md hover:bg-primary-dark hover:shadow-lg transition-all transform active:scale-95">
+                            Next Question
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Reference Sheet Collapsible (Optional Feature) -->
+<div class="mt-8">
+<details class="group bg-white border border-gray-200 rounded-lg overflow-hidden">
+<summary class="flex items-center justify-between p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors">
+<span class="font-bold text-text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined">functions</span>
+                                Formula Sheet Reference
+                            </span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-6 border-t border-gray-200">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-text-main">
+<div class="p-3 bg-gray-50 rounded border border-gray-100">
+<p class="font-semibold mb-1">Power Rule</p>
+<p class="font-mono text-gray-600">d/dx(x^n) = nx^(n-1)</p>
+</div>
+<div class="p-3 bg-gray-50 rounded border border-gray-100">
+<p class="font-semibold mb-1">Constant Multiple Rule</p>
+<p class="font-mono text-gray-600">d/dx[c*f(x)] = c * f'(x)</p>
+</div>
+<div class="p-3 bg-gray-50 rounded border border-gray-100">
+<p class="font-semibold mb-1">Sum Rule</p>
+<p class="font-mono text-gray-600">d/dx[f(x) + g(x)] = f'(x) + g'(x)</p>
+</div>
+</div>
+</div>
+</details>
+</div>
+</div>
+</main>
+<!-- Right Sidebar (Question Navigator - Optional/Responsive) -->
+<aside class="w-64 bg-surface-light border-l border-gray-200 hidden xl:flex flex-col shrink-0">
+<div class="p-5 border-b border-gray-100">
+<h3 class="text-sm font-bold text-text-main">Question Navigator</h3>
+</div>
+<div class="p-5 flex-1 overflow-y-auto">
+<div class="grid grid-cols-4 gap-3">
+<!-- Completed -->
+<button class="h-10 w-10 rounded-lg bg-green-100 text-green-700 font-bold text-sm flex items-center justify-center border border-green-200 hover:bg-green-200 transition-colors">1</button>
+<button class="h-10 w-10 rounded-lg bg-green-100 text-green-700 font-bold text-sm flex items-center justify-center border border-green-200 hover:bg-green-200 transition-colors">2</button>
+<!-- Current -->
+<button class="h-10 w-10 rounded-lg bg-primary text-white font-bold text-sm flex items-center justify-center shadow-md ring-2 ring-primary ring-offset-2">3</button>
+<!-- Flagged -->
+<button class="h-10 w-10 rounded-lg bg-orange-50 text-orange-600 font-bold text-sm flex items-center justify-center border border-orange-200 relative hover:bg-orange-100 transition-colors">
+                        4
+                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-orange-500 rounded-full border-2 border-white"></div>
+</button>
+<!-- Pending -->
+<button class="h-10 w-10 rounded-lg bg-gray-50 text-text-secondary font-medium text-sm flex items-center justify-center border border-gray-200 hover:bg-gray-100 transition-colors">5</button>
+<button class="h-10 w-10 rounded-lg bg-gray-50 text-text-secondary font-medium text-sm flex items-center justify-center border border-gray-200 hover:bg-gray-100 transition-colors">6</button>
+<button class="h-10 w-10 rounded-lg bg-gray-50 text-text-secondary font-medium text-sm flex items-center justify-center border border-gray-200 hover:bg-gray-100 transition-colors">7</button>
+<button class="h-10 w-10 rounded-lg bg-gray-50 text-text-secondary font-medium text-sm flex items-center justify-center border border-gray-200 hover:bg-gray-100 transition-colors">8</button>
+<button class="h-10 w-10 rounded-lg bg-gray-50 text-text-secondary font-medium text-sm flex items-center justify-center border border-gray-200 hover:bg-gray-100 transition-colors">9</button>
+<button class="h-10 w-10 rounded-lg bg-gray-50 text-text-secondary font-medium text-sm flex items-center justify-center border border-gray-200 hover:bg-gray-100 transition-colors">10</button>
+<button class="h-10 w-10 rounded-lg bg-gray-50 text-text-secondary font-medium text-sm flex items-center justify-center border border-gray-200 hover:bg-gray-100 transition-colors">11</button>
+<button class="h-10 w-10 rounded-lg bg-gray-50 text-text-secondary font-medium text-sm flex items-center justify-center border border-gray-200 hover:bg-gray-100 transition-colors">12</button>
+</div>
+<div class="mt-8 border-t border-gray-100 pt-4 flex flex-col gap-3">
+<div class="flex items-center gap-2 text-xs text-text-secondary">
+<div class="w-3 h-3 rounded bg-green-100 border border-green-200"></div>
+<span>Answered</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-text-secondary">
+<div class="w-3 h-3 rounded bg-primary"></div>
+<span>Current</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-text-secondary">
+<div class="w-3 h-3 rounded bg-orange-50 border border-orange-200"></div>
+<span>Flagged for Review</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-text-secondary">
+<div class="w-3 h-3 rounded bg-gray-50 border border-gray-200"></div>
+<span>Unanswered</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</body></html>

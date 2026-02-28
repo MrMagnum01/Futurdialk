@@ -1,0 +1,39 @@
+# Web framework
+fastapi>=0.115.0
+uvicorn[standard]>=0.34.0
+python-multipart>=0.0.17
+
+# PostgreSQL (async)
+sqlalchemy[asyncio]>=2.0.36
+asyncpg>=0.30.0
+alembic>=1.14.0
+
+# MongoDB (async)
+motor>=3.6.0
+
+# MinIO / S3
+minio>=7.2.0
+
+# Redis
+redis[hiredis]>=5.2.0
+
+# Celery
+celery[redis]>=5.4.0
+
+# Auth
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+bcrypt>=4.1.0
+
+# Validation
+pydantic[email]>=2.10.0
+pydantic-settings>=2.7.0
+
+# HTTP client
+httpx>=0.28.0
+
+# OpenAI
+openai>=1.50.0
+
+# Utilities
+python-dotenv>=1.0.0
