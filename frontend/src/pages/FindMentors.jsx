@@ -1,25 +1,35 @@
 /**
  * Find Mentors — Browse mentors from the community.
+ * Fetches real mentor data from /api/mentors.
  */
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation, LanguageSwitcher } from '../i18n'
-
-const MOCK_MENTORS = [
-    { name: 'Youssef B.', country: '🇫🇷 France', field: 'Engineering', uni: 'INSA Lyon', available: true },
-    { name: 'Salma R.', country: '🇨🇦 Canada', field: 'Computer Science', uni: 'UdeM', available: true },
-    { name: 'Ahmed K.', country: '🇩🇪 Germany', field: 'Medicine', uni: 'Charité Berlin', available: false },
-    { name: 'Fatima Z.', country: '🇫🇷 France', field: 'Business', uni: 'HEC Paris', available: true },
-    { name: 'Omar M.', country: '🇬🇧 UK', field: 'Law', uni: 'King\'s College', available: true },
-    { name: 'Nadia H.', country: '🇨🇦 Canada', field: 'Architecture', uni: 'McGill', available: false },
-]
+import { getMentors } from '../api'
 
 export default function FindMentors() {
     const { lang } = useTranslation()
     const isFr = lang === 'fr'
     const [filter, setFilter] = useState('')
+    const [mentors, setMentors] = useState([])
+    const [loading, setLoading] = useState(true)
 
-    const filtered = MOCK_MENTORS.filter(m => !filter || m.country.toLowerCase().includes(filter.toLowerCase()) || m.field.toLowerCase().includes(filter.toLowerCase()))
+    useEffect(() => {
+        getMentors()
+            .then(data => setMentors(data.mentors || []))
+            .catch(() => { })
+            .finally(() => setLoading(false))
+    }, [])
+
+    const filtered = mentors.filter(m =>
+        !filter ||
+        (m.country_code || '').toLowerCase().includes(filter.toLowerCase()) ||
+        (m.field || '').toLowerCase().includes(filter.toLowerCase()) ||
+        (m.university || '').toLowerCase().includes(filter.toLowerCase()) ||
+        (m.city || '').toLowerCase().includes(filter.toLowerCase())
+    )
+
+    const countryFlags = { FR: '🇫🇷 France', CA: '🇨🇦 Canada', DE: '🇩🇪 Germany', GB: '🇬🇧 UK', TR: '🇹🇷 Turkey', MA: '🇲🇦 Morocco' }
 
     return (
         <div className="min-h-screen bg-bg-light">
@@ -32,27 +42,42 @@ export default function FindMentors() {
             <main className="max-w-[1000px] mx-auto px-4 py-8">
                 <h1 className="text-2xl font-bold mb-2">{isFr ? 'Trouver un Mentor' : 'Find a Mentor'}</h1>
                 <p className="text-secondary mb-6">{isFr ? 'Connectez-vous avec des étudiants marocains à l\'étranger' : 'Connect with Moroccan students abroad'}</p>
-                <input value={filter} onChange={e => setFilter(e.target.value)} className="w-full max-w-md p-3 border border-gray-200 rounded-xl mb-6 outline-none focus:border-primary" placeholder={isFr ? 'Filtrer par pays ou domaine...' : 'Filter by country or field...'} />
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {filtered.map((m, i) => (
-                        <div key={i} className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-all">
-                            <div className="flex items-center gap-3 mb-3">
-                                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-blue-600 text-white flex items-center justify-center font-bold text-lg">{m.name.charAt(0)}</div>
-                                <div>
-                                    <p className="font-bold text-text-main">{m.name}</p>
-                                    <p className="text-xs text-secondary">{m.uni}</p>
+                <input value={filter} onChange={e => setFilter(e.target.value)} className="w-full max-w-md p-3 border border-gray-200 rounded-xl mb-6 outline-none focus:border-primary" placeholder={isFr ? 'Filtrer par pays, domaine ou université...' : 'Filter by country, field or university...'} />
+                {loading ? (
+                    <p className="text-center text-secondary py-10">{isFr ? 'Chargement...' : 'Loading...'}</p>
+                ) : filtered.length === 0 ? (
+                    <div className="text-center py-20"><span className="material-symbols-outlined text-5xl text-gray-300 mb-3 block">person_search</span><p className="text-secondary">{isFr ? 'Aucun mentor trouvé' : 'No mentors found'}</p></div>
+                ) : (
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {filtered.map((m) => (
+                            <div key={m.id} className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-all">
+                                <div className="flex items-center gap-3 mb-3">
+                                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-blue-600 text-white flex items-center justify-center font-bold text-lg">{(m.name || 'M').charAt(0)}</div>
+                                    <div>
+                                        <p className="font-bold text-text-main">{m.name}</p>
+                                        <p className="text-xs text-secondary">{m.university}</p>
+                                    </div>
                                 </div>
+                                <div className="flex flex-wrap gap-2 mb-3">
+                                    <span className="px-2 py-1 text-xs bg-blue-50 text-blue-700 rounded-full">{countryFlags[m.country_code] || m.country_code}</span>
+                                    <span className="px-2 py-1 text-xs bg-gray-100 rounded-full">{m.field}</span>
+                                    {m.rating && <span className="px-2 py-1 text-xs bg-yellow-50 text-yellow-700 rounded-full">⭐ {m.rating}</span>}
+                                </div>
+                                {m.bio && <p className="text-xs text-secondary mb-3 line-clamp-2">{m.bio}</p>}
+                                {m.specialties && m.specialties.length > 0 && (
+                                    <div className="flex flex-wrap gap-1 mb-3">
+                                        {m.specialties.slice(0, 3).map((s, i) => (
+                                            <span key={i} className="px-2 py-0.5 text-xs bg-primary/10 text-primary rounded">{s}</span>
+                                        ))}
+                                    </div>
+                                )}
+                                <button className="w-full py-2 rounded-lg text-sm font-bold transition-colors bg-primary text-white hover:bg-primary-hover">
+                                    {isFr ? 'Contacter' : 'Contact'}
+                                </button>
                             </div>
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                <span className="px-2 py-1 text-xs bg-blue-50 text-blue-700 rounded-full">{m.country}</span>
-                                <span className="px-2 py-1 text-xs bg-gray-100 rounded-full">{m.field}</span>
-                            </div>
-                            <button disabled={!m.available} className={`w-full py-2 rounded-lg text-sm font-bold transition-colors ${m.available ? 'bg-primary text-white hover:bg-primary-hover' : 'bg-gray-100 text-gray-400 cursor-not-allowed'}`}>
-                                {m.available ? (isFr ? 'Contacter' : 'Contact') : (isFr ? 'Indisponible' : 'Unavailable')}
-                            </button>
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                )}
             </main>
         </div>
     )

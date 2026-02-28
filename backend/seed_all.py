@@ -9,9 +9,19 @@ from datetime import datetime, timezone
 from decimal import Decimal
 
 from app.core.database import engine, Base, AsyncSessionLocal, mongo_db
-from app.models.marketplace import ServiceProvider
-from app.models.mentor import Mentor
+# Import ALL models so SQLAlchemy can resolve all relationships
 from app.models.user import User
+from app.models.student_profile import StudentProfile
+from app.models.marketplace import ServiceProvider, ServiceReview
+from app.models.mentor import Mentor
+from app.models.exam import ExamProgress, ExamAttempt
+from app.models.gamification import UserGamification
+from app.models.roadmap import RoadmapTemplate
+from app.models.school import School
+from app.models.program import Program
+from app.models.scholarship import Scholarship
+from app.models.notification import NotificationQueue
+from app.models.learning import LearningProgress
 from sqlalchemy import select, func
 
 # ══════════════════════════════════════════════════════════
@@ -491,7 +501,7 @@ async def seed_all():
                 user = User(
                     full_name=md["full_name"],
                     email=md["email"],
-                    hashed_password="$2b$12$placeholder_hash_unused",
+                    password_hash="$2b$12$placeholder_hash_unused_",
                     role="student",
                 )
                 session.add(user)
