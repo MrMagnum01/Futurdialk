@@ -1,4 +1,6 @@
-import { Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Routes, Route, useNavigate } from 'react-router-dom'
+import { onAuthExpired } from './api'
 import ProtectedRoute from './pages/ProtectedRoute'
 
 // Pages
@@ -69,6 +71,14 @@ function P({ children }) {
 }
 
 export default function App() {
+    const navigate = useNavigate()
+
+    // Listen for auth expiry events from api.js and redirect via SPA navigation
+    // This prevents Caddy BasicAuth re-prompts that would occur with window.location.href
+    useEffect(() => {
+        return onAuthExpired(() => navigate('/login', { replace: true }))
+    }, [navigate])
+
     return (
         <Routes>
             {/* ── Public — no login required ── */}

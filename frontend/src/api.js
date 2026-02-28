@@ -5,6 +5,25 @@
 
 const API_BASE = import.meta.env.VITE_API_URL || '';
 
+// ── SPA-safe Navigation ─────────────────────────────────
+// Instead of window.location.href (which triggers Caddy BasicAuth re-prompt),
+// we dispatch a custom event that React components can listen to.
+
+function navigateToLogin() {
+    clearTokens();
+    window.dispatchEvent(new CustomEvent('auth:expired'));
+}
+
+/**
+ * Subscribe to auth expiry events. Call from a React component
+ * (e.g. App.jsx) to redirect via React Router instead of hard reload.
+ * Returns an unsubscribe function.
+ */
+export function onAuthExpired(callback) {
+    window.addEventListener('auth:expired', callback);
+    return () => window.removeEventListener('auth:expired', callback);
+}
+
 // ── Token Management ────────────────────────────────────
 
 let accessToken = localStorage.getItem('tawjih_token');
@@ -54,8 +73,7 @@ export async function apiFetch(path, options = {}) {
             headers['Authorization'] = `Bearer ${accessToken}`;
             return fetch(url, { ...options, headers });
         } else {
-            clearTokens();
-            window.location.href = '/login';
+            navigateToLogin();
             throw new Error('Session expired');
         }
     }
@@ -130,8 +148,7 @@ export async function getMe() {
 }
 
 export function logout() {
-    clearTokens();
-    window.location.href = '/login';
+    navigateToLogin();
 }
 
 // ── Profile ─────────────────────────────────────────────
