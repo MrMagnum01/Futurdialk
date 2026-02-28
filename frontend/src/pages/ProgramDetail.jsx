@@ -45,7 +45,7 @@ export default function ProgramDetail() {
                 <div className="max-w-[1100px] mx-auto flex items-center justify-between">
                     <Link to="/" className="flex items-center gap-2">
                         <span className="material-symbols-outlined text-3xl text-primary">school</span>
-                        <span className="text-xl font-bold text-text-main">Tawjihi</span>
+                        <span className="text-xl font-bold text-text-main">FuturDialk</span>
                     </Link>
                     <div className="flex items-center gap-3">
                         <LanguageSwitcher />
@@ -151,7 +151,7 @@ export default function ProgramDetail() {
                         <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-100 p-5">
                             <h3 className="font-bold text-green-800 mb-2 flex items-center gap-2">
                                 <span className="material-symbols-outlined text-green-600">tips_and_updates</span>
-                                {isFr ? 'Conseil Tawjihi' : 'Tawjihi Tip'}
+                                {isFr ? 'Conseil FuturDialk' : 'FuturDialk Tip'}
                             </h3>
                             <p className="text-sm text-green-700">
                                 {isFr

@@ -48,7 +48,7 @@ export default function ScholarshipSearch() {
                 <div className="max-w-[1280px] mx-auto px-6 h-16 flex items-center justify-between">
                     <Link to="/" className="flex items-center gap-2">
                         <span className="material-symbols-outlined text-3xl text-primary">school</span>
-                        <span className="text-xl font-bold text-text-main">Tawjihi</span>
+                        <span className="text-xl font-bold text-text-main">FuturDialk</span>
                     </Link>
                     <nav className="hidden md:flex items-center gap-8">
                         <Link to="/" className="text-sm font-medium text-secondary hover:text-primary">{isFr ? 'Accueil' : 'Home'}</Link>

@@ -1,5 +1,5 @@
 /**
- * Landing Page — Tawjihi homepage.
+ * Landing Page — FuturDialk homepage.
  * All text via i18n — French default for Moroccan market.
  */
 
@@ -27,7 +27,7 @@ export default function Landing() {
             <header className="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-gray-200 bg-white px-6 py-3 lg:px-20 shadow-sm">
                 <Link to="/" className="flex items-center gap-3 text-text-main">
                     <span className="material-symbols-outlined text-3xl text-primary">school</span>
-                    <h2 className="text-xl font-bold tracking-tight">Tawjihi</h2>
+                    <h2 className="text-xl font-bold tracking-tight">FuturDialk</h2>
                 </Link>
                 <div className="hidden lg:flex flex-1 justify-end gap-8">
                     <nav className="flex items-center gap-9">
@@ -189,7 +189,7 @@ export default function Landing() {
                         <div>
                             <div className="flex items-center gap-2 text-text-main mb-4">
                                 <span className="material-symbols-outlined text-primary">school</span>
-                                <span className="text-lg font-bold">Tawjihi</span>
+                                <span className="text-lg font-bold">FuturDialk</span>
                             </div>
                             <p className="text-secondary text-sm leading-relaxed">
                                 {t('landing.footerDesc')}

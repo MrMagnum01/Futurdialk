@@ -17,7 +17,7 @@ export default function ForgotPassword() {
         <div className="min-h-screen bg-bg-light flex items-center justify-center px-4">
             <div className="w-full max-w-md">
                 <div className="text-center mb-8">
-                    <Link to="/" className="inline-flex items-center gap-2 mb-4"><span className="material-symbols-outlined text-3xl text-primary">school</span><span className="text-xl font-bold">Tawjihi</span></Link>
+                    <Link to="/" className="inline-flex items-center gap-2 mb-4"><span className="material-symbols-outlined text-3xl text-primary">school</span><span className="text-xl font-bold">FuturDialk</span></Link>
                     <h1 className="text-2xl font-bold">{isFr ? 'Mot de passe oublié' : 'Forgot Password'}</h1>
                     <p className="text-secondary text-sm mt-1">{isFr ? 'Entrez votre email pour recevoir un lien de réinitialisation' : 'Enter your email for a reset link'}</p>
                 </div>

@@ -1,5 +1,5 @@
 /**
- * i18n — Internationalization system for Tawjihi.
+ * i18n — Internationalization system for FuturDialk.
  * French (fr) is the default language for the Moroccan market.
  * Translations are loaded from JSON files and managed via admin panel.
  */
@@ -10,7 +10,7 @@ import en from './en.json'
 
 const translations = { fr, en }
 
-const STORAGE_KEY = 'tawjihi_lang'
+const STORAGE_KEY = 'FuturDialk_lang'
 
 function getInitialLang() {
     if (typeof window !== 'undefined') {

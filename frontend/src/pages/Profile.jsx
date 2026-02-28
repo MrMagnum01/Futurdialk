@@ -55,7 +55,7 @@ export default function Profile() {
             <header className="sticky top-0 z-50 flex items-center justify-between border-b border-gray-200 bg-white px-6 py-3 lg:px-20 shadow-sm">
                 <Link to="/" className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-3xl text-primary">school</span>
-                    <span className="text-xl font-bold text-text-main">Tawjihi</span>
+                    <span className="text-xl font-bold text-text-main">FuturDialk</span>
                 </Link>
                 <div className="flex items-center gap-4">
                     <LanguageSwitcher />

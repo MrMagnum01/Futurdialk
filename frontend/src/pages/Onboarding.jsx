@@ -16,8 +16,8 @@ const TOTAL_STEPS = 5
 
 const stepConfig = {
     1: {
-        titleFr: 'Bienvenue sur Tawjihi',
-        titleEn: 'Welcome to Tawjihi',
+        titleFr: 'Bienvenue sur FuturDialk',
+        titleEn: 'Welcome to FuturDialk',
         subtitleFr: 'Personnalisons votre expérience. Quelle description vous correspond le mieux ?',
         subtitleEn: "Let's personalize your journey. Which best describes you?",
         field: 'user_type',
@@ -155,7 +155,7 @@ export default function Onboarding() {
             <header className="flex items-center justify-between border-b border-gray-200 bg-white px-6 py-3 lg:px-20">
                 <Link to="/" className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-3xl text-primary">school</span>
-                    <span className="text-xl font-bold text-text-main">Tawjihi</span>
+                    <span className="text-xl font-bold text-text-main">FuturDialk</span>
                 </Link>
                 <div className="flex items-center gap-4">
                     <LanguageSwitcher />

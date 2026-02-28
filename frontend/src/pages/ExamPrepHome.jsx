@@ -36,7 +36,7 @@ export default function ExamPrepHome() {
                 <div className="flex items-center gap-8">
                     <Link to="/" className="flex items-center gap-2">
                         <span className="material-symbols-outlined text-3xl text-primary">school</span>
-                        <span className="text-xl font-bold text-text-main">Tawjihi</span>
+                        <span className="text-xl font-bold text-text-main">FuturDialk</span>
                     </Link>
                     <nav className="hidden lg:flex items-center gap-8">
                         <Link to="/" className="text-sm font-medium text-secondary hover:text-primary">{isFr ? 'Accueil' : 'Home'}</Link>

@@ -42,7 +42,7 @@ export default function AdminDashboard() {
                 <div className="p-6 border-b border-gray-700">
                     <Link to="/" className="flex items-center gap-2">
                         <span className="material-symbols-outlined text-2xl text-primary">school</span>
-                        <span className="text-lg font-bold text-white">Tawjihi</span>
+                        <span className="text-lg font-bold text-white">FuturDialk</span>
                     </Link>
                     <span className="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded mt-2 inline-block font-bold">ADMIN</span>
                 </div>

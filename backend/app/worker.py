@@ -1,5 +1,5 @@
 """
-Tawjihi V4 — Celery Worker
+FuturDialk V4 — Celery Worker
 Background tasks: AI generation, notifications, scraping.
 Uses OpenRouter via ai_service for AI tasks.
 """
@@ -9,7 +9,7 @@ from celery import Celery
 from app.core.config import settings
 
 celery_app = Celery(
-    "tawjihi",
+    "FuturDialk",
     broker=settings.REDIS_URL,
     backend=settings.REDIS_URL,
 )

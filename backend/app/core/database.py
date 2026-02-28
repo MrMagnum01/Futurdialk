@@ -1,5 +1,5 @@
 """
-Tawjihi V4 — Database Connections
+FuturDialk V4 — Database Connections
 Async engines for PostgreSQL, MongoDB, MinIO, Redis.
 """
 
@@ -44,7 +44,7 @@ async def get_db() -> AsyncSession:
 # ── MongoDB (Motor async) ────────────────────────────────
 
 mongo_client = AsyncIOMotorClient(settings.MONGODB_URL)
-mongo_db = mongo_client.tawjihi
+mongo_db = mongo_client.FuturDialk
 
 
 def get_mongo():
@@ -62,10 +62,10 @@ minio_client = Minio(
 )
 
 MINIO_BUCKETS = [
-    "tawjihi-audio",
-    "tawjihi-images",
-    "tawjihi-recordings",
-    "tawjihi-documents",
+    "FuturDialk-audio",
+    "FuturDialk-images",
+    "FuturDialk-recordings",
+    "FuturDialk-documents",
 ]
 
 

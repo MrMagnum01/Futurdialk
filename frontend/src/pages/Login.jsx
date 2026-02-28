@@ -41,7 +41,7 @@ export default function Login() {
                     <div className="flex items-center justify-between mb-8">
                         <Link to="/" className="flex items-center gap-2">
                             <span className="material-symbols-outlined text-3xl text-primary">school</span>
-                            <span className="text-xl font-bold text-text-main">Tawjihi</span>
+                            <span className="text-xl font-bold text-text-main">FuturDialk</span>
                         </Link>
                         <LanguageSwitcher />
                     </div>

@@ -22,7 +22,7 @@ export default function GenerateDocument() {
         <div className="min-h-screen bg-bg-light">
             <header className="sticky top-0 z-50 bg-white border-b border-gray-200 px-6 py-3 shadow-sm">
                 <div className="max-w-[800px] mx-auto flex items-center justify-between">
-                    <Link to="/" className="flex items-center gap-2"><span className="material-symbols-outlined text-3xl text-primary">school</span><span className="text-xl font-bold">Tawjihi</span></Link>
+                    <Link to="/" className="flex items-center gap-2"><span className="material-symbols-outlined text-3xl text-primary">school</span><span className="text-xl font-bold">FuturDialk</span></Link>
                     <Link to="/documents" className="px-4 py-2 bg-gray-100 rounded-lg text-sm font-bold">{isFr ? '← Mes documents' : '← My Documents'}</Link>
                 </div>
             </header>

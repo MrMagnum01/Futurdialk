@@ -12,7 +12,7 @@
         "badge": "Plateforme IA pour les Études à l'Étranger",
         "heroTitle1": "Votre Parcours",
         "heroTitle2": "Commence Ici",
-        "heroDesc": "Tawjihi accompagne les étudiants marocains à chaque étape — du choix de votre programme à la réussite de vos examens, en passant par l'obtention de votre visa et votre arrivée à l'étranger.",
+        "heroDesc": "FuturDialk accompagne les étudiants marocains à chaque étape — du choix de votre programme à la réussite de vos examens, en passant par l'obtention de votre visa et votre arrivée à l'étranger.",
         "getStarted": "Commencer Gratuitement",
         "browsePrograms": "Explorer les Programmes",
         "statsExams": "Examens Supportés",
@@ -34,7 +34,7 @@
         "feature6Title": "Copilote IA",
         "feature6Desc": "Posez toutes vos questions sur les examens, écoles, procédures. Disponible aussi sur WhatsApp.",
         "ctaTitle": "Prêt à commencer votre aventure ?",
-        "ctaDesc": "Rejoignez des milliers d'étudiants marocains qui ont trouvé leur voie avec Tawjihi.",
+        "ctaDesc": "Rejoignez des milliers d'étudiants marocains qui ont trouvé leur voie avec FuturDialk.",
         "footerPlatform": "Plateforme",
         "footerExplore": "Explorer les Programmes",
         "footerExamPrep": "Préparation Examens",
@@ -49,7 +49,7 @@
         "footerContact": "Contactez-nous",
         "footerPrivacy": "Politique de Confidentialité",
         "footerTerms": "Conditions d'Utilisation",
-        "footerCopyright": "© 2026 Tawjihi. Tous droits réservés. توجيهي",
+        "footerCopyright": "© 2026 FuturDialk. Tous droits réservés. توجيهي",
         "footerDesc": "Plateforme d'accompagnement IA pour les étudiants marocains souhaitant étudier à l'étranger."
     },
     "login": {
@@ -84,10 +84,10 @@
         "hasAccount": "Vous avez déjà un compte ?",
         "login": "Se connecter",
         "sideTitle": "Votre Guide Complet",
-        "sideDesc": "De la préparation aux examens jusqu'à votre arrivée à destination — Tawjihi vous accompagne à chaque étape."
+        "sideDesc": "De la préparation aux examens jusqu'à votre arrivée à destination — FuturDialk vous accompagne à chaque étape."
     },
     "dashboard": {
-        "welcome": "Bienvenue sur Tawjihi 🎓",
+        "welcome": "Bienvenue sur FuturDialk 🎓",
         "subtitle": "Votre centre de commande pour les études à l'étranger.",
         "level": "Niveau",
         "streak": "Série",

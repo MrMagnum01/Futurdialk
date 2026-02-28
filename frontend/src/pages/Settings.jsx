@@ -47,7 +47,7 @@ export default function Settings() {
         <div className="min-h-screen bg-bg-light flex flex-col">
             <header className="sticky top-0 z-50 bg-white border-b border-gray-200 px-6 py-3 lg:px-20 shadow-sm">
                 <div className="flex items-center justify-between max-w-[1280px] mx-auto">
-                    <Link to="/" className="flex items-center gap-2"><span className="material-symbols-outlined text-3xl text-primary">school</span><span className="text-xl font-bold text-text-main">Tawjihi</span></Link>
+                    <Link to="/" className="flex items-center gap-2"><span className="material-symbols-outlined text-3xl text-primary">school</span><span className="text-xl font-bold text-text-main">FuturDialk</span></Link>
                     <div className="flex items-center gap-3"><LanguageSwitcher /><div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-blue-600 text-white flex items-center justify-center font-bold">{userInitial}</div></div>
                 </div>
             </header>

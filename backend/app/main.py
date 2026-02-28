@@ -1,5 +1,5 @@
 """
-Tawjihi V4 — FastAPI Application Entry Point
+FuturDialk V4 — FastAPI Application Entry Point
 18 modules, all routers, CORS, health check, startup events.
 """
 
@@ -42,7 +42,7 @@ from app.routers import (
 async def lifespan(app: FastAPI):
     """Startup and shutdown events."""
     # Startup
-    print("🚀 Tawjihi V4 starting up...")
+    print("🚀 FuturDialk V4 starting up...")
 
     # Create tables (dev only — use Alembic migrations in production)
     async with engine.begin() as conn:
@@ -70,18 +70,18 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         print(f"⚠️ MongoDB not available: {e}")
 
-    print("🟢 Tawjihi V4 is ready!")
+    print("🟢 FuturDialk V4 is ready!")
     yield
 
     # Shutdown
-    print("Shutting down Tawjihi V4...")
+    print("Shutting down FuturDialk V4...")
     await engine.dispose()
 
 
 # ── App ───────────────────────────────────────────────────
 
 app = FastAPI(
-    title="Tawjihi API",
+    title="FuturDialk API",
     description="AI-Native Study Abroad & Career Platform for Moroccan Students",
     version="4.1.0",
     lifespan=lifespan,

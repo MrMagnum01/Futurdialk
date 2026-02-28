@@ -1,6 +1,6 @@
 /**
  * Marketplace — Student services with MAD pricing for Moroccan market.
- * Verified services curated by Tawjihi.
+ * Verified services curated by FuturDialk.
  */
 
 import { Link } from 'react-router-dom'
@@ -25,7 +25,7 @@ export default function Marketplace() {
         <div className="min-h-screen bg-bg-light flex flex-col">
             <header className="sticky top-0 z-50 bg-white border-b border-gray-200 px-6 py-3 lg:px-20 shadow-sm">
                 <div className="flex items-center justify-between max-w-[1280px] mx-auto">
-                    <Link to="/" className="flex items-center gap-2"><span className="material-symbols-outlined text-3xl text-primary">school</span><span className="text-xl font-bold text-text-main">Tawjihi</span></Link>
+                    <Link to="/" className="flex items-center gap-2"><span className="material-symbols-outlined text-3xl text-primary">school</span><span className="text-xl font-bold text-text-main">FuturDialk</span></Link>
                     <div className="flex items-center gap-3"><LanguageSwitcher /><Link to="/dashboard" className="px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold">Dashboard</Link></div>
                 </div>
             </header>
@@ -36,7 +36,7 @@ export default function Marketplace() {
                     <div className="relative z-10 max-w-2xl">
                         <div className="flex items-center gap-2 mb-4">
                             <span className="material-symbols-outlined">storefront</span>
-                            <span className="text-sm font-bold uppercase tracking-wider">{isFr ? 'Marché Tawjihi' : 'Tawjihi Marketplace'}</span>
+                            <span className="text-sm font-bold uppercase tracking-wider">{isFr ? 'Marché FuturDialk' : 'FuturDialk Marketplace'}</span>
                         </div>
                         <h1 className="text-3xl md:text-5xl font-black tracking-tight mb-3">
                             {isFr ? 'Services Vérifiés' : 'Verified Services'}

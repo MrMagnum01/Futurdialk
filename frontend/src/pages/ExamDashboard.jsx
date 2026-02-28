@@ -30,7 +30,7 @@ export default function ExamDashboard() {
         <div className="min-h-screen bg-bg-light">
             <header className="sticky top-0 z-50 bg-white border-b border-gray-200 px-6 py-3 shadow-sm">
                 <div className="max-w-[1000px] mx-auto flex items-center justify-between">
-                    <Link to="/" className="flex items-center gap-2"><span className="material-symbols-outlined text-3xl text-primary">school</span><span className="text-xl font-bold text-text-main">Tawjihi</span></Link>
+                    <Link to="/" className="flex items-center gap-2"><span className="material-symbols-outlined text-3xl text-primary">school</span><span className="text-xl font-bold text-text-main">FuturDialk</span></Link>
                     <div className="flex items-center gap-3"><LanguageSwitcher /><Link to="/prep" className="px-4 py-2 bg-gray-100 rounded-lg text-sm font-bold hover:bg-gray-200">{isFr ? '← Examens' : '← Exams'}</Link></div>
                 </div>
             </header>

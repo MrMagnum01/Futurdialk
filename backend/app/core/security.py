@@ -1,5 +1,5 @@
 """
-Tawjihi V4 — Security Utilities
+FuturDialk V4 — Security Utilities
 JWT token handling, password hashing, FastAPI auth dependencies.
 """
 

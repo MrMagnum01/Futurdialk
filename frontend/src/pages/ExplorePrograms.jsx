@@ -70,7 +70,7 @@ export default function ExplorePrograms() {
                     <div className="flex items-center gap-3">
                         <Link to="/" className="flex items-center gap-2">
                             <span className="material-symbols-outlined text-3xl text-primary">school</span>
-                            <span className="text-xl font-bold text-text-main">Tawjihi</span>
+                            <span className="text-xl font-bold text-text-main">FuturDialk</span>
                         </Link>
                     </div>
                     <nav className="hidden md:flex gap-8">

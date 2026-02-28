@@ -126,7 +126,7 @@ export default function AICopilot() {
                         background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', fontSize: 18,
                     }}>🤖</div>
                     <div>
-                        <div style={{ fontWeight: 600, fontSize: 15 }}>Tawjihi Copilot</div>
+                        <div style={{ fontWeight: 600, fontSize: 15 }}>FuturDialk Copilot</div>
                         <div style={{ fontSize: 11, color: '#6366f1' }}>● En ligne — Prêt à vous aider</div>
                     </div>
                     <button onClick={() => navigate('/dashboard')} style={{
@@ -141,7 +141,7 @@ export default function AICopilot() {
                         <div style={{ textAlign: 'center', maxWidth: 600, margin: '60px auto' }}>
                             <div style={{ fontSize: 48, marginBottom: 16 }}>🎓</div>
                             <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#fff' }}>
-                                Bienvenue sur Tawjihi Copilot
+                                Bienvenue sur FuturDialk Copilot
                             </h2>
                             <p style={{ color: '#888', fontSize: 14, marginBottom: 32, lineHeight: 1.6 }}>
                                 Votre assistant IA spécialisé pour les études à l'étranger.<br />

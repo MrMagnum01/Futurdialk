@@ -108,7 +108,7 @@ export default function Lesson() {
                 <div className="max-w-[700px] mx-auto flex items-center justify-between">
                     <Link to="/" className="flex items-center gap-2">
                         <span className="material-symbols-outlined text-3xl text-primary">school</span>
-                        <span className="text-xl font-bold">Tawjihi</span>
+                        <span className="text-xl font-bold">FuturDialk</span>
                     </Link>
                     <div className="flex items-center gap-3">
                         <span className="text-xs text-secondary font-medium">{currentIdx + 1}/{total}</span>

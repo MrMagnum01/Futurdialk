@@ -1,5 +1,5 @@
 """
-Tawjihi V4 — Core Configuration
+FuturDialk V4 — Core Configuration
 Loads all environment variables via Pydantic Settings.
 """
 
@@ -9,7 +9,7 @@ from typing import Optional
 
 class Settings(BaseSettings):
     # App
-    APP_NAME: str = "Tawjihi"
+    APP_NAME: str = "FuturDialk"
     APP_ENV: str = "development"
     APP_DEBUG: bool = True
 
@@ -21,8 +21,8 @@ class Settings(BaseSettings):
 
     # MinIO
     MINIO_ENDPOINT: str = "minio:9000"
-    MINIO_ACCESS_KEY: str = "tawjihi_minio"
-    MINIO_SECRET_KEY: str = "tawjihi_minio_pwd_2026"
+    MINIO_ACCESS_KEY: str = "FuturDialk_minio"
+    MINIO_SECRET_KEY: str = "FuturDialk_minio_pwd_2026"
 
     # Redis
     REDIS_URL: str = "redis://redis:6379/0"

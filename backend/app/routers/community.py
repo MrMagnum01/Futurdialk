@@ -82,7 +82,7 @@ GROUPS_FALLBACK = [
 ]
 
 STORIES_FALLBACK = [
-    {"id": "s1", "name": "Salma E.", "from_fr": "Casablanca", "to_fr": "Sorbonne Université, Paris", "to_en": "Sorbonne University, Paris", "program_fr": "Master Informatique", "program_en": "Computer Science Master's", "quote_fr": "Le TCF m'a stressée, mais la préparation sur Tawjihi a fait la différence.", "quote_en": "The TCF stressed me out, but Tawjihi prep made the difference.", "year": 2025},
+    {"id": "s1", "name": "Salma E.", "from_fr": "Casablanca", "to_fr": "Sorbonne Université, Paris", "to_en": "Sorbonne University, Paris", "program_fr": "Master Informatique", "program_en": "Computer Science Master's", "quote_fr": "Le TCF m'a stressée, mais la préparation sur FuturDialk a fait la différence.", "quote_en": "The TCF stressed me out, but FuturDialk prep made the difference.", "year": 2025},
     {"id": "s2", "name": "Mehdi A.", "from_fr": "Rabat", "to_fr": "McGill, Montréal", "to_en": "McGill, Montreal", "program_fr": "Génie Civil", "program_en": "Civil Engineering", "quote_fr": "J'ai obtenu la bourse MIFI grâce aux conseils de la communauté.", "quote_en": "I got the MIFI scholarship thanks to community advice.", "year": 2025},
     {"id": "s3", "name": "Nora B.", "from_fr": "Fès", "to_fr": "TU Munich", "to_en": "TU Munich", "program_fr": "Master Data Science", "program_en": "Data Science Master's", "quote_fr": "L'Allemagne est incroyable — frais quasi-nuls et excellent enseignement.", "quote_en": "Germany is incredible — near-zero tuition and excellent teaching.", "year": 2024},
 ]

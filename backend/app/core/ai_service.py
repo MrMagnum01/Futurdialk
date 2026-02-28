@@ -1,5 +1,5 @@
 """
-Tawjihi V4 — AI Service Layer
+FuturDialk V4 — AI Service Layer
 Unified AI gateway via OpenRouter. Uses OpenAI SDK with custom base_url.
 All AI features route through here: copilot, writing eval, study plans, etc.
 """
@@ -35,7 +35,7 @@ def get_ai_client() -> Optional[AsyncOpenAI]:
         api_key=key,
         default_headers={
             "HTTP-Referer": settings.FRONTEND_URL,
-            "X-Title": "Tawjihi",
+            "X-Title": "FuturDialk",
         },
     )
     return _client
@@ -62,7 +62,7 @@ MODELS = {
 # ── System Prompts ───────────────────────────────────────
 
 PROMPTS = {
-    "copilot": """Tu es Tawjihi Copilot, un assistant IA spécialisé pour les étudiants marocains qui préparent leurs études à l'étranger.
+    "copilot": """Tu es FuturDialk Copilot, un assistant IA spécialisé pour les étudiants marocains qui préparent leurs études à l'étranger.
 
 Tu connais parfaitement :
 - Le système éducatif marocain (BAC Sciences, Lettres, Économie)

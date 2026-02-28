@@ -12,7 +12,7 @@
         "badge": "AI-Powered Study Abroad Platform",
         "heroTitle1": "Your Study Abroad",
         "heroTitle2": "Starts Here",
-        "heroDesc": "Tawjihi guides Moroccan students through every step — from choosing your program and passing exams to getting your visa and arriving abroad.",
+        "heroDesc": "FuturDialk guides Moroccan students through every step — from choosing your program and passing exams to getting your visa and arriving abroad.",
         "getStarted": "Get Started Free",
         "browsePrograms": "Browse Programs",
         "statsExams": "Exams Supported",
@@ -34,7 +34,7 @@
         "feature6Title": "AI Copilot",
         "feature6Desc": "Ask anything about exams, schools, procedures. Available on WhatsApp too.",
         "ctaTitle": "Ready to start your journey?",
-        "ctaDesc": "Join thousands of Moroccan students who found their path with Tawjihi.",
+        "ctaDesc": "Join thousands of Moroccan students who found their path with FuturDialk.",
         "footerPlatform": "Platform",
         "footerExplore": "Explore Programs",
         "footerExamPrep": "Exam Prep",
@@ -49,7 +49,7 @@
         "footerContact": "Contact Us",
         "footerPrivacy": "Privacy Policy",
         "footerTerms": "Terms of Service",
-        "footerCopyright": "© 2026 Tawjihi. All rights reserved. توجيهي",
+        "footerCopyright": "© 2026 FuturDialk. All rights reserved. توجيهي",
         "footerDesc": "AI-powered study abroad platform for Moroccan students."
     },
     "login": {
@@ -84,10 +84,10 @@
         "hasAccount": "Already have an account?",
         "login": "Sign In",
         "sideTitle": "Your Complete Guide",
-        "sideDesc": "From exam prep to your arrival abroad — Tawjihi guides you every step of the way."
+        "sideDesc": "From exam prep to your arrival abroad — FuturDialk guides you every step of the way."
     },
     "dashboard": {
-        "welcome": "Welcome to Tawjihi 🎓",
+        "welcome": "Welcome to FuturDialk 🎓",
         "subtitle": "Your study abroad command center.",
         "level": "Level",
         "streak": "Streak",

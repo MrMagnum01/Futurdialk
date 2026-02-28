@@ -99,7 +99,7 @@ export default function AdminTranslations() {
             <header className="sticky top-0 z-50 flex items-center justify-between border-b border-gray-200 bg-white px-6 py-3 lg:px-20 shadow-sm">
                 <Link to="/admin" className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-3xl text-primary">school</span>
-                    <span className="text-xl font-bold text-text-main">Tawjihi</span>
+                    <span className="text-xl font-bold text-text-main">FuturDialk</span>
                     <span className="text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full font-bold ml-2">Admin</span>
                 </Link>
                 <div className="flex items-center gap-4">

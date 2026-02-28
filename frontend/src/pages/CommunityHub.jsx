@@ -29,7 +29,7 @@ export default function CommunityHub() {
                 <div className="flex items-center justify-between max-w-[1280px] mx-auto">
                     <Link to="/" className="flex items-center gap-2">
                         <span className="material-symbols-outlined text-3xl text-primary">school</span>
-                        <span className="text-xl font-bold text-text-main">Tawjihi</span>
+                        <span className="text-xl font-bold text-text-main">FuturDialk</span>
                     </Link>
                     <nav className="hidden md:flex gap-8">
                         <Link to="/" className="text-sm font-medium text-secondary hover:text-primary">{isFr ? 'Accueil' : 'Home'}</Link>
@@ -50,7 +50,7 @@ export default function CommunityHub() {
                     <div className="relative z-10 max-w-2xl">
                         <div className="flex items-center gap-2 mb-4">
                             <span className="material-symbols-outlined">groups</span>
-                            <span className="text-sm font-bold uppercase tracking-wider">{isFr ? 'Communauté Tawjihi' : 'Tawjihi Community'}</span>
+                            <span className="text-sm font-bold uppercase tracking-wider">{isFr ? 'Communauté FuturDialk' : 'FuturDialk Community'}</span>
                         </div>
                         <h1 className="text-3xl md:text-5xl font-black tracking-tight mb-3">
                             {isFr ? 'Échangez, Partagez, Réussissez' : 'Connect, Share, Succeed'}
