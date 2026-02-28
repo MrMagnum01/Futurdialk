@@ -6,10 +6,11 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation, LanguageSwitcher } from '../i18n'
-import { getPrograms, getScholarships, getSchools } from '../api'
+import { getPrograms, getScholarships, getSchools, isAuthenticated } from '../api'
 
 export default function Landing() {
     const { t } = useTranslation()
+    const loggedIn = isAuthenticated()
     const [stats, setStats] = useState({ programs: '60+', schools: '30+', scholarships: '15+' })
 
     useEffect(() => {
@@ -37,17 +38,38 @@ export default function Landing() {
                     </nav>
                     <div className="flex items-center gap-2">
                         <LanguageSwitcher />
-                        <Link to="/login" className="flex min-w-[84px] items-center justify-center rounded-lg h-10 px-4 bg-gray-100 text-text-main text-sm font-bold hover:bg-gray-200 transition-colors">
-                            {t('header.login')}
-                        </Link>
-                        <Link to="/register" className="flex min-w-[84px] items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold hover:bg-primary-hover transition-colors shadow-md">
-                            {t('header.register')}
-                        </Link>
+                        {loggedIn ? (
+                            <>
+                                <Link to="/dashboard" className="flex min-w-[84px] items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold hover:bg-primary-hover transition-colors shadow-md">
+                                    {t('header.dashboard') || 'Dashboard'}
+                                </Link>
+                                <Link to="/profile" className="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-blue-600 text-white flex items-center justify-center text-sm font-bold">
+                                    <span className="material-symbols-outlined text-lg">person</span>
+                                </Link>
+                            </>
+                        ) : (
+                            <>
+                                <Link to="/login" className="flex min-w-[84px] items-center justify-center rounded-lg h-10 px-4 bg-gray-100 text-text-main text-sm font-bold hover:bg-gray-200 transition-colors">
+                                    {t('header.login')}
+                                </Link>
+                                <Link to="/register" className="flex min-w-[84px] items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold hover:bg-primary-hover transition-colors shadow-md">
+                                    {t('header.register')}
+                                </Link>
+                            </>
+                        )}
                     </div>
                 </div>
                 <div className="lg:hidden flex items-center gap-2">
                     <LanguageSwitcher />
-                    <span className="material-symbols-outlined text-text-main">menu</span>
+                    {loggedIn ? (
+                        <Link to="/dashboard" className="p-2 text-primary">
+                            <span className="material-symbols-outlined">dashboard</span>
+                        </Link>
+                    ) : (
+                        <Link to="/login" className="p-2 text-text-main">
+                            <span className="material-symbols-outlined">login</span>
+                        </Link>
+                    )}
                 </div>
             </header>
 
@@ -79,10 +101,10 @@ export default function Landing() {
                                     </div>
                                     <div className="flex flex-wrap gap-4 mt-4">
                                         <Link
-                                            to="/register"
+                                            to={loggedIn ? '/dashboard' : '/register'}
                                             className="flex min-w-[140px] items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold hover:bg-primary-hover transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                                         >
-                                            {t('landing.getStarted')}
+                                            {loggedIn ? (t('header.dashboard') || 'Dashboard') : t('landing.getStarted')}
                                         </Link>
                                         <Link
                                             to="/explore"
@@ -147,8 +169,8 @@ export default function Landing() {
                                 <p className="text-blue-100 text-lg">{t('landing.ctaDesc')}</p>
                             </div>
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <Link to="/register" className="px-8 py-4 bg-white text-primary rounded-lg font-bold hover:bg-gray-100 transition-colors shadow-lg">
-                                    {t('landing.getStarted')}
+                                <Link to={loggedIn ? '/dashboard' : '/register'} className="px-8 py-4 bg-white text-primary rounded-lg font-bold hover:bg-gray-100 transition-colors shadow-lg">
+                                    {loggedIn ? (t('header.dashboard') || 'Dashboard') : t('landing.getStarted')}
                                 </Link>
                                 <Link to="/explore" className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-bold hover:bg-white/10 transition-colors">
                                     {t('landing.browsePrograms')}

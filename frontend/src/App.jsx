@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import ProtectedRoute from './pages/ProtectedRoute'
 
 // Pages
 import Landing from './pages/Landing'
@@ -48,6 +49,7 @@ import NotificationSettings from './pages/NotificationSettings'
 import NotificationCenter from './pages/NotificationCenter'
 import HousingGuides from './pages/HousingGuides'
 import Marketplace from './pages/Marketplace'
+import AICopilot from './pages/AICopilot'
 import AdminDashboard from './pages/AdminDashboard'
 import AdminTranslations from './pages/AdminTranslations'
 import AdminUsers from './pages/AdminUsers'
@@ -59,104 +61,102 @@ import AdminPrograms from './pages/AdminPrograms'
 import AdminRoadmaps from './pages/AdminRoadmaps'
 import AdminScholarships from './pages/AdminScholarships'
 import AdminAnalytics from './pages/AdminAnalytics'
-import AICopilot from './pages/AICopilot'
 import StubPage from './pages/StubPage'
+
+/* Helper — shorthand for protected routes */
+function P({ children }) {
+    return <ProtectedRoute>{children}</ProtectedRoute>
+}
 
 export default function App() {
     return (
         <Routes>
-            {/* Public */}
+            {/* ── Public — no login required ── */}
             <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/verify-email" element={<VerifyEmail />} />
 
-            {/* Onboarding */}
-            <Route path="/onboarding/step/:step" element={<Onboarding />} />
-
-            {/* Dashboard */}
-            <Route path="/dashboard" element={<Dashboard />} />
-
-            {/* Explore */}
+            {/* Public browsing */}
             <Route path="/explore" element={<ExplorePrograms />} />
             <Route path="/explore/compare" element={<ComparePrograms />} />
             <Route path="/explore/program/:id" element={<ProgramDetail />} />
             <Route path="/explore/school/:id" element={<SchoolDetail />} />
             <Route path="/explore/:countryCode" element={<CountryDetail />} />
-
-            {/* Career */}
             <Route path="/career" element={<CareerAdvisor />} />
-            <Route path="/career/discover" element={<CareerDiscovery />} />
-            <Route path="/career/compare" element={<CompareCareers />} />
             <Route path="/career/path/:id" element={<CareerPathDetail />} />
-
-            {/* Exam Prep */}
             <Route path="/prep" element={<ExamPrepHome />} />
             <Route path="/prep/leaderboard" element={<GlobalLeaderboard />} />
-            <Route path="/prep/:examCode" element={<ExamDashboard />} />
-            <Route path="/prep/:examCode/diagnostic" element={<DiagnosticTest />} />
-            <Route path="/prep/:examCode/simulation" element={<ExamSimulation />} />
-            <Route path="/prep/:examCode/practice" element={<SectionPractice />} />
-            <Route path="/prep/:examCode/writing" element={<WritingPractice />} />
-            <Route path="/prep/:examCode/speaking" element={<SpeakingPractice />} />
-            <Route path="/prep/:examCode/results/:attemptId" element={<ResultsDetail />} />
-
-            {/* Roadmap */}
-            <Route path="/roadmap" element={<RoadmapList />} />
-            <Route path="/roadmap/:id" element={<RoadmapDetail />} />
-            <Route path="/roadmap/:id/step/:stepId" element={<StepDetail />} />
-
-            {/* Documents */}
-            <Route path="/documents" element={<DocumentVault />} />
-            <Route path="/documents/generate" element={<GenerateDocument />} />
-
-            {/* Community */}
             <Route path="/community" element={<CommunityHub />} />
-            <Route path="/community/qa" element={<QAForum />} />
             <Route path="/community/stories" element={<SuccessStories />} />
             <Route path="/community/mentors" element={<FindMentors />} />
+            <Route path="/scholarships" element={<ScholarshipSearch />} />
+            <Route path="/housing" element={<HousingGuides />} />
+            <Route path="/marketplace" element={<Marketplace />} />
+            <Route path="/learn" element={<LanguageLearning />} />
+
+            {/* ── Protected — login required ── */}
+
+            {/* Dashboard & Profile */}
+            <Route path="/dashboard" element={<P><Dashboard /></P>} />
+            <Route path="/onboarding/step/:step" element={<P><Onboarding /></P>} />
+            <Route path="/profile" element={<P><Profile /></P>} />
+            <Route path="/settings" element={<P><Settings /></P>} />
+            <Route path="/settings/notifications" element={<P><NotificationSettings /></P>} />
+            <Route path="/notifications" element={<P><NotificationCenter /></P>} />
+
+            {/* Exam Prep — practice/interactive */}
+            <Route path="/prep/:examCode" element={<P><ExamDashboard /></P>} />
+            <Route path="/prep/:examCode/diagnostic" element={<P><DiagnosticTest /></P>} />
+            <Route path="/prep/:examCode/simulation" element={<P><ExamSimulation /></P>} />
+            <Route path="/prep/:examCode/practice" element={<P><SectionPractice /></P>} />
+            <Route path="/prep/:examCode/writing" element={<P><WritingPractice /></P>} />
+            <Route path="/prep/:examCode/speaking" element={<P><SpeakingPractice /></P>} />
+            <Route path="/prep/:examCode/results/:attemptId" element={<P><ResultsDetail /></P>} />
+
+            {/* Career — interactive */}
+            <Route path="/career/discover" element={<P><CareerDiscovery /></P>} />
+            <Route path="/career/compare" element={<P><CompareCareers /></P>} />
+
+            {/* Roadmap */}
+            <Route path="/roadmap" element={<P><RoadmapList /></P>} />
+            <Route path="/roadmap/:id" element={<P><RoadmapDetail /></P>} />
+            <Route path="/roadmap/:id/step/:stepId" element={<P><StepDetail /></P>} />
+
+            {/* Documents */}
+            <Route path="/documents" element={<P><DocumentVault /></P>} />
+            <Route path="/documents/generate" element={<P><GenerateDocument /></P>} />
+
+            {/* Community — interactive */}
+            <Route path="/community/qa" element={<P><QAForum /></P>} />
 
             {/* Financial */}
-            <Route path="/budget" element={<BudgetCalculator />} />
-            <Route path="/scholarships" element={<ScholarshipSearch />} />
+            <Route path="/budget" element={<P><BudgetCalculator /></P>} />
 
-            {/* Housing */}
-            <Route path="/housing" element={<HousingGuides />} />
+            {/* Visa Prep — interactive */}
+            <Route path="/visa-prep" element={<P><VisaPrep /></P>} />
+            <Route path="/visa-prep/:country" element={<P><MockVisaInterview /></P>} />
 
-            {/* Marketplace */}
-            <Route path="/marketplace" element={<Marketplace />} />
-
-            {/* Visa Prep */}
-            <Route path="/visa-prep" element={<VisaPrep />} />
-            <Route path="/visa-prep/:country" element={<MockVisaInterview />} />
-
-            {/* Language Learning */}
-            <Route path="/learn" element={<LanguageLearning />} />
-            <Route path="/learn/:lang" element={<LanguageDashboard />} />
-            <Route path="/learn/:lang/lesson/:id" element={<Lesson />} />
-
-            {/* Settings & Profile */}
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/settings/notifications" element={<NotificationSettings />} />
-            <Route path="/notifications" element={<NotificationCenter />} />
+            {/* Language Learning — interactive */}
+            <Route path="/learn/:lang" element={<P><LanguageDashboard /></P>} />
+            <Route path="/learn/:lang/lesson/:id" element={<P><Lesson /></P>} />
 
             {/* AI Copilot */}
-            <Route path="/copilot" element={<AICopilot />} />
+            <Route path="/copilot" element={<P><AICopilot /></P>} />
 
             {/* Admin */}
-            <Route path="/admin" element={<AdminDashboard />} />
-            <Route path="/admin/users" element={<AdminUsers />} />
-            <Route path="/admin/users/:id" element={<AdminUserDetail />} />
-            <Route path="/admin/questions" element={<AdminQuestions />} />
-            <Route path="/admin/content/exams" element={<AdminExams />} />
-            <Route path="/admin/content/schools" element={<AdminSchools />} />
-            <Route path="/admin/content/programs" element={<AdminPrograms />} />
-            <Route path="/admin/content/roadmaps" element={<AdminRoadmaps />} />
-            <Route path="/admin/content/scholarships" element={<AdminScholarships />} />
-            <Route path="/admin/analytics" element={<AdminAnalytics />} />
-            <Route path="/admin/translations" element={<AdminTranslations />} />
+            <Route path="/admin" element={<P><AdminDashboard /></P>} />
+            <Route path="/admin/users" element={<P><AdminUsers /></P>} />
+            <Route path="/admin/users/:id" element={<P><AdminUserDetail /></P>} />
+            <Route path="/admin/questions" element={<P><AdminQuestions /></P>} />
+            <Route path="/admin/content/exams" element={<P><AdminExams /></P>} />
+            <Route path="/admin/content/schools" element={<P><AdminSchools /></P>} />
+            <Route path="/admin/content/programs" element={<P><AdminPrograms /></P>} />
+            <Route path="/admin/content/roadmaps" element={<P><AdminRoadmaps /></P>} />
+            <Route path="/admin/content/scholarships" element={<P><AdminScholarships /></P>} />
+            <Route path="/admin/analytics" element={<P><AdminAnalytics /></P>} />
+            <Route path="/admin/translations" element={<P><AdminTranslations /></P>} />
 
             {/* 404 */}
             <Route path="*" element={<StubPage title="Page Not Found" />} />

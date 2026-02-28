@@ -5,7 +5,8 @@
         "careerAI": "Career AI",
         "community": "Community",
         "login": "Login",
-        "register": "Register"
+        "register": "Register",
+        "dashboard": "Dashboard"
     },
     "landing": {
         "badge": "AI-Powered Study Abroad Platform",

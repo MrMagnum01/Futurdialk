@@ -2,10 +2,10 @@
  * Login Page — with i18n support
  */
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation, LanguageSwitcher } from '../i18n'
-import { login } from '../api'
+import { login, isAuthenticated } from '../api'
 
 export default function Login() {
     const { t } = useTranslation()
@@ -14,6 +14,10 @@ export default function Login() {
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        if (isAuthenticated()) navigate('/dashboard', { replace: true })
+    }, [])
 
     async function handleSubmit(e) {
         e.preventDefault()
