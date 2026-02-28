@@ -62,10 +62,10 @@ minio_client = Minio(
 )
 
 MINIO_BUCKETS = [
-    "FuturDialk-audio",
-    "FuturDialk-images",
-    "FuturDialk-recordings",
-    "FuturDialk-documents",
+    "futurdialk-audio",
+    "futurdialk-images",
+    "futurdialk-recordings",
+    "futurdialk-documents",
 ]
 
 

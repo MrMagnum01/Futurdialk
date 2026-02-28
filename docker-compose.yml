@@ -109,20 +109,19 @@ services:
         condition: service_healthy
     command: celery -A app.worker.celery_app worker --loglevel=info
 
-  # ─── React Frontend (Vite dev) ──────────────────────────
+  # ─── React Frontend (production nginx) ──────────────────
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      args:
+        - VITE_API_URL=${VITE_API_URL}
+        - VITE_APP_NAME=${VITE_APP_NAME}
     restart: unless-stopped
     ports:
-      - "127.0.0.1:3089:5173"
+      - "127.0.0.1:3089:80"
     env_file:
       - .env
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-    command: npm run dev -- --host 0.0.0.0
 
 volumes:
   pgdata:
