@@ -1,0 +1,304 @@
+# Admin Data Templates — Exact Fields
+
+## 🔐 Admin Login
+> Same login flow as any user → `/login` with `admin@futurdialk.com` / `Admin2025@@`
+> Admin dashboard at `/admin`, same site template
+
+---
+
+## CRUD Readiness Summary
+
+| Data Type | DB | Backend CRUD | Frontend List | Frontend Add Form | Save Wired |
+|-----------|-----|:---:|:---:|:---:|:---:|
+| Schools | PostgreSQL | ✅ | ✅ | ⚠️ partial | ❌ |
+| Programs | PostgreSQL | ✅ | ✅ | ⚠️ partial | ❌ |
+| Scholarships | PostgreSQL | ✅ | ✅ | ⚠️ partial | ❌ |
+| Roadmap Templates | PostgreSQL | ❌ | ✅ | ⚠️ partial | ❌ |
+| Marketplace Providers | PostgreSQL | ❌ | ❌ | ❌ | ❌ |
+| Mentors | PostgreSQL | ❌ | ❌ | ❌ | ❌ |
+| Exam Questions | MongoDB | ❌ | ✅ (read-only) | ❌ | ❌ |
+| Career Paths | MongoDB | ❌ | ❌ | ❌ | ❌ |
+| Language Courses | MongoDB | ❌ | ❌ | ❌ | ❌ |
+| Users | PostgreSQL | ✅ | ✅ | N/A | ✅ |
+
+---
+
+## 1. 🏫 School
+
+**Route:** `/admin/content/schools`
+**Backend:** `POST /api/admin/schools` · `PUT /api/admin/schools/{id}` · `DELETE /api/admin/schools/{id}`
+**DB:** PostgreSQL [schools](file:///c:/DEV/Tawjih%20V4/backend/app/routers/admin.py#178-198) table
+**Current:** 0 rows
+
+| Field | Type | Required | Enum Values / Notes |
+|-------|------|:---:|-----|
+| `name` | string(300) | ✅ | Full official name |
+| `short_name` | string(100) | — | Abbreviation (e.g. "INSA") |
+| `country_code` | string(5) | ✅ | FR, CA, DE, UK, ES, MA |
+| `city` | string(100) | — | City name |
+| `type` | enum | — | `university` · `grande_ecole` · `community_college` · `language_school` · `prep_school` |
+| `is_public` | boolean | — | Default: true |
+| `ranking_national` | integer | — | National ranking |
+| `ranking_world` | integer | — | QS/THE world ranking |
+| `tuition_international_yearly` | string(100) | — | e.g. "3,500 EUR/year" |
+| `acceptance_rate` | decimal(5,2) | — | e.g. 15.50 |
+| `has_moroccan_students` | boolean | — | Default: false |
+| `application_platform` | string(100) | — | e.g. "Campus France", "Uni-Assist" |
+| `scholarship_available` | boolean | — | Default: false |
+
+---
+
+## 2. 📚 Program
+
+**Route:** `/admin/content/programs`
+**Backend:** `POST /api/admin/programs` · `PUT /api/admin/programs/{id}` · `DELETE /api/admin/programs/{id}`
+**DB:** PostgreSQL [programs](file:///c:/DEV/Tawjih%20V4/backend/app/routers/admin.py#234-253) table
+**Current:** 0 rows
+
+| Field | Type | Required | Enum Values / Notes |
+|-------|------|:---:|-----|
+| `school_id` | UUID | ✅ | FK → schools.id (pick from existing schools) |
+| `name` | string(300) | ✅ | Program name |
+| `degree_type` | enum | — | `licence` · `master` · `phd` · `dut` · `bts` · `cpge` · `diplome_ingenieur` · `mba` · `certificate` |
+| `field_category` | string(100) | — | e.g. "Computer Science", "Business" |
+| `language_of_instruction` | string(10) | — | [fr](file:///c:/DEV/Tawjih%20V4/backend/app/routers/auth.py#98-109) · [en](file:///c:/DEV/Tawjih%20V4/backend/app/models/mentor.py#13-30) · [de](file:///c:/DEV/Tawjih%20V4/frontend/src/pages/AdminRoadmaps.jsx#75-85) · [ar](file:///c:/DEV/Tawjih%20V4/frontend/src/pages/Onboarding.jsx#95-307) |
+| `duration_months` | integer | — | e.g. 24, 36 |
+| `admission_requirements` | JSON object | — | `{"gpa_min": 12, "bac_type": "S", "language_cert": "TCF B2"}` |
+| `career_outcomes` | JSON array | — | `["Software Engineer", "Data Analyst"]` |
+| `is_moroccan` | boolean | — | Default: false |
+
+---
+
+## 3. 🎓 Scholarship
+
+**Route:** `/admin/content/scholarships`
+**Backend:** `POST /api/admin/scholarships` · `PUT /api/admin/scholarships/{id}` · `DELETE /api/admin/scholarships/{id}`
+**DB:** PostgreSQL [scholarships](file:///c:/DEV/Tawjih%20V4/backend/app/routers/admin.py#289-304) table
+**Current:** 0 rows
+
+| Field | Type | Required | Enum Values / Notes |
+|-------|------|:---:|-----|
+| `name` | string(300) | ✅ | e.g. "Bourse d'Excellence CNRST" |
+| [provider](file:///c:/DEV/Tawjih%20V4/backend/app/routers/marketplace.py#39-53) | string(200) | — | e.g. "Campus France", "DAAD" |
+| `country_code` | string(5) | ✅ | FR, CA, DE, UK, ES, MA |
+| `eligibility_nationality` | JSON array | — | `["MA", "DZ", "TN"]` |
+| `eligibility_education_level` | JSON array | — | `["licence", "master"]` |
+| `eligibility_field` | JSON array | — | `["engineering", "sciences"]` |
+| `eligibility_gpa_min` | decimal | — | e.g. 12.0 |
+| `coverage` | JSON object | — | `{"tuition": true, "living": true, "travel": false}` |
+| `amount_description` | text | — | e.g. "767 EUR/mois + frais inscription" |
+| `application_deadline` | string(200) | — | e.g. "Mars 2026" |
+| `application_url` | string(500) | — | URL to apply |
+| `competitiveness` | enum | — | `low` · `medium` · `high` · `very_high` |
+| `success_rate_moroccan` | decimal | — | e.g. 0.15 (15%) |
+| `tips` | text | — | Advice for Moroccan applicants |
+| `is_active` | boolean | — | Default: true |
+
+---
+
+## 4. 🗺️ Roadmap Template
+
+**Route:** `/admin/content/roadmaps`
+**Backend:** ❌ No CRUD endpoints (needs to be built)
+**DB:** PostgreSQL `roadmap_templates` table
+**Current:** 0 rows
+
+| Field | Type | Required | Notes |
+|-------|------|:---:|-----|
+| `country_code` | string(5) | ✅ | FR, CA, DE, UK, TR |
+| `pathway` | string(100) | ✅ | e.g. "campus_france", "direct_apply", "uni_assist" |
+| `name` | string(300) | ✅ | e.g. "France — Campus France Pathway" |
+| `total_steps` | integer | ✅ | Number of steps |
+| `estimated_duration_weeks` | integer | — | e.g. 24 |
+| `steps` | JSON array | ✅ | See step structure below |
+
+**Step structure** (each item in `steps` array):
+```json
+{
+  "order": 1,
+  "title": "Créer un compte Campus France",
+  "description": "Inscrivez-vous sur EtudesEnFrance...",
+  "category": "application",
+  "estimated_days": 3,
+  "documents_needed": ["passeport", "relevés de notes"],
+  "tips": "Commencez dès octobre"
+}
+```
+
+---
+
+## 5. 🏪 Marketplace Provider
+
+**Route:** No admin page yet (needs to be built)
+**Backend:** ❌ No admin CRUD endpoints
+**DB:** PostgreSQL `service_providers` table
+**Current:** 25 rows
+
+| Field | Type | Required | Enum Values / Notes |
+|-------|------|:---:|-----|
+| `name` | string(300) | ✅ | Provider business name |
+| `category` | enum | ✅ | `translator` · `legalization` · `exam_help` · `photo` · `medical` · `tutor` · `blocked_acct` · `insurance` |
+| `city` | string(100) | — | e.g. "Casablanca", "Rabat" |
+| `address` | text | — | Full address |
+| `phone` | string(20) | — | e.g. "+212 522-111222" |
+| [email](file:///c:/DEV/Tawjih%20V4/backend/app/routers/auth.py#111-122) | string(255) | — | Contact email |
+| `website` | string(500) | — | Website URL |
+| [languages](file:///c:/DEV/Tawjih%20V4/backend/app/routers/learn.py#24-27) | JSON array | — | `["ar", "fr", "en"]` |
+| `price_description` | text | — | e.g. "500-700 MAD/page" |
+| `turnaround_days` | integer | — | e.g. 1, 3, 7 |
+| `rating` | decimal(3,2) | — | e.g. 4.80 |
+| `total_reviews` | integer | — | Default: 0 |
+| `is_verified` | boolean | — | Default: false |
+| `is_active` | boolean | — | Default: true |
+
+---
+
+## 6. 👨‍🏫 Mentor
+
+**Route:** No admin page yet (needs to be built)
+**Backend:** ❌ No admin CRUD endpoints
+**DB:** PostgreSQL [mentors](file:///c:/DEV/Tawjih%20V4/backend/app/routers/mentors.py#13-43) table (FK → users)
+**Current:** 15 rows
+
+| Field | Type | Required | Notes |
+|-------|------|:---:|-----|
+| `user_id` | UUID | ✅ | FK → users.id |
+| `country_code` | string(5) | ✅ | FR, CA, DE, UK, TR |
+| `city` | string(100) | — | City abroad |
+| `university` | string(200) | — | e.g. "INSA Lyon" |
+| `field` | string(200) | — | e.g. "Engineering", "Sciences" |
+| `arrival_year` | integer | — | e.g. 2022 |
+| `specialties` | JSON array | — | `["Campus France", "Visa", "Housing"]` |
+| `bio` | text | — | Short bio |
+| `is_verified` | boolean | — | Default: false |
+| `rating` | decimal(3,2) | — | e.g. 4.80 |
+| `total_mentees` | integer | — | Default: 0 |
+| `is_active` | boolean | — | Default: true |
+| `verification_doc_url` | string(500) | — | Proof document |
+
+---
+
+## 7. 📝 Exam Question (MongoDB)
+
+**Route:** `/admin/questions` + `/admin/content/exams`
+**Backend:** ❌ No CRUD endpoints
+**DB:** MongoDB `questions` collection
+**Current:** 10 docs
+
+| Field | Type | Required | Notes |
+|-------|------|:---:|-----|
+| `exam_code` | string | ✅ | `bac_sciences` · `delf_b2` · `testdaf` · `ielts_academic` · `tcf` · `toefl_ibt` |
+| `section` | string | ✅ | e.g. "reading", "listening", "math", "physics" |
+| `question_type` | string | ✅ | `mcq` · `fill_blank` · `essay` · `short_answer` |
+| `difficulty` | string | ✅ | `easy` · `medium` · `hard` |
+| `text_fr` | string | ✅ | Question text in French |
+| `text_en` | string | — | Question text in English |
+| `options` | array of objects | — | `[{"key": "A", "text": "..."}, ...]` |
+| `correct_answer` | string | ✅ | e.g. "A", "true", "42" |
+| `explanation_fr` | string | — | Explanation in French |
+| `explanation_en` | string | — | Explanation in English |
+| `tags` | array of strings | — | `["derivatives", "integration"]` |
+| `points` | integer | — | Default: 1 |
+
+---
+
+## 8. 🧭 Career Path (MongoDB)
+
+**Route:** No admin page yet
+**Backend:** ❌ No CRUD endpoints
+**DB:** MongoDB [career_paths](file:///c:/DEV/Tawjih%20V4/backend/app/routers/career.py#99-109) collection
+**Current:** 15 docs
+
+| Field | Type | Required | Notes |
+|-------|------|:---:|-----|
+| `name` | string | ✅ | English name |
+| `name_fr` | string | ✅ | French name |
+| `category` | string | ✅ | `engineering` · `business` · `medicine` · `sciences` · `tech` · `humanities` · `arts` |
+| `description_fr` | string | — | French description |
+| `description_en` | string | — | English description |
+| `riasec_codes` | array of strings | — | `["I", "R", "C"]` |
+| `required_education` | string | — | `licence` · `master` · `phd` |
+| `job_titles` | array of strings | — | `["Full Stack Dev", "Backend Engineer"]` |
+| `skills` | array of strings | — | `["Python", "SQL", "React"]` |
+| `automation_risk` | float | — | 0.0–1.0 |
+| `demand_level` | string | — | `low` · `medium` · `high` · `very_high` |
+| [market_data](file:///c:/DEV/Tawjih%20V4/backend/app/routers/career.py#131-166) | object | — | `{"morocco": {"demand": "high", "avg_salary": 120000, ...}}` |
+
+---
+
+## 9. 🗣️ Language Course (MongoDB)
+
+**Route:** No admin page yet
+**Backend:** ❌ No CRUD endpoints
+**DB:** MongoDB `language_courses` + `language_lessons` + `vocabulary`
+**Current:** 2 courses, 3 lessons, 12 vocab
+
+### language_courses
+
+| Field | Type | Required | Notes |
+|-------|------|:---:|-----|
+| [language](file:///c:/DEV/Tawjih%20V4/backend/app/routers/learn.py#24-27) | string | ✅ | [fr](file:///c:/DEV/Tawjih%20V4/backend/app/routers/auth.py#98-109) · [en](file:///c:/DEV/Tawjih%20V4/backend/app/models/mentor.py#13-30) · [de](file:///c:/DEV/Tawjih%20V4/frontend/src/pages/AdminRoadmaps.jsx#75-85) |
+| `units` | array of objects | ✅ | See unit structure below |
+
+**Unit structure:**
+```json
+{
+  "unit": 1,
+  "title": "Les Bases",
+  "lessons": [
+    {"lesson": 1, "title": "Greetings", "xp": 20},
+    {"lesson": 2, "title": "Numbers", "xp": 25}
+  ]
+}
+```
+
+### language_lessons
+
+| Field | Type | Required | Notes |
+|-------|------|:---:|-----|
+| [language](file:///c:/DEV/Tawjih%20V4/backend/app/routers/learn.py#24-27) | string | ✅ | [fr](file:///c:/DEV/Tawjih%20V4/backend/app/routers/auth.py#98-109) · [en](file:///c:/DEV/Tawjih%20V4/backend/app/models/mentor.py#13-30) · [de](file:///c:/DEV/Tawjih%20V4/frontend/src/pages/AdminRoadmaps.jsx#75-85) |
+| [unit](file:///c:/DEV/Tawjih%20V4/frontend/src/pages/CommunityHub.jsx#11-161) | integer | ✅ | Unit number |
+| [lesson](file:///c:/DEV/Tawjih%20V4/backend/app/routers/learn.py#53-61) | integer | ✅ | Lesson number |
+| `exercises` | array of objects | ✅ | See exercise structure below |
+
+**Exercise structure:**
+```json
+{
+  "type": "translate",
+  "prompt": "Translate: Hello",
+  "answer": "Bonjour",
+  "options": ["Bonjour", "Merci", "Au revoir"]
+}
+```
+
+### vocabulary
+
+| Field | Type | Required | Notes |
+|-------|------|:---:|-----|
+| [language](file:///c:/DEV/Tawjih%20V4/backend/app/routers/learn.py#24-27) | string | ✅ | [fr](file:///c:/DEV/Tawjih%20V4/backend/app/routers/auth.py#98-109) · [en](file:///c:/DEV/Tawjih%20V4/backend/app/models/mentor.py#13-30) · [de](file:///c:/DEV/Tawjih%20V4/frontend/src/pages/AdminRoadmaps.jsx#75-85) |
+| [word](file:///C:/Users/filma/AppData/Local/Temp/fix_all.py#48-66) | string | ✅ | Word in target language |
+| `translation` | string | ✅ | Translation |
+| `category` | string | — | e.g. "greetings", "numbers" |
+| [example](file:///c:/DEV/Tawjih%20V4/.env.example) | string | — | Example sentence |
+| `difficulty` | string | — | `easy` · `medium` · `hard` |
+
+---
+
+## What Needs to Be Built
+
+### Backend (API endpoints)
+1. Roadmap Templates CRUD (`/api/admin/roadmaps`)
+2. Marketplace CRUD (`/api/admin/providers`)
+3. Mentors CRUD (`/api/admin/mentors`)
+4. Exam Questions CRUD (`/api/admin/questions`) — MongoDB
+5. Career Paths CRUD (`/api/admin/careers`) — MongoDB
+6. Language Content CRUD (`/api/admin/languages`) — MongoDB
+
+### Frontend (Wire Save buttons)
+1. Wire [AdminSchools.jsx](file:///c:/DEV/Tawjih%20V4/frontend/src/pages/AdminSchools.jsx) Save → `POST /api/admin/schools`
+2. Wire [AdminPrograms.jsx](file:///c:/DEV/Tawjih%20V4/frontend/src/pages/AdminPrograms.jsx) Save → `POST /api/admin/programs`
+3. Wire [AdminScholarships.jsx](file:///c:/DEV/Tawjih%20V4/frontend/src/pages/AdminScholarships.jsx) Save → `POST /api/admin/scholarships`
+4. Wire [AdminRoadmaps.jsx](file:///c:/DEV/Tawjih%20V4/frontend/src/pages/AdminRoadmaps.jsx) Save → (needs backend first)
+5. Complete form fields to match ALL schema fields
+6. Add Edit/Delete action handlers
+7. Build admin pages for Marketplace, Mentors, Career Paths, Questions, Languages

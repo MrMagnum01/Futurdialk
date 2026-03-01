@@ -51,6 +51,27 @@ export function isAuthenticated() {
     return !!accessToken;
 }
 
+/**
+ * Decode the JWT payload and return the user role.
+ * Returns 'student' as default if token is missing or invalid.
+ */
+export function getUserRole() {
+    if (!accessToken) return null;
+    try {
+        const payload = JSON.parse(atob(accessToken.split('.')[1]));
+        return payload.role || 'student';
+    } catch {
+        return 'student';
+    }
+}
+
+/**
+ * Get the correct dashboard path based on user role.
+ */
+export function getDashboardPath() {
+    return getUserRole() === 'admin' ? '/admin' : '/dashboard';
+}
+
 // ── Core Fetch Wrapper ──────────────────────────────────
 
 export async function apiFetch(path, options = {}) {
