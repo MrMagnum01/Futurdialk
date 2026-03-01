@@ -16,11 +16,16 @@ class MarketData(BaseModel):
 class CareerPathResponse(BaseModel):
     id: str
     name: str
+    name_fr: Optional[str] = None
     category: str
     riasec_codes: list[str] = []
     required_education: list[str] = []
     job_titles: list[str] = []
+    description_fr: Optional[str] = None
+    description_en: Optional[str] = None
+    skills: list[str] = []
     automation_risk: str  # low, medium, high
+    demand_level: Optional[str] = None
     market_data: dict[str, dict] = {}
     match_score: Optional[float] = None
     match_reason: Optional[str] = None

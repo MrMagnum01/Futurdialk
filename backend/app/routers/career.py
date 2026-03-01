@@ -16,14 +16,27 @@ router = APIRouter(prefix="/api/career", tags=["Career"])
 
 
 def _career_doc_to_response(doc: dict, match_score=None, match_reason=None) -> CareerPathResponse:
+    # Handle automation_risk: seed stores as float (0.04), schema expects string
+    risk = doc.get("automation_risk", "medium")
+    if isinstance(risk, (int, float)):
+        risk = "low" if risk < 0.1 else "medium" if risk < 0.25 else "high"
+    # Handle required_education: seed stores as string, schema expects list
+    edu = doc.get("required_education", [])
+    if isinstance(edu, str):
+        edu = [edu]
     return CareerPathResponse(
         id=str(doc["_id"]),
         name=doc.get("name", ""),
+        name_fr=doc.get("name_fr"),
         category=doc.get("category", ""),
         riasec_codes=doc.get("riasec_codes", []),
-        required_education=doc.get("required_education", []),
+        required_education=edu,
         job_titles=doc.get("job_titles", []),
-        automation_risk=doc.get("automation_risk", "medium"),
+        description_fr=doc.get("description_fr"),
+        description_en=doc.get("description_en"),
+        skills=doc.get("skills", []),
+        automation_risk=risk,
+        demand_level=doc.get("demand_level"),
         market_data=doc.get("market_data", {}),
         match_score=match_score,
         match_reason=match_reason,
