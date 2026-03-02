@@ -5,7 +5,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation, LanguageSwitcher } from '../i18n'
-import { getProfile, getMyRoadmaps, isAuthenticated } from '../api'
+import { getProfile, getMyRoadmaps, isAuthenticated, logout } from '../api'
 
 export default function Dashboard() {
     const { t, lang } = useTranslation()
@@ -67,6 +67,9 @@ export default function Dashboard() {
                     <Link to="/profile" className="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-blue-600 text-white flex items-center justify-center text-sm font-bold">
                         {userInitial}
                     </Link>
+                    <button onClick={() => { logout(); navigate('/login') }} className="p-2 text-secondary hover:text-red-500 transition-colors" title={isFr ? 'Se déconnecter' : 'Sign out'}>
+                        <span className="material-symbols-outlined">logout</span>
+                    </button>
                 </div>
             </header>
 
